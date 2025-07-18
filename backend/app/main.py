@@ -1,13 +1,18 @@
 import os
-
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
-from app.api import users, itinerary
-from app.api.nlp import router as nlp_router
+from app.db.session import init_db, get_session
+from app.api import users, itinerary, auth, nlp
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await init_db()
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 # Enable CORS for frontend
 app.add_middleware(
@@ -18,14 +23,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Health check endpoint
 @app.get("/")
 def health_check():
     return {"status": "API active", "version": "0.1.0"}
 
 # Include API routers
+app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(itinerary.router)
-app.include_router(nlp_router)
+app.include_router(nlp.router)
 
 # Database connectivity test
 DB_URL = os.getenv("DB_URL", "postgresql://postgres:password@db:5432/traveldb")

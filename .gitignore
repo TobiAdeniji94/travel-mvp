@@ -1,2 +1,8 @@
 **/venv
 /pycache/*
+.env
+# or explicitly only the root one
+/.env
+# Environment variables
+.env.local
+# Temporary files

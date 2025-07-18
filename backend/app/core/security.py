@@ -7,7 +7,8 @@ from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 
-from sqlmodel import Session, select
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlmodel import select
 from app.db.session import get_session
 from app.db.models import User
 
@@ -35,20 +36,26 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 
-def authenticate_user(username_or_email: str, password: str, session: Session):
-    user = session.exec(
+async def authenticate_user(
+    username_or_email: str, 
+    password: str, 
+    session: AsyncSession
+)-> Optional[User]:
+    user = await session.execute(
         select(User).where(
             (User.username == username_or_email) | (User.email == username_or_email)
         )
-    ).first()
-    if not user or not verify_password(password, user.password_hash):
+    )
+
+    result = user.scalar_one_or_none()
+    if not result or not verify_password(password, result.password_hash):
         return None
-    return user
+    return result
 
 
-def get_current_user(
+async def get_current_user(
     token: str = Depends(oauth2_scheme),
-    session: Session = Depends(get_session),
+    session: AsyncSession = Depends(get_session),
 ) -> User:
     credentials_exc = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -63,7 +70,7 @@ def get_current_user(
     except JWTError:
         raise credentials_exc
 
-    user = session.get(User, user_id)
+    user = await session.get(User, user_id)
     if not user:
         raise credentials_exc
     return user
