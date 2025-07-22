@@ -1,3 +1,4 @@
+from typing import List
 from pydantic import BaseModel, EmailStr, Field
 from uuid import UUID
 from datetime import datetime
@@ -34,3 +35,49 @@ class ItineraryUpdate(BaseModel):
     start_date: datetime | None = None
     end_date: datetime | None = None
     status: str | None = None
+
+class DestinationRead(BaseModel):
+    id: UUID
+    name: str
+    latitude: float
+    longitude: float
+
+    class Config:
+        orm_mode = True
+
+class ActivityRead(BaseModel):
+    id: UUID
+    name: str
+    description: str | None = None
+    latitude: float
+    longitude: float
+
+    class Config:
+        orm_mode = True
+
+class ItineraryDestinationRead(BaseModel):
+    order: int
+    destination: DestinationRead
+
+    class Config:
+        orm_mode = True
+
+class ItineraryActivityRead(BaseModel):
+    order: int
+    activity: ActivityRead
+    class Config: orm_mode = True
+
+class ItineraryRead(BaseModel):
+    id: UUID
+    name: str
+    start_date: datetime
+    end_date: datetime
+    status: str
+    data: dict
+    
+    dest_links: List[ItineraryDestinationRead]
+    act_links:  List[ItineraryActivityRead]
+
+    class Config:
+        orm_mode = True
+

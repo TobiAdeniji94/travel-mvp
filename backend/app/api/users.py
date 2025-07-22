@@ -8,12 +8,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.schemas import UserCreate, UserRead
 from app.db.models import User
 from app.db.crud import create_user, get_user, list_users
-from app.core.security import get_password_hash
+from app.core.security import get_password_hash, get_current_user
 from app.db.session import get_session
 
 router = APIRouter(prefix="/users", tags=["users"])
 
-@router.post("/", response_model=User)
+@router.post("/", response_model=UserRead)
 async def create_user_endpoint(
     payload: UserCreate,
     session: AsyncSession = Depends(get_session)
@@ -42,3 +42,14 @@ async def get_user_endpoint(
 ):
     return await get_user(user_id, session)
 
+@router.patch("/me/preferences", response_model=UserRead, summary="Update user travel preferences")
+async def update_preferences(
+    prefs: dict,
+    current_user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session)
+):
+    current_user.preferences = prefs
+    session.add(current_user)
+    await session.commit()
+    await session.refresh(current_user)
+    return current_user

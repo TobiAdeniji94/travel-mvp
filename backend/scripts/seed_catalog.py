@@ -536,7 +536,7 @@ ACTIVITIES = [
 ]
 
 async def seed():
-    # Ensure tables exist (skip if you rely purely on Alembic migrations)
+    # Ensure tables exist
     async with engine.begin() as conn:
         await conn.run_sync(SQLModel.metadata.create_all)
 

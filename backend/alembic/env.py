@@ -14,7 +14,7 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# Load your .env and settings
+# Load .env and settings
 settings = Settings()
 config.set_main_option("sqlalchemy.url", settings.DB_URL)
 
