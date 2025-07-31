@@ -51,8 +51,11 @@ DEST_ID_MAP   = pickle.load(open(DEST_MAP, "rb"))
 async def get_destination_ids(interests: List[str], budget: Optional[float]):
    q      = " ".join(interests or []) + f" budget {budget or 0}"
    v      = vectorizer.transform([q])
+   print(f"Destination Query vector: {v}")
    scores = cosine_similarity(v, item_matrix).flatten()
+   print(f"Destination scores: {scores}")
    top    = scores.argsort()[::-1][:10]
+   print(f"Top destination indices: {top}")
    return [DEST_ID_MAP[i] for i in top]
 
 # Activity TF-IDF artifacts
@@ -63,12 +66,18 @@ act_vectorizer = pickle.load(open(ACT_VEC,   "rb"))
 act_matrix     = scipy.sparse.load_npz(ACT_MAT)
 ACT_ID_MAP     = pickle.load(open(ACT_MAP, "rb"))
 
+
 async def get_activity_ids(interests: List[str], budget: Optional[float]):
    q      = " ".join(interests or []) + f" budget {budget or 0}"
+   # TODO: find out what this .transform() does?
    v      = act_vectorizer.transform([q])
+   print(f"Activity Query vector: {v}")
    scores = cosine_similarity(v, act_matrix).flatten()
+   print(f"Activity scores: {scores}")
    top    = scores.argsort()[::-1][:10]
-   return [ACT_ID_MAP[i] for i in top]
+   print(f"Top activity indices: {top}")
+   rank = [ACT_ID_MAP[i] for i in top]
+   return rank
 
 @router.post("/generate", response_model=ItineraryRead)
 async def generate_itinerary(
@@ -111,7 +120,7 @@ async def generate_itinerary(
          itinerary_id=itin_id,
          destination_id=dc.id,
          order=idx,
-         ))
+      ))
    await session.commit()
 
    # Get top activities based on interests and budget
@@ -125,7 +134,7 @@ async def generate_itinerary(
          itinerary_id=itin_id,
          activity_id=ac.id,
          order=idx,
-         ))
+      ))
    await session.commit()
 
    stmt = (

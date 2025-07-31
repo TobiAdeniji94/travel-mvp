@@ -95,7 +95,7 @@ def parse_travel_request(text: str) -> dict:
                 if cleaned.replace(".", "", 1).isdigit():
                     result["budget"] = float(cleaned)
 
-    # —— Build a set of all tokens that were part of spaCy DATE ents —
+    # Build a set of all tokens that were part of spaCy DATE ents
     date_tokens = {
         tok.text.lower()
         for ent in doc.ents
@@ -104,7 +104,7 @@ def parse_travel_request(text: str) -> dict:
         if tok.is_alpha
     }
 
-    # —— Interests: all NOUN/PROPN minus locations & date words —
+    # Interests: all NOUN/PROPN minus locations & date words
     seen = set()
     for tok in doc:
         lemma = tok.lemma_.lower()
@@ -118,4 +118,5 @@ def parse_travel_request(text: str) -> dict:
             seen.add(lemma)
             result["interests"].append(lemma)
 
+    print(f"Parsed request: {result}")
     return result

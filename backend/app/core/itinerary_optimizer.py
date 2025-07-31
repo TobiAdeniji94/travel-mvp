@@ -25,4 +25,7 @@ def greedy_route(dest_coords: List[DestCoord]) -> List[DestCoord]:
         )
         dest_coords.remove(next_tc)
         ordered.append(next_tc)
+    
+    print("greedy_route: ordered", ordered)
     return ordered
+print("Greedy route function loaded successfully.")

@@ -1,566 +1,164 @@
 #!/usr/bin/env python3
-# backend/scripts/seed_catalog.py
-
 import asyncio
-from sqlmodel import SQLModel, select
+import csv
+import json
+from pathlib import Path
+from datetime import datetime
+from uuid import UUID
+
+from sqlmodel import SQLModel
 from app.db.session import engine, async_session
-from app.db.models import Destination, Activity
+from app.db.models import (
+    Destination,
+    Activity,
+    Accommodation,
+    Transportation,
+)
 
-# 30 sample destinations
-DESTINATIONS = [
-    {
-        "name": "Eiffel Tower",
-        "description": "Iconic wrought-iron tower in Paris, built 1889.",
-        "latitude": 48.8584,
-        "longitude": 2.2945,
-        "images": ["https://example.com/eiffel.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Central Park",
-        "description": "Urban oasis in the heart of Manhattan, NYC.",
-        "latitude": 40.7851,
-        "longitude": -73.9683,
-        "images": ["https://example.com/centralpark.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Colosseum",
-        "description": "Ancient Roman amphitheater in the center of Rome.",
-        "latitude": 41.8902,
-        "longitude": 12.4922,
-        "images": ["https://example.com/colosseum.jpg"],
-        "rating": 4.6,
-    },
-    {
-        "name": "Great Wall of China",
-        "description": "Historic series of walls and fortifications across northern China.",
-        "latitude": 40.4319,
-        "longitude": 116.5704,
-        "images": ["https://example.com/greatwall.jpg"],
-        "rating": 4.5,
-    },
-    {
-        "name": "Machu Picchu",
-        "description": "15th-century Inca citadel set high in the Andes Mountains.",
-        "latitude": -13.1631,
-        "longitude": -72.5450,
-        "images": ["https://example.com/machupicchu.jpg"],
-        "rating": 4.9,
-    },
-    {
-        "name": "Grand Canyon",
-        "description": "Vast, steep canyon carved by the Colorado River in Arizona.",
-        "latitude": 36.1069,
-        "longitude": -112.1129,
-        "images": ["https://example.com/grandcanyon.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Sydney Opera House",
-        "description": "Famed performing-arts venue on Sydney Harbour.",
-        "latitude": -33.8568,
-        "longitude": 151.2153,
-        "images": ["https://example.com/opera.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Tokyo Skytree",
-        "description": "Broadcast tower and observation deck in Sumida, Tokyo.",
-        "latitude": 35.7100,
-        "longitude": 139.8107,
-        "images": ["https://example.com/skytree.jpg"],
-        "rating": 4.6,
-    },
-    {
-        "name": "Petra",
-        "description": "Archaeological city famous for its rock-cut architecture in Jordan.",
-        "latitude": 30.3285,
-        "longitude": 35.4444,
-        "images": ["https://example.com/petra.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Taj Mahal",
-        "description": "White marble mausoleum in Agra, India.",
-        "latitude": 27.1751,
-        "longitude": 78.0421,
-        "images": ["https://example.com/tajmahal.jpg"],
-        "rating": 4.9,
-    },
-    {
-        "name": "Santorini",
-        "description": "Picturesque Greek island in the Aegean Sea, noted for white-washed buildings.",
-        "latitude": 36.3932,
-        "longitude": 25.4615,
-        "images": ["https://example.com/santorini.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Yellowstone National Park",
-        "description": "First U.S. national park, known for geysers and wildlife.",
-        "latitude": 44.4280,
-        "longitude": -110.5885,
-        "images": ["https://example.com/yellowstone.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Banff National Park",
-        "description": "Canada’s oldest national park, famous for mountain scenery.",
-        "latitude": 51.4968,
-        "longitude": -115.9281,
-        "images": ["https://example.com/banff.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Serengeti National Park",
-        "description": "Vast Tanzanian wilderness known for its annual migration of wildebeest.",
-        "latitude": -2.3333,
-        "longitude": 34.8333,
-        "images": ["https://example.com/serengeti.jpg"],
-        "rating": 4.9,
-    },
-    {
-        "name": "Great Barrier Reef",
-        "description": "World’s largest coral reef system off the coast of Queensland, Australia.",
-        "latitude": -18.2871,
-        "longitude": 147.6992,
-        "images": ["https://example.com/reef.jpg"],
-        "rating": 4.6,
-    },
-    {
-        "name": "Galápagos Islands",
-        "description": "Archipelago of volcanic islands rich in wildlife, Ecuador.",
-        "latitude": -0.9538,
-        "longitude": -90.9656,
-        "images": ["https://example.com/galapagos.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Niagara Falls",
-        "description": "Massive waterfalls on the US–Canada border.",
-        "latitude": 43.0962,
-        "longitude": -79.0377,
-        "images": ["https://example.com/niagara.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Venice Canals",
-        "description": "Historic canal network traversing the city of Venice, Italy.",
-        "latitude": 45.4408,
-        "longitude": 12.3155,
-        "images": ["https://example.com/venice.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Amsterdam Canals",
-        "description": "Famous 17th-century canal ring in Amsterdam, Netherlands.",
-        "latitude": 52.3702,
-        "longitude": 4.8952,
-        "images": ["https://example.com/amsterdam.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Sagrada Familia",
-        "description": "Unfinished Roman Catholic church designed by Antoni Gaudí in Barcelona.",
-        "latitude": 41.4036,
-        "longitude": 2.1744,
-        "images": ["https://example.com/sagrada.jpg"],
-        "rating": 4.9,
-    },
-    {
-        "name": "Bora Bora",
-        "description": "Tropical island in French Polynesia, known for overwater bungalows.",
-        "latitude": -16.5004,
-        "longitude": -151.7415,
-        "images": ["https://example.com/borabora.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Maldives Beaches",
-        "description": "Pristine beaches and turquoise lagoons in the Maldives.",
-        "latitude": 3.2028,
-        "longitude": 73.2207,
-        "images": ["https://example.com/maldives.jpg"],
-        "rating": 4.9,
-    },
-    {
-        "name": "Amazon Rainforest",
-        "description": "Largest tropical rainforest spanning multiple South American countries.",
-        "latitude": -3.4653,
-        "longitude": -62.2159,
-        "images": ["https://example.com/amazon.jpg"],
-        "rating": 4.6,
-    },
-    {
-        "name": "Mount Kilimanjaro",
-        "description": "Africa’s highest peak, a dormant volcanic mountain in Tanzania.",
-        "latitude": -3.0674,
-        "longitude": 37.3556,
-        "images": ["https://example.com/kilimanjaro.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Mount Fuji",
-        "description": "Iconic volcano and highest mountain in Japan.",
-        "latitude": 35.3606,
-        "longitude": 138.7274,
-        "images": ["https://example.com/fuji.jpg"],
-        "rating": 4.8,
-    },
-    {
-        "name": "Grand Bazaar Istanbul",
-        "description": "One of the world’s largest and oldest covered markets in Turkey.",
-        "latitude": 41.0101,
-        "longitude": 28.9680,
-        "images": ["https://example.com/bazaar.jpg"],
-        "rating": 4.5,
-    },
-    {
-        "name": "Marrakech Medina",
-        "description": "Historic walled old city of Marrakech, Morocco.",
-        "latitude": 31.6295,
-        "longitude": -7.9811,
-        "images": ["https://example.com/marrakech.jpg"],
-        "rating": 4.6,
-    },
-    {
-        "name": "Prague Old Town",
-        "description": "Medieval heart of Prague with Gothic churches and the Astronomical Clock.",
-        "latitude": 50.0870,
-        "longitude": 14.4208,
-        "images": ["https://example.com/prague.jpg"],
-        "rating": 4.7,
-    },
-    {
-        "name": "Stonehenge",
-        "description": "Prehistoric stone circle monument in Wiltshire, England.",
-        "latitude": 51.1789,
-        "longitude": -1.8262,
-        "images": ["https://example.com/stonehenge.jpg"],
-        "rating": 4.4,
-    },
-    {
-        "name": "Antarctica Peninsula",
-        "description": "Remote, icy wilderness at the tip of the Antarctic continent.",
-        "latitude": -65.2500,
-        "longitude": -64.2500,
-        "images": ["https://example.com/antarctica.jpg"],
-        "rating": 4.9,
-    },
-]
+BASE_DIR = Path(__file__).parent
 
-
-# 30 sample activities
-ACTIVITIES = [
-    {
-        "name": "Seine River Cruise",
-        "description": "Scenic boat tour along the Seine with views of Paris landmarks.",
-        "latitude": 48.8566,
-        "longitude": 2.3522,
-        "images": ["https://example.com/seine_cruise.jpg"],
-        "price": 30.0,
-        "opening_hours": "09:00-21:00",
-        "rating": 4.5,
-    },
-    {
-        "name": "Louvre Museum Guided Tour",
-        "description": "Expert-led 2-hour walkthrough of the Louvre’s highlights.",
-        "latitude": 48.8606,
-        "longitude": 2.3376,
-        "images": ["https://example.com/louvre_tour.jpg"],
-        "price": 20.0,
-        "opening_hours": "09:00-18:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Grand Canyon Helicopter Tour",
-        "description": "Aerial flight over the Grand Canyon with commentary.",
-        "latitude": 36.0544,
-        "longitude": -112.1401,
-        "images": ["https://example.com/grandcanyon_heli.jpg"],
-        "price": 249.0,
-        "opening_hours": "08:00-17:00",
-        "rating": 4.9,
-    },
-    {
-        "name": "Safari Game Drive",
-        "description": "Morning jeep safari to see the Big Five in Serengeti National Park.",
-        "latitude": -2.3333,
-        "longitude": 34.8333,
-        "images": ["https://example.com/serengeti_safari.jpg"],
-        "price": 150.0,
-        "opening_hours": "06:00-10:00",
-        "rating": 4.9,
-    },
-    {
-        "name": "Taj Mahal Sunrise Visit",
-        "description": "Early-morning guided tour of the Taj Mahal at sunrise.",
-        "latitude": 27.1751,
-        "longitude": 78.0421,
-        "images": ["https://example.com/taj_sunrise.jpg"],
-        "price": 50.0,
-        "opening_hours": "05:30-07:30",
-        "rating": 4.8,
-    },
-    {
-        "name": "Venetian Gondola Ride",
-        "description": "Romantic gondola trip through Venice’s canals.",
-        "latitude": 45.4408,
-        "longitude": 12.3155,
-        "images": ["https://example.com/gondola.jpg"],
-        "price": 80.0,
-        "opening_hours": "09:00-23:00",
-        "rating": 4.6,
-    },
-    {
-        "name": "Machu Picchu Hike",
-        "description": "Guided hike up to the Sun Gate for panoramic Inca citadel views.",
-        "latitude": -13.1631,
-        "longitude": -72.5450,
-        "images": ["https://example.com/machu_hike.jpg"],
-        "price": 120.0,
-        "opening_hours": "06:00-16:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Tokyo Sushi Workshop",
-        "description": "Hands-on class making sushi with a master chef.",
-        "latitude": 35.6895,
-        "longitude": 139.6917,
-        "images": ["https://example.com/sushi_workshop.jpg"],
-        "price": 75.0,
-        "opening_hours": "11:00-14:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Yellowstone Geyser Tour",
-        "description": "Guided bus tour of Old Faithful and other geothermal features.",
-        "latitude": 44.4279,
-        "longitude": -110.5885,
-        "images": ["https://example.com/old_faithful.jpg"],
-        "price": 45.0,
-        "opening_hours": "07:00-19:00",
-        "rating": 4.6,
-    },
-    {
-        "name": "Banff Gondola Ride",
-        "description": "Cable car ascent for mountain vistas above Banff.",
-        "latitude": 51.2143,
-        "longitude": -115.5748,
-        "images": ["https://example.com/banff_gondola.jpg"],
-        "price": 50.0,
-        "opening_hours": "10:00-17:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Amazon Canoe Expedition",
-        "description": "Half-day canoe trip through the Amazon rainforest waterways.",
-        "latitude": -3.4653,
-        "longitude": -62.2159,
-        "images": ["https://example.com/amazon_canoe.jpg"],
-        "price": 80.0,
-        "opening_hours": "06:00-18:00",
-        "rating": 4.5,
-    },
-    {
-        "name": "Great Barrier Reef Snorkeling",
-        "description": "Boat trip to reefs with snorkeling and marine guide.",
-        "latitude": -18.2871,
-        "longitude": 147.6992,
-        "images": ["https://example.com/reef_snorkel.jpg"],
-        "price": 100.0,
-        "opening_hours": "08:00-15:00",
-        "rating": 4.8,
-    },
-    {
-        "name": "Bordeaux Wine Tasting",
-        "description": "Guided tasting at two châteaux in Bordeaux wine region.",
-        "latitude": 44.8378,
-        "longitude": -0.5792,
-        "images": ["https://example.com/bordeaux_wine.jpg"],
-        "price": 65.0,
-        "opening_hours": "10:00-18:00",
-        "rating": 4.6,
-    },
-    {
-        "name": "Northern Lights Tour",
-        "description": "Small-group evening chase of the Aurora in Tromsø.",
-        "latitude": 69.6492,
-        "longitude": 18.9553,
-        "images": ["https://example.com/northern_lights.jpg"],
-        "price": 120.0,
-        "opening_hours": "18:00-02:00",
-        "rating": 4.9,
-    },
-    {
-        "name": "Dubai Desert Safari",
-        "description": "4×4 dune bashing, camel ride, and BBQ dinner in the desert.",
-        "latitude": 25.2048,
-        "longitude": 55.2708,
-        "images": ["https://example.com/desert_safari.jpg"],
-        "price": 70.0,
-        "opening_hours": "15:00-22:00",
-        "rating": 4.4,
-    },
-    {
-        "name": "Great Wall Hiking Tour",
-        "description": "Guided hike on restored sections of the Great Wall.",
-        "latitude": 40.4319,
-        "longitude": 116.5704,
-        "images": ["https://example.com/greatwall_hike.jpg"],
-        "price": 40.0,
-        "opening_hours": "07:30-17:30",
-        "rating": 4.6,
-    },
-    {
-        "name": "Broadway Show",
-        "description": "Premium tickets to a top Broadway musical in New York City.",
-        "latitude": 40.7590,
-        "longitude": -73.9845,
-        "images": ["https://example.com/broadway.jpg"],
-        "price": 120.0,
-        "opening_hours": "19:00-22:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Alps Ski Pass",
-        "description": "Day pass for ski lifts and slopes in the Chamonix region.",
-        "latitude": 45.9237,
-        "longitude": 6.8694,
-        "images": ["https://example.com/chamonix_ski.jpg"],
-        "price": 90.0,
-        "opening_hours": "08:00-16:00",
-        "rating": 4.8,
-    },
-    {
-        "name": "Colosseum Underground Tour",
-        "description": "Access to the hypogeum and restricted areas of the Colosseum.",
-        "latitude": 41.8902,
-        "longitude": 12.4922,
-        "images": ["https://example.com/colosseum_underground.jpg"],
-        "price": 55.0,
-        "opening_hours": "08:30-18:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Santorini Sunset Cruise",
-        "description": "Evening catamaran cruise with dinner at sea.",
-        "latitude": 36.3932,
-        "longitude": 25.4615,
-        "images": ["https://example.com/santorini_cruise.jpg"],
-        "price": 60.0,
-        "opening_hours": "17:00-20:00",
-        "rating": 4.8,
-    },
-    {
-        "name": "Amazon River Dolphin Watching",
-        "description": "Boat trip to see pink river dolphins at dawn.",
-        "latitude": -0.9538,
-        "longitude": -90.9656,
-        "images": ["https://example.com/dolphin.jpg"],
-        "price": 80.0,
-        "opening_hours": "06:00-12:00",
-        "rating": 4.6,
-    },
-    {
-        "name": "Floating Market Visit",
-        "description": "Early-morning tour of Damnoen Saduak floating market near Bangkok.",
-        "latitude": 13.6525,
-        "longitude": 100.4980,
-        "images": ["https://example.com/floating_market.jpg"],
-        "price": 35.0,
-        "opening_hours": "06:00-12:00",
-        "rating": 4.4,
-    },
-    {
-        "name": "Petra Night Tour",
-        "description": "Candlelit walk through the Siq to the Treasury in Petra.",
-        "latitude": 30.3285,
-        "longitude": 35.4444,
-        "images": ["https://example.com/petra_night.jpg"],
-        "price": 25.0,
-        "opening_hours": "20:30-22:30",
-        "rating": 4.7,
-    },
-    {
-        "name": "Iceland Glacier Hike",
-        "description": "Guided crampon trek on a Vatnajökull glacier.",
-        "latitude": 64.0275,
-        "longitude": -16.9750,
-        "images": ["https://example.com/glacier_hike.jpg"],
-        "price": 100.0,
-        "opening_hours": "09:00-17:00",
-        "rating": 4.8,
-    },
-    {
-        "name": "Hot Air Balloon in Cappadocia",
-        "description": "Sunrise balloon flight over the fairy chimneys.",
-        "latitude": 38.6431,
-        "longitude": 34.8271,
-        "images": ["https://example.com/balloon.jpg"],
-        "price": 180.0,
-        "opening_hours": "05:00-08:00",
-        "rating": 4.9,
-    },
-    {
-        "name": "Blue Lagoon Spa",
-        "description": "Geothermal spa entry with silica mask in Iceland.",
-        "latitude": 63.8792,
-        "longitude": -22.4495,
-        "images": ["https://example.com/blue_lagoon.jpg"],
-        "price": 90.0,
-        "opening_hours": "08:00-22:00",
-        "rating": 4.6,
-    },
-    {
-        "name": "Milford Sound Kayak",
-        "description": "Guided kayak trip through Fiordland’s Milford Sound.",
-        "latitude": -44.6167,
-        "longitude": 167.8667,
-        "images": ["https://example.com/milford_kayak.jpg"],
-        "price": 85.0,
-        "opening_hours": "09:00-17:00",
-        "rating": 4.7,
-    },
-    {
-        "name": "Serengeti Balloon Safari",
-        "description": "Hot-air balloon ride over the Serengeti plains at sunrise.",
-        "latitude": -2.3333,
-        "longitude": 34.8333,
-        "images": ["https://example.com/serengeti_balloon.jpg"],
-        "price": 200.0,
-        "opening_hours": "06:00-09:00",
-        "rating": 4.8,
-    },
-]
+def parse_float(value: str, field: str, row_id: str):
+    """Safely parse float or return None."""
+    val = (value or "").strip()
+    if not val:
+        print(f"Skipping row {row_id}: empty {field}")
+        return None
+    try:
+        return float(val)
+    except ValueError:
+        print(f"Skipping row {row_id}: invalid {field} '{value}'")
+        return None
 
 async def seed():
-    # Ensure tables exist
+    # ensure tables exist
     async with engine.begin() as conn:
         await conn.run_sync(SQLModel.metadata.create_all)
 
     async with async_session() as session:
-        # DESTINATIONS
-        for d in DESTINATIONS:
-            exists = await session.scalar(
-                select(Destination).where(Destination.name == d["name"])
-            )
-            if not exists:
-                session.add(Destination(**d))
-                print(f"Added destination: {d['name']}")
+        # -- Destinations --
+        dest_file = BASE_DIR / "destination.csv"
+        with open(dest_file, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                row_id = row.get("id", "<no-id>")
+                lat = parse_float(row.get("latitude"), "latitude", row_id)
+                lon = parse_float(row.get("longitude"), "longitude", row_id)
+                if lat is None or lon is None:
+                    continue  # skip rows without valid coords
+                dest_id = UUID(row_id)
+                exists = await session.get(Destination, dest_id)
+                if not exists:
+                    images = json.loads(row["images"]) if row.get("images", "").strip().startswith("[") else row["images"].split(",")
+                    rating = parse_float(row.get("rating"), "rating", row_id)
+                    session.add(
+                        Destination(
+                            id=dest_id,
+                            name=row.get("name") or "",
+                            description=row.get("description") or None,
+                            latitude=lat,
+                            longitude=lon,
+                            images=images,
+                            rating=rating,
+                        )
+                    )
+                    print(f"Added destination: {row.get('name')}")
 
-        # ACTIVITIES
-        for a in ACTIVITIES:
-            exists = await session.scalar(
-                select(Activity).where(Activity.name == a["name"])
-            )
-            if not exists:
-                session.add(Activity(**a))
-                print(f"Added activity: {a['name']}")
+        # -- Activities --
+        act_file = BASE_DIR / "activities.csv"
+        with open(act_file, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                row_id = row.get("id", "<no-id>")
+                lat = parse_float(row.get("latitude"), "latitude", row_id)
+                lon = parse_float(row.get("longitude"), "longitude", row_id)
+                if lat is None or lon is None:
+                    continue
+                act_id = UUID(row_id)
+                exists = await session.get(Activity, act_id)
+                if not exists:
+                    images = json.loads(row["images"]) if row.get("images", "").strip().startswith("[") else row["images"].split(",")
+                    price = parse_float(row.get("price"), "price", row_id)
+                    rating = parse_float(row.get("rating"), "rating", row_id)
+                    session.add(
+                        Activity(
+                            id=act_id,
+                            name=row.get("name") or "",
+                            description=row.get("description") or None,
+                            latitude=lat,
+                            longitude=lon,
+                            images=images,
+                            price=price,
+                            opening_hours=row.get("opening_hours") or None,
+                            rating=rating,
+                        )
+                    )
+                    print(f"Added activity: {row.get('name')}")
+
+        # -- Accommodations --
+        acc_file = BASE_DIR / "accomodation.csv"
+        with open(acc_file, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                row_id = row.get("id", "<no-id>")
+                lat = parse_float(row.get("latitude"), "latitude", row_id)
+                lon = parse_float(row.get("longitude"), "longitude", row_id)
+                if lat is None or lon is None:
+                    continue
+                acc_id = UUID(row_id)
+                exists = await session.get(Accommodation, acc_id)
+                if not exists:
+                    images = json.loads(row["images"]) if row.get("images", "").strip().startswith("[") else row["images"].split(",")
+                    amenities = json.loads(row["amenities"]) if row.get("amenities", "").strip().startswith("[") else row["amenities"].split(",")
+                    price = parse_float(row.get("price"), "price", row_id)
+                    rating = parse_float(row.get("rating"), "rating", row_id)
+                    session.add(
+                        Accommodation(
+                            id=acc_id,
+                            name=row.get("name") or "",
+                            description=row.get("description") or None,
+                            latitude=lat,
+                            longitude=lon,
+                            images=images,
+                            price=price,
+                            rating=rating,
+                            amenities=amenities,
+                        )
+                    )
+                    print(f"Added accommodation: {row.get('name')}")
+
+        # -- Transportations --
+        trans_file = BASE_DIR / "transport.csv"
+        with open(trans_file, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                row_id = row.get("id", "<no-id>")
+                dep_lat = parse_float(row.get("departure_lat"), "departure_lat", row_id)
+                dep_lon = parse_float(row.get("departure_long"), "departure_long", row_id)
+                arr_lat = parse_float(row.get("arrival_lat"), "arrival_lat", row_id)
+                arr_lon = parse_float(row.get("arrival_long"), "arrival_long", row_id)
+                if None in (dep_lat, dep_lon, arr_lat, arr_lon):
+                    continue
+                tr_id = UUID(row_id)
+                exists = await session.get(Transportation, tr_id)
+                if not exists:
+                    session.add(
+                        Transportation(
+                            id=tr_id,
+                            type=row.get("type") or "",
+                            departure_lat=dep_lat,
+                            departure_long=dep_lon,
+                            arrival_lat=arr_lat,
+                            arrival_long=arr_lon,
+                            departure_time=datetime.fromisoformat(row["departure_time"]),
+                            arrival_time=datetime.fromisoformat(row["arrival_time"]),
+                            price=parse_float(row.get("price"), "price", row_id),
+                        )
+                    )
+                    print(f"Added transportation: {row_id}")
 
         await session.commit()
-        print(f"Seeded {len(DESTINATIONS)} destinations and {len(ACTIVITIES)} activities.")
+        print("Seeding completed.")
 
 if __name__ == "__main__":
     asyncio.run(seed())
+
