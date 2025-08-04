@@ -1,31 +1,92 @@
-from typing import List
-from geopy.distance import geodesic
 from collections import namedtuple
+from datetime import datetime, timedelta
+from geopy.distance import geodesic
+from typing import List, Union
 
-# Define the simple tuple for routing
+# Simple start‐point with only coords
 DestCoord = namedtuple("DestCoord", ["id", "latitude", "longitude"])
 
-def greedy_route(dest_coords: List[DestCoord]) -> List[DestCoord]:
+# Full POI with time windows and service duration
+POI = namedtuple("POI", [
+    "id",        # UUID or identifier
+    "latitude", 
+    "longitude",
+    "price",
+    "opens",     # datetime when it opens
+    "closes",    # datetime when it closes
+    "duration",  # minutes spent on site
+    "type"       # one of "destination","activity","accommodation","transportation"
+])
+
+def time_aware_greedy_route(
+    start_point: DestCoord,
+    pois:          List[POI],
+    day_start:     datetime,
+    day_end:       datetime,
+) -> List[POI]:
     """
-    Given a list of DestCoord tuples, return them in a simple
-    nearest-neighbor order.
+    Single‐day greedy that interleaves all POI types, respecting:
+     - travel times (geodesic / avg speed)
+     - POI opening/closing windows
+     - service duration
+     - day end cutoff
+     
+    Returns an ordered sublist of `pois`.
     """
-    if not dest_coords:
+    if not pois:
         return []
-    ordered = [dest_coords.pop(0)]
-    while dest_coords:
-        last = ordered[-1]
-        # pick the next tuple by minimum geodesic distance
-        next_tc = min(
-            dest_coords,
-            key=lambda tc: geodesic(
-                (last.latitude, last.longitude),
-                (tc.latitude, tc.longitude),
-            ).km
-        )
-        dest_coords.remove(next_tc)
-        ordered.append(next_tc)
-    
-    print("greedy_route: ordered", ordered)
+
+    current_time = day_start
+    current_loc  = start_point
+    ordered      = []
+
+    # Copy list so we can pop from it
+    remaining = pois.copy()
+
+    # assume 40 km/h average speed
+    def travel_time_minutes(a: DestCoord, b: POI) -> float:
+        dist_km = geodesic(
+            (a.latitude, a.longitude),
+            (b.latitude, b.longitude)
+        ).km
+        return (dist_km / 40) * 60
+
+    while remaining and current_time < day_end:
+        best = None
+        best_finish = None
+        best_score = None
+
+        for poi in remaining:
+            # travel time to poi
+            tt = timedelta(minutes=travel_time_minutes(current_loc, poi))
+            arrive = current_time + tt
+
+            # if we arrive before it opens, we must wait
+            wait = max(timedelta(0), poi.opens - arrive)
+            start_service = arrive + wait
+            finish_service = start_service + timedelta(minutes=poi.duration)
+
+            # skip if we’d finish after closing or day_end
+            if finish_service > poi.closes or finish_service > day_end:
+                continue
+
+            # score = minimal wait, tie-break on shortest travel
+            score = (wait.total_seconds(), tt.total_seconds())
+
+            if best is None or score < best_score:
+                best = poi
+                best_finish = finish_service
+                best_score = score
+
+        if not best:
+            break
+
+        # accept best POI
+        ordered.append(best)
+        remaining.remove(best)
+
+        # advance time & location
+        current_time = best_finish
+        current_loc = DestCoord(best.id, best.latitude, best.longitude)
+
     return ordered
-print("Greedy route function loaded successfully.")

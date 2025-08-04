@@ -1,0 +1,176 @@
+# ==============================================================================
+# Docker ignore file for optimized builds
+# ==============================================================================
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+.tox/
+.coverage
+.pytest_cache/
+htmlcov/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation
+docs/_build/
+site/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+logs/
+log/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker files (don't include other Dockerfiles in build context)
+Dockerfile.*
+docker-compose*.yml
+.dockerignore
+
+# Development and testing
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+test_*.py
+*_test.py
+tests/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Configuration files that shouldn't be in production
+alembic.ini
+pytest.ini
+setup.cfg
+tox.ini
+
+# README and documentation
+README*
+*.md
+CHANGELOG*
+LICENSE*
+CONTRIBUTING*
+
+# CI/CD files
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+Jenkinsfile
+
+# Node.js (if any frontend build artifacts)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Local development files
+*.local
+local_*
+dev_*
+development_*
+
+# Machine learning model artifacts (keep only production models)
+*.pkl.tmp
+*.joblib.tmp
+experiments/
+model_training/
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Performance profiling
+*.prof
+*.pstats
+
+# Security files
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+private/
+
+# Miscellaneous
+*.orig
+*.rej
+.sass-cache/
+connect.lock
+typings/
