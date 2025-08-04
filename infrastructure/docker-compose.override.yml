@@ -1,8 +1,55 @@
 services:
+  # Backend development overrides
   backend:
+    environment:
+      - FASTAPI_ENV=development
+      - LOG_LEVEL=debug
+      - RELOAD=true
+      - WORKERS=1
+      - ENABLE_RATE_LIMITING=false
+      - ENABLE_DEBUG_MODE=true
     entrypoint: []
     command: >
       sh -c "
+        echo 'Starting development server...' &&
         alembic upgrade head &&
         uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
       "
+    ports:
+      - "8000:8000"
+      - "5678:5678"  # Debug port
+  
+  # Development tools (optional - comment out if not needed)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: travel-mvp-pgadmin
+    restart: unless-stopped
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@travel-mvp.dev
+      - PGADMIN_DEFAULT_PASSWORD=admin123
+      - PGADMIN_CONFIG_SERVER_MODE=False
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - travel-mvp-network
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: travel-mvp-redis-commander
+    restart: unless-stopped
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - travel-mvp-network
+
+volumes:
+  pgadmin_data:
+    driver: local

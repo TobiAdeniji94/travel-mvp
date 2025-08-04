@@ -1,0 +1,85 @@
+# ==============================================================================
+# Production overrides for Travel MVP
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+# ==============================================================================
+
+services:
+  # Production backend configuration
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      - FASTAPI_ENV=production
+      - LOG_LEVEL=info
+      - WORKERS=4
+      - ENABLE_RATE_LIMITING=true
+      - ENABLE_DEBUG_MODE=false
+    restart: always
+    # Remove volume mount for production (no hot reload)
+    volumes:
+      - backend_logs:/app/logs
+      - backend_models:/app/models
+      - backend_temp:/app/temp
+    # Production command override
+    command: >
+      sh -c "
+        echo 'Starting production server...' &&
+        alembic upgrade head &&
+        gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+      "
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`api.travel-mvp.com`)"
+      - "traefik.http.routers.backend.tls=true"
+      - "traefik.http.services.backend.loadbalancer.server.port=8000"
+
+  # Production database configuration
+  db:
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Must be set in production
+    command: >
+      postgres
+      -c shared_preload_libraries=pg_stat_statements
+      -c max_connections=200
+      -c shared_buffers=512MB
+      -c effective_cache_size=2GB
+      -c maintenance_work_mem=128MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+
+  # Production Redis configuration
+  redis:
+    restart: always
+    command: redis-server --save 900 1 --save 300 10 --save 60 10000 --loglevel notice
+
+  # Optional: Nginx reverse proxy for production
+  nginx:
+    image: nginx:alpine
+    container_name: travel-mvp-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - backend
+    networks:
+      - travel-mvp-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  nginx_logs:
+    driver: local
