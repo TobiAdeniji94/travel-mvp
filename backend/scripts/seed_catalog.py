@@ -18,7 +18,7 @@ from dataclasses import dataclass
 
 from sqlmodel import SQLModel
 from sqlalchemy.exc import SQLAlchemyError
-from app.db.session import engine, async_session
+from app.db.session import init_db, get_engine, get_session
 from app.db.models import (
     Destination,
     Activity,
@@ -592,6 +592,12 @@ async def seed():
     logger.info("🚀 Starting database seeding process")
     
     try:
+        await init_db()
+        engine = get_engine()
+        if engine is None:
+            logger.error("Database engine unavailable after init_db()")
+            return False
+        
         # Configuration
         config = SeedingConfig()
         seeder = CatalogSeeder(config)
@@ -607,7 +613,7 @@ async def seed():
                 await conn.run_sync(SQLModel.metadata.create_all)
         
         # Seed all categories
-        async with async_session() as session:
+        async with get_session() as session:
             try:
                 # Seed destinations
                 async with performance_timer("destinations_seeding"):

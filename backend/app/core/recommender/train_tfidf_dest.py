@@ -20,7 +20,7 @@ from sklearn.exceptions import NotFittedError
 from sqlmodel import select
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.db.session import async_session
+from app.db.session import init_db, get_session
 from app.db.models import Destination
 
 # Configure logging
@@ -39,7 +39,7 @@ class TrainingConfig:
     ngram_range: Tuple[int, int] = (1, 2)  # Unigrams and bigrams
     stop_words: str = "english"
     lowercase: bool = True
-    strip_accents: bool = True
+    strip_accents: str = "unicode"
     min_text_length: int = 10  # Minimum text length to include
     max_text_length: int = 10000  # Maximum text length to include
 
@@ -115,7 +115,7 @@ class DestinationCorpusBuilder:
         
         try:
             async with performance_timer("destination_data_fetch"):
-                async with async_session() as session:
+                async with get_session() as session:
                     # Enhanced query with more fields
                     result = await session.execute(
                         select(
@@ -304,6 +304,14 @@ class TFIDFTrainer:
 async def main():
     """Enhanced main function with comprehensive error handling"""
     logger.info("🚀 Starting destination TF-IDF training")
+
+    # Initialize database connection
+    try:
+        await init_db()
+        logger.info("✅ Database initialized successfully")
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize database: {e}")
+        return False
     
     try:
         # Configuration

@@ -7,7 +7,7 @@ from app.core.security import (
     get_current_user, get_security_info, SecurityService,
     is_token_blacklisted, blacklist_token
 )
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.models import User
 from app.api.schemas import SecurityInfoResponse
 
@@ -115,6 +115,7 @@ async def logout_user(
     summary="Check token status",
     description="Check if the current token is valid and not blacklisted"
 )
+
 async def check_token_status(
     request: Request,
     current_user: User = Depends(get_current_user)

@@ -18,6 +18,12 @@ services:
     ports:
       - "8000:8000"
       - "5678:5678"  # Debug port
+    volumes:
+      - ../backend:/app
+      - backend_logs:/app/logs
+      - ../backend/models:/app/models
+      - backend_temp:/app/temp
+
   
   # Development tools (optional - comment out if not needed)
   pgadmin:

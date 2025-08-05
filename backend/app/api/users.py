@@ -9,7 +9,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.crud import (
     create_user, get_user_by_id, get_user_by_username, get_user_by_email,
     get_users
@@ -27,7 +27,7 @@ router = APIRouter(prefix="/users")
 @router.post("/", response_model=UserRead)
 async def create_user_endpoint(
     payload: UserCreate,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Create a new user with password validation"""
     try:
@@ -87,7 +87,7 @@ async def create_user_endpoint(
 async def list_users_endpoint(
     skip: int = Query(0, ge=0, description="Number of records to skip"),
     limit: int = Query(100, ge=1, le=1000, description="Maximum number of records to return"),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get list of active users with pagination"""
     try:
@@ -104,7 +104,7 @@ async def list_users_endpoint(
 @router.get("/{user_id}", response_model=UserRead)
 async def get_user_endpoint(
     user_id: UUID,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get user by ID"""
     try:
@@ -129,7 +129,7 @@ async def get_user_endpoint(
 async def update_user_endpoint(
     user_id: UUID,
     payload: UserUpdate,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Update user information"""
     try:
@@ -183,7 +183,7 @@ async def update_user_endpoint(
 @router.delete("/{user_id}")
 async def delete_user_endpoint(
     user_id: UUID,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Soft delete user"""
     try:
@@ -235,7 +235,7 @@ async def validate_password_endpoint(
 @router.post("/me/change-password")
 async def change_password_endpoint(
     payload: ChangePasswordRequest,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Change user password (requires authentication)"""
     try:

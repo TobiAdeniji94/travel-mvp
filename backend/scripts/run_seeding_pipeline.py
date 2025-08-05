@@ -129,11 +129,11 @@ class SeedingPipeline:
         try:
             # Import database models and session
             sys.path.append(str(Path(__file__).parent.parent))
-            from app.db.session import async_session
+            from app.db.session import get_session
             from app.db.models import Destination, Activity, Accommodation, Transportation
             from sqlalchemy import func
             
-            async with async_session() as session:
+            async with get_session() as session:
                 # Count seeded items
                 destinations_count = await session.scalar(func.count(Destination.id))
                 activities_count = await session.scalar(func.count(Activity.id))
@@ -235,6 +235,9 @@ class SeedingPipeline:
     async def run_pipeline(self) -> bool:
         """Run the complete seeding pipeline"""
         logger.info("🚀 Starting comprehensive seeding pipeline")
+        # Ensure the DatabaseManager is initialized before any DB work
+        from app.db.session import init_db
+        await init_db()
         
         # Step 1: Validate environment
         if self.config.validate_environment:

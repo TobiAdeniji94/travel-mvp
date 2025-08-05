@@ -21,7 +21,7 @@ class NLPParser:
     def __init__(self):
         self.nlp = self._load_model()
         self.date_settings = {
-            "PREFER_DATES_FROM": "future",
+            "PREFER_DATES_FROM": "current_period",
             "RETURN_AS_TIMEZONE_AWARE": True,
             "TIMEZONE": "UTC",
             "STRICT_PARSING": False,
@@ -53,32 +53,52 @@ def extract_date_range(text: str) -> Tuple[Optional[datetime], Optional[datetime
             r'(\d+)\s+days?\s+(?:starting|from)\s+(.+?)(?:[.,;\s]|$)'
         ]
         
+        # for pattern in date_patterns:
+        #     m = re.search(pattern, text, flags=re.IGNORECASE)
+        #     if m:
+        #         try:
+        #             d1 = dateparser.parse(m.group(1), settings=parser.date_settings)
+                    
+                    
+        #             # Handle duration patterns
+        #             if "days" in pattern and len(m.groups()) > 1:
+        #                 if m.group(2) and m.group(2).isdigit():
+        #                     days = int(m.group(2))
+        #                     d2 = d1 + timedelta(days=days) if d1 else None
+        #                 else:
+        #                     d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
+        #             else:
+        #                 d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
+                    
+        #             if d1 and d2:
+        #                 return (min(d1, d2), max(d1, d2))
+        #             elif d1:
+        #                 # Check for duration indicator
+        #                 duration_match = re.search(r'(\d+)\s+days?', text, re.IGNORECASE)
+        #                 if duration_match:
+        #                     days = int(duration_match.group(1))
+        #                     d2 = d1 + timedelta(days=days)
+        #                     return (d1, d2)
+        #                 return (d1, d1)
         for pattern in date_patterns:
             m = re.search(pattern, text, flags=re.IGNORECASE)
             if m:
                 try:
                     d1 = dateparser.parse(m.group(1), settings=parser.date_settings)
+                    d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if m.groups(2) else d1
                     
-                    # Handle duration patterns
-                    if "days" in pattern and len(m.groups()) > 1:
-                        if m.group(2) and m.group(2).isdigit():
-                            days = int(m.group(2))
-                            d2 = d1 + timedelta(days=days) if d1 else None
-                        else:
-                            d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
-                    else:
-                        d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
+                    now = datetime.now(tz=d1.tzinfo)
+
+                    if d1:
+                        if d1.year > now.year + 1 or d1.year < now.year:
+                            d1 = d1.replace(year=now.year, month=now.month, day=now.day)
+                            logger.warning(f"Date {d1} is too far in the future or past, ignoring")
+                    if d2:
+                        if d2.year > now.year + 1 or d2.year < now.year:
+                            d2 = d2.replace(year=now.year, month=now.month, day=now.day)
+                            logger.warning(f"Date {d2} is too far in the future or past, ignoring")
                     
-                    if d1 and d2:
-                        return (min(d1, d2), max(d1, d2))
-                    elif d1:
-                        # Check for duration indicator
-                        duration_match = re.search(r'(\d+)\s+days?', text, re.IGNORECASE)
-                        if duration_match:
-                            days = int(duration_match.group(1))
-                            d2 = d1 + timedelta(days=days)
-                            return (d1, d2)
-                        return (d1, d1)
+                    return (min(d1, d2), max(d1, d2)) if d1 and d2 else (d1, d2)
                 except Exception as e:
                     logger.warning(f"Error parsing date in pattern: {e}")
                     continue

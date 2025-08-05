@@ -13,7 +13,7 @@ from pydantic import BaseModel, Field, field_validator
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlmodel import select
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.models import User
 
 # Set up logging
@@ -213,7 +213,7 @@ async def authenticate_user(
 
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db_session),
 ) -> User:
     """Get current user from JWT token with enhanced security"""
     credentials_exc = HTTPException(

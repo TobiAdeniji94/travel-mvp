@@ -19,7 +19,7 @@ from app.core.security import (
     get_password_hash,
     verify_password,
 )
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.models import User
 from app.api.schemas import Token, UserRead
 
@@ -218,7 +218,7 @@ auth_service = None
 async def login(
     request: Request,
     form_data: OAuth2PasswordRequestForm = Depends(),
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db_session),
 ):
     """Authenticate user and return access token"""
     async with performance_timer("user_login"):
@@ -277,7 +277,7 @@ async def login(
 async def register(
     request: Request,
     user_data: RegisterRequest,
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db_session),
 ):
     """Register a new user"""
     async with performance_timer("user_registration"):
@@ -323,7 +323,7 @@ async def register(
 async def refresh_token(
     request: Request,
     refresh_data: RefreshTokenRequest,
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db_session),
 ):
     """Refresh access token using refresh token"""
     async with performance_timer("token_refresh"):

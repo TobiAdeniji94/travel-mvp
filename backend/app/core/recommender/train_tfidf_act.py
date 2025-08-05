@@ -20,7 +20,7 @@ from sklearn.exceptions import NotFittedError
 from sqlmodel import select
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.db.session import async_session
+from app.db.session import init_db, get_session
 from app.db.models import Activity
 
 # Configure logging
@@ -39,7 +39,7 @@ class TrainingConfig:
     ngram_range: Tuple[int, int] = (1, 2)  # Unigrams and bigrams
     stop_words: str = "english"
     lowercase: bool = True
-    strip_accents: bool = True
+    strip_accents: str = "unicode"
     min_text_length: int = 10  # Minimum text length to include
     max_text_length: int = 10000  # Maximum text length to include
 
@@ -115,7 +115,7 @@ class ActivityCorpusBuilder:
         
         try:
             async with performance_timer("activity_data_fetch"):
-                async with async_session() as session:
+                async with get_session() as session:
                     # Enhanced query with more fields
                     result = await session.execute(
                         select(
@@ -123,12 +123,11 @@ class ActivityCorpusBuilder:
                             Activity.name,
                             Activity.description,
                             Activity.type,
-                            Activity.category
                         )
                     )
                     
                     for row in result.all():
-                        _id, name, desc, act_type, category = row
+                        _id, name, desc, act_type = row
                         
                         # Build comprehensive text representation
                         text_parts = []
@@ -138,8 +137,6 @@ class ActivityCorpusBuilder:
                             text_parts.append(desc)
                         if act_type:
                             text_parts.append(act_type)
-                        if category:
-                            text_parts.append(category)
                         
                         raw_text = " ".join(text_parts)
                         cleaned_text = self.preprocessor.clean(raw_text)
@@ -304,6 +301,14 @@ class TFIDFTrainer:
 async def main():
     """Enhanced main function with comprehensive error handling"""
     logger.info("🚀 Starting activity TF-IDF training")
+
+    # Initialize database connection
+    try:
+        await init_db()
+        logger.info("✅ Database initialized successfully")
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize database: {e}")
+        return False
     
     try:
         # Configuration

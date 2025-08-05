@@ -16,6 +16,7 @@ from app.db.models import (
     Review, ItineraryDestination, ItineraryActivity, 
     ItineraryAccommodation, ItineraryTransportation
 )
+from fastapi import HTTPException, status
 
 logger = logging.getLogger(__name__)
 
@@ -135,13 +136,26 @@ async def get_itinerary_by_id(session: AsyncSession, itinerary_id: UUID) -> Opti
     try:
         result = await session.execute(
             select(Itinerary)
-            .options(selectinload(Itinerary.user))
-            .where(Itinerary.id == itinerary_id)
+            .options(
+                selectinload(Itinerary.dest_links).selectinload(ItineraryDestination.destination),
+                selectinload(Itinerary.act_links).selectinload(ItineraryActivity.activity),
+                selectinload(Itinerary.accom_links).selectinload(ItineraryAccommodation.accommodation),
+                selectinload(Itinerary.trans_links).selectinload(ItineraryTransportation.transportation),
+            ).where(Itinerary.id == itinerary_id)
         )
-        return result.scalar_one_or_none()
+        itin = result.scalar_one_or_none()
+        if not itin:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Itinerary '{itinerary_id}' not found"
+            ) 
+        return itin
     except Exception as e:
         logger.error(f"Error getting itinerary {itinerary_id}: {e}")
-        return None
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Itinerary with ID {itinerary_id} not found"
+        )
 
 # Legacy function names for compatibility
 async def get_itinerary(session: AsyncSession, itinerary_id: UUID) -> Optional[Itinerary]:

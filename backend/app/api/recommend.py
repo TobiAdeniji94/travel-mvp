@@ -12,7 +12,7 @@ from functools import lru_cache
 from contextlib import asynccontextmanager
 from pydantic import BaseModel, Field, field_validator
 
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.models import Destination, Activity, Accommodation, Transportation
 
 # Set up logging
@@ -250,7 +250,7 @@ def get_cached_recommendations(query_key: str, model_type: str, limit: int):
 async def recommend_destinations(
     request: Request,
     prefs: RecommendationRequest,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get destination recommendations"""
     async with performance_timer("destination_recommendations"):
@@ -286,7 +286,7 @@ async def recommend_destinations(
 async def recommend_activities(
     request: Request,
     prefs: RecommendationRequest,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get activity recommendations"""
     async with performance_timer("activity_recommendations"):
@@ -322,7 +322,7 @@ async def recommend_activities(
 async def recommend_accommodations(
     request: Request,
     prefs: RecommendationRequest,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get accommodation recommendations"""
     async with performance_timer("accommodation_recommendations"):
@@ -358,7 +358,7 @@ async def recommend_accommodations(
 async def recommend_transportations(
     request: Request,
     prefs: RecommendationRequest,
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get transportation recommendations"""
     async with performance_timer("transportation_recommendations"):
