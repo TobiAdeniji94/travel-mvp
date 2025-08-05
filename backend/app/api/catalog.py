@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.db.models import Destination, Activity, Accommodation, Transportation
 from app.api.schemas import CatalogStats, SeedingStatus
 
@@ -26,7 +26,7 @@ router = APIRouter()
     description="Retrieve statistics about the travel catalog including counts for all categories"
 )
 async def get_catalog_stats(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get comprehensive catalog statistics"""
     try:
@@ -75,7 +75,7 @@ async def get_catalog_stats(
     description="Check if the database has been seeded and get seeding statistics"
 )
 async def get_seeding_status(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get database seeding status and statistics"""
     try:
@@ -129,7 +129,7 @@ async def get_seeding_status(
     description="Get the total number of destinations in the catalog"
 )
 async def get_destinations_count(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get destinations count"""
     try:
@@ -151,7 +151,7 @@ async def get_destinations_count(
     description="Get the total number of activities in the catalog"
 )
 async def get_activities_count(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get activities count"""
     try:
@@ -173,7 +173,7 @@ async def get_activities_count(
     description="Get the total number of accommodations in the catalog"
 )
 async def get_accommodations_count(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get accommodations count"""
     try:
@@ -195,7 +195,7 @@ async def get_accommodations_count(
     description="Get the total number of transportations in the catalog"
 )
 async def get_transportations_count(
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db_session)
 ):
     """Get transportations count"""
     try:

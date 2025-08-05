@@ -1,0 +1,195 @@
+2025-08-04 23:49:15,214 - __main__ - INFO - 🚀 Starting database seeding process
+2025-08-04 23:49:15,215 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-04 23:49:15,256 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-04 23:49:15,305 - app.db.session - ERROR - Database health check failed: 'AsyncAdaptedQueuePool' object has no attribute 'invalidated'
+2025-08-04 23:49:15,306 - app.db.session - INFO - Database manager initialized successfully
+2025-08-04 23:49:15,307 - app.db.session - INFO - Creating database tables...
+2025-08-04 23:49:15,376 - app.db.session - INFO - Database tables created successfully
+2025-08-04 23:49:15,376 - __main__ - INFO - 🔍 Validating seeding environment...
+2025-08-04 23:49:15,379 - __main__ - INFO -   ✅ destination.csv (4515 bytes)
+2025-08-04 23:49:15,381 - __main__ - INFO -   ✅ activities.csv (1869096 bytes)
+2025-08-04 23:49:15,383 - __main__ - INFO -   ✅ accomodation.csv (366957 bytes)
+2025-08-04 23:49:15,385 - __main__ - INFO -   ✅ transport.csv (31552 bytes)
+2025-08-04 23:49:15,385 - __main__ - INFO - ✅ Environment validation passed
+2025-08-04 23:49:15,398 - __main__ - INFO - database_setup completed in 0.01s
+2025-08-04 23:49:15,399 - __main__ - ERROR - ❌ Seeding process failed: 'async_generator' object does not support the asynchronous context manager protocol
+2025-08-04 23:55:10,298 - __main__ - INFO - 🚀 Starting database seeding process
+2025-08-04 23:55:10,299 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-04 23:55:10,343 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-04 23:55:10,406 - app.db.session - INFO - Database manager initialized successfully
+2025-08-04 23:55:10,407 - app.db.session - INFO - Creating database tables...
+2025-08-04 23:55:10,436 - app.db.session - INFO - Database tables created successfully
+2025-08-04 23:55:10,436 - __main__ - INFO - 🔍 Validating seeding environment...
+2025-08-04 23:55:10,438 - __main__ - INFO -   ✅ destination.csv (4515 bytes)
+2025-08-04 23:55:10,441 - __main__ - INFO -   ✅ activities.csv (1869096 bytes)
+2025-08-04 23:55:10,443 - __main__ - INFO -   ✅ accomodation.csv (366957 bytes)
+2025-08-04 23:55:10,446 - __main__ - INFO -   ✅ transport.csv (31552 bytes)
+2025-08-04 23:55:10,446 - __main__ - INFO - ✅ Environment validation passed
+2025-08-04 23:55:10,460 - __main__ - INFO - database_setup completed in 0.01s
+2025-08-04 23:55:10,461 - __main__ - INFO - 🌍 Seeding destinations...
+2025-08-04 23:55:10,658 - __main__ - INFO - destinations_seeding completed in 0.20s
+2025-08-04 23:55:10,659 - __main__ - INFO - 🎯 Seeding activities...
+2025-08-04 23:55:12,724 - __main__ - INFO - activities_seeding completed in 2.07s
+2025-08-04 23:55:12,725 - __main__ - INFO - 🏨 Seeding accommodations...
+2025-08-04 23:55:14,297 - __main__ - INFO - accommodations_seeding completed in 1.57s
+2025-08-04 23:55:14,297 - __main__ - INFO - 🚗 Seeding transportations...
+2025-08-04 23:55:14,652 - __main__ - INFO - transportations_seeding completed in 0.35s
+2025-08-04 23:55:14,656 - __main__ - INFO - ✅ Database changes committed successfully
+2025-08-04 23:55:14,656 - __main__ - INFO - 
+================================================================================
+2025-08-04 23:55:14,657 - __main__ - INFO - 📊 SEEDING SUMMARY
+2025-08-04 23:55:14,657 - __main__ - INFO - ================================================================================
+2025-08-04 23:55:14,657 - __main__ - INFO - 
+📋 DESTINATIONS:
+2025-08-04 23:55:14,658 - __main__ - INFO -   Processed: 12
+2025-08-04 23:55:14,658 - __main__ - INFO -   Added: 12
+2025-08-04 23:55:14,658 - __main__ - INFO -   Errors: 0
+2025-08-04 23:55:14,659 - __main__ - INFO - 
+📋 ACTIVITIES:
+2025-08-04 23:55:14,659 - __main__ - INFO -   Processed: 900
+2025-08-04 23:55:14,659 - __main__ - INFO -   Added: 900
+2025-08-04 23:55:14,660 - __main__ - INFO -   Errors: 0
+2025-08-04 23:55:14,660 - __main__ - INFO - 
+📋 ACCOMMODATIONS:
+2025-08-04 23:55:14,660 - __main__ - INFO -   Processed: 750
+2025-08-04 23:55:14,661 - __main__ - INFO -   Added: 750
+2025-08-04 23:55:14,661 - __main__ - INFO -   Errors: 0
+2025-08-04 23:55:14,661 - __main__ - INFO - 
+📋 TRANSPORTATIONS:
+2025-08-04 23:55:14,662 - __main__ - INFO -   Processed: 170
+2025-08-04 23:55:14,662 - __main__ - INFO -   Added: 170
+2025-08-04 23:55:14,662 - __main__ - INFO -   Errors: 0
+2025-08-04 23:55:14,663 - __main__ - INFO - 
+📊 OVERALL STATISTICS:
+2025-08-04 23:55:14,663 - __main__ - INFO -   Total processed: 1832
+2025-08-04 23:55:14,664 - __main__ - INFO -   Total added: 1832
+2025-08-04 23:55:14,664 - __main__ - INFO -   Total errors: 0
+2025-08-04 23:55:14,664 - __main__ - INFO -   Success rate: 100.0%
+2025-08-04 23:55:14,665 - __main__ - INFO - 
+🔍 VALIDATION STATISTICS:
+2025-08-04 23:55:14,666 - __main__ - INFO -   total_processed: 0
+2025-08-04 23:55:14,666 - __main__ - INFO -   valid_records: 0
+2025-08-04 23:55:14,666 - __main__ - INFO -   invalid_records: 0
+2025-08-04 23:55:14,667 - __main__ - INFO -   duplicate_records: 0
+2025-08-04 23:55:14,667 - __main__ - INFO -   coordinate_errors: 0
+2025-08-04 23:55:14,667 - __main__ - INFO -   parsing_errors: 0
+2025-08-04 23:57:06,048 - __main__ - INFO - 🚀 Starting database seeding process
+2025-08-04 23:57:06,048 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-04 23:57:06,096 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-04 23:57:06,159 - app.db.session - INFO - Database manager initialized successfully
+2025-08-04 23:57:06,159 - app.db.session - INFO - Creating database tables...
+2025-08-04 23:57:06,182 - app.db.session - INFO - Database tables created successfully
+2025-08-04 23:57:06,182 - __main__ - INFO - 🔍 Validating seeding environment...
+2025-08-04 23:57:06,184 - __main__ - INFO -   ✅ destination.csv (4515 bytes)
+2025-08-04 23:57:06,186 - __main__ - INFO -   ✅ activities.csv (1869096 bytes)
+2025-08-04 23:57:06,188 - __main__ - INFO -   ✅ accomodation.csv (366957 bytes)
+2025-08-04 23:57:06,190 - __main__ - INFO -   ✅ transport.csv (31552 bytes)
+2025-08-04 23:57:06,190 - __main__ - INFO - ✅ Environment validation passed
+2025-08-04 23:57:06,201 - __main__ - INFO - database_setup completed in 0.01s
+2025-08-04 23:57:06,201 - __main__ - INFO - 🌍 Seeding destinations...
+2025-08-04 23:57:06,261 - __main__ - INFO - destinations_seeding completed in 0.06s
+2025-08-04 23:57:06,262 - __main__ - INFO - 🎯 Seeding activities...
+2025-08-04 23:57:07,166 - __main__ - INFO - activities_seeding completed in 0.90s
+2025-08-04 23:57:07,166 - __main__ - INFO - 🏨 Seeding accommodations...
+2025-08-04 23:57:07,716 - __main__ - INFO - accommodations_seeding completed in 0.55s
+2025-08-04 23:57:07,717 - __main__ - INFO - 🚗 Seeding transportations...
+2025-08-04 23:57:07,839 - __main__ - INFO - transportations_seeding completed in 0.12s
+2025-08-04 23:57:07,840 - __main__ - INFO - ✅ Database changes committed successfully
+2025-08-04 23:57:07,841 - __main__ - INFO - 
+================================================================================
+2025-08-04 23:57:07,841 - __main__ - INFO - 📊 SEEDING SUMMARY
+2025-08-04 23:57:07,841 - __main__ - INFO - ================================================================================
+2025-08-04 23:57:07,842 - __main__ - INFO - 
+📋 DESTINATIONS:
+2025-08-04 23:57:07,842 - __main__ - INFO -   Processed: 12
+2025-08-04 23:57:07,842 - __main__ - INFO -   Added: 0
+2025-08-04 23:57:07,842 - __main__ - INFO -   Errors: 12
+2025-08-04 23:57:07,843 - __main__ - INFO - 
+📋 ACTIVITIES:
+2025-08-04 23:57:07,843 - __main__ - INFO -   Processed: 900
+2025-08-04 23:57:07,843 - __main__ - INFO -   Added: 0
+2025-08-04 23:57:07,844 - __main__ - INFO -   Errors: 900
+2025-08-04 23:57:07,844 - __main__ - INFO - 
+📋 ACCOMMODATIONS:
+2025-08-04 23:57:07,844 - __main__ - INFO -   Processed: 750
+2025-08-04 23:57:07,845 - __main__ - INFO -   Added: 0
+2025-08-04 23:57:07,845 - __main__ - INFO -   Errors: 750
+2025-08-04 23:57:07,845 - __main__ - INFO - 
+📋 TRANSPORTATIONS:
+2025-08-04 23:57:07,846 - __main__ - INFO -   Processed: 170
+2025-08-04 23:57:07,846 - __main__ - INFO -   Added: 0
+2025-08-04 23:57:07,846 - __main__ - INFO -   Errors: 170
+2025-08-04 23:57:07,846 - __main__ - INFO - 
+📊 OVERALL STATISTICS:
+2025-08-04 23:57:07,847 - __main__ - INFO -   Total processed: 1832
+2025-08-04 23:57:07,847 - __main__ - INFO -   Total added: 0
+2025-08-04 23:57:07,847 - __main__ - INFO -   Total errors: 1832
+2025-08-04 23:57:07,848 - __main__ - INFO -   Success rate: 0.0%
+2025-08-04 23:57:07,848 - __main__ - INFO - 
+🔍 VALIDATION STATISTICS:
+2025-08-04 23:57:07,848 - __main__ - INFO -   total_processed: 0
+2025-08-04 23:57:07,848 - __main__ - INFO -   valid_records: 0
+2025-08-04 23:57:07,849 - __main__ - INFO -   invalid_records: 0
+2025-08-04 23:57:07,849 - __main__ - INFO -   duplicate_records: 0
+2025-08-04 23:57:07,849 - __main__ - INFO -   coordinate_errors: 0
+2025-08-04 23:57:07,850 - __main__ - INFO -   parsing_errors: 0
+2025-08-04 23:59:28,917 - __main__ - INFO - 🚀 Starting database seeding process
+2025-08-04 23:59:28,917 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-04 23:59:28,954 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-04 23:59:29,010 - app.db.session - INFO - Database manager initialized successfully
+2025-08-04 23:59:29,011 - app.db.session - INFO - Creating database tables...
+2025-08-04 23:59:29,029 - app.db.session - INFO - Database tables created successfully
+2025-08-04 23:59:29,030 - __main__ - INFO - 🔍 Validating seeding environment...
+2025-08-04 23:59:29,032 - __main__ - INFO -   ✅ destination.csv (4515 bytes)
+2025-08-04 23:59:29,035 - __main__ - INFO -   ✅ activities.csv (1869096 bytes)
+2025-08-04 23:59:29,037 - __main__ - INFO -   ✅ accomodation.csv (366957 bytes)
+2025-08-04 23:59:29,038 - __main__ - INFO -   ✅ transport.csv (31552 bytes)
+2025-08-04 23:59:29,039 - __main__ - INFO - ✅ Environment validation passed
+2025-08-04 23:59:29,049 - __main__ - INFO - database_setup completed in 0.01s
+2025-08-04 23:59:29,049 - __main__ - INFO - 🌍 Seeding destinations...
+2025-08-04 23:59:29,107 - __main__ - INFO - destinations_seeding completed in 0.06s
+2025-08-04 23:59:29,108 - __main__ - INFO - 🎯 Seeding activities...
+2025-08-04 23:59:29,933 - __main__ - INFO - activities_seeding completed in 0.83s
+2025-08-04 23:59:29,933 - __main__ - INFO - 🏨 Seeding accommodations...
+2025-08-04 23:59:30,538 - __main__ - INFO - accommodations_seeding completed in 0.60s
+2025-08-04 23:59:30,538 - __main__ - INFO - 🚗 Seeding transportations...
+2025-08-04 23:59:30,685 - __main__ - INFO - transportations_seeding completed in 0.15s
+2025-08-04 23:59:30,686 - __main__ - INFO - ✅ Database changes committed successfully
+2025-08-04 23:59:30,686 - __main__ - INFO - 
+================================================================================
+2025-08-04 23:59:30,687 - __main__ - INFO - 📊 SEEDING SUMMARY
+2025-08-04 23:59:30,687 - __main__ - INFO - ================================================================================
+2025-08-04 23:59:30,687 - __main__ - INFO - 
+📋 DESTINATIONS:
+2025-08-04 23:59:30,688 - __main__ - INFO -   Processed: 12
+2025-08-04 23:59:30,688 - __main__ - INFO -   Added: 0
+2025-08-04 23:59:30,688 - __main__ - INFO -   Errors: 12
+2025-08-04 23:59:30,689 - __main__ - INFO - 
+📋 ACTIVITIES:
+2025-08-04 23:59:30,689 - __main__ - INFO -   Processed: 900
+2025-08-04 23:59:30,689 - __main__ - INFO -   Added: 0
+2025-08-04 23:59:30,689 - __main__ - INFO -   Errors: 900
+2025-08-04 23:59:30,690 - __main__ - INFO - 
+📋 ACCOMMODATIONS:
+2025-08-04 23:59:30,690 - __main__ - INFO -   Processed: 750
+2025-08-04 23:59:30,690 - __main__ - INFO -   Added: 0
+2025-08-04 23:59:30,691 - __main__ - INFO -   Errors: 750
+2025-08-04 23:59:30,691 - __main__ - INFO - 
+📋 TRANSPORTATIONS:
+2025-08-04 23:59:30,691 - __main__ - INFO -   Processed: 170
+2025-08-04 23:59:30,692 - __main__ - INFO -   Added: 0
+2025-08-04 23:59:30,692 - __main__ - INFO -   Errors: 170
+2025-08-04 23:59:30,692 - __main__ - INFO - 
+📊 OVERALL STATISTICS:
+2025-08-04 23:59:30,693 - __main__ - INFO -   Total processed: 1832
+2025-08-04 23:59:30,693 - __main__ - INFO -   Total added: 0
+2025-08-04 23:59:30,693 - __main__ - INFO -   Total errors: 1832
+2025-08-04 23:59:30,694 - __main__ - INFO -   Success rate: 0.0%
+2025-08-04 23:59:30,694 - __main__ - INFO - 
+🔍 VALIDATION STATISTICS:
+2025-08-04 23:59:30,694 - __main__ - INFO -   total_processed: 0
+2025-08-04 23:59:30,694 - __main__ - INFO -   valid_records: 0
+2025-08-04 23:59:30,695 - __main__ - INFO -   invalid_records: 0
+2025-08-04 23:59:30,695 - __main__ - INFO -   duplicate_records: 0
+2025-08-04 23:59:30,696 - __main__ - INFO -   coordinate_errors: 0
+2025-08-04 23:59:30,696 - __main__ - INFO -   parsing_errors: 0

@@ -51,7 +51,7 @@ class TrainingPipeline:
         self.jobs = [
             TrainingJob(
                 name="accommodations",
-                script_path="backend/app/core/recommender/train_tfidf_acc.py",
+                script_path="app/core/recommender/train_tfidf_acc.py",
                 description="TF-IDF model for accommodation recommendations",
                 expected_files=[
                     "tfidf_vectorizer_acc.pkl",
@@ -62,7 +62,7 @@ class TrainingPipeline:
             ),
             TrainingJob(
                 name="activities",
-                script_path="backend/app/core/recommender/train_tfidf_act.py",
+                script_path="app/core/recommender/train_tfidf_act.py",
                 description="TF-IDF model for activity recommendations",
                 expected_files=[
                     "tfidf_vectorizer_act.pkl",
@@ -73,7 +73,7 @@ class TrainingPipeline:
             ),
             TrainingJob(
                 name="destinations",
-                script_path="backend/app/core/recommender/train_tfidf_dest.py",
+                script_path="app/core/recommender/train_tfidf_dest.py",
                 description="TF-IDF model for destination recommendations",
                 expected_files=[
                     "tfidf_vectorizer_dest.pkl",
@@ -84,7 +84,7 @@ class TrainingPipeline:
             ),
             TrainingJob(
                 name="transportation",
-                script_path="backend/app/core/recommender/train_tfidf_trans.py",
+                script_path="app/core/recommender/train_tfidf_trans.py",
                 description="TF-IDF model for transportation recommendations",
                 expected_files=[
                     "tfidf_vectorizer_trans.pkl",
@@ -156,6 +156,7 @@ class TrainingPipeline:
                     }
                 else:
                     logger.error(f"❌ {job.name} training failed with return code {process.returncode}")
+                    logger.error(f"--- STDERR (full) ---\n{stderr.decode()}\n------------")
                     return {
                         "success": False,
                         "stdout": stdout.decode(),

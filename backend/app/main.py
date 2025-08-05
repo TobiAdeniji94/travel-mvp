@@ -10,7 +10,7 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
-from app.db.session import init_db, get_session, db_manager
+from app.db.session import init_db, get_db_session, db_manager
 from app.api import users, itinerary, auth, nlp, recommend, security, catalog, database
 
 # Configure logging

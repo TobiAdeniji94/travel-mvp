@@ -4,7 +4,6 @@ Enhanced database session management with connection pooling, health checks, and
 
 import logging
 import time
-from contextlib import asynccontextmanager
 from typing import AsyncGenerator, Optional, Dict, Any
 from urllib.parse import urlparse
 
@@ -16,6 +15,7 @@ from sqlalchemy.exc import SQLAlchemyError, DisconnectionError
 from sqlalchemy import event
 
 from app.core.settings import Settings
+from contextlib import asynccontextmanager
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -235,7 +235,7 @@ class DatabaseManager:
                     "checked_in": pool.checkedin(),
                     "checked_out": pool.checkedout(),
                     "overflow": pool.overflow(),
-                    "invalidated": pool.invalidated()
+                    "invalidated": getattr(pool, "invalidated", None)
                 }
             
             # Update health status
@@ -286,7 +286,7 @@ class DatabaseManager:
 db_manager = DatabaseManager()
 
 # Backward compatibility functions
-async def get_session() -> AsyncGenerator[AsyncSession, None]:
+async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
     """Get database session (backward compatibility)"""
     async with db_manager.get_session() as session:
         yield session

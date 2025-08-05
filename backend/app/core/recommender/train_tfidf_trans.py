@@ -20,7 +20,7 @@ from sklearn.exceptions import NotFittedError
 from sqlmodel import select
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.db.session import async_session
+from app.db.session import init_db, get_session
 from app.db.models import Transportation
 
 # Configure logging
@@ -39,7 +39,7 @@ class TrainingConfig:
     ngram_range: Tuple[int, int] = (1, 2)  # Unigrams and bigrams
     stop_words: str = "english"
     lowercase: bool = True
-    strip_accents: bool = True
+    strip_accents: str = "unicode"
     min_text_length: int = 3  # Shorter minimum for transportation
     max_text_length: int = 1000  # Shorter maximum for transportation
 
@@ -115,20 +115,18 @@ class TransportationCorpusBuilder:
         
         try:
             async with performance_timer("transportation_data_fetch"):
-                async with async_session() as session:
+                async with get_session() as session:
                     # Enhanced query with more fields
                     result = await session.execute(
                         select(
                             Transportation.id,
                             Transportation.type,
                             Transportation.provider,
-                            Transportation.departure_city,
-                            Transportation.arrival_city
                         )
                     )
                     
                     for row in result.all():
-                        _id, trans_type, provider, dep_city, arr_city = row
+                        _id, trans_type, provider = row
                         
                         # Build comprehensive text representation
                         text_parts = []
@@ -136,10 +134,6 @@ class TransportationCorpusBuilder:
                             text_parts.append(trans_type)
                         if provider:
                             text_parts.append(provider)
-                        if dep_city:
-                            text_parts.append(dep_city)
-                        if arr_city:
-                            text_parts.append(arr_city)
                         
                         raw_text = " ".join(text_parts)
                         cleaned_text = self.preprocessor.clean(raw_text)
@@ -304,6 +298,14 @@ class TFIDFTrainer:
 async def main():
     """Enhanced main function with comprehensive error handling"""
     logger.info("🚀 Starting transportation TF-IDF training")
+
+    # Initialize database connection
+    try:
+        await init_db()
+        logger.info("✅ Database initialized successfully")
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize database: {e}")
+        return False
     
     try:
         # Configuration

@@ -121,24 +121,6 @@ class ItineraryUpdate(BaseModel):
             raise ValueError("Name cannot be empty")
         return v
 
-class ItineraryRead(BaseModel):
-    id: UUID
-    name: str
-    start_date: datetime
-    end_date: datetime
-    status: ItineraryStatus
-    data: Dict[str, Any]
-    budget: Optional[Decimal] = None
-    notes: Optional[str] = None
-    tags: Optional[List[str]] = None
-    duration_days: int
-    is_active: bool
-    created_at: datetime
-    updated_at: datetime
-
-    class Config:
-        orm_mode = True
-
 # ===== CATALOG ITEM SCHEMAS =====
 
 class DestinationRead(BaseModel):
@@ -265,6 +247,30 @@ class ItineraryTransportationRead(BaseModel):
 
     class Config:
         orm_mode = True
+
+class ItineraryRead(BaseModel):
+    id: UUID
+    name: str
+    start_date: datetime
+    end_date: datetime
+    status: ItineraryStatus
+    data: Dict[str, Any]
+    budget: Optional[Decimal] = None
+    notes: Optional[str] = None
+    tags: Optional[List[str]] = None
+    duration_days: int
+    is_active: bool
+    created_at: datetime
+    updated_at: datetime
+
+    dest_links: List[ItineraryDestinationRead]        = []
+    act_links:  List[ItineraryActivityRead]           = []
+    accom_links:List[ItineraryAccommodationRead]      = []
+    trans_links:List[ItineraryTransportationRead]     = []
+    
+    class Config:
+        orm_mode = True
+
 
 # ===== BOOKING SCHEMAS =====
 
