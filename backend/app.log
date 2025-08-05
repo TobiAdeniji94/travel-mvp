@@ -2915,3 +2915,187 @@ fastapi.exceptions.ResponseValidationError: 6 validation errors:
 2025-08-05 03:20:41,670 - app.db.session - INFO - Database engine created with pool_size=10
 2025-08-05 03:20:41,719 - app.db.session - INFO - Database manager initialized successfully
 2025-08-05 03:20:41,719 - app.main - INFO - Database manager initialized successfully
+2025-08-05 21:03:02,383 - app.main - INFO - Starting application...
+2025-08-05 21:03:02,384 - app.main - INFO - Initializing database manager...
+2025-08-05 21:03:02,384 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-05 21:03:02,447 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-05 21:03:02,515 - app.db.session - INFO - Database manager initialized successfully
+2025-08-05 21:03:02,516 - app.main - INFO - Database manager initialized successfully
+2025-08-05 21:27:25,478 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 21:27:25,837 - app.api.auth - INFO - New user registered: ttobi_94
+2025-08-05 21:27:25,837 - app.api.auth - INFO - New user registered: ttobi_94
+2025-08-05 21:27:25,880 - app.api.auth - ERROR - Unexpected error in registration: 3 validation errors for UserRead
+status
+  Field required [type=missing, input_value={'id': UUID('b760e9d1-895...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+updated_at
+  Field required [type=missing, input_value={'id': UUID('b760e9d1-895...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+is_active
+  Field required [type=missing, input_value={'id': UUID('b760e9d1-895...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-08-05 21:27:25,881 - app.api.auth - INFO - user_registration completed in 0.54s
+2025-08-05 21:27:25,882 - app.db.session - ERROR - Unexpected session error: 500: Registration failed
+2025-08-05 21:34:17,068 - app.api.auth - INFO - user_registration completed in 0.00s
+2025-08-05 21:34:17,069 - app.db.session - ERROR - Unexpected session error: 400: Username already registered
+2025-08-05 21:34:55,724 - app.api.auth - INFO - user_registration completed in 0.00s
+2025-08-05 21:34:55,724 - app.db.session - ERROR - Unexpected session error: 400: Email already registered
+2025-08-05 21:44:57,633 - app.api.auth - INFO - New user registered: ttobi
+2025-08-05 21:44:57,634 - app.api.auth - INFO - New user registered: ttobi
+2025-08-05 21:44:57,634 - app.api.auth - ERROR - Unexpected error in registration: 3 validation errors for UserRead
+status
+  Field required [type=missing, input_value={'id': UUID('17f3ed12-e72...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+updated_at
+  Field required [type=missing, input_value={'id': UUID('17f3ed12-e72...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+is_active
+  Field required [type=missing, input_value={'id': UUID('17f3ed12-e72...=datetime.timezone.utc)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-08-05 21:44:57,635 - app.api.auth - INFO - user_registration completed in 0.29s
+2025-08-05 21:44:57,635 - app.db.session - ERROR - Unexpected session error: 500: Registration failed
+2025-08-05 21:45:15,731 - app.api.auth - INFO - user_registration completed in 0.00s
+2025-08-05 21:45:15,731 - app.db.session - ERROR - Unexpected session error: 400: Username already registered
+2025-08-05 21:45:21,818 - app.api.auth - INFO - user_registration completed in 0.00s
+2025-08-05 21:45:21,819 - app.db.session - ERROR - Unexpected session error: 400: Email already registered
+2025-08-05 21:48:40,731 - app.main - INFO - Shutting down application...
+2025-08-05 21:48:40,731 - app.main - INFO - Closing database connections...
+2025-08-05 21:48:40,732 - app.db.session - INFO - Closing database connections...
+2025-08-05 21:48:40,743 - app.db.session - INFO - Database connections closed
+2025-08-05 21:48:40,743 - app.main - INFO - Database connections closed successfully
+2025-08-05 21:48:54,465 - app.main - INFO - Starting application...
+2025-08-05 21:48:54,468 - app.main - INFO - Initializing database manager...
+2025-08-05 21:48:54,470 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-05 21:48:54,519 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-05 21:48:54,634 - app.db.session - INFO - Database manager initialized successfully
+2025-08-05 21:48:54,634 - app.main - INFO - Database manager initialized successfully
+2025-08-05 21:49:04,498 - app.main - INFO - Shutting down application...
+2025-08-05 21:49:04,498 - app.main - INFO - Closing database connections...
+2025-08-05 21:49:04,499 - app.db.session - INFO - Closing database connections...
+2025-08-05 21:49:04,502 - app.db.session - INFO - Database connections closed
+2025-08-05 21:49:04,503 - app.main - INFO - Database connections closed successfully
+2025-08-05 21:49:12,385 - app.main - INFO - Starting application...
+2025-08-05 21:49:12,385 - app.main - INFO - Initializing database manager...
+2025-08-05 21:49:12,386 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-08-05 21:49:12,409 - app.db.session - INFO - Database engine created with pool_size=10
+2025-08-05 21:49:12,458 - app.db.session - INFO - Database manager initialized successfully
+2025-08-05 21:49:12,458 - app.main - INFO - Database manager initialized successfully
+2025-08-05 21:55:57,222 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 21:55:57,586 - app.api.auth - INFO - New user registered: ttob
+2025-08-05 21:55:57,586 - app.api.auth - INFO - New user registered: ttob
+2025-08-05 21:55:57,593 - app.api.auth - INFO - user_registration completed in 0.43s
+2025-08-05 21:58:37,028 - app.api.auth - INFO - New user registered: ttgi_
+2025-08-05 21:58:37,028 - app.api.auth - INFO - New user registered: ttgi_
+2025-08-05 21:58:37,029 - app.api.auth - INFO - user_registration completed in 0.33s
+2025-08-05 21:58:37,348 - app.core.security - INFO - User authenticated successfully: ttgi_
+2025-08-05 21:58:37,349 - app.core.security - INFO - user_authentication completed in 0.30s
+2025-08-05 21:58:37,350 - app.api.auth - INFO - Successful login for user: ttgi_
+2025-08-05 21:58:37,369 - app.core.security - INFO - Access token created successfully
+2025-08-05 21:58:37,369 - app.core.security - INFO - Refresh token created successfully
+2025-08-05 21:58:37,370 - app.api.auth - INFO - User ttgi_ logged in successfully
+2025-08-05 21:58:37,370 - app.api.auth - INFO - user_login completed in 0.32s
+2025-08-05 21:58:37,429 - app.core.security - INFO - Current user resolved: ttgi_
+2025-08-05 21:58:38,673 - app.core.security - INFO - Current user resolved: ttgi_
+2025-08-05 21:58:38,679 - app.db.session - ERROR - Unexpected session error: get_itineraries() missing 1 required positional argument: 'user_id'
+2025-08-05 21:58:38,682 - app.main - ERROR - Unhandled exception: get_itineraries() missing 1 required positional argument: 'user_id'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/slowapi/extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/api/itinerary.py", line 678, in list_itineraries
+    itineraries = await get_itineraries(session)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: get_itineraries() missing 1 required positional argument: 'user_id'
+2025-08-05 21:58:38,732 - app.core.security - INFO - Current user resolved: ttgi_
+2025-08-05 21:58:38,735 - app.db.session - ERROR - Unexpected session error: get_itineraries() missing 1 required positional argument: 'user_id'
+2025-08-05 21:58:38,740 - app.main - ERROR - Unhandled exception: get_itineraries() missing 1 required positional argument: 'user_id'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/slowapi/extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/api/itinerary.py", line 678, in list_itineraries
+    itineraries = await get_itineraries(session)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: get_itineraries() missing 1 required positional argument: 'user_id'
