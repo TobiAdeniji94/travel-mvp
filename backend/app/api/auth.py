@@ -296,9 +296,13 @@ async def register(
                 id=new_user.id,
                 username=new_user.username,
                 email=new_user.email,
+                status=new_user.status,
                 preferences=new_user.preferences,
                 travel_history=new_user.travel_history,
-                created_at=new_user.created_at
+                profile_data=new_user.profile_data,
+                created_at=new_user.created_at,
+                updated_at=new_user.updated_at,
+                is_active=new_user.is_active
             )
             
         except HTTPException:
@@ -403,9 +407,13 @@ async def get_current_user_info(
             id=current_user.id,
             username=current_user.username,
             email=current_user.email,
+            status=current_user.status,
             preferences=current_user.preferences,
             travel_history=current_user.travel_history,
-            created_at=current_user.created_at
+            profile_data=current_user.profile_data,
+            created_at=current_user.created_at,
+            updated_at=current_user.updated_at,
+            is_active=current_user.is_active
         )
     except Exception as e:
         logger.error(f"Error getting user info: {e}")
