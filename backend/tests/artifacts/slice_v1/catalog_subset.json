@@ -1,0 +1,662 @@
+[
+  {
+    "id": "af51d1d6-fd9d-42f7-ad7d-ded5c15de130",
+    "name": "World of Coca-Cola",
+    "text": "Memorabilia, films & exhibits (some interactive) about soft drink that debuted in Atlanta in 1886.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "8c75c13b-9b73-48ea-bd55-5ac1e2c3effc",
+    "name": "Georgia Aquarium",
+    "text": "One of world's largest aquariums, with permanent exhibits, interactive galleries & animals galore.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "75ab9099-aaa3-4658-bcdc-16490e1bc1fc",
+    "name": "Fox Theatre",
+    "text": "Restored opulent theater built in 1920s with 3,600-pipe organ hosts ballet, movies & other events.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "0695b203-8a75-495c-8584-1bcab1661d24",
+    "name": "Atlanta Botanical Garden",
+    "text": "30-acre garden with a conservatory & fountains playing host to concerts, cocktail parties & more.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "2318085e-c87d-4e30-b945-92ca0c91ba27",
+    "name": "Six Flags Over Georgia",
+    "text": "Sprawling amusement park featuring high-speed roller coasters & water attractions, plus kids' rides.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "4fea61b9-359d-4809-a21c-cd4b2e8fa26c",
+    "name": "High Museum of Art",
+    "text": "Museum known for its diverse art collection & modern architecture by Richard Meier & Renzo Piano.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "7184e58c-44f1-4daf-b098-23c9f3d4ba4e",
+    "name": "Atlanta History Center",
+    "text": "Center includes exhibits on the antebellum South & an 1845-era farm with a blacksmith & smokehouse.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "ef09b4da-95b2-4d36-83dd-37ac45861c1a",
+    "name": "Martin Luther King, Jr. National Historical Park",
+    "text": "National Park encompassing King's birth home, Ebenezer Baptist Church & his final resting place.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "522ac7c9-3209-4508-b01b-5151cfa2db22",
+    "name": "The King Center",
+    "text": "Nonprofit center exhibiting MLK related photos & artifacts, plus rooms on Gandhi & Rosa Parks.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "0be74afe-2afc-49f8-94e8-1c245bcff3a5",
+    "name": "LEGO® Discovery Center Atlanta",
+    "text": "Family entertainment center featuring LEGO® toy displays, rides & 4D films, plus a gift shop.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "ffe8fa55-b48d-48b2-bfd0-dcfd342f9da3",
+    "name": "Peachtree Park Historic District",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "ea097581-70df-4098-bb46-ed730fa37663",
+    "name": "SkyView Atlanta",
+    "text": "20-story Ferris wheel in Centennial Park providing scenic views from climate-controlled gondolas.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "e731e335-9350-4e40-b5a8-18ea9f7d9355",
+    "name": "Woodruff Arts Center",
+    "text": "Cultural hub home to the Atlanta Symphony Orchestra, the Alliance Theater & the High Museum of Art.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "7fc41744-152e-425e-a549-3a1e97e33d04",
+    "name": "Center For Puppetry Arts",
+    "text": "Long-standing puppetry museum with a variety of exhibits, performances, workshops & classes.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "992e5894-b22a-4abe-af72-65b890d03d74",
+    "name": "Rhodes Hall",
+    "text": "Turn-of-the-century residence known as The Castle on Peachtree that's now a museum & event space.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "29277005-a349-4dca-a333-e96525bde277",
+    "name": "Jimmy Carter Presidential Library and Museum",
+    "text": "Housing documents of the 39th president, this museum also features a replica of the Oval Office.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "e6ee71f6-32bb-4dca-b0a2-a17441a2fe61",
+    "name": "Children's Museum of Atlanta",
+    "text": "Recommended for kids age 2-8, this hands-on museum features an indoor playground, sand table & more.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "44119744-d2ff-455e-8a55-6ef26e3504ff",
+    "name": "Underground Atlanta",
+    "text": "This historic area is now a shopping & entertainment center with eateries, events & tours.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "4f28791a-fbbd-49f9-956d-bc7b9a2df885",
+    "name": "Al-Farooq Mosque",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "16cee6e6-55b6-4bee-a289-648a1ca9c36b",
+    "name": "Hindu Temple of Atlanta",
+    "text": "Traditional Hindu place of worship with 2 temples featuring ornate carvings of deities.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "72be65d6-0820-4caa-bb1a-eacba4398fc3",
+    "name": "Callanwolde Fine Arts Center",
+    "text": "Community arts center in a mansion, with exhibits, concerts & workshops, plus outreach programs.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "dc5642e0-e589-43d8-88c6-099a97a6e24d",
+    "name": "Oakland Cemetery",
+    "text": "This historic 1850s cemetery is the burial site of Margaret Mitchell & other notable locals.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "401c71a8-c164-41e1-abbc-ec6bb7373e44",
+    "name": "Michael C. Carlos Museum",
+    "text": "Museum of ancient art featuring Greek & Roman collections & an Egyptian exhibit including mummies.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "d71aab3f-350e-41fe-83bb-c5235da11d46",
+    "name": "Candler Park",
+    "text": "Neighborhood park features an elaborate wooden playground, a pavilion, a multi-use field & a pool.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "9632aa3f-78d7-4b89-b615-2b97776056fd",
+    "name": "Lakewood Amphitheatre",
+    "text": "Major concert & festival venue with both reserved seating & a sloping lawn.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "15a2db04-4fce-42dd-ad65-7e1cadd4d165",
+    "name": "MODA (Museum of Design Atlanta)",
+    "text": "Small gallery space featuring rotating exhibitions that explore the impact of design on art & life.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "683ee9f0-7e36-4d6b-a7c2-689799d445fc",
+    "name": "Oglethorpe University Museum of Art",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "ddf86a8d-65cd-425d-95b3-94841e4c9ca6",
+    "name": "Westview Cemetery Inc.",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "8c4bc0a4-b4a7-46d2-b229-6a687a7f8bb5",
+    "name": "Swan House at Atlanta History Center",
+    "text": "Restored Philip T. Shutze designed 1928 neoclassical mansion & gardens built for rich cotton heirs.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "69dcd899-5e04-46ef-a1ca-b1f2ec10b943",
+    "name": "Central Park",
+    "text": "17-acre recreational facility includes paths, athletic fields, a playground & a recreational center.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "a0346217-5b00-44a2-8931-a50b77ead203",
+    "name": "Catholic Shrine of the Immaculate Conception",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "894ddf81-1169-47e6-a09f-c0dc4316f11b",
+    "name": "Basilica of the Sacred Heart of Jesus",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "d45bc45f-a52f-4fa0-9588-5c897531c884",
+    "name": "Cabbagetown Park",
+    "text": "Pint-sized neighborhood park featuring a children's playground, stone sculptures & more.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "594fe7f3-98ab-4343-a256-152f6944e402",
+    "name": "Historic Fourth Ward Park",
+    "text": "A 17-acre park with a splash fountain, skate park & amphitheater, adjacent to the Atlanta Beltline.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "aa556e53-8562-453a-bcac-1b41c0346b8a",
+    "name": "Hammonds House Museum",
+    "text": "Quaint, Victorian house showcasing diverse works by artists of African decent, plus lectures & more.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "92c0c1dc-f12f-449b-b50b-747242b39ba7",
+    "name": "Blackburn Park",
+    "text": "In addition to multi-use fields & trails, this park houses a tennis center with lighted hard courts.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "60640f20-c782-4889-9b78-670b3cc0c9f1",
+    "name": "Piedmont Dog Park",
+    "text": "Fenced off-leash dog park on 3 acres, with small- & large-breed areas, shade, water & benches.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "f3ccc99e-b200-4c86-8b81-067cca1587d1",
+    "name": "Frankie Allen Park",
+    "text": "Public site with baseball diamonds, tennis courts, a picnic meadow & a small historic graveyard.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "6d756e07-3c09-4f7b-8132-ac90e06862ef",
+    "name": "Delta Flight Museum",
+    "text": "Kid-friendly museum tracing the history of Delta Airlines with hands-on exhibits & vintage aircraft.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "dc08856e-da03-4328-a42f-ec62d4ac8c94",
+    "name": "Grant Park",
+    "text": "Sprawling green space & recreational area is the heart of one of Atlanta's oldest neighborhoods.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "805a2158-4f66-43b4-8fc2-4e0b37e0055f",
+    "name": "Reynolds Nature Preserve",
+    "text": "Vast natural wildlife & land conservation area combining rolling hills, forests & wetlands.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "1c38499c-d0df-4e48-9cf8-b507853b2181",
+    "name": "Apex Museum",
+    "text": "African-American museum chronicling Auburn's history through exhibits, replicas & workshops.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "52e5e714-69f9-4800-b166-671425573a0d",
+    "name": "Murphey Candler Park",
+    "text": "135-acre park offering walking trails around a lake, a swimming pool, sports fields & picnic areas.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "5716eb86-4e9a-4cf9-bf13-a504442b53ad",
+    "name": "Ebenezer Baptist Church",
+    "text": "Historic, preserved church where both Martin Luther King, Jr. and his father were preachers.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "3f60c81a-e846-4bfc-94bb-6d0b17d08431",
+    "name": "Governor's Mansion",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "5a7057af-0825-424c-a87d-e2bf6cb3f354",
+    "name": "Ben Hill Recreation Center",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "c8fa19d2-2958-4f71-89aa-c11bf9456fa0",
+    "name": "South View Cemetery Association",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "3f4a360c-b78d-4f1f-81b8-dd9a301cebf7",
+    "name": "Millennium Gate Museum - History Art Museum Atlanta, Georgia | Classical Architecture",
+    "text": "12,000-square-foot interactive museum shaped like an arch dedicated to state history, art & culture.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "f3e572f0-2a4d-43aa-b8b0-4200aee700d6",
+    "name": "Robert C. Williams Museum of Papermaking",
+    "text": "A history of paper with more 2,000 books, papers, tools, machines & manuscripts.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "81b60bee-f8d2-4b79-8ea9-54b8dd93de01",
+    "name": "Chattahoochee NRA--Powers Island Unit",
+    "text": "Park on the Chattahoochee River Water Trail with areas for hiking, biking, canoeing & bird-watching.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "b588f9a7-5db9-424d-ae04-2b5ddfc9850b",
+    "name": "Wat Buddha Bucha Foundation",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "979523d8-12d2-4ce1-98c2-87a679bfbde6",
+    "name": "Museum of Contemporary Art of Georgia",
+    "text": "Museum founded in 2000 to showcase significant contemporary works by Georgian visual artists.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "0ac695ef-664d-476e-a127-81431f55022b",
+    "name": "Henderson Park",
+    "text": "A public park with a waterfall, soccer fields, tennis courts, trails & a community garden.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "971accd3-e770-49a4-8d30-76453ce02734",
+    "name": "Emma Millican Park",
+    "text": "This scenic neighborhood park features multiple play structures, shade trees, paths & picnic areas.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "3aa74d9a-c6ec-44ff-818c-8ef40b64911b",
+    "name": "Sunken Garden Park",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "db3cb860-151b-4799-bbb0-6cf452cda0d8",
+    "name": "Rosa L. Burney Park",
+    "text": "Urban park with lawns, a playground, tennis courts, softball fields & an indoor recreation center.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "7393e90d-80a7-43b6-8139-963d1522b181",
+    "name": "Hapeville Depot Museum and Visitor Center",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "d96c58fa-6345-43d0-be9e-a7d5bc02103b",
+    "name": "Egan Park",
+    "text": "",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "5ce6c601-156d-4daa-9540-f0304e0f0bf1",
+    "name": "DeKalb History Center Museum",
+    "text": "Local-history artifacts & unique exhibits inside a stately historic courthouse building.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  },
+  {
+    "id": "29c6d5ac-0622-4d66-b6e0-3ffd0fdd5d87",
+    "name": "Walton Spring Park",
+    "text": "This small downtown plaza features shade trees & a circular seating area around an obelisk.",
+    "tags": [],
+    "hours": "",
+    "coords": {
+      "lat": 0.0,
+      "lng": 0.0
+    }
+  }
+]

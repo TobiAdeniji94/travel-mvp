@@ -28,6 +28,7 @@ export default function ItineraryDetailPage() {
     const loadItinerary = async () => {
       try {
         const data = await apiClient.getItinerary(id as string);
+        console.log('Itinerary loaded:',data);
         setItinerary(data);
       } catch (error: any) {
         if (error.status === 404) {
@@ -48,7 +49,15 @@ export default function ItineraryDetailPage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: itinerary?.title || `Trip to ${itinerary?.destination}`,
+          title:
+            (itinerary?.name as string) ||
+            (itinerary?.title as string) ||
+            `Trip to ${
+              (itinerary?.destination as string) ||
+              (itinerary?.data?.parsed_data?.destination as string) ||
+              (itinerary?.data?.locations?.[0] as string) ||
+              'your destination'
+            }`,
           text: `Check out my travel itinerary!`,
           url: window.location.href,
         });
@@ -120,7 +129,16 @@ export default function ItineraryDetailPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">
-                {itinerary.title || `Trip to ${itinerary.destination}`}
+                {(
+                  itinerary.name ||
+                  itinerary.title ||
+                  `Trip to ${
+                    itinerary.destination ||
+                    itinerary?.data?.parsed_data?.destination ||
+                    itinerary?.data?.locations?.[0] ||
+                    'your destination'
+                  }`
+                )}
               </h1>
               <p className="mt-2 text-gray-600">
                 {new Date(itinerary.start_date).toLocaleDateString()} - {new Date(itinerary.end_date).toLocaleDateString()}
@@ -129,7 +147,10 @@ export default function ItineraryDetailPage() {
             <div className="flex space-x-3">
               <Button variant="outline" onClick={handleShare}>
                 <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 
+                  12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 
+                  110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 
+                  2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                 </svg>
                 Share
               </Button>
@@ -214,42 +235,53 @@ export default function ItineraryDetailPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {/* Placeholder for schedule */}
                 <div className="space-y-4">
-                  {[1, 2, 3].map((day) => (
-                    <div key={day} className="border-l-4 border-blue-500 pl-4">
-                      <h3 className="font-semibold text-lg">Day {day}</h3>
-                      <p className="text-sm text-gray-500 mb-3">
-                        {new Date(new Date(itinerary.start_date).getTime() + (day - 1) * 24 * 60 * 60 * 1000).toLocaleDateString()}
-                      </p>
-                      <div className="space-y-2">
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <h4 className="font-medium">Morning Activity</h4>
-                              <p className="text-sm text-gray-600">Explore local attractions</p>
-                            </div>
-                            <span className="text-sm text-gray-500">9:00 AM</span>
+                  {Array.isArray(itinerary?.scheduled_items) && itinerary.scheduled_items.length > 0 ? (
+                    itinerary.scheduled_items.map((dayItems: any[], dayIdx: number) => {
+                      const dayDate = new Date(new Date(itinerary.start_date).getTime() + dayIdx * 24 * 60 * 60 * 1000);
+                      return (
+                        <div key={dayIdx} className="border-l-4 border-blue-500 pl-4">
+                          <h3 className="font-semibold text-lg">Day {dayIdx + 1}</h3>
+                          <p className="text-sm text-gray-500 mb-3">
+                            {dayDate.toLocaleDateString()}
+                          </p>
+                          <div className="space-y-2">
+                            {Array.isArray(dayItems) && dayItems.length > 0 ? (
+                              dayItems.map((activity: any, actIdx: number) => (
+                                <div key={activity.id || actIdx} className="bg-gray-50 p-3 rounded-lg">
+                                  <div className="flex items-center justify-between">
+                                    <div>
+                                      <h4 className="font-medium">{activity.name || activity.title || 'Activity'}</h4>
+                                      <p className="text-sm text-gray-600">Description: {activity.description}</p>
+                                      <p className="text-sm text-gray-600">Location: {activity.location}</p>
+                                      <p className="text-sm text-gray-600">Rating: {activity.rating}</p>
+                                      <p className="text-sm text-gray-600">Price: $ {activity.price}</p>        
+                                      {activity.scheduled_time && (
+                                        <p className="text-sm text-gray-600">
+                                          {new Date(activity.scheduled_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                        </p>
+                                      )}
+                                      {activity.notes && (
+                                        <p className="text-xs text-gray-500 mt-1">{activity.notes}</p>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              ))
+                            ) : (
+                              <div className="bg-yellow-50 p-3 rounded-lg text-yellow-800">
+                                No activities found for this day.
+                              </div>
+                            )}
                           </div>
                         </div>
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <h4 className="font-medium">Afternoon Activity</h4>
-                              <p className="text-sm text-gray-600">Local dining experience</p>
-                            </div>
-                            <span className="text-sm text-gray-500">2:00 PM</span>
-                          </div>
-                        </div>
-                      </div>
+                      );
+                    })
+                  ) : (
+                    <div className="bg-yellow-50 p-3 rounded-lg text-yellow-800">
+                      No scheduled items found.
                     </div>
-                  ))}
-                </div>
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Detailed activities and bookings will be populated based on your generated itinerary data. 
-                    This is a preview of the schedule layout.
-                  </p>
+                  )}
                 </div>
               </CardContent>
             </Card>

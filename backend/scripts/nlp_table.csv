@@ -1,0 +1,6 @@
+idx, prompt_len, processing_time_s  , parsed_keys
+  0,         94, 1.9010367393493652 , "['locations', 'dates', 'interests', 'budget', 'duration_days', 'group_size', 'travel_style', 'confidence_score', 'parsing_time_ms', 'warnings']"
+  1,        115, 0.08566904067993164, "['locations', 'dates', 'interests', 'budget', 'duration_days', 'group_size', 'travel_style', 'confidence_score', 'parsing_time_ms', 'warnings']"
+  2,        103, 0.07647299766540527, "['locations', 'dates', 'interests', 'budget', 'duration_days', 'group_size', 'travel_style', 'confidence_score', 'parsing_time_ms', 'warnings']"
+  3,         98, 0.07442903518676758, "['locations', 'dates', 'interests', 'budget', 'duration_days', 'group_size', 'travel_style', 'confidence_score', 'parsing_time_ms', 'warnings']"
+  4,        101, 0.06768679618835449, "['locations', 'dates', 'interests', 'budget', 'duration_days', 'group_size', 'travel_style', 'confidence_score', 'parsing_time_ms', 'warnings']"

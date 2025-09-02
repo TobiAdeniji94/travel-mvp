@@ -180,9 +180,12 @@ class RecommendationService:
         if not top_ids:
             raise HTTPException(status_code=404, detail="No activity recommendations found")
         
+        logger.info(f"get_activities: interests={interests}, budget={budget}, limit={limit}")
+        logger.info(f"ML recommended activity IDs: {top_ids}")
         stmt = select(Activity).where(Activity.id.in_(top_ids))
         results = await self.session.scalars(stmt)
         items = results.all()
+        logger.info(f"Fetched {len(items)} activities from DB: {[item.id for item in items]}")
         
         if not items:
             raise HTTPException(status_code=404, detail="No activity recommendations found")

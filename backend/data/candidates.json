@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "af51d1d6-fd9d-42f7-ad7d-ded5c15de130",
+    "text": "World of Coca-Cola \nMemorabilia, films & exhibits (some interactive) about soft drink that debuted in Atlanta in 1886."
+  },
+  {
+    "id": "8c75c13b-9b73-48ea-bd55-5ac1e2c3effc",
+    "text": "Georgia Aquarium \nOne of world's largest aquariums, with permanent exhibits, interactive galleries & animals galore."
+  },
+  {
+    "id": "75ab9099-aaa3-4658-bcdc-16490e1bc1fc",
+    "text": "Fox Theatre \nRestored opulent theater built in 1920s with 3,600-pipe organ hosts ballet, movies & other events."
+  },
+  {
+    "id": "0695b203-8a75-495c-8584-1bcab1661d24",
+    "text": "Atlanta Botanical Garden \n30-acre garden with a conservatory & fountains playing host to concerts, cocktail parties & more."
+  },
+  {
+    "id": "2318085e-c87d-4e30-b945-92ca0c91ba27",
+    "text": "Six Flags Over Georgia \nSprawling amusement park featuring high-speed roller coasters & water attractions, plus kids' rides."
+  },
+  {
+    "id": "4fea61b9-359d-4809-a21c-cd4b2e8fa26c",
+    "text": "High Museum of Art \nMuseum known for its diverse art collection & modern architecture by Richard Meier & Renzo Piano."
+  },
+  {
+    "id": "7184e58c-44f1-4daf-b098-23c9f3d4ba4e",
+    "text": "Atlanta History Center \nCenter includes exhibits on the antebellum South & an 1845-era farm with a blacksmith & smokehouse."
+  },
+  {
+    "id": "ef09b4da-95b2-4d36-83dd-37ac45861c1a",
+    "text": "Martin Luther King, Jr. National Historical Park \nNational Park encompassing King's birth home, Ebenezer Baptist Church & his final resting place."
+  },
+  {
+    "id": "522ac7c9-3209-4508-b01b-5151cfa2db22",
+    "text": "The King Center \nNonprofit center exhibiting MLK related photos & artifacts, plus rooms on Gandhi & Rosa Parks."
+  },
+  {
+    "id": "0be74afe-2afc-49f8-94e8-1c245bcff3a5",
+    "text": "LEGO® Discovery Center Atlanta \nFamily entertainment center featuring LEGO® toy displays, rides & 4D films, plus a gift shop."
+  },
+  {
+    "id": "ffe8fa55-b48d-48b2-bfd0-dcfd342f9da3",
+    "text": "Peachtree Park Historic District"
+  },
+  {
+    "id": "ea097581-70df-4098-bb46-ed730fa37663",
+    "text": "SkyView Atlanta \n20-story Ferris wheel in Centennial Park providing scenic views from climate-controlled gondolas."
+  },
+  {
+    "id": "e731e335-9350-4e40-b5a8-18ea9f7d9355",
+    "text": "Woodruff Arts Center \nCultural hub home to the Atlanta Symphony Orchestra, the Alliance Theater & the High Museum of Art."
+  },
+  {
+    "id": "7fc41744-152e-425e-a549-3a1e97e33d04",
+    "text": "Center For Puppetry Arts \nLong-standing puppetry museum with a variety of exhibits, performances, workshops & classes."
+  },
+  {
+    "id": "992e5894-b22a-4abe-af72-65b890d03d74",
+    "text": "Rhodes Hall \nTurn-of-the-century residence known as The Castle on Peachtree that's now a museum & event space."
+  },
+  {
+    "id": "29277005-a349-4dca-a333-e96525bde277",
+    "text": "Jimmy Carter Presidential Library and Museum \nHousing documents of the 39th president, this museum also features a replica of the Oval Office."
+  },
+  {
+    "id": "e6ee71f6-32bb-4dca-b0a2-a17441a2fe61",
+    "text": "Children's Museum of Atlanta \nRecommended for kids age 2-8, this hands-on museum features an indoor playground, sand table & more."
+  },
+  {
+    "id": "44119744-d2ff-455e-8a55-6ef26e3504ff",
+    "text": "Underground Atlanta \nThis historic area is now a shopping & entertainment center with eateries, events & tours."
+  },
+  {
+    "id": "4f28791a-fbbd-49f9-956d-bc7b9a2df885",
+    "text": "Al-Farooq Mosque"
+  },
+  {
+    "id": "16cee6e6-55b6-4bee-a289-648a1ca9c36b",
+    "text": "Hindu Temple of Atlanta \nTraditional Hindu place of worship with 2 temples featuring ornate carvings of deities."
+  },
+  {
+    "id": "72be65d6-0820-4caa-bb1a-eacba4398fc3",
+    "text": "Callanwolde Fine Arts Center \nCommunity arts center in a mansion, with exhibits, concerts & workshops, plus outreach programs."
+  },
+  {
+    "id": "dc5642e0-e589-43d8-88c6-099a97a6e24d",
+    "text": "Oakland Cemetery \nThis historic 1850s cemetery is the burial site of Margaret Mitchell & other notable locals."
+  },
+  {
+    "id": "401c71a8-c164-41e1-abbc-ec6bb7373e44",
+    "text": "Michael C. Carlos Museum \nMuseum of ancient art featuring Greek & Roman collections & an Egyptian exhibit including mummies."
+  },
+  {
+    "id": "d71aab3f-350e-41fe-83bb-c5235da11d46",
+    "text": "Candler Park \nNeighborhood park features an elaborate wooden playground, a pavilion, a multi-use field & a pool."
+  },
+  {
+    "id": "9632aa3f-78d7-4b89-b615-2b97776056fd",
+    "text": "Lakewood Amphitheatre \nMajor concert & festival venue with both reserved seating & a sloping lawn."
+  },
+  {
+    "id": "15a2db04-4fce-42dd-ad65-7e1cadd4d165",
+    "text": "MODA (Museum of Design Atlanta) \nSmall gallery space featuring rotating exhibitions that explore the impact of design on art & life."
+  },
+  {
+    "id": "683ee9f0-7e36-4d6b-a7c2-689799d445fc",
+    "text": "Oglethorpe University Museum of Art"
+  },
+  {
+    "id": "ddf86a8d-65cd-425d-95b3-94841e4c9ca6",
+    "text": "Westview Cemetery Inc."
+  },
+  {
+    "id": "8c4bc0a4-b4a7-46d2-b229-6a687a7f8bb5",
+    "text": "Swan House at Atlanta History Center \nRestored Philip T. Shutze designed 1928 neoclassical mansion & gardens built for rich cotton heirs."
+  },
+  {
+    "id": "69dcd899-5e04-46ef-a1ca-b1f2ec10b943",
+    "text": "Central Park \n17-acre recreational facility includes paths, athletic fields, a playground & a recreational center."
+  },
+  {
+    "id": "a0346217-5b00-44a2-8931-a50b77ead203",
+    "text": "Catholic Shrine of the Immaculate Conception"
+  },
+  {
+    "id": "894ddf81-1169-47e6-a09f-c0dc4316f11b",
+    "text": "Basilica of the Sacred Heart of Jesus"
+  },
+  {
+    "id": "d45bc45f-a52f-4fa0-9588-5c897531c884",
+    "text": "Cabbagetown Park \nPint-sized neighborhood park featuring a children's playground, stone sculptures & more."
+  },
+  {
+    "id": "594fe7f3-98ab-4343-a256-152f6944e402",
+    "text": "Historic Fourth Ward Park \nA 17-acre park with a splash fountain, skate park & amphitheater, adjacent to the Atlanta Beltline."
+  },
+  {
+    "id": "aa556e53-8562-453a-bcac-1b41c0346b8a",
+    "text": "Hammonds House Museum \nQuaint, Victorian house showcasing diverse works by artists of African decent, plus lectures & more."
+  },
+  {
+    "id": "92c0c1dc-f12f-449b-b50b-747242b39ba7",
+    "text": "Blackburn Park \nIn addition to multi-use fields & trails, this park houses a tennis center with lighted hard courts."
+  },
+  {
+    "id": "60640f20-c782-4889-9b78-670b3cc0c9f1",
+    "text": "Piedmont Dog Park \nFenced off-leash dog park on 3 acres, with small- & large-breed areas, shade, water & benches."
+  },
+  {
+    "id": "f3ccc99e-b200-4c86-8b81-067cca1587d1",
+    "text": "Frankie Allen Park \nPublic site with baseball diamonds, tennis courts, a picnic meadow & a small historic graveyard."
+  },
+  {
+    "id": "6d756e07-3c09-4f7b-8132-ac90e06862ef",
+    "text": "Delta Flight Museum \nKid-friendly museum tracing the history of Delta Airlines with hands-on exhibits & vintage aircraft."
+  },
+  {
+    "id": "dc08856e-da03-4328-a42f-ec62d4ac8c94",
+    "text": "Grant Park \nSprawling green space & recreational area is the heart of one of Atlanta's oldest neighborhoods."
+  },
+  {
+    "id": "805a2158-4f66-43b4-8fc2-4e0b37e0055f",
+    "text": "Reynolds Nature Preserve \nVast natural wildlife & land conservation area combining rolling hills, forests & wetlands."
+  },
+  {
+    "id": "1c38499c-d0df-4e48-9cf8-b507853b2181",
+    "text": "Apex Museum \nAfrican-American museum chronicling Auburn's history through exhibits, replicas & workshops."
+  },
+  {
+    "id": "52e5e714-69f9-4800-b166-671425573a0d",
+    "text": "Murphey Candler Park \n135-acre park offering walking trails around a lake, a swimming pool, sports fields & picnic areas."
+  },
+  {
+    "id": "5716eb86-4e9a-4cf9-bf13-a504442b53ad",
+    "text": "Ebenezer Baptist Church \nHistoric, preserved church where both Martin Luther King, Jr. and his father were preachers."
+  },
+  {
+    "id": "3f60c81a-e846-4bfc-94bb-6d0b17d08431",
+    "text": "Governor's Mansion"
+  },
+  {
+    "id": "5a7057af-0825-424c-a87d-e2bf6cb3f354",
+    "text": "Ben Hill Recreation Center"
+  },
+  {
+    "id": "c8fa19d2-2958-4f71-89aa-c11bf9456fa0",
+    "text": "South View Cemetery Association"
+  },
+  {
+    "id": "3f4a360c-b78d-4f1f-81b8-dd9a301cebf7",
+    "text": "Millennium Gate Museum - History Art Museum Atlanta, Georgia | Classical Architecture \n12,000-square-foot interactive museum shaped like an arch dedicated to state history, art & culture."
+  },
+  {
+    "id": "f3e572f0-2a4d-43aa-b8b0-4200aee700d6",
+    "text": "Robert C. Williams Museum of Papermaking \nA history of paper with more 2,000 books, papers, tools, machines & manuscripts."
+  },
+  {
+    "id": "81b60bee-f8d2-4b79-8ea9-54b8dd93de01",
+    "text": "Chattahoochee NRA--Powers Island Unit \nPark on the Chattahoochee River Water Trail with areas for hiking, biking, canoeing & bird-watching."
+  },
+  {
+    "id": "b588f9a7-5db9-424d-ae04-2b5ddfc9850b",
+    "text": "Wat Buddha Bucha Foundation"
+  },
+  {
+    "id": "979523d8-12d2-4ce1-98c2-87a679bfbde6",
+    "text": "Museum of Contemporary Art of Georgia \nMuseum founded in 2000 to showcase significant contemporary works by Georgian visual artists."
+  },
+  {
+    "id": "0ac695ef-664d-476e-a127-81431f55022b",
+    "text": "Henderson Park \nA public park with a waterfall, soccer fields, tennis courts, trails & a community garden."
+  },
+  {
+    "id": "971accd3-e770-49a4-8d30-76453ce02734",
+    "text": "Emma Millican Park \nThis scenic neighborhood park features multiple play structures, shade trees, paths & picnic areas."
+  },
+  {
+    "id": "3aa74d9a-c6ec-44ff-818c-8ef40b64911b",
+    "text": "Sunken Garden Park"
+  },
+  {
+    "id": "db3cb860-151b-4799-bbb0-6cf452cda0d8",
+    "text": "Rosa L. Burney Park \nUrban park with lawns, a playground, tennis courts, softball fields & an indoor recreation center."
+  },
+  {
+    "id": "7393e90d-80a7-43b6-8139-963d1522b181",
+    "text": "Hapeville Depot Museum and Visitor Center"
+  },
+  {
+    "id": "d96c58fa-6345-43d0-be9e-a7d5bc02103b",
+    "text": "Egan Park"
+  },
+  {
+    "id": "5ce6c601-156d-4daa-9540-f0304e0f0bf1",
+    "text": "DeKalb History Center Museum \nLocal-history artifacts & unique exhibits inside a stately historic courthouse building."
+  },
+  {
+    "id": "29c6d5ac-0622-4d66-b6e0-3ffd0fdd5d87",
+    "text": "Walton Spring Park \nThis small downtown plaza features shade trees & a circular seating area around an obelisk."
+  },
+  {
+    "id": "43f890af-f944-4279-9038-9c8308af1167",
+    "text": "中国园林博物馆"
+  },
+  {
+    "id": "9d72da28-6dde-4a73-b9e0-7a83ebcfd132",
+    "text": "Liangqichao Former Residence"
+  },
+  {
+    "id": "34fa0844-d7ed-45ac-a06f-ad77f9d06fd4",
+    "text": "藻鉴堂"
+  },
+  {
+    "id": "960f719c-ad0b-4523-be18-7b84bae131c2",
+    "text": "Beijiao Park"
+  },
+  {
+    "id": "9f95b1ea-7ae0-4ca0-9438-21515908a524",
+    "text": "慈寿寺塔"
+  },
+  {
+    "id": "98927db5-b9ae-4cc2-a8b3-50a2488cdcb3",
+    "text": "Long Corridor \nBuilt in 1750, this 728-m.-long passageway in the Summer Palace features 14,000+ paintings."
+  },
+  {
+    "id": "9de95fc5-9ca5-4e4a-a4be-bcdeba4f4af5",
+    "text": "Beijing Shejitan"
+  },
+  {
+    "id": "552eb0ec-504f-4043-9c4f-095adfa7d4c4",
+    "text": "菖蒲河"
+  },
+  {
+    "id": "39f87976-030c-4bb2-9535-2992b5866dd0",
+    "text": "交泰殿"
+  },
+  {
+    "id": "46bb36b6-a47d-427d-8aae-bd036e8a773c",
+    "text": "Palace of Earthly Tranquility \nRestored 15th-century palace that once housed a Ming empress & Qing Dynasty shamanist ceremonies."
+  },
+  {
+    "id": "662df7a9-8bfa-4090-9be6-98ce3576674f",
+    "text": "Lishui Bridge"
+  },
+  {
+    "id": "a4204bf6-08e8-4b3c-a2bd-aa7ba15d15e8",
+    "text": "The Palace Museum \nMassive palace complex & museum featuring tours, art exhibits & restaurants."
+  },
+  {
+    "id": "4b29d6cb-7337-4a67-b872-2e60fed613d7",
+    "text": "Sea View Building"
+  },
+  {
+    "id": "7d039e71-7596-4138-b95b-bdbc58113db7",
+    "text": "Chaoyang Park Recreation Ground"
+  },
+  {
+    "id": "e4c323a9-80df-4dd4-b50b-fdacff95c9b9",
+    "text": "National Stadium \nIconic stadium known as the Bird's Nest built for the Olympics & now hosting concerts & sports."
+  },
+  {
+    "id": "24e61d37-a9d7-4875-aba9-f4487d5c090e",
+    "text": "Hot Air Balloon Theme Park"
+  },
+  {
+    "id": "023dad39-5bb3-486e-8d61-4386568b3483",
+    "text": "Beijing Temple of Confucius \n14th-century Confucian temple with grounds including monumental pavilions, gates & carvings."
+  },
+  {
+    "id": "359b41f9-aa16-43ca-b3c7-ceb0854a7eae",
+    "text": "Temple of Heaven \nRenowned temple complex from 1420 featuring distinctive circular buildings set in a popular park."
+  },
+  {
+    "id": "c7a7f4cc-7ffa-4e92-b2b7-34b3a3b08582",
+    "text": "Aoxian Garden"
+  },
+  {
+    "id": "076e24a6-9ca2-4345-938b-bd60ccdc0f69",
+    "text": "Duxingting"
+  },
+  {
+    "id": "cf04e02c-a9ac-4792-87b0-d141f679f6c1",
+    "text": "Baowei Andpingfang"
+  },
+  {
+    "id": "6b513d08-ce04-4d4c-8111-fb34fec926ba",
+    "text": "Duiyun"
+  },
+  {
+    "id": "50c8f804-a959-45f3-9876-4f8f5c4424ed",
+    "text": "京杭运河积水潭港"
+  },
+  {
+    "id": "b7226d7e-b81e-4bb1-8e6f-1be2500e8eb9",
+    "text": "Xiehu Bridge"
+  },
+  {
+    "id": "b582d08a-63e2-4775-b994-1fe1f1a350c7",
+    "text": "红领巾公园小卖部"
+  },
+  {
+    "id": "51204267-8475-4075-8438-7a9dea3c3751",
+    "text": "Bayixuan"
+  },
+  {
+    "id": "c0c2231c-1293-4af1-96ca-c11414dd1b61",
+    "text": "Yuan Dynasty Capital City Wall Relics Park"
+  },
+  {
+    "id": "80cb25fd-5f66-40b2-a68d-46aa97abe114",
+    "text": "Xiliting"
+  },
+  {
+    "id": "4118528f-96f6-4490-9dcd-ea1830ec700c",
+    "text": "Wenhuadian"
+  },
+  {
+    "id": "000771f2-53a9-4791-a6e1-bbc45ae8dc20",
+    "text": "Huangjimen"
+  },
+  {
+    "id": "21a16c31-c0fd-4b20-9f88-1dcb5aa36cd9",
+    "text": "Fengxian Gate"
+  },
+  {
+    "id": "256f0499-6fc4-4bc7-8115-f8c7fd009681",
+    "text": "Gate of Thriving Imperial Clan"
+  },
+  {
+    "id": "816e7c86-3e13-4c6d-b220-e543b438509e",
+    "text": "Zhenbaoguan"
+  },
+  {
+    "id": "3e4b3fdd-fc89-4cf0-94f0-e688a174eaed",
+    "text": "Yongshougong"
+  },
+  {
+    "id": "4bf6d333-7774-43a5-8a2c-02d7deef8050",
+    "text": "Yihexuan"
+  },
+  {
+    "id": "33565f87-3b41-4c88-9f4b-d370e1dd8e6c",
+    "text": "Fuwangge"
+  },
+  {
+    "id": "364c2479-19dc-4fb7-a6ab-bd9ff76f178a",
+    "text": "Changchungong"
+  },
+  {
+    "id": "b10b45e4-25fb-4dae-a9fb-7bcd094b143a",
+    "text": "Xianfugong"
+  },
+  {
+    "id": "92a7d9ca-829a-4bf1-bb69-d5c0375718e9",
+    "text": "寿皇殿"
+  },
+  {
+    "id": "cadbe0a3-fbcf-4aad-8cda-782d90a3d134",
+    "text": "Arab Customs Garden"
+  },
+  {
+    "id": "e0a005eb-69bb-4abe-8797-d10b8aa89020",
+    "text": "姚家园公园"
+  },
+  {
+    "id": "0b291320-5411-4dec-926c-1ba63b065711",
+    "text": "Jinzhong Du Chengqiang Relic Site"
+  },
+  {
+    "id": "452b2bcb-f9ec-407d-bf38-d3fbf17f5d66",
+    "text": "Macao Garden"
+  },
+  {
+    "id": "94d182f2-2300-4c23-976d-c1b95872d644",
+    "text": "Mengtang Garden"
+  },
+  {
+    "id": "c89cedc5-ec3e-4823-8a4c-fbba0268330f",
+    "text": "Taiwan Garden"
+  },
+  {
+    "id": "f397c84a-373d-4196-b816-9c6e6a2b682d",
+    "text": "Jianbiting"
+  },
+  {
+    "id": "58bd197d-2fa5-4e1b-a56a-43439fe6019d",
+    "text": "国家森林公园"
+  },
+  {
+    "id": "90c6e451-8944-4995-86ea-8d6ba5be99ec",
+    "text": "药王庙"
+  },
+  {
+    "id": "a15d216e-1589-4379-9e79-4a18a32967a9",
+    "text": "Jinxiu Gorge"
+  },
+  {
+    "id": "2c4a2e02-5a23-455d-a4b0-419cc549feb1",
+    "text": "Spring Dew Mansion"
+  },
+  {
+    "id": "4a0f7364-319a-4dfc-b4eb-4c3870388e80",
+    "text": "斋宫"
+  },
+  {
+    "id": "233fc885-4f9a-4d9f-bd7a-3250ca1e028e",
+    "text": "黄花阵"
+  },
+  {
+    "id": "056b69d5-5cc6-4a1b-ae82-2a39d1a335e7",
+    "text": "Nanchang Garden"
+  },
+  {
+    "id": "fc9a8ded-5c85-4e90-931e-e0333e7c4a0f",
+    "text": "Renshoudian"
+  },
+  {
+    "id": "2010ab3e-e084-44c0-b380-372c73c60cfc",
+    "text": "夕佳楼"
+  },
+  {
+    "id": "902a1992-3a7e-4981-9621-a371c126756f",
+    "text": "Yulantang"
+  },
+  {
+    "id": "c97e75b4-f444-4363-8b6a-d10e4b8a55f3",
+    "text": "永寿斋"
+  },
+  {
+    "id": "ae9090e1-5e6f-4c4b-ba37-a10382f25374",
+    "text": "青芝岫"
+  },
+  {
+    "id": "2b1ce45d-aab1-49dd-adf8-0cae35e03599",
+    "text": "Leshoutang"
+  },
+  {
+    "id": "7ec34811-a39a-43b9-8bd3-aafeedb93df4",
+    "text": "Zhiyu Bridge"
+  },
+  {
+    "id": "fb569907-d1a9-4f2c-ac50-4290a8838c0a",
+    "text": "Wild Wadi Waterpark Jumeirah \nAquatic roller coasters & surfing wave machine in outdoor water park with pools, slides & tunnels."
+  },
+  {
+    "id": "fea51e98-2d00-4a0e-b0ae-9f21c2c477eb",
+    "text": "Ski Dubai \nIndoor ski center with a mountain motif & snow for year-round skiing & snowboarding."
+  },
+  {
+    "id": "b5ab7aeb-9970-40a3-85f2-4a85d6411e34",
+    "text": "Quad Biking Dubai and Dune Buggy Ride"
+  },
+  {
+    "id": "928aa489-0479-43a5-9d92-c7f8026cef63",
+    "text": "Madinat Jumeirah \nUpmarket resort complex with hotels, a modern souk, restaurants & bars, plus a private beach."
+  },
+  {
+    "id": "3f797793-d1b5-44d4-bcf0-cd6c5bc1dcea",
+    "text": "St. Mary's Catholic Church, Dubai \nBusy church with daily services in different languages & an attached Catholic school."
+  },
+  {
+    "id": "4d9f957e-3256-471a-b51e-4acaad0f564a",
+    "text": "Ras Al Khor Wildlife Sanctuary \nThis nature preservation area with mangroves & lagoons is home to a large population of flamingos."
+  },
+  {
+    "id": "9ff57306-2fd1-469b-8dd6-168356484462",
+    "text": "Mushrif Park \nVast public space with a swimming pool, green areas, horse & camel rides, plus a 500-seat theater."
+  },
+  {
+    "id": "4dbc97cf-49f3-4181-984f-15f2687ab0dd",
+    "text": "Fun City - Oasis Mall"
+  },
+  {
+    "id": "cb2dc42a-fbc9-48f5-a6c3-181bce291460",
+    "text": "SEGA Republic \nIndoor theme park with arcade & video games, rides & sports-based games, plus parties & events."
+  },
+  {
+    "id": "ba57f10c-b72a-424a-ac77-7cacae1f377c",
+    "text": "Safa Park \nGreen, public space with sports pitches, playgrounds, prayer rooms & a boating lake."
+  },
+  {
+    "id": "d0cfda55-b3c5-437c-937a-21c0e7160337",
+    "text": "Burj Khalifa \nSpired 828-metre skyscraper with a viewing deck, a restaurant, a hotel and offices."
+  },
+  {
+    "id": "4eb2b547-dc8d-4617-a465-f38ea83b2bd1",
+    "text": "Jumeirah Mosque \nLandmark mosque with guided tours offered to non-Muslims to promote cultural understanding."
+  },
+  {
+    "id": "a8140f6a-f891-428f-aa66-0ce997c35c03",
+    "text": "Aquaventure World \nWorld's largest water park with over 105 slides, attractions & experiences, plus a splash area for kids."
+  },
+  {
+    "id": "46de485e-0c39-4a6a-a882-33d57e2c7674",
+    "text": "Grand Bur Dubai Masjid \nThis mosque accommodates 1200 worshippers & allows non-Muslim visitors in the minaret only."
+  },
+  {
+    "id": "e528b05c-9b95-4bd0-9ee0-0ff039a7db53",
+    "text": "Dubai Autodrome \nCircuit for fast car & superbike races also used for experience days, karting & corporate events."
+  },
+  {
+    "id": "cb3dc1ad-7961-42b0-810c-f5e03d923515",
+    "text": "OffRoad-Zone"
+  },
+  {
+    "id": "bae41548-2285-4757-8aaf-a32c9d3f2a62",
+    "text": "Heritage House - Dubai \nOffering self-guided tours, this 2-story home built in 1890 depicts daily, historical life."
+  },
+  {
+    "id": "48351d37-c30d-436a-840c-a82e59df79ef",
+    "text": "Dubai Aquarium & Underwater Zoo \nMarine animal encounters & feedings, plus an underwater tunnel under a huge tank with sharks & rays."
+  },
+  {
+    "id": "973cb118-207e-4b1a-bb46-a32eefc39463",
+    "text": "Al Muteena Park"
+  },
+  {
+    "id": "6e1ae121-fbf7-4a9a-b62c-fdf764409dc0",
+    "text": "MFive Services LLC"
+  },
+  {
+    "id": "f623ba7a-39da-4936-b849-6b9c74031500",
+    "text": "Dubai Opera \nClassic musical theater, dance & live concerts staged in a futuristic venue with a restaurant."
+  },
+  {
+    "id": "f9f02117-d11a-45a5-81ed-64b24d5642f5",
+    "text": "The Dubai Fountain \nMassive fountain with displays of water jets reaching 140 m, set to a music & light show."
+  },
+  {
+    "id": "d44ab0bc-1a0d-4a0e-bac2-42f08617ef13",
+    "text": "Mermaids of Arabia"
+  },
+  {
+    "id": "327e059f-d3bb-41ac-a0c1-4efff7d3c1ef",
+    "text": "Dubai Dino"
+  },
+  {
+    "id": "8c1e3369-a6fa-431e-adc8-4aded23f0cfa",
+    "text": "Downtown Slide"
+  },
+  {
+    "id": "58ab1762-d4ec-4a8e-8a33-cc9da4bfe2e9",
+    "text": "Burj Plaza by Emaar"
+  },
+  {
+    "id": "f38de1f3-db2e-45ac-9ce7-2f262b91c709",
+    "text": "Dubai Trolley by Emaar - Dubai"
+  },
+  {
+    "id": "f5c52b9f-0567-4023-9a2b-deb2cfa47e7d",
+    "text": "The Tower \nModern skyscraper with 50 floors of luxury apartments & a distinctive pyramidal top."
+  },
+  {
+    "id": "cac1ac56-c278-4997-9a90-b79f79b2b848",
+    "text": "Arabian Nights Tours (official)"
+  },
+  {
+    "id": "62833b43-f877-400b-901a-8127dbb24e3f",
+    "text": "Alpha Destination Management"
+  },
+  {
+    "id": "7edb0083-94d7-426c-9edb-066312776407",
+    "text": "Imagine Cruising"
+  },
+  {
+    "id": "86ac4fae-3bc4-4d59-9bc2-368845f9c53b",
+    "text": "عالم مدهش"
+  },
+  {
+    "id": "cd5dfcec-0ec8-41ac-ad63-5da8bf17a223",
+    "text": "Dubai Sports World \nSpacious, seasonal venue with tennis, basketball & badminton courts, plus football & cricket fields."
+  },
+  {
+    "id": "e58c7449-4a52-4d75-9d94-941d0abf8bf7",
+    "text": "La Mer \nStreets of restaurants, cafes & boutiques, plus a sandy beach & trampoline park for kids."
+  },
+  {
+    "id": "738fc960-8835-4a7c-8f93-e14b48b8cbc8",
+    "text": "Buggy Adventure Dubai | ATV Quad Bike Tours & Desert Safari Dubai"
+  },
+  {
+    "id": "788d2666-cc61-4e1b-a77c-b17002a45997",
+    "text": "Dubai Ladies Club"
+  },
+  {
+    "id": "2c8440d2-cac0-4f43-8470-fecf3ab8ddb6",
+    "text": "Etihad Museum \nHigh-tech displays on the history of the UAE in an ultramodern building with an eatery & library."
+  },
+  {
+    "id": "1e1bef86-9a6a-4a35-a468-370fcc5d64a4",
+    "text": "Zabeel Park \nScenic, 117-acre park featuring a flea market, a landmark shaped like a giant picture frame & more."
+  },
+  {
+    "id": "066d7b9d-4501-4dd8-941a-bfe36df91808",
+    "text": "Hajar Alasas Building Contracting (L.L.C)"
+  },
+  {
+    "id": "7f34db5d-7c80-4119-8d78-5934f39f0532",
+    "text": "Certified Tourism LLC"
+  },
+  {
+    "id": "112ad599-e471-47b5-b0f7-1766f6775016",
+    "text": "The Track, Meydan Golf"
+  },
+  {
+    "id": "a5b4073a-3402-4122-9fc6-b838e8b8d77a",
+    "text": "Connect World Travel & Tourism"
+  },
+  {
+    "id": "2ddd8bcf-b039-49db-aa7a-1d1b79fe9257",
+    "text": "Quad Biking Dubai | Dune Buggy Dubai | Morning and Evening Desert Safari Tours"
+  },
+  {
+    "id": "e517a7f8-e081-49ff-baee-1fc805a95726",
+    "text": "Desert Safari Tours Dubai"
+  },
+  {
+    "id": "9512850c-f886-462f-a5fa-62800733ea5f",
+    "text": "Dubai Dolphinarium \nSizable indoor destination with dolphin & seal shows, interactive experiences & an Asian restaurant."
+  },
+  {
+    "id": "bf5e8bbd-fe6a-4049-95b8-8d70fdd1ba43",
+    "text": "Green Apple Travel & Tourism - Bur Dubai Office"
+  },
+  {
+    "id": "e4dccb82-d81e-403f-896c-faf23a4f419a",
+    "text": "Creek Park \nLush waterside park with kids' play areas, a cable car, an amphitheatre & restaurants."
+  },
+  {
+    "id": "f161beb3-e801-4d5b-b5a0-d73bd9a6df1d",
+    "text": "Wonder Bus Tours \nBus tours that travel on land & water, passing souks, Old City landmarks & boats on Dubai Creek."
+  },
+  {
+    "id": "b7c0dec3-0e6b-48e9-b628-afada6b462e4",
+    "text": "Al Ghubaiba Tourism LLC | Best VIP Desert Safari Dubai Tour Operator"
+  },
+  {
+    "id": "3357f28d-e894-4c3a-8432-4a681e4e0333",
+    "text": "Saruq Al-Hadid Archaeological Museum \nStreamlined, multimedia showcase for excavated jewelry, weapons & tools, plus a gift shop."
+  },
+  {
+    "id": "25f5f0fb-709a-4942-b8cd-904824b96099",
+    "text": "Harbour Views - Dubai Creek Harbour"
+  },
+  {
+    "id": "a3936b32-937e-4d6c-bc04-6d671da46b74",
+    "text": "Al Fahidi Historical Neighbourhood \nArea of traditional-style buildings in typical materials housing arts & cultural exhibits & museums."
+  },
+  {
+    "id": "162c73d3-b9f0-418a-9abf-2c61e2c29d63",
+    "text": "Coins Museum Bur Dubai \nEstablished in 2004, this museum features a modern interactive exhibit on historic & modern coins."
+  },
+  {
+    "id": "ceb4253b-446d-45c9-93fa-8850daff48f0",
+    "text": "Royal Mirage Safari"
+  },
+  {
+    "id": "596d18eb-7b4f-4a7d-abfc-eff784a91085",
+    "text": "XPark by Etisalat"
+  },
+  {
+    "id": "26eb9429-1ecf-4250-bac5-5ce2abd39b24",
+    "text": "Dubai Gold Souk \nMarked by a wooden arch, this bustling bazaar features many stores selling dazzling gold jewellery."
+  },
+  {
+    "id": "7285e14b-b325-482f-a330-b0876f0e9878",
+    "text": "Saifco Travel & Tourism L.L.C - Dubai, UAE."
+  },
+  {
+    "id": "b74791bf-82bb-492f-a9bc-02eaebfba122",
+    "text": "Waddington Custot Dubai"
+  },
+  {
+    "id": "b873958a-0393-450e-b60c-d3bbda7d2a5f",
+    "text": "VIP Hummer Desert Safari Dubai"
+  },
+  {
+    "id": "50007be9-608a-403e-bade-6d2cafe63843",
+    "text": "Naif Museum"
+  },
+  {
+    "id": "aa772519-39d1-4ba4-88ca-b912bf5c91b5",
+    "text": "Los Angeles County Museum of Art \nThis 20-acre campus with diverse collections spanning art history also offers screenings & concerts."
+  },
+  {
+    "id": "d1c0f7ac-1512-40db-ae30-78bedd29bf14",
+    "text": "The Greek Theatre \nHistoric, 5,900-seat amphitheater in a wooded park showcasing a variety of acts under the stars."
+  },
+  {
+    "id": "3d095dc5-094e-41b0-bab7-e320ded7e866",
+    "text": "Universal Studios Hollywood \nSprawling amusement park with a cinema theme, featuring rides, restaurants, shops & shows."
+  },
+  {
+    "id": "4ed335b4-149a-43f5-bb7c-c6c75560e01e",
+    "text": "Hollywood Sign \nErected in 1923, this symbolic landmark on Mount Lee is often viewed from Griffith Park Observatory."
+  },
+  {
+    "id": "26261800-ffcd-4166-80df-5c6c2634acba",
+    "text": "Griffith Observatory \nThis art deco landmark from 1935 features a high-tech planetarium, public telescopes & city views."
+  },
+  {
+    "id": "830d2479-deac-47a7-9c58-1a67d512143e",
+    "text": "California Science Center \nAdmission's free to permanent exhibits at this kid-friendly spot, also boasting IMAX & the Endeavor."
+  },
+  {
+    "id": "931798c1-a7d1-4ab3-a781-b28d5e17dec6",
+    "text": "Walt Disney Concert Hall \nFrank Gehry-designed music hall with striking steel architecture & pristine acoustics."
+  },
+  {
+    "id": "2bbd347f-2b60-4429-aadb-fab8630a32a1",
+    "text": "Dolby Theatre \nBesides the Oscars, this chic, state-of-the-art theater hosts film premieres, shows & public tours."
+  },
+  {
+    "id": "4bf8f275-7fcf-4f2e-8242-67ed9ee3db18",
+    "text": "Hollywood Bowl \nConcertgoers bring a picnic & wine to watch shows of every genre at this historic amphitheater."
+  },
+  {
+    "id": "248993c5-1859-4e08-baca-aa357b81befd",
+    "text": "Rose Bowl Stadium \nArena home to a storied annual college-football championship game & a notable monthly flea market."
+  },
+  {
+    "id": "65f7e92c-bdbb-4b2d-8041-8b8574c10637",
+    "text": "La Brea Tar Pits and Museum \nIce Age–fossil excavation site with an adjacent museum, plus a re-created prehistoric garden."
+  },
+  {
+    "id": "7aed8d2d-3bd4-49f2-9e1e-2e26e5b4ee8d",
+    "text": "Griffith Park \nUrban oasis featuring hiking & equestrian trails, plus city views, the Greek Theatre & the L.A. Zoo."
+  },
+  {
+    "id": "59317ddf-d964-4450-96ac-52a9f6dc3ae3",
+    "text": "Los Angeles State Historic Park \n32 acres of open space with walkways & architectural features, plus Downtown views."
+  },
+  {
+    "id": "b9ba4475-4758-4a26-8368-ed6088afa887",
+    "text": "Universal CityWalk Hollywood \nHigh-energy hub featuring shops, eateries & bars, as well as a 7-story IMAX theater."
+  },
+  {
+    "id": "7ab9d4d4-2024-4947-a2f3-97285defc39f",
+    "text": "Natural History Museum of Los Angeles County \nFrom T. rex skeletons to an insect zoo, popular attraction holds more than 35-million artifacts."
+  },
+  {
+    "id": "e94da51b-a9ff-4a41-95fb-698eb5cfdcfc",
+    "text": "Dodger Stadium \nThis classic ballpark, one of baseball's oldest, has hosted the Los Angeles Dodgers since 1962."
+  },
+  {
+    "id": "f42e12b1-9b10-42c5-b4b7-c1f28bb132ee",
+    "text": "The Comedy Store \nFamous acts & emerging talent are showcased at this long-running venue with 3 separate stages."
+  },
+  {
+    "id": "9df75fe2-d94e-4ae0-941b-b93cc4942930",
+    "text": "Petersen Automotive Museum \nA vast collection of autos including restored antiques, race cars &  vehicles from famous movies."
+  },
+  {
+    "id": "dd800076-8334-4068-ba52-22cb1ff13268",
+    "text": "Pink's Hot Dogs \nCreatively topped dogs (some named for celebrities) draw long lines at this historic roadside spot."
+  },
+  {
+    "id": "9213d8e3-42b0-47af-bc73-bbdc59d5bf55",
+    "text": "Norton Simon Museum \nUnconventional building housing a noted collection of European & Asian art plus a sculpture garden."
+  },
+  {
+    "id": "2a076b4a-43d8-4fd1-802f-11d57cb28ba2",
+    "text": "Old Pasadena \nDowntown historic district, now a popular destination for shopping, dining & entertainment."
+  },
+  {
+    "id": "c2dee3eb-a101-48d7-9ecc-93913215eeaa",
+    "text": "Melrose Trading Post \nSunday open-air market features a range of vendors selling antiques, vintage goods & collectibles."
+  },
+  {
+    "id": "4c9eba85-2ec2-456a-9173-729c7dbaebb3",
+    "text": "Museum of Tolerance \nFilms & other educational exhibits on the Holocaust & ways to confront modern-day discrimination."
+  },
+  {
+    "id": "4345d21f-1c4a-42a6-87f7-78b06e306907",
+    "text": "Japanese American National Museum \nArt, artifacts & historical exhibits exploring over 130 years of the Japanese-American experience."
+  },
+  {
+    "id": "4ecdbfc0-1806-4d7c-870a-696d2b744ace",
+    "text": "Hollywood Wax Museum \nFamous Hollywood faces are cast out of wax at this museum with late-night hours."
+  },
+  {
+    "id": "b04a2f09-c335-4e6f-a96c-13c9b6b8e9a6",
+    "text": "Bradbury Building \nUnique structure featuring a Victorian center court with wrought-iron stairs & birdcage elevators."
+  },
+  {
+    "id": "e276e091-a62d-4a60-abd9-edd07ca8f10d",
+    "text": "Pasadena City Hall \nDomed, Renaissance-style structure from 1927, housing city administrative offices & gardens."
+  },
+  {
+    "id": "d9f6e700-88ae-4e15-9c07-3935a6cfdd04",
+    "text": "Chinatown Central Plaza \nPedestrian mall designed in Chinese style featuring a variety of Asian shops & restaurants."
+  },
+  {
+    "id": "6d20ffe8-296a-48e9-b3e0-7c23691b9fdc",
+    "text": "The Gamble House \nGuided tours showcase this architecturally significant 1908 home designed by Charles & Henry Greene."
+  },
+  {
+    "id": "4308af8f-4b93-41c7-9b20-875fb041678b",
+    "text": "Highland-Camrose Bungalow Village"
+  },
+  {
+    "id": "d4031e82-9cb6-4e39-889d-3b0a29cba005",
+    "text": "Jerome C. Daniel Overlook above the Hollywood Bowl \nHillside spot provides telescopes & views of downtown, the Hollywood Sign & the ocean on clear days."
+  },
+  {
+    "id": "5db1aa79-e3a5-4b3d-9fbb-f98a20cac60d",
+    "text": "Beach Boys Historic Landmark \nMonument on the site of the demolished boyhood home of the Wilson family of Beach Boys fame."
+  },
+  {
+    "id": "a29d1cf1-be40-448b-81f8-3ebb979a74bd",
+    "text": "The Museum of Jurassic Technology \nCollection of microscopic sculpture & other eccentric curiosities in art, science & natural history."
+  },
+  {
+    "id": "4a93dfeb-4fc7-4eda-9654-11e686068b49",
+    "text": "Jet Propulsion Laboratory \nPart of NASA since 1958, this space exploration center offers talks & tours (reservations required)."
+  },
+  {
+    "id": "01129e0c-23fe-4da6-a8e5-2d3a0ad3409d",
+    "text": "Travel Town Gift Shop \nLong-standing Griffith Park museum dedicated to trains with multiple locomotives & cars on display."
+  },
+  {
+    "id": "4053bc68-04be-4845-8911-b6191d66f660",
+    "text": "Sunset Ranch Hollywood \nCountry-style getaway on a ranch offering day & night horseback riding tours & BBQ buffets."
+  },
+  {
+    "id": "e25f7e72-f24c-4ad4-829a-13d50f14bd07",
+    "text": "Descanso Gardens \nPicturesque botanic gardens & oak forests showcasing native plants, water features & a casual cafe."
+  },
+  {
+    "id": "79598c56-9571-47e8-ac31-21e25da1d094",
+    "text": "LACMA Store in the Resnick Pavilion \nStore inside the Los Angeles County Museum of Art, selling gifts, books & artful trinkets."
+  },
+  {
+    "id": "a9a5acba-be9e-4e3d-8a09-887c1f9dd47f",
+    "text": "Madame Tussauds Hollywood \nMuseum chain for life-size wax replicas of famous Americans & historic icons in themed galleries."
+  },
+  {
+    "id": "f20353fc-b71a-4c82-ac3b-365dfafd0bd3",
+    "text": "Heritage Square Museum \nWith 8 Victorian-era buildings, this living history museum documents city life in late 19th century."
+  },
+  {
+    "id": "9476c245-f37b-436e-ac73-7cd5f734b687",
+    "text": "Hustler Casino \nThis casino with a Monte Carlo-style decor offers poker & table games plus a variety of eateries."
+  },
+  {
+    "id": "668c17cc-9e4e-443e-9c85-3fc716b9ddc4",
+    "text": "Bronson Canyon Playground \nSecluded, verdant park offering picnic tables, hiking trails, a cave & other features."
+  },
+  {
+    "id": "bbcde3a1-3db4-4fc8-a557-bbf291cb4018",
+    "text": "Lincoln Park \nPublic recreation destination with barbecue pits, a baseball diamond, a playground & picnic tables."
+  },
+  {
+    "id": "ce59ca89-07c6-4b43-bb63-6764b11b2f24",
+    "text": "Cathedral of Our Lady of the Angels \nMassive contemporary cathedral featuring bronze doors, alabaster windows & tapestry-lined walls."
+  },
+  {
+    "id": "71603c64-7375-4528-8605-cf3f69e80475",
+    "text": "Almansor Park \nFamily-friendly park with a gym, a jogging trail, picnic tables, a playground & tennis courts."
+  },
+  {
+    "id": "c196624f-5e1e-4b48-ae8b-f2ec3e842312",
+    "text": "Lacy Park \nDog-friendly public expanse featuring 2 walking loops, 6 tennis courts & a decades-old rose arbor."
+  },
+  {
+    "id": "64daf56a-15cb-4c55-a84a-fe77827ca636",
+    "text": "PodShare"
+  },
+  {
+    "id": "29a41cf5-d29f-4584-a415-ec3fddffcc71",
+    "text": "Los Angeles City Hall \nThis 1928 landmark with docent-led tours features a stepped tower & 27th-floor observation deck."
+  },
+  {
+    "id": "69eca90f-54b2-4e87-927b-00f0b8e44125",
+    "text": "GRAMMY Museum \nInteractive exhibits & showbiz artifacts honor music greats past & present at this sprawling center."
+  },
+  {
+    "id": "6bd13051-d7d0-4595-b9c8-4ae7f3988de8",
+    "text": "Archdiocese of Los Angeles"
+  },
+  {
+    "id": "7c9f10de-41ba-4357-aefc-83c2fb8da8db",
+    "text": "Lucky Lady Casino \nFamily-owned casino offering table games, tournaments, card rooms & restaurants since 1947."
+  },
+  {
+    "id": "9981ede1-60fc-4b8e-8ed8-41f65af3c19c",
+    "text": "USC Pacific Asia Museum \nMuseum with research library relating to Asian & Pacific art & culture in a Chinese-style building."
+  },
+  {
+    "id": "8cfabc23-476e-42c1-9d90-0d0d1f195327",
+    "text": "Japanese Village Plaza \nBi-level complex featuring a range of Japanese eateries, markets, retailers, offices & gift shops."
+  },
+  {
+    "id": "dc1b988c-7b8a-4173-b906-a411dc14102d",
+    "text": "Golf N' Stuff \nBoasting an 18-hole mini-golf course, this amusement park also offers an arcade, go-karts & rides."
+  },
+  {
+    "id": "3183d49b-bac3-4579-97e6-a9cde37c537b",
+    "text": "Travel Town Railroad \nMiniature, mile-long train ride that circles the Travel Town Train Museum in Griffith Park."
+  },
+  {
+    "id": "e2b7a3be-5065-43e7-bc41-eb5b6edbfb44",
+    "text": "Hollenbeck Park \nThis park with lake views offers picnic areas with BBQ pits, basketball courts & a playground."
+  },
+  {
+    "id": "8428b780-6a63-4d6e-a5f1-154a239f1695",
+    "text": "Franklin Canyon Park, Mountains Recreation & Conservation Authority \n605-acre park featuring many picnic areas, over 5 miles of trails, a duck pond & a nature center."
+  },
+  {
+    "id": "cc87d250-94ac-4aa0-9200-c827a3fe31bd",
+    "text": "Kenneth Hahn State Recreation Area \nThis 308-acre park features a Japanese garden, a workout course, athletic fields & scenic trails."
+  },
+  {
+    "id": "b6eff01e-9a35-437b-bc7e-f5d112195ccd",
+    "text": "The Hollywood Museum \nHollywood history, including props, costumes, scripts & photos, housed in a historic building."
+  },
+  {
+    "id": "af3ccf0f-d9c1-49be-b7cb-5a54417b2826",
+    "text": "LA Plaza de Cultura y Artes \nExhibits dedicated to Mexican-American culture in Southern California plus education & music events."
+  },
+  {
+    "id": "a43bd62a-b5e4-4f22-a10e-b4253cc6c1d9",
+    "text": "Shichifuku No Yu \nIndoor & outdoor baths in spring water said to be especially rich in health-giving carbonic acid."
+  },
+  {
+    "id": "c321a739-a001-4b5c-b3f9-5c08a6ff2762",
+    "text": "Aoyama Cemetery \nGovernment-run cemetery with Japanese & foreign sections, also renowned for its cherry blossoms."
+  },
+  {
+    "id": "0db0f173-6c1a-4da5-a9b2-7ec019c1752f",
+    "text": "Fuji Television Network, Inc. \nLandmark, waterfront building renowned for its ultra-futuristic architecture & observation platform."
+  },
+  {
+    "id": "36f8ea89-1a42-43f2-ac03-9d13e82ccf62",
+    "text": "Tokyo Metropolitan Art Museum \nMuseum of fine art, sculpture & photography, with 6 exhibition halls, cafes & restaurants."
+  },
+  {
+    "id": "48e38191-9948-4339-8bd2-0e065eda5368",
+    "text": "The National Museum of Western Art \nRenoir, Van Gogh, Picasso & Monet are featured in this national western art museum opened in 1959."
+  },
+  {
+    "id": "42545fe1-dd66-48ac-a0da-e99a175a0bf3",
+    "text": "Hotel Monterey La Soeur Ginza \nWarm lodging offering relaxed rooms, plus a cozy Italian restaurant with a glassed-in terrace."
+  },
+  {
+    "id": "7eae3a4d-e6a0-4e9d-9fb0-95813ccf7667",
+    "text": "Toshima-ku Agariyashiki Park"
+  },
+  {
+    "id": "7aea88b5-e57d-47c6-95da-10d7457852d3",
+    "text": "Shiba Maruyama Tumulus"
+  },
+  {
+    "id": "b70fdf81-7c27-48d2-9483-365fe217aeec",
+    "text": "Site of the seppuku (ritualistic execution) of Oishi Yoshitaka and the other 16 Akougishi (Akou Roshi) samurai"
+  },
+  {
+    "id": "a0ef6b1d-55a5-4e45-8d51-e6ab2f4cfddc",
+    "text": "Ruins of Takanawa Ōkido Gate"
+  },
+  {
+    "id": "139e8ea9-6a0e-4f42-9960-97db2a8b9e83",
+    "text": "RYOKAN KAMOGAWA \nCozy rooms in a casual inn with a communal bathhouse, plus  breakfast & dinner."
+  },
+  {
+    "id": "44d970d1-ad72-4e18-91bc-6da1dab3e31b",
+    "text": "Kuji Cylindrical Water Divider"
+  },
+  {
+    "id": "d23673ee-674b-409a-a51a-d1333177c1c7",
+    "text": "Tokyo Kotsu Kaikan"
+  },
+  {
+    "id": "b8af92c3-6bfe-41db-b9f2-54d6bb79b7d9",
+    "text": "COVO Oyster Bar"
+  },
+  {
+    "id": "74c005ed-9818-494d-94c7-57c2c7ad7aeb",
+    "text": "Holly Mound Tomb"
+  },
+  {
+    "id": "eaecaa11-2c78-4aed-8080-51ded8d4d88a",
+    "text": "Furukawa Water Park \nPicturesque gardens with walking paths, peaceful water features & seasonal cherry blossoms."
+  },
+  {
+    "id": "88859444-e494-4cc7-9f7f-d2bcda24f12d",
+    "text": "Ryōgoku Edo NOREN \nEdo period–style street featuring a sumo ring, plus restaurants serving sushi & noodles."
+  },
+  {
+    "id": "5f3f110f-9e83-4e26-ad95-7c05ea09dda1",
+    "text": "Tokyo Tower \nReminiscent of the Eiffel Tower, this landmark features observation areas & other attractions."
+  },
+  {
+    "id": "16a1af17-a721-48e4-b926-9a5a8bff1507",
+    "text": "Tokyo Skytree \nWorld's tallest freestanding broadcasting tower with an observation deck boasting 360-degree views."
+  },
+  {
+    "id": "b57b6e50-8d51-4def-a7ac-e4677ab73dcd",
+    "text": "Meiji Jingu \nSurrounded by forest, this venerable Shinto shrine features a seasonal iris garden."
+  },
+  {
+    "id": "0d4020d7-0721-4ca7-b81c-abb494037e4b",
+    "text": "Tokyo Joypolis \nIndoor amusement park featuring a roller coaster, arcade games & virtual-reality experiences."
+  },
+  {
+    "id": "531d1de5-522b-4eb5-bebf-b11c5579123a",
+    "text": "Ghibli Museum \nWhimsical museum dedicated to the famed animation studio with a play area, theater & rooftop garden."
+  },
+  {
+    "id": "47014dd0-d46a-4109-99cd-aeefc715eab6",
+    "text": "Tokyo Dome \nThis iconic domed stadium hosts baseball games & other sporting events, plus concerts & exhibitions."
+  },
+  {
+    "id": "060d5b0f-0709-45c2-bb8f-163280e7d109",
+    "text": "Yasukuni-jinja Shrine \nShinto-style shrine commemorating Japanese war dead, plus a garden with cherry blossom trees."
+  },
+  {
+    "id": "3b8dc140-114b-47f4-a5f9-3877f67d24b7",
+    "text": "Imperial Palace \nThis site with scenic gardens & tours of the grounds is the main residence of the emperor of Japan."
+  },
+  {
+    "id": "a0dd6f9c-68ba-4ee4-9b70-13bab3ec5aaf",
+    "text": "Edo-Tokyo Museum \nMajor museum opened in 1993 & displaying artifacts from Tokyo's Edo period & one-off exhibits."
+  },
+  {
+    "id": "6837498b-22cb-441b-813f-29625fd2e54a",
+    "text": "Toshimaen Niwa-no-yu \nThis relaxed co-ed bathhouse offers indoor & outdoor pools, along with saunas & massage chairs."
+  },
+  {
+    "id": "c1fd4fd6-808c-44ca-aa6d-7e9dbcfc4a74",
+    "text": "Meiji Jingu Gaien \nWell-known park with an indoor ice skating rink, driving range, baseball diamonds & tennis courts."
+  },
+  {
+    "id": "8cb1d3db-7c5c-4cef-9c89-d85fe4e512d2",
+    "text": "Tokyo Metropolitan Teien Art Museum \nArt deco former residence of Prince Asaka, housing museum hosting temporary art exhibition program."
+  },
+  {
+    "id": "a8e4ce4a-b7a8-4a51-8b4f-5d5deebfd235",
+    "text": "Sengaku-ji \nBuddhist temple & pilgrimage site featuring the graves of the legendary 47 Rōnin samurai."
+  },
+  {
+    "id": "287ae58e-d488-444c-8252-827f83201df3",
+    "text": "Sensō-ji \nCompleted in 645, this temple, Tokyo's oldest, was built to honor Kannon, the goddess of mercy."
+  },
+  {
+    "id": "54d79199-af93-4cc5-be1c-a31104e2d3b6",
+    "text": "National Museum of Nature and Science \nSprawling museum with a 360-degree movie theater & exhibits on topics such as dinosaurs & evolution."
+  },
+  {
+    "id": "53daff05-e47f-4048-9ece-bd75c0d2ccda",
+    "text": "Tokyo Disneyland \nTokyo offshoot of the iconic theme park known for its rides, live shows & costumed characters."
+  },
+  {
+    "id": "c5ee1a6d-eff9-41b2-b855-14e608ec8ac6",
+    "text": "Hamarikyu Gardens \nPublic park with a pond, laid out in the Edo-period style, on the site of 17th-century Shogun villa."
+  },
+  {
+    "id": "6f0e21e9-5008-4860-9add-9364fbb079d8",
+    "text": "Izumo Taisha Tokyo \nTokyo branch of a centuries-old shrine in Shimane Prefecture dedicated to the god of marriage."
+  },
+  {
+    "id": "c8596d04-599e-4fad-b919-7e5378eea30c",
+    "text": "Tokyo National Museum \nStately museum complex devoted to the art & antiquities of Japan, as well as other Asian countries."
+  },
+  {
+    "id": "0ef46e9c-475c-4def-ab70-c6990022e3b8",
+    "text": "Akagi Shrine \nSpacious, leafy complex with traditional shrines as well as modern architecture."
+  },
+  {
+    "id": "6099a747-0ee4-47c1-9044-cf1f3afce7c6",
+    "text": "Meguro Parasitological Museum \nThis small, unique research museum features exhibits on parasites, including many specimens."
+  },
+  {
+    "id": "a1dccdad-4718-4eb9-8db8-5dbb7480f40c",
+    "text": "Tokyo Metropolitan Government Building \nKenzo Tange-designed City Hall complex with views from the tallest building's observation decks."
+  },
+  {
+    "id": "5eabfd94-01aa-4881-a5e5-919cad475245",
+    "text": "Yamatane Museum of Art \nArt museum featuring a rotating collection of contemporary Japanese paintings & Nihonga watercolors."
+  },
+  {
+    "id": "fed1fd47-f80a-4c9f-896a-f3181a4b2c63",
+    "text": "Gas Science Museum \nColorful displays on natural gas, including a hot-air balloon, plus city views from a roof garden."
+  },
+  {
+    "id": "8b0e027b-70ef-470b-b655-9bf926c72399",
+    "text": "Hanazono Shrine \nCompact Edo-period Shinto shrine known for its serene atmosphere & yearly festivals."
+  },
+  {
+    "id": "ba6cd1f0-a96a-47bd-93ca-a1f722fe366d",
+    "text": "National Diet Building \nLegislative sessions are held at this landmark building with a pyramid-shaped dome & public tours."
+  },
+  {
+    "id": "d676d01c-0ee6-4de0-9664-42bc19f90468",
+    "text": "Koishikawa Korakuen Garden \nTranquil, scenic landscape garden dating to the 17th century, with walking paths, a pond & bridges."
+  },
+  {
+    "id": "69785d25-51d0-469d-b216-919e255b7af4",
+    "text": "Asakusa Hanayashiki \nAmusement park with a roller coaster & other high-speed rides, plus kids' activities & eateries."
+  },
+  {
+    "id": "19875ba1-24a3-41cf-9dd5-263abb0999d8",
+    "text": "Haginaka Park \nIndoor & outdoor pools, baseball fields & areas where kids can climb on old vehicles or ride bikes."
+  },
+  {
+    "id": "bc7ceea8-723b-4f01-8d9b-d8a47d791ba0",
+    "text": "The National Museum of Modern Art, Tokyo \nRenovated 1969 gallery housing Japanese art created since the start of the Meiji period (1868)."
+  },
+  {
+    "id": "904d68be-bb07-4d67-af26-2353c6707e68",
+    "text": "Akasaka Sacas \nEntertainment complex with shops, global restaurants & a theater for concerts, musicals & kabuki."
+  },
+  {
+    "id": "0e54cfee-020c-46a8-b9c5-538c54588aab",
+    "text": "Hatoyama Hall \nHouse & gardens formerly home to the prominent family of 1950s prime minister Ichirō Hatoyama."
+  },
+  {
+    "id": "788ee031-0422-4151-939d-b1b344408b19",
+    "text": "Nogi Shrine \nTranquil Shinto temple precinct at a general's residence founded in 1923 & restored after WWII."
+  },
+  {
+    "id": "1bb49304-716a-4de6-b7c0-0c9faea027d6",
+    "text": "Okura Museum of Art"
+  },
+  {
+    "id": "8e225d98-c460-4e75-8744-eb4a5029af70",
+    "text": "Komazawa Olympic Park Athletic Stadium \nLandmark stadium with cycling & running tracks in a space designed for the 1964 Summer Olympics."
+  },
+  {
+    "id": "ce04f13a-2def-4183-976b-f97a812d4068",
+    "text": "Bunkyo Civic Center Observation Lounge \nExpansive views of Tokyo & Mount Fuji from a free 25th-floor deck with occasional live piano music."
+  },
+  {
+    "id": "0a3d7231-f3a5-4a08-afc1-1e257244af99",
+    "text": "Yomiuri Land \nGo-karts, roller coasters & kids' rides, plus winter light displays, summer pools & cherry blossoms."
+  },
+  {
+    "id": "eb749da4-d2ca-4edb-bec7-91eb465c5405",
+    "text": "Shinjuku Gyoen National Garden \nThis former estate is now a 144-acre park with diverse garden areas, grassy expanses & a greenhouse."
+  },
+  {
+    "id": "300ad18d-ca1b-45c0-a611-87cc601f3458",
+    "text": "Taro Okamoto Memorial Museum \nSculptures & painting by 20th century abstract artist Taro Okamoto in his former house & studio."
+  },
+  {
+    "id": "0232298d-5442-4b36-ba2f-75936ade4b5f",
+    "text": "Rainbow Bridge \nThis suspension bridge crossing Tokyo Bay is colorfully illuminated at night using solar power."
+  },
+  {
+    "id": "6ffcd8ab-9893-4e50-8ad8-4b9810b1a3d2",
+    "text": "Tokyo DisneySea \nPart of the Disney resort, this large park has 7 themed ports of call with rides, shows & dining."
+  },
+  {
+    "id": "86c0b524-ebba-4421-a3e2-db000d5c4b8e",
+    "text": "Rooftop Kamataen"
+  },
+  {
+    "id": "c4e66547-2072-4f78-8e4f-e3d328a5dd0e",
+    "text": "Zōjō-ji \nThe main temple of Jōdo-shū Buddhism, this compound includes ornate buildings dating to the 1600s."
+  },
+  {
+    "id": "22443924-3157-4386-bb30-fd1781acf431",
+    "text": "Field Museum \nState-of-the-art museum of science & invention,  with the world's largest Tyrannosaurus Rex."
+  },
+  {
+    "id": "1a9112a9-6ce5-4055-9451-83215b5952dd",
+    "text": "The Chicago Theatre \nFrench Baroque-style 3,600-seat auditorium showcasing national musical & comedy acts since 1921."
+  },
+  {
+    "id": "eaa7e321-1ea4-471f-808a-d7dd21d967a2",
+    "text": "Willis Tower \nIconic, 110-story skyscraper featuring expansive views of Chicago from its 103rd-story Skydeck."
+  },
+  {
+    "id": "6c991ee7-567e-45a0-a191-a5ceeb219b40",
+    "text": "The Art Institute of Chicago \nRenowned art museum holding nearly 300,000 works from all over the world, spanning many centuries."
+  },
+  {
+    "id": "88bafec8-8ea6-47ac-9cdf-f1612914b51c",
+    "text": "875 North Michigan Avenue \nSkyscraper observation deck offering panoramic city views from 1,000 feet up, plus food & drink."
+  },
+  {
+    "id": "6a8d97e3-24d8-4dc2-8d84-a69e0a9bbb8f",
+    "text": "Shedd Aquarium \nState-of-the-art indoor aquarium, famous for its variety of habitats & views of Lake Michigan."
+  },
+  {
+    "id": "350cc98f-e9b7-4577-a6a7-0fcbc30d78ff",
+    "text": "360 CHICAGO \nObservatory on the 94th floor of the John Hancock Building with a tilting glass lookout 1000ft up."
+  },
+  {
+    "id": "36c4dd3b-df2a-449a-b9b2-4afb8eee2ed4",
+    "text": "Skydeck Chicago \n103rd floor of the Willis Tower with clear observation boxes & views extending to four states."
+  },
+  {
+    "id": "388f54ce-35a2-4c09-811c-847429157e54",
+    "text": "Adler Planetarium \nInteractive exhibits & high-tech sky shows entertain stargazers, lakefront views are a bonus."
+  },
+  {
+    "id": "e562b8e0-669e-4346-b19f-34c5cc8449c8",
+    "text": "Lincoln Park Zoo \nSmall, free zoo with lions, primates, reptiles, a children's area & an interactive farm exhibit."
+  },
+  {
+    "id": "b2eee8c4-dd5b-457b-a684-c989bf4b90e7",
+    "text": "Cloud Gate \nHuge outdoor sculpture shaped like a bean & allowing for views from its many mirrored sides."
+  },
+  {
+    "id": "a482db20-0051-428e-9126-8e16e2371940",
+    "text": "Millennium Park \n24.5-acre green space with a video display, the reflective \"Bean\" sculpture & an outdoor theater."
+  },
+  {
+    "id": "a4f28ce4-684c-4bab-ae79-d259a3090e14",
+    "text": "Wrigley Field \nIvy-clad walls & manual scoreboard add retro charm to the 2nd oldest baseball stadium in the majors."
+  },
+  {
+    "id": "cb47c6a1-bc15-43e9-ab4d-e80a65c310b7",
+    "text": "Chicago Cultural Center \nFree art & shows in an 1897 Beaux-Arts building with vaulted lobby, mosaics & 2 stained-glass domes."
+  },
+  {
+    "id": "201e6b5f-bec5-4e95-b329-590e5d336f39",
+    "text": "Museum Of Contemporary Art Chicago \nDowntown museum showcasing post-World War II paintings, sculptures, photos, videos & performances."
+  },
+  {
+    "id": "0b85beaa-8021-476e-a11e-100c9fb7fb53",
+    "text": "S.R. Crown Hall (IIT) \nLandmark glass-&-steel building designed by Mies van der Rohe in 1956, offering frequent tours."
+  },
+  {
+    "id": "b70b604f-aab4-4ce4-b26f-a85a9722c31a",
+    "text": "Frank Lloyd Wright Home & Studio \nHome & studio of the famous architect, with guided tours focused on his early career."
+  },
+  {
+    "id": "db5af0f8-4e23-424e-8212-e762c71d10bf",
+    "text": "National Museum of Mexican Art \nSome 18,000 paintings, photographs, sculptures & more are housed at this art museum."
+  },
+  {
+    "id": "6d0a429e-eb64-468a-b908-640c7686ae25",
+    "text": "Hawthorne Works \nThis sprawling retail complex on the site of a historic factory features many eateries & a cinema."
+  },
+  {
+    "id": "574d2610-b054-49b0-9498-f4e306203ba5",
+    "text": "Grant Park \n312-acre centerpiece of Downtown housing some of the city's busiest attractions."
+  },
+  {
+    "id": "f0eb494c-187a-4b45-919b-58c086b252f3",
+    "text": "Chicago History Museum \nPhotos, artifacts, newsreels & dioramas bring to life historical events, architecture & culture."
+  },
+  {
+    "id": "bda27a9b-b098-4952-ba66-3ddc0aca0cee",
+    "text": "McCormick Tribune Plaza \nPublic square & events venue with seasonal ice-skating & an upbeat outdoor restaurant."
+  },
+  {
+    "id": "9ed51693-d2f7-424a-8bb7-7386f504bebe",
+    "text": "Clarence F. Buckingham Memorial Fountain \nAmong the world’s largest, Grant Park’s 3-level rococo fountain (1927) offers light & water shows."
+  },
+  {
+    "id": "a63e6598-b507-4770-812a-43fb80300b63",
+    "text": "Nicholas J. Melas Centennial Fountain"
+  },
+  {
+    "id": "238fb616-8e70-406d-8398-7b9e323e443d",
+    "text": "Chicago Children's Museum \nFamily museum on Navy Pier with lots of interactive exhibits, including many for young kids."
+  },
+  {
+    "id": "53cd9e42-8405-45a2-85bf-686811b41cce",
+    "text": "Frederick C. Robie House \nNotable 1910 Prairie-style house designed by Frank Lloyd Wright, offering tours 5 days a week."
+  },
+  {
+    "id": "41388187-6392-4a8d-80e2-3dbcdf15fc60",
+    "text": "International Museum of Surgical Science \nPaintings, sculptures & exhibits help tell the history of surgery from ancient times to the present."
+  },
+  {
+    "id": "5f638094-f769-4004-9a0d-a8837d9b44e7",
+    "text": "Newberry Library \nResearch library in a stately five-story granite building from 1893, with rare books & manuscripts."
+  },
+  {
+    "id": "9334f516-1ab9-4dbc-b8fd-df73523b25b5",
+    "text": "Fourth Presbyterian Church \n1912 landmark church with neo-Gothic styling & stained glass by Charles Connick."
+  },
+  {
+    "id": "2afae3ed-dca7-4646-a6f7-af561c8cb2d8",
+    "text": "Chicago Architecture Center \nNonprofit promoting the city's built environment through tours, exhibitions & events."
+  },
+  {
+    "id": "5d8ba270-0928-406e-a1e1-c4ae9293fcb5",
+    "text": "Dearborn Street Bridge"
+  },
+  {
+    "id": "f20e84da-4900-4a61-88e5-f0d1adf3fc0a",
+    "text": "Cortland Street Bridge"
+  },
+  {
+    "id": "11368b24-c255-4b24-a1e4-42d4865fcc0b",
+    "text": "Union Stockyards Gate"
+  },
+  {
+    "id": "c3afb0bf-91ad-4288-b47d-e333ad9c6e6f",
+    "text": "Loyola University Museum of Art (LUMA) \nMedieval, Renaissance & baroque art collections that reflect the faith of various cultures."
+  },
+  {
+    "id": "1488993a-37bc-44ba-aad0-88830b0dfb10",
+    "text": "Brookfield Zoo \nLions, tigers, dolphins & more frolic in natural indoor & outdoor settings at this wildlife park."
+  },
+  {
+    "id": "efa3c6e2-78ca-4ae4-921b-517bd63b9d77",
+    "text": "Jane Addams Hull-House Museum \nMansion where Jane Addams began the settlement-house movement & now a museum with exhibits & tours."
+  },
+  {
+    "id": "7bed5ae4-f678-4c9d-a742-8c1e7d9bec3b",
+    "text": "Institute for the Study of Ancient Cultures Museum \nDedicated to researching ancient civilizations of the Middle East & educating the public about them."
+  },
+  {
+    "id": "5fa1062f-7d87-49f9-b017-e0bc06ed5957",
+    "text": "Intuit Art Museum \nMuseum focused exclusively on folk & outsider art, also offering performances & lectures."
+  },
+  {
+    "id": "0abf98ae-b2d7-496d-95a9-b0169725fdc7",
+    "text": "Lincoln Park Conservatory (Reservations Required) \nThousands of exotic plants in an 1890 glass structure, plus outdoor gardens & fountains."
+  },
+  {
+    "id": "549f1f46-69df-44b1-a55f-304b6d4072f3",
+    "text": "Saint Clement Church \nCatholic church opened in 1919, with a Byzantine-style design & vivid interior frescoes."
+  },
+  {
+    "id": "676a5876-d099-4a4f-afa7-622d0f482dfa",
+    "text": "Garfield Park Conservatory \n184-acre park with a swimming pool, fishing lagoon, athletic fields & tennis courts."
+  },
+  {
+    "id": "7d7b4dba-dcff-4ffe-ba52-0274f6db6c56",
+    "text": "Navy Pier \nFormer Navy training center draws crowds with carnival rides, restaurants, shops & fireworks."
+  },
+  {
+    "id": "b9b8d717-8a4d-4325-b9c7-53549b2f0a0a",
+    "text": "Griffin Museum of Science and Industry \nSprawling, hands-on museum full of informative, child-friendly scientific & industrial exhibits."
+  },
+  {
+    "id": "15bbb59c-10d7-4599-b9d6-2856f955869a",
+    "text": "DuSable Black History Museum and Education Center \nMuseum housing exhibits & artifacts that highlight African-American history, culture & art."
+  },
+  {
+    "id": "3eb5017e-090a-4af2-bc3f-9d15b694144e",
+    "text": "St. James Cathedral, Chicago"
+  },
+  {
+    "id": "8fb55739-12f5-4190-ab40-ecd243736061",
+    "text": "Holy Name Cathedral \nAn 1800s Catholic church with a vaulted ceiling & colorful stained glass, offering guided tours."
+  },
+  {
+    "id": "afbe4a72-4283-40db-88f2-2d2f190ff937",
+    "text": "Smart Museum of Art \nMuseum specializing in Asian, European, Contemporary & Modern Art, with over 12,000 objects."
+  },
+  {
+    "id": "43531da3-8953-46c0-9466-30c735fd2792",
+    "text": "City Gallery in the Historic Water Tower \nChicago-focused gallery, specializing in photos, inside a 19th-century Gothic limestone landmark."
+  },
+  {
+    "id": "28fbb276-cff2-42a9-85b8-caa005876cb7",
+    "text": "Untouchable Tour - Chicago's Original Gangster Tour \nChicago's notorious past is explored in this 2-hour bus tour of Prohibition-era mobster hangouts."
+  },
+  {
+    "id": "642706ac-3a2a-41e8-9c58-1e48d08f2a18",
+    "text": "Hyde Park Art Center \nNonprofit visual arts center exhibiting work by emerging or under-recognized contemporary artists."
+  },
+  {
+    "id": "f5a90f4d-afb0-4b91-ad87-43c9dac9f1d8",
+    "text": "Jay Pritzker Pavilion \nDesigned by architect Frank Gehry, this bandshell in Millennium Park hosts various musical events."
+  },
+  {
+    "id": "639093c4-bc37-46dd-a3f1-627930a6de5d",
+    "text": "St Michael Catholic Church in Old Town"
+  },
+  {
+    "id": "2048c996-a70d-4e3d-aecc-184dfc7612e1",
+    "text": "Church of Saint John Cantius \nLate-1800s Catholic church with ornate vaulted ceilings, religious statues & stained glass windows."
+  },
+  {
+    "id": "c514b1d3-01f3-4bfe-9d45-362bb518eec5",
+    "text": "Charles Gates Dawes House \nChateau-style house built in 1894, once home to a U.S. vice president, open for guided tours."
+  },
+  {
+    "id": "9be680fd-c08c-405b-b41e-bb9cd30c4456",
+    "text": "Museum of Contemporary Photography \nMuseum offering programs & events, with a U.S.-focused permanent collection & rotating exhibits."
+  },
+  {
+    "id": "1e709e21-45c7-44b0-a075-00adf731cf79",
+    "text": "The Wrigley Building \nBeloved 1924 addition to the city skyline, whose clock tower stands 425 ft above street level."
+  },
+  {
+    "id": "0041f0fa-3404-4b29-919c-b0d6b8a9a86d",
+    "text": "Ping Tom Memorial Park \nChinatown park on the Chicago River with Chinese-style landscaping, a playground & kayak rentals."
+  },
+  {
+    "id": "f8cf07f5-238a-4f7f-8b8a-eb72773f7ee9",
+    "text": "Tribune Tower \nNeo-Gothic skyscraper influenced by Rouen Cathedral & decorated with rocks from world landmarks."
+  },
+  {
+    "id": "8be22a5b-4bc5-4576-9966-564a19190221",
+    "text": "Dvorak (Anton) Park \n5.6-acre park with a swimming pool, playground, 2 gyms & fields for baseball, football & soccer."
+  },
+  {
+    "id": "e0ef6df6-39a2-485c-b6e3-1e6aaad67f31",
+    "text": "Wiggly Field Dog Park \nSizable neighborhood dog park with areas for small & large pooches, plus water & benches."
+  },
+  {
+    "id": "f2c57f6c-0299-4a86-a627-2403cf33d231",
+    "text": "Syon House \n16th-century estate with sprawling gardens, historic home to the Duke of Northumberland."
+  },
+  {
+    "id": "3a56f551-88e8-43c5-b19d-9ec7545d0f60",
+    "text": "Primrose Hill \nThis popular grassy hill is known for its views of London, as well as Shakespeare's Tree."
+  },
+  {
+    "id": "176cea64-8c92-4ff1-bfe9-e7430ffbe0bb",
+    "text": "Old War Office Building \nFormer office building with 1,100 rooms used by Churchill as a headquarters during World War II."
+  },
+  {
+    "id": "14f558bd-ca81-4649-930e-ba76b3a8618b",
+    "text": "All Hallows-On-The Wall"
+  },
+  {
+    "id": "957d3e40-948d-4c24-b790-fa3d00c9baa3",
+    "text": "Theatre Royal Drury Lane \nLavish Georgian theatre that favours crowd-pulling mainstream musicals."
+  },
+  {
+    "id": "3d77d953-c038-4872-8a73-890a467a4858",
+    "text": "The British Museum \nHuge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures."
+  },
+  {
+    "id": "c7afa5a7-8fc9-4f05-957b-c646a9ae9e3c",
+    "text": "Alexandra Palace \nIconic Victorian building in parkland staging live music, sports, exhibitions, circus & funfairs."
+  },
+  {
+    "id": "46a03881-7d2c-42b7-b0d2-945bf1d1fdb7",
+    "text": "Harrods"
+  },
+  {
+    "id": "95bcccba-b21a-4122-abf0-fc92c6714dd7",
+    "text": "Natural History Museum \nLandmark museum of animals and natural phenomena, with hands-on exhibits and animatronic dinosaurs."
+  },
+  {
+    "id": "371a3237-6d6b-4276-b041-76411b568864",
+    "text": "Churchill War Rooms \nSecret underground headquarters where Prime Minister Winston Churchill lived and worked during WWII."
+  },
+  {
+    "id": "52d067fd-4c4f-43fc-bc8a-054b869594bc",
+    "text": "His Majesty's Theatre \nGrand, French Renaissance-style Victorian theatre showing The Phantom of the Opera since 1986."
+  },
+  {
+    "id": "588094b0-8169-4603-a986-7cd4d2d48fa8",
+    "text": "The Sherlock Holmes Museum \nMuseum with Victorian decor in the home of Sir Arthur Conan Doyle's famous fictional detective."
+  },
+  {
+    "id": "5bf0e17d-d335-4134-9009-009afc8b540b",
+    "text": "Statue of Oliver Cromwell"
+  },
+  {
+    "id": "d87cc2e7-7f9a-4d1a-b5a8-234978170def",
+    "text": "Flanders Fields Memorial Garden"
+  },
+  {
+    "id": "13c4ad8f-746c-4416-8265-ad13a3dbcc00",
+    "text": "Bomber Command Memorial \nIconic stone monument honoring 55,573 aircrew who died flying Bomber Command during World War II."
+  },
+  {
+    "id": "652efd07-fc2b-4f2b-a658-ef645a0f01a9",
+    "text": "Machine Gun Corps Memorial"
+  },
+  {
+    "id": "694e5365-4820-4531-b3d8-34ad6b70f933",
+    "text": "Crosby Moran Hall"
+  },
+  {
+    "id": "bbe9ca08-5b70-416c-b0a4-c80bf4da2c49",
+    "text": "Paddock"
+  },
+  {
+    "id": "7cb8d63c-89f9-4910-a2c2-086691ce4f1b",
+    "text": "SEA LIFE London Aquarium \nFamily-friendly exhibits with a variety of sea creatures (most offer play areas & group packages)."
+  },
+  {
+    "id": "de570742-47d0-4394-9462-b0c87107a879",
+    "text": "lastminute.com London Eye"
+  },
+  {
+    "id": "bcab85c2-42ef-40db-a6e4-057f563ab260",
+    "text": "Science Museum \nA vast treasury of science & invention, famous for its state-of-the-art interactive exhibits."
+  },
+  {
+    "id": "4d9600b9-9316-423e-94cc-f053dbda8db3",
+    "text": "Madame Tussauds London \nMuseum chain for life-size wax replicas of famous celebrities & historic icons in themed galleries."
+  },
+  {
+    "id": "9c7e220a-2fca-428f-9c83-f3ee927254ac",
+    "text": "Tower of London \nCenturies of bloody history around a medieval castle, home to Crown Jewels and iconic Beefeaters."
+  },
+  {
+    "id": "03c8f3c4-56ba-46dd-82de-f9d0c1e03288",
+    "text": "Royal Observatory Greenwich \nWren's 18th-century astronomical observatory on the Prime Meridian, now a museum with a planetarium."
+  },
+  {
+    "id": "f7244d1a-c064-4142-9243-7121f283a2db",
+    "text": "Liberty London \nTudor-revival building filled with high-end fashion and luxury homeware, with its own fabric line."
+  },
+  {
+    "id": "c611fd72-d7e0-4060-b93c-945578de3410",
+    "text": "The National Gallery \nTrafalgar Square art museum whose masterworks trace the development of Western European painting."
+  },
+  {
+    "id": "b96bd19f-6a76-413c-b783-2cac610444f0",
+    "text": "Victoria and Albert Museum \nBlockbuster exhibitions and permanent decorative arts collection, with design shop and ornate cafe."
+  },
+  {
+    "id": "28757d3c-e7fe-417e-b3fd-5ff7e44b016b",
+    "text": "Excel London \nContemporary exhibition centre also staging conferences, awards ceremonies and sporting events."
+  },
+  {
+    "id": "80469b61-a1a9-4e11-beae-f5426749e1d8",
+    "text": "Hyde Park \nHuge green space, home to Diana Memorial Fountain, with boating and swimming in the Serpentine lake."
+  },
+  {
+    "id": "fcae6551-cd47-4b12-a6a0-43943698ae1f",
+    "text": "Buckingham Palace \nVisitors can tour the palace's opulent private and state rooms or watch the changing of the guard."
+  },
+  {
+    "id": "85fd3fa3-f05f-44ba-8463-fbdb5153d5b4",
+    "text": "Tate Modern \nModern-art gallery with international works on display, plus a cafe with panoramic river views."
+  },
+  {
+    "id": "a62be754-2992-44f0-b196-5dd4c9b149f9",
+    "text": "Westminster Abbey \nProtestant abbey hosting daily services and every English and British coronation since 1066."
+  },
+  {
+    "id": "a694bdf9-c17d-4522-aec2-bffcfb79adc4",
+    "text": "St Katharine Docks \nMarina at the redeveloped port, designed by Thomas Telford, with shops, cafes & restaurants."
+  },
+  {
+    "id": "b7ed8218-b509-4450-acea-2d9a60960adf",
+    "text": "Big Ben \n16-storey Gothic clocktower and national symbol at the Eastern end of the Houses of Parliament."
+  },
+  {
+    "id": "658a576c-e9c7-47d1-8f39-1043fafd9955",
+    "text": "Royal Albert Hall \nOne of Britain's great Victorian splendours, most famous for the Proms classical music festival."
+  },
+  {
+    "id": "58907884-a70c-4cb3-ac12-a63d80c47e20",
+    "text": "Institute of Contemporary Arts \nExperimental visual art, performance and film presented across galleries, a theatre and 2 cinemas."
+  },
+  {
+    "id": "f0c1c86e-29c0-4fca-a2b7-ebb8bef7423c",
+    "text": "Imperial War Museum \nRecreations of WWI trenches and the Blitz, many tanks and planes and revolving military exhibitions."
+  },
+  {
+    "id": "8c2147f0-4d73-4f5f-ab0f-23b72c577ccf",
+    "text": "St. Paul's Cathedral \n17th-century cathedral featuring a 365ft-high dome, recitals & a churchyard, plus a crypt."
+  },
+  {
+    "id": "e3968422-c646-4b64-9a03-a74ebac312c9",
+    "text": "Somerset House \nNeoclassical riverside palace hosting courtyard events, a winter ice rink and the Courtauld Gallery."
+  },
+  {
+    "id": "7a368299-41aa-4598-95aa-a035467a95fb",
+    "text": "The Photographers' Gallery \nGallery space over 3 floors showing multi-genre, international photography, plus cafe and shop."
+  },
+  {
+    "id": "93a8c628-2ea1-4280-b8e4-c84b976d1d42",
+    "text": "The London Dungeon \nCostumed actors & themed fairground rides depicting macabre stories from London's past."
+  },
+  {
+    "id": "2b3e0dfc-d438-4d8e-8d2d-61b5380a3823",
+    "text": "Tower Bridge \nPanoramic views from high-level walkways and behind-the-scenes access to original lifting machinery."
+  },
+  {
+    "id": "68832f51-99ae-4318-9fe6-af5cc27e8159",
+    "text": "The British Library \nLibrary containing the Magna Carta and handwritten Beatles lyrics on some 400 miles of shelves."
+  },
+  {
+    "id": "d00a6027-8933-4164-b28e-e817a5417fd7",
+    "text": "Tate Britain \nImposing gallery with historic and contemporary British art, notable for its JMW Turner collection."
+  },
+  {
+    "id": "067c2180-af7d-4205-8a7f-149cee2205fd",
+    "text": "Royal Festival Hall \nSouthbank Centre landmark hosting concerts and performing arts in a variety of spaces."
+  },
+  {
+    "id": "614fedca-a4ab-4d56-8438-4d0cb91d8039",
+    "text": "National Portrait Gallery \nPaintings and photographs of aristocratic and famous figures throughout British history."
+  },
+  {
+    "id": "b4ba2208-52a2-429a-ac00-33ab8a489cba",
+    "text": "Leadenhall Market \nHistorical, Victorian indoor marketplace with apparel & accessory stores, plus restaurants & bars."
+  },
+  {
+    "id": "8f274d0f-d27d-4f8a-b054-6bd61e8fa669",
+    "text": "Roundhouse \nDistinctive former Victorian railway shed, now hosts live music, circus and alternative theatre."
+  },
+  {
+    "id": "ffc149e7-8e67-4863-9b67-6a0de215ef94",
+    "text": "Barbican Centre \nCultural venue with concert hall, theatres, cinema, galleries and home of London Symphony Orchestra."
+  },
+  {
+    "id": "19deb0ee-bd61-4658-8e4c-8840eae11852",
+    "text": "Trafalgar Square \nNelson's Column rises above this iconic square's LED-lit fountains, artworks and lion statues."
+  },
+  {
+    "id": "a9022441-db85-41e4-8d7d-a49b5f3221cc",
+    "text": "WWT London Wetland Centre \nWetland nature reserve with 6 bird spotting hides plus a cafe, daily tours and specialist talks."
+  },
+  {
+    "id": "1f2931e4-67db-4405-9895-a57fb559c74c",
+    "text": "Grant Museum of Zoology \nSkeletons and preserved remains of animals large and small in Victorian-style glass cases."
+  },
+  {
+    "id": "47760dcc-78ad-4385-898a-54de215349dd",
+    "text": "the Design Museum \nDisplays of contemporary design & innovation, from the everyday to the cutting edge."
+  },
+  {
+    "id": "80ead50a-d848-4f71-8d2d-04bebe3c687c",
+    "text": "London Museum Docklands \nGeorgian sugar warehouse, now home to a museum chronicling London's history as a trading port."
+  },
+  {
+    "id": "6cd8fbfe-3b01-4962-9cdd-f8903baf8be4",
+    "text": "Wellington Arch \n19th-century memorial arch topped by a bronze sculpture, with exhibition space and viewing gallery."
+  },
+  {
+    "id": "3fa926ae-80af-485f-be37-b86d8c931391",
+    "text": "Westminster Cathedral \nRed-&-white striped Victorian cathedral in Byzantine style with gold, mosaics & marble interior."
+  },
+  {
+    "id": "2825f752-c339-442b-8db3-4b064557a406",
+    "text": "London Bridge \nConcrete pedestrian and traffic bridge that gave a major railway station its name."
+  },
+  {
+    "id": "497dc453-297e-4bff-be5b-20247f9356f0",
+    "text": "Sir John Soane's Museum \nEccentric 19th-century collector's home, packed with classical sculpture, paintings and curiosities."
+  },
+  {
+    "id": "f9f97b80-28be-4bc9-878c-74a949ea2d6e",
+    "text": "The Regent's Park \nModern, glass-clad cafe and sports administrative centre, with pitches and changing rooms."
+  },
+  {
+    "id": "eb845b99-2610-4ec3-91fd-8d0ec29bbccc",
+    "text": "Royal Ballet and Opera \nPerformances by Royal Opera and Royal Ballet companies in stately Covent Garden theatre."
+  },
+  {
+    "id": "a9bffbc6-9aaa-4a31-b182-a5545bbf1dff",
+    "text": "杨浦大桥"
+  },
+  {
+    "id": "d855e89c-181e-4b84-b928-66d967514522",
+    "text": "Waibaidu Bridge \nThis landmark is China's first all-steel bridge & features a colorful LED lighting system."
+  },
+  {
+    "id": "22c01c2d-7437-4c25-b946-a299d9f18a23",
+    "text": "Shuangyong Square"
+  },
+  {
+    "id": "aaae7e2f-76d2-4aff-bca3-77553664e505",
+    "text": "Xupu Bridge"
+  },
+  {
+    "id": "c875cba8-3d2b-4aa8-89d8-bffc441f1d6a",
+    "text": "USA pavilion at Expo 2010"
+  },
+  {
+    "id": "60c185b3-db5b-4eb2-821a-fa15441c98cc",
+    "text": "Waitan"
+  },
+  {
+    "id": "4b4f3505-2e3c-4947-acda-662a5c713127",
+    "text": "Tianzifang \nThis former French Concession area with narrow alleys is known for its quaint shops, cafes & bars."
+  },
+  {
+    "id": "5e83b51f-69b0-42e4-86c3-79e8c761c4ac",
+    "text": "Chuanheyuan"
+  },
+  {
+    "id": "f6f3d61a-fad2-4e73-b062-3d717263e22b",
+    "text": "Yu Garden \n5-acre garden built in 1577 that features Ming dynasty pavilions, ponds, rockeries & arched bridges."
+  },
+  {
+    "id": "61dd9b71-35e0-4c71-831f-b541bc8b5967",
+    "text": "Fu 1088"
+  },
+  {
+    "id": "fd6d4ef2-d2ed-465c-83cd-41f5cb25ac87",
+    "text": "Shanghai World Financial Center \nOne of the world's tallest skyscrapers, with 101 floors, an elevated hotel, views, shops & eateries."
+  },
+  {
+    "id": "dc89d849-2c61-4614-8ab8-99c83536c456",
+    "text": "上海商城"
+  },
+  {
+    "id": "07349d8c-8ed2-4e4f-92ae-16099eb139fc",
+    "text": "Oriental Pearl TV Tower \nFuturistic TV tower (468-meters tall) offering city vistas, a history museum & revolving restaurant."
+  },
+  {
+    "id": "edcf6c48-dfb1-4220-9301-b1d7d3c3db45",
+    "text": "外滩中心"
+  },
+  {
+    "id": "50f01f3b-4489-4383-926a-ebf9f922802d",
+    "text": "Shanghai Museum \nHuge, free museum with extensive displays including bronze & jade artifacts, sculptures & paintings."
+  },
+  {
+    "id": "2289e426-64ac-424f-8eb3-4fc19eb2d8e7",
+    "text": "四川路桥"
+  },
+  {
+    "id": "055b96c8-adb3-4292-9dcc-945659154075",
+    "text": "Century Square"
+  },
+  {
+    "id": "df3c9804-a58d-4fdd-a7a7-a590c2e3f60f",
+    "text": "城市未来馆"
+  },
+  {
+    "id": "ea6058e6-e335-4891-b53d-0822a00c5b32",
+    "text": "庆典广场"
+  },
+  {
+    "id": "5f691e92-93ff-43bd-bc64-7b3766dad7ed",
+    "text": "浙江路桥"
+  },
+  {
+    "id": "f7b4764f-8a09-4fb6-a50c-f41ba86b672f",
+    "text": "旧上海特别市政府大楼"
+  },
+  {
+    "id": "14ab1d1e-de82-4c69-959a-d30608bbfb2b",
+    "text": "SOHO东海广场"
+  },
+  {
+    "id": "02998782-917b-49c8-95ef-b0acc6641f97",
+    "text": "嘉里中心"
+  },
+  {
+    "id": "1d3efe6b-c653-4c69-9f3d-159ad3c3fa84",
+    "text": "Shanghai Science and Technology Museum \nModern museum focusing on technology, with educational programs, multimedia exhibits & theaters."
+  },
+  {
+    "id": "fcbe508b-5d1a-4a12-a7b2-50582e23c336",
+    "text": "Dongchang Riverside Greenland"
+  },
+  {
+    "id": "a9b6e4b1-e17f-4dfd-81bd-d209760a2e89",
+    "text": "Jin Mao Tower \n88-story, spired skyscraper offering restaurants, offices, a Grand Hyatt hotel & observation deck."
+  },
+  {
+    "id": "623335d5-2470-439c-b2a8-7f0845ecbbf9",
+    "text": "Jade Buddha Temple \nActive Buddhist temple known for its large, ornate jade Buddha sculptures."
+  },
+  {
+    "id": "028694b1-d559-474e-9343-76fc3adea3e9",
+    "text": "1933 Old Millfun \nArchitecturally unique building with shops, dining & galleries built in 1933 as a slaughterhouse."
+  },
+  {
+    "id": "0f7ee85e-4fab-420a-81db-090d18d03f3c",
+    "text": "M1NT"
+  },
+  {
+    "id": "c9292848-e6a9-4db3-a0ed-ad6ffe166039",
+    "text": "The Bund \nHistoric, 1,500-meter-long waterside promenade showcasing distinctive modern & colonial buildings."
+  },
+  {
+    "id": "bd0e138c-066f-4600-9a8f-540eb7e84f9c",
+    "text": "名人苑"
+  },
+  {
+    "id": "ebd20443-5627-423a-afc4-aa6cf657bc23",
+    "text": "Shanghai Library"
+  },
+  {
+    "id": "4f318a53-341f-4b3b-a538-fe42e9763681",
+    "text": "Shanghai Urban Planning Exhibition Center \nModern 6-story space offering interactive exhibits on the city's architecture & urban development."
+  },
+  {
+    "id": "2f2aa1dd-ad9f-4308-a23d-876b8ec3fd7c",
+    "text": "Shanghai Railway Museum"
+  },
+  {
+    "id": "cbf1b8e1-abe2-4079-b0c4-955da5b0542e",
+    "text": "Jing'an Temple \nHistoric Buddhist temple complex comprising 3 main halls & a massive sitting jade Buddha."
+  },
+  {
+    "id": "1e6e7d69-182d-4d5c-b5e8-2decdfd82963",
+    "text": "Huaihai Lu"
+  },
+  {
+    "id": "cc270ad5-46f9-47bd-ab36-1f6015fa3a73",
+    "text": "后滩公园（南1门）"
+  },
+  {
+    "id": "e41b4a04-85f7-43a6-87d1-8bf151b1e830",
+    "text": "Shanghai Port International Cruise Terminal \nCruise ship hub with a park, shuttle service & unique, bubble-shaped glass terminal."
+  },
+  {
+    "id": "191165cd-8205-4b55-ae62-c42b304207a5",
+    "text": "震旦国际大楼"
+  },
+  {
+    "id": "89c9bd93-16b8-490a-8cee-ec257d9563cf",
+    "text": "50 Moganshan Road \nCelebrated contemporary district featuring a diverse selection of art galleries & studio spaces."
+  },
+  {
+    "id": "200a2a1a-1e40-4a87-953d-5cd09d64714a",
+    "text": "Qibao Ancient Town \nPreserved Song dynasty–era city with stores, workshops, eateries & an ancient temple."
+  },
+  {
+    "id": "ed4aae0b-0290-4f44-bb70-5b83f751e193",
+    "text": "Laowai Street 101"
+  },
+  {
+    "id": "f7d18911-8ddb-4568-af6c-35c196a220f5",
+    "text": "Zhongshan Park \nSerene park featuring a lush array of plantings, including roses & lotus flowers."
+  },
+  {
+    "id": "8ee0ae10-f101-4534-9ef1-55ef2f8ab2db",
+    "text": "Pudong Jinhai Wetland Park"
+  },
+  {
+    "id": "1e7cc4da-64f5-40fd-a123-6136c6a121ae",
+    "text": "Shanghai Jewish Refugees Museum \nExhibits on Judaism & the 20,000+ Jewish refugees who fled to Shanghai during the Holocaust."
+  },
+  {
+    "id": "92e1593f-2ab8-4595-9f9d-0a7ca69704f1",
+    "text": "上海儿童博物馆"
+  },
+  {
+    "id": "dd10d4bf-270e-4b22-95cb-52c042da1776",
+    "text": "Museum of Contemporary Art Shanghai \nEstablished in 2005, this museum exhibits works of contemporary art in former greenhouse."
+  },
+  {
+    "id": "779c9676-8ef3-4cb3-a6bc-59c50b55aeef",
+    "text": "Shanghai Tunnel Science & Technology Museum"
+  },
+  {
+    "id": "6c8fff5f-87f4-41da-8042-689f000c2cbb",
+    "text": "Shanghai Sanshan Assembly Hall Management Office"
+  },
+  {
+    "id": "7a76b20f-a88e-40c2-870b-b50228595071",
+    "text": "滨江森林公园"
+  },
+  {
+    "id": "0d325f52-f106-4b19-ba51-fbf8dc3712ff",
+    "text": "Tou-Se-We Museum"
+  },
+  {
+    "id": "525df3d6-cb6c-4451-b2a1-d56712520fc3",
+    "text": "Environmental Theme Park of Suzhouhe Mengqing Garden"
+  },
+  {
+    "id": "d435d149-4ab2-4f9f-a5c0-dccc717ed8ef",
+    "text": "Baiyun Guan"
+  },
+  {
+    "id": "6d3bd1af-d299-44af-8996-ab63c8fa9d41",
+    "text": "英武功夫馆"
+  },
+  {
+    "id": "b29b1730-212c-4624-a806-e1e576a1b237",
+    "text": "Himalayas Center"
+  },
+  {
+    "id": "eadfef06-0d1f-4013-a7d1-72c9f25809e0",
+    "text": "Tangmuxiong Happy World"
+  },
+  {
+    "id": "57536579-9356-4624-822d-8120a0563e72",
+    "text": "黄浦江观光区"
+  },
+  {
+    "id": "fb4f4e0f-7351-4d57-98b1-9c98b40ccc2a",
+    "text": "Former Residence of Ba Jin"
+  },
+  {
+    "id": "18c5716c-28b8-4e86-b7b2-69f6b5fc15c7",
+    "text": "Kunshan Park （West Gate）"
+  },
+  {
+    "id": "212578a8-ebc2-41a5-9228-7c53020cb9fd",
+    "text": "上海中医药博物馆"
+  },
+  {
+    "id": "5d19c99e-db02-47b0-b9ba-ab3805e19293",
+    "text": "Bois de Vincennes \nCity green space on 995 hectares with biking/hiking trails & lakes, plus a botanical garden & zoo."
+  },
+  {
+    "id": "90b0a69e-420c-4525-aac9-0efc2a18c749",
+    "text": "Passerelle Debilly \nPedestrian-only crossing over the river Seine offering Eiffel Tower views, popular at sunset."
+  },
+  {
+    "id": "85fa7e7d-1f26-4592-aa26-f92dafd1e4e8",
+    "text": "Hôtel de Sens \nGothic-style villa with gables, turrets & formal gardens, plus art books in the Forney Library."
+  },
+  {
+    "id": "308706dc-4761-4522-8aa5-780a47954c1f",
+    "text": "Opera National de Paris \nBallet as well as classical & modern operas in a famous 1989 building with a transparent facade."
+  },
+  {
+    "id": "93cbf4bc-28f1-4a3f-99ca-6393554c3901",
+    "text": "Eiffel Tower \nGustave Eiffel's iconic, wrought-iron 1889 tower, with steps and elevators to observation decks."
+  },
+  {
+    "id": "24bbc4d5-e97c-4ff1-8396-69a9d854dbf0",
+    "text": "Ennery Museum"
+  },
+  {
+    "id": "7ef505da-afa3-4d38-926f-4d5e8e1c9b18",
+    "text": "Pavillon Vendôme"
+  },
+  {
+    "id": "560d4398-422d-41bb-9206-20e1cd1a8d1a",
+    "text": "Moulin Rouge \nFamed 19th-century cabaret featuring Belle Epoque decor, dinner & dancers in elaborate costumes."
+  },
+  {
+    "id": "f6ff23b6-d2f6-4fcf-b267-16ba709951f4",
+    "text": "Bibliothèque François-Mitterrand \nModern glass towers with over 15 million books & collections, plus regular cultural events."
+  },
+  {
+    "id": "26a55116-3c44-4fe8-a697-4200b14ec9c6",
+    "text": "La Villette \nWide lawns with sculptures and fountains in urban park with a museum, a cinema and a music complex."
+  },
+  {
+    "id": "9b528fe9-418c-4f02-8a56-eebc45b16412",
+    "text": "Notre-Dame Cathedral of Paris \nTowering, 12th-century cathedral with flying buttresses & gargoyles, setting for Hugo's novel."
+  },
+  {
+    "id": "9c17c26b-c00d-4c5d-a0be-72a9593e8844",
+    "text": "Basilique du Sacré-Cœur de Montmartre \nIconic, domed white church, completed in 1914, with interior mosaics, stained-glass windows & crypt."
+  },
+  {
+    "id": "bdc91f48-fa5e-4c11-919d-7e280c270793",
+    "text": "Musée d'Orsay \nMajor 19th- & 20th-century European art collections housed in a monumental, former railway station."
+  },
+  {
+    "id": "4df71d81-ce69-4351-a264-3e8587dd96be",
+    "text": "Louvre Museum \nFormer historic palace housing huge art collection, from Roman sculptures to da Vinci's \"Mona Lisa.\""
+  },
+  {
+    "id": "0756e4a2-f0a8-426e-8445-bf1956585086",
+    "text": "Palais de Chaillot \nArchitectural, naval & ethnographic museums, above fountains & gardens with Eiffel Tower views."
+  },
+  {
+    "id": "efd1876c-8739-41f8-aa84-86428d320e53",
+    "text": "Catacombs of Paris \nIlluminated labyrinth in former limestone mine with millions of ghoulishly arranged skeletons."
+  },
+  {
+    "id": "fb28697d-d942-4476-8753-6baaef1dbc7b",
+    "text": "Musée national des arts asiatiques - Guimet \nHuge Asian art collections, with Afghan Buddhas & Tibetan pieces, housed in a 19th-century building."
+  },
+  {
+    "id": "a4a701c6-3ae3-4ccb-8d80-923f017dbfba",
+    "text": "Sainte-Chapelle \nOrnate, 13th-century, Gothic chapel with relics & notable stained-glass windows of biblical scenes."
+  },
+  {
+    "id": "1c2de0ef-7974-458d-a1bc-c832fcf2f408",
+    "text": "Stade de France \nAll-seater 81,000-capacity stadium for international soccer and rugby matches, plus major concerts."
+  },
+  {
+    "id": "c1e32a60-a586-4996-8387-44b009f8d5c8",
+    "text": "Palais Garnier \nItalian-style opera house with ceiling painted by Chagall & library museum in 19th-century building."
+  },
+  {
+    "id": "ac3a03bd-cf33-4068-8fe2-ffabbb3eee8e",
+    "text": "Musée Rodin \n18th-century mansion & sculpture garden displaying Rodin's influential works, such as The Thinker."
+  },
+  {
+    "id": "b79b3e50-c388-4ae9-aa17-5cd1bde3400b",
+    "text": "Collège des Bernardins \nClassical concerts, lectures & tours at a 13th-century Cistercian college with a grand vaulted hall."
+  },
+  {
+    "id": "25879ee1-ad17-423e-9342-c3caee152cca",
+    "text": "Petit Palais \nRichly decorated 1900 building, housing eclectic fine arts dating from Renaissance to 20th century."
+  },
+  {
+    "id": "9f03910e-a172-4aad-a1ae-579a905e6ad9",
+    "text": "Grand Palais \nArt nouveau hall with domed glass roof, built in 1900, hosting exhibitions and cultural events."
+  },
+  {
+    "id": "f4f26c9d-b790-4b92-88c4-d351fa935e86",
+    "text": "Grande Mosquée de Paris \nMarble mosque with ornate square minaret, emerald-tiled courtyard & gardens, plus guided tours."
+  },
+  {
+    "id": "d9fc7bfe-1656-45fc-9e34-739b6fbb02d1",
+    "text": "Champ de Mars"
+  },
+  {
+    "id": "34a99a49-e813-4e5c-b663-5b7b70b5db42",
+    "text": "Musée du quai Branly - Jacques Chirac \nEngaging museum displaying the arts and civilizations of Africa, Asia, Oceania & the Americas.\n"
+  },
+  {
+    "id": "c410032e-8b37-4361-84ce-01506aa82978",
+    "text": "Palais de l'Élysée \nSumptuous 18th-century official mansion home of the President of France, set in landscaped gardens."
+  },
+  {
+    "id": "2600c86b-0fd0-4090-b039-99e9ca9a631b",
+    "text": "Arc de Triomphe \nIconic triumphal arch built to commemorate Napoleon's victories, with an observation deck."
+  },
+  {
+    "id": "d038ef43-0e40-49a1-81a4-49815b177c6e",
+    "text": "Jardin du Luxembourg \n17th-century park with formally laid-out gardens, trees planted in patterns & statues on pedestals."
+  },
+  {
+    "id": "69883980-c7e9-437a-be97-b8642746e6c8",
+    "text": "The Centre Pompidou \nArchitecturally avant-garde complex housing National Museum of Modern Art, library and music center."
+  },
+  {
+    "id": "30b5872c-76a8-4d84-bf75-77c3932f4d2c",
+    "text": "Pont des Arts \nPicturesque bridge over the Seine connecting the Louvre & the Institut de France."
+  },
+  {
+    "id": "3da0c221-98ee-4d11-a2e9-f98dec6a5619",
+    "text": "Musée National Picasso-Paris \n17th-century building holding 5,000 artworks by Pablo Picasso, his own art collection & archive."
+  },
+  {
+    "id": "21cf4086-a6dc-471e-a09b-99c67f25aab3",
+    "text": "Cité des Sciences et de l'Industrie \nMultimedia, interactive displays in vast science & technology center, with silver-domed IMAX cinema."
+  },
+  {
+    "id": "ffdf9d4b-6d6d-44c3-bf70-3bc011d1fe06",
+    "text": "Palais de Tokyo \n1930s venue offering rotating exhibits of renowned & emerging artists, from art to performance."
+  },
+  {
+    "id": "f3d660e4-3af3-4e4e-9eec-74c3bdeeaa57",
+    "text": "Hôtel de Ville \nNeo-Renaissance administrative building with regular exhibitions & tours by appointment."
+  },
+  {
+    "id": "4f3865b2-a0a8-4213-bb37-54f899cbd414",
+    "text": "Musée Grévin \nFamily-friendly wax museum with lifelike models of French historic and contemporary figures."
+  },
+  {
+    "id": "b7b75c63-ca50-4552-8b41-ef7ec96bada1",
+    "text": "Bacchus Pool"
+  },
+  {
+    "id": "f28118b6-f8b1-4cf6-9f52-a08cbce4170b",
+    "text": "Domaine départemental de Sceaux \nPartially restored gardens of a 17th-century chateau with sweeping vistas & elegant water features."
+  },
+  {
+    "id": "a6774c9c-b613-411c-96a1-08ce8de6f113",
+    "text": "Jardin des Plantes \nVast park with plant species grown in botanical & alpine gardens & restored 19th-century hothouses."
+  },
+  {
+    "id": "f597e64a-7b43-4938-adbb-2cda8d3210ab",
+    "text": "Place du Tertre \nSmall, cafe-lined cobbled square & a hangout for buskers & artists painting visitors' portraits."
+  },
+  {
+    "id": "37197b44-8fbc-4158-9367-cfa063e4bedc",
+    "text": "Shakespeare and Company \nIconic, English-language bookstore stocking new & used titles in bohemian surrounds since 1951."
+  },
+  {
+    "id": "208a00be-04f1-4ea5-8e12-aa94c8e96d39",
+    "text": "Conciergerie \nGothic, riverside fortress & French Revolution prison, housing Marie Antoinette's former cell."
+  },
+  {
+    "id": "ba9addef-0902-4f09-bde8-fc12fa1bc284",
+    "text": "Museum of Urban Transport"
+  },
+  {
+    "id": "73a9fe28-6e25-4b0d-8db4-1515bdc96de7",
+    "text": "Arab World Institute \nStriking, 10-story building with latticed windows, housing Islamic cultural exhibitions, plus cafe."
+  },
+  {
+    "id": "d3ab7b5e-2bfd-40d0-a133-29e24b6404ac",
+    "text": "Grande Arche de la Défense \n110m steel & stone monument in the shape of a hollow cube, illuminated at night."
+  },
+  {
+    "id": "5398ef85-dbf8-447f-9926-02729f492f68",
+    "text": "Cirque d'Hiver Bouglione \nOrnately decorated circular venue, opened in 1852 and hosting a variety of exhibitions & shows."
+  },
+  {
+    "id": "de208a1e-a5ec-4272-a276-4dc338ddfac9",
+    "text": "Palace of Versailles \nImmense, 18th-century palace with gilded apartments, chandeliered Hall of Mirrors & fountain show."
+  },
+  {
+    "id": "b9a3c722-d627-4d83-9749-589207cfea8c",
+    "text": "Palais de la découverte \nInteractive science & astronomy exhibits & presentation program in grand, colonnaded museum."
+  },
+  {
+    "id": "baf0a565-3a53-40ef-b312-8022effef862",
+    "text": "Tuileries Garden \nExpansive, 17th-century formal garden dotted with statues, including 18 bronzes by Maillol."
+  },
+  {
+    "id": "4308ee8e-4b92-43ed-9066-dae5198eef83",
+    "text": "Musée des Arts et Métiers \nConverted church with scientific & industrial artworks & artifacts, including Foucault's pendulum."
+  },
+  {
+    "id": "31bb11c8-7f24-445e-8535-8eac45bc2e18",
+    "text": "Cimetière du Père-Lachaise \nVast tree-lined burial site with famous names including Oscar Wilde, Jim Morrison & Maria Callas."
+  },
+  {
+    "id": "cb1c94b9-3778-4767-a6b8-47a7b6b0da24",
+    "text": "Les Pavillons de Bercy - Musée des Arts Forains \nGuided tours of former wine cellars displaying objects from fairgrounds, theaters & music halls."
+  },
+  {
+    "id": "2ae75527-2c58-4ca3-b567-d849523e4e42",
+    "text": "Chapel of Our Lady of the Miraculous Medal \nIntimate art nouveau chapel associated with Marian apparitions & housing several saints' relics."
+  },
+  {
+    "id": "050b9b9d-8e78-4729-ab4e-c78ee9547dbe",
+    "text": "La Madeleine \nChurch & concert venue completed in 1842, conceived as a pantheon in honor of Napoleon's armies."
+  },
+  {
+    "id": "d348e332-8bf8-42fa-9a11-06365978606a",
+    "text": "Basilique Cathédrale Saint-Denis \nImposing Gothic cathedral with ornate 12th-century stained-glass windows & many reclining statues."
+  },
+  {
+    "id": "c631e4c4-5632-4286-bdcd-7c2a0355bed6",
+    "text": "Cartier Foundation for Contemporary Art \nFoundation hosting temporary exhibits housed in an airy building designed by architect Jean Nouvel."
+  },
+  {
+    "id": "94a14171-eff4-4262-9082-fba317c9498b",
+    "text": "Pont des belles fontaines"
+  },
+  {
+    "id": "119ac8e9-f498-4d86-a709-091b5947c046",
+    "text": "Place des Vosges \nOldest planned square in Paris, lined with trees and red brick houses, built by Henri IV in 1612."
+  },
+  {
+    "id": "5132953e-86d7-43c9-8739-5e402ce739bf",
+    "text": "Paris Observatory \nInstitution founded in 1667 for the Sun King's astronomers, with occasional open days & events."
+  },
+  {
+    "id": "0c028cf2-a23d-4acf-9437-b08a61037317",
+    "text": "Dallas Zoo \nHousing 2,000 animals, with a renowned children's area, a carousel & a mini-train."
+  },
+  {
+    "id": "07602396-1177-421c-b925-a2cf5dcd9127",
+    "text": "John F. Kennedy Memorial Plaza \nConcrete JFK monument by influential postmodern architect Philip Johnson, a Kennedy family friend."
+  },
+  {
+    "id": "ed860330-32f1-4698-aaf1-2200ae2333c9",
+    "text": "The Dallas Arboretum and Botanical Garden \n66-acre botanical garden set on White Rock Lake with frequent concerts, special exhibits & classes."
+  },
+  {
+    "id": "75eafe98-9d9d-4231-ada9-af92e82834dc",
+    "text": "Perot Museum of Nature and Science \nLarge-scale state-of-the-art interactive & multimedia exhibits & educational programs for all ages."
+  },
+  {
+    "id": "6f341ec1-d1fc-4240-8fe9-f81a155547a9",
+    "text": "The Sixth Floor Museum at Dealey Plaza \nComprehensive exhibits on John F. Kennedy's presidency & assassination at site of the sniper's nest."
+  },
+  {
+    "id": "f97081e2-32b3-4bc5-82a3-4c016ab38877",
+    "text": "The Dallas World Aquarium \nReplica habitats containing exotic birds, mammals & fish are open for public tours & private events."
+  },
+  {
+    "id": "16cb10d7-bc09-436f-90a4-7e09ca8829b1",
+    "text": "Dallas Museum of Art \nArts District anchor with an encyclopedic collection spanning ancient times to the present."
+  },
+  {
+    "id": "d0eb0146-25e2-4ffb-8115-923a2fd62aea",
+    "text": "Dealey Plaza \nCity park & National Historic Landmark where President John F. Kennedy was assassinated in 1963."
+  },
+  {
+    "id": "2c8db9fc-61f3-40d4-8d95-40a98880dc0e",
+    "text": "George W. Bush Presidential Center \nMuseum housing the archives of the George W. Bush presidency, 43,000 gifts & a replica Oval Office."
+  },
+  {
+    "id": "41578316-e528-4820-9c58-d752b31bfb43",
+    "text": "Klyde Warren Park \nUrban park hosting lunchtime food trucks & frequent arts, music, fitness & children's events."
+  },
+  {
+    "id": "c9954e90-f02a-45d8-ad36-50d9698aa34d",
+    "text": "Medieval Times Dinner & Tournament \nJousting, horsemanship & falconry plus a 4-course, utensil-free meal served in a castle-like space."
+  },
+  {
+    "id": "e861ff71-9945-46ff-a48a-5c2d02d36d72",
+    "text": "City Park \nCollection of 19th-century pioneer & commercial buildings, plus events like ghost tours."
+  },
+  {
+    "id": "0e27a455-4b53-421f-bd8b-9ec757c01c10",
+    "text": "Reunion Tower \nLandmark observation deck featuring light shows, 360-degree city views & a gift shop."
+  },
+  {
+    "id": "c2958f0a-dc3d-4bdf-96ef-35980eb55c24",
+    "text": "Pioneer Plaza \nPublic park with Texan plant life & large bronze sculptures of 3 cowboys driving longhorn cattle."
+  },
+  {
+    "id": "2703a64f-b3c3-47a2-8a4c-cd7f3dbd4854",
+    "text": "The Hall of State \nNeoclassical & Art Deco 1936 building marking 100 years of Texas' history, with statues & murals."
+  },
+  {
+    "id": "880dc18b-e987-4a64-89fe-bd06aa881920",
+    "text": "Nasher Sculpture Center \nEducation & research facility featuring rotating exhibits of contemporary sculptures & a cafe."
+  },
+  {
+    "id": "724b30d0-c432-4192-bf64-8d95d0d4247b",
+    "text": "National Shrine Cathedral of Our Lady of Guadalupe \nSeat of the city's Catholic bishop, opened in 1902 & rededicated to Our Lady of Guadalupe in 1975."
+  },
+  {
+    "id": "c7c9e34b-8150-4022-9118-57d051409957",
+    "text": "Trinity River Audubon Center \nNature preserve with hiking & biking trails, guided walks & many bird-watching lookouts."
+  },
+  {
+    "id": "39822926-0f9f-4ca0-94be-f9f0e2c29c1c",
+    "text": "Frontiers of Flight Museum \nSmithsonian-affiliated venue with aircraft, exhibits & educational programs on aviation history."
+  },
+  {
+    "id": "426a8193-c053-4e7f-b8fa-6e64f0074283",
+    "text": "Meadows Museum \nUniversity-based showcase for art by Goya & other Spanish masters from the 15th to 20th century."
+  },
+  {
+    "id": "884ff850-4064-4b5b-82d2-5c3c74967f42",
+    "text": "Main Street Garden Park \nPublic great lawn with WiFi, a toddler play area, a dog run, fountains, public art & a cafe."
+  },
+  {
+    "id": "e4ae9f16-7938-46bb-870a-437819cdce2b",
+    "text": "Crow Museum of Asian Art of The University of Texas at Dallas \nGalleries dedicated to individual regions showcase Asian art from 1000 B.C. to the 20th century."
+  },
+  {
+    "id": "2f33361c-6077-436b-9637-3196e609c633",
+    "text": "Thanks-Giving Square \nDesigned as an all-faiths gathering place, this park features a garden, chapel & hall with exhibits."
+  },
+  {
+    "id": "9c1b320a-4fbf-4bd4-ba5e-4fc428eaa6a4",
+    "text": "Texas Discovery Gardens at Fair Park \nFair Park public garden teaches nature conservation with events & exhibits like the butterfly house."
+  },
+  {
+    "id": "e243f239-38d5-4b9d-83dd-a16dccba03cd",
+    "text": "Farmers Branch Historical Park"
+  },
+  {
+    "id": "c3f46eeb-459c-4059-b4bb-19290702acd9",
+    "text": "Museum of Biblical Art National Center for Jewish Art Museum of Holocaust Art - 3 Museums in 1 Location! \nA gold ziggurat tops this museum housing works of Bible-inspired art from the Renaissance to today."
+  },
+  {
+    "id": "66a6c279-5ec5-4801-8c6b-828eec03a890",
+    "text": "Museum Tower"
+  },
+  {
+    "id": "906bf67d-c0b6-45fc-9d64-9126263cbb02",
+    "text": "Norbuck Park"
+  },
+  {
+    "id": "2aa6e12d-365c-4317-b52f-6e91a39b9965",
+    "text": "Lakeside Park \nLush, creekside landscape with walking paths, benches & a bridge, plus teddy bear statues."
+  },
+  {
+    "id": "55719355-ef78-43c5-bde4-a41c8e40b615",
+    "text": "Children's Aquarium Dallas at Fair Park \nKid-friendly exhibits featuring 1,000+ aquatic animals, including a touch pond & ray feeding areas."
+  },
+  {
+    "id": "06a3974c-41ae-42ee-ae6c-e3a964b71400",
+    "text": "Glencoe Park \nDating to 1944, this park offers courts for basketball, softball & tennis plus trails & a play area."
+  },
+  {
+    "id": "cbf7fad0-f184-403f-a60f-17b0c18095e4",
+    "text": "African American Museum of Dallas \nMuseum exhibiting artwork, historic & cultural displays, & more by those of African descent."
+  },
+  {
+    "id": "90ffbdd2-f8ae-457a-9c07-51cfac6a0ae0",
+    "text": "Flag Pole Hill Park \nPublic recreation & picnic area high on a hill overlooking a lake, a popular spot for kite-flying."
+  },
+  {
+    "id": "9f70af5a-a325-4c42-ac63-db9cdad86d18",
+    "text": "Dallas Contemporary \nIndustrial-style gallery featuring exhibitions & large-scale installments by contemporary artists."
+  },
+  {
+    "id": "823b65be-371e-4d31-9fc8-cc2efc8b3ee9",
+    "text": "Louis Tussaud's Palace of Wax \nBig attraction offers celebrity wax figures, exhibits, laser maze & more in a Taj Mahal look-alike."
+  },
+  {
+    "id": "53ccadd8-b75c-4016-b38b-7c581c535c02",
+    "text": "Oak Cliff Nature Preserve \n121 rolling acres of woodlands & wildflower meadows, with 8 miles of hike-&-bike trails."
+  },
+  {
+    "id": "99813e6d-1381-41a1-a2c2-a019de545777",
+    "text": "Harry S Moss Park \nThis single-track trail designated for mountain biking features more than 5 miles of loops."
+  },
+  {
+    "id": "8574f0bd-ac9d-443f-ba64-7b4f400976df",
+    "text": "Civic Garden \nUrban garden featuring native trees, grasses & flowers, plus an interactive water fountain."
+  },
+  {
+    "id": "8c8fdf9e-6545-4efa-8b4a-7c14fb70b24e",
+    "text": "Ridgewood Park"
+  },
+  {
+    "id": "70865a0f-ee23-454e-b31f-eac4ac22db23",
+    "text": "Lively Pointe Skate Park \nSprawling skateboard park featuring an amoeba bowl, grind edges, hand rails & more."
+  },
+  {
+    "id": "b0ab6cdb-5f53-460e-b7f7-3ca176e61d50",
+    "text": "Trammell Crow Park \nRiverside park around a lake with a skyline backdrop, cow sculptures, soccer fields & trails."
+  },
+  {
+    "id": "ed7e4a37-d9be-4409-94bc-2ae4ab418536",
+    "text": "Coffee Park \nThis small neighborhood green space offers baseball, soccer & picnic facilities, plus a play area."
+  },
+  {
+    "id": "b661df9d-b60a-4401-a620-c9e65b9c5636",
+    "text": "Trinity Park Conservancy"
+  },
+  {
+    "id": "bf97a5c0-9966-4a64-8c82-a50c235b7fd3",
+    "text": "Lake Cliff Park \nCity park around a small lake with a rose garden, strolling paths, ball fields & tennis courts."
+  },
+  {
+    "id": "f96599d9-2ec3-4f31-beb4-784a213aa007",
+    "text": "Singing Hills Park"
+  },
+  {
+    "id": "7469d108-cf57-44b0-96d3-8bab57a5d23b",
+    "text": "Gateway Park"
+  },
+  {
+    "id": "92452786-52b0-4fb6-a933-13bf8f1d314d",
+    "text": "Tietze Park \nThis popular park with lots of trees offers a pool, playground & picnic area plus sports facilities."
+  },
+  {
+    "id": "8015c739-6c3d-4f52-8074-a355fa8eee0f",
+    "text": "Splash Factory"
+  },
+  {
+    "id": "d24a6f3d-f664-465b-899f-f06712fb17dd",
+    "text": "Grimes Park \nCity park on 75 acres, with baseball/softball, soccer & BMX facilities, concessions & picnicking."
+  },
+  {
+    "id": "49328624-ed8a-4dc7-b79f-88d0cb220ea6",
+    "text": "First Presbyterian Church of Dallas"
+  },
+  {
+    "id": "856c1d75-c01a-4013-a91f-ff614dc4e158",
+    "text": "Cottonwood Park \nCity park features playground, picnic area, swimming pools, tennis & volleyball courts & trails."
+  },
+  {
+    "id": "32032fc6-7843-4c92-809c-b7d7c88d97e7",
+    "text": "Latino Cultural Center \nLatino arts center with a 300-seat theater, an art gallery, sculpture gardens & event spaces."
+  },
+  {
+    "id": "c3438788-80b9-4076-83ce-7aa7174a7ecf",
+    "text": "T. & P. Hill"
+  },
+  {
+    "id": "1f2ab478-1eb4-46bd-837b-e92a48fdf906",
+    "text": "Harrington Park"
+  },
+  {
+    "id": "f866021f-c7ee-42cb-87f1-70860ccf25be",
+    "text": "Bahama Beach Waterpark \nFamily-oriented venue with interactive water playground, lazy river, slides & reservable cabanas."
+  },
+  {
+    "id": "3e1d8809-dad3-45bb-aa80-fb72d8328df9",
+    "text": "Umphress Park"
+  },
+  {
+    "id": "f5ccd5e7-941d-4664-8c73-460c18f03e6c",
+    "text": "Tokalon Park"
+  },
+  {
+    "id": "4557e45d-8727-440a-ada8-0c6fec4975dd",
+    "text": "Cummings Park"
+  },
+  {
+    "id": "51b8c98a-6aef-4cbd-880b-4d04fb9eab49",
+    "text": "Miller Family Park"
+  },
+  {
+    "id": "de8dba0b-3f2f-4bf8-858e-5d76e10dfb2a",
+    "text": "Opportunity Park \n20-acre community park featuring trails, sports courts & fields, a playground & lots of green space."
+  },
+  {
+    "id": "6ddfa426-ab2c-4869-ab59-a4e59fefcae2",
+    "text": "Guangdong Television Tower Cultural Amusement Center"
+  },
+  {
+    "id": "9a70b730-2cb3-4e09-b781-c0cbe2fa0c63",
+    "text": "Guangdong Chinese Medicine Museum"
+  },
+  {
+    "id": "bee46b14-ab4b-4b8f-aa0c-4a73db2d9e5d",
+    "text": "赤岗塔"
+  },
+  {
+    "id": "fbddadf4-f223-4293-aa59-41bef6715613",
+    "text": "蜜蜂世界"
+  },
+  {
+    "id": "d26570bb-2c33-4c6f-accb-389c9cd0f442",
+    "text": "Xinguang Bridge"
+  },
+  {
+    "id": "721d871b-2e7c-4591-bc88-fe9ef658ceac",
+    "text": "Yajisha Bridge"
+  },
+  {
+    "id": "ace11580-3531-4b4b-a92e-585fa6b73d91",
+    "text": "Pazhou Bridge"
+  },
+  {
+    "id": "603b1653-bc08-4a33-96d3-b2cc41fb004b",
+    "text": "东华里古建筑群"
+  },
+  {
+    "id": "8b8c98a0-7fdc-43a5-bbd3-0e1ba10b9ce7",
+    "text": "Nanhu Amusement Park"
+  },
+  {
+    "id": "2e1b60d1-2c96-4e06-816f-79b66f9809cc",
+    "text": "邓氏宗祠"
+  },
+  {
+    "id": "83f19f6f-1ae6-4fc1-b77c-f7b349867087",
+    "text": "Luoxi Food Street"
+  },
+  {
+    "id": "1c3b2493-f2e3-44e3-945a-fedbaab50808",
+    "text": "广州解放纪念像"
+  },
+  {
+    "id": "cde64021-08e9-4f0b-9ac7-8d28c026c269",
+    "text": "Sifang Paotai Relic Site"
+  },
+  {
+    "id": "bb508190-7af0-42ac-81cd-4e9fe60f4fd0",
+    "text": "纪念园"
+  },
+  {
+    "id": "c22bdd4f-c8a5-44d3-90bd-b9c27d490445",
+    "text": "凌氏宗祠"
+  },
+  {
+    "id": "3f92582f-c38e-42c4-a5d9-0244711adb39",
+    "text": "Guangzhou Baima Costume Market \nLarge indoor shopping hub with individual kiosks selling discounted clothing, accessories & foods."
+  },
+  {
+    "id": "5428be64-fec3-4586-9aa5-cfc26e4c0f54",
+    "text": "Guangzhou Museum of Modern History \nMuseum offering educational exhibits & cultural relics from Guangdong's modern era."
+  },
+  {
+    "id": "c008b540-3ee5-44b7-8908-2b1fa32c02a2",
+    "text": "Guangzhou Gongshe Martyrs' Cemetery"
+  },
+  {
+    "id": "5e73202f-c214-40c4-bef1-a58b1d1d86c7",
+    "text": "CITIC Plaza \nModernist, 80-story concrete skyscraper including a shopping mall with varied stores & eateries."
+  },
+  {
+    "id": "87cf37b2-edb2-4246-8a70-82d05fe011a3",
+    "text": "Guangzhou Zoo \nPark with a wide variety of animals, including elephants, giraffes, pandas & exotic birds."
+  },
+  {
+    "id": "199754a8-a71c-43f7-996d-ddb7d52209b1",
+    "text": "Guangdong Museum \nDistinctive modern building housing Chinese paintings, ceramics, bronzes & archaeological artifacts."
+  },
+  {
+    "id": "effb1176-49d7-4dba-b656-4c0147ca1b0b",
+    "text": "Dr. Sun Yat-sen's Memorial Hall \nCompleted in 1931, this grand structure dedicated to Sun Yat-sen contains displays of memorabilia."
+  },
+  {
+    "id": "7f27f970-9411-4929-8be7-867418d73449",
+    "text": "Guangxiao Temple \nAncient Buddhist temple complex known for its numerous iron towers, statues, gardens & bodhi tree."
+  },
+  {
+    "id": "7e301328-c299-4d72-b903-5799c1682488",
+    "text": "简氏别墅"
+  },
+  {
+    "id": "96e2876f-da36-4dfd-b695-f7404547158f",
+    "text": "大学城博物馆"
+  },
+  {
+    "id": "969373d6-2a1c-43bf-be40-2a3dccd60a9d",
+    "text": "Yunxi Ecological Park"
+  },
+  {
+    "id": "6c1086f9-79b1-4587-9c44-608912aad9bf",
+    "text": "粤海关大楼"
+  },
+  {
+    "id": "f95bc785-6778-4f8a-a5fd-33dcb23c0f6c",
+    "text": "Guangdong Folk Art Museum \nFolk art museum within a state heritage site featuring regional artwork, crafts & cultural relics."
+  },
+  {
+    "id": "6a82367b-9341-49e4-94ab-fcb930736f9d",
+    "text": "Postal Expo Hall"
+  },
+  {
+    "id": "6ec4f998-d6d6-49f1-82c2-ec5e55305ef1",
+    "text": "Qingping Chinese Medicinal Plant Market \nExpansive trading center offering herbs, Chinese & Western medicines & other healthcare products."
+  },
+  {
+    "id": "d9449fda-4fd3-4257-b656-879a43019039",
+    "text": "Guangdong Overseas Chinese Museum"
+  },
+  {
+    "id": "b7f6c10a-184b-4518-81ab-d7b7ca5f158c",
+    "text": "Guangzhou Children's Park \nPark featuring gentle rides & other amusements geared toward younger children, plus casual dining."
+  },
+  {
+    "id": "a475003e-d13f-4df7-bdf5-6bfc8d078408",
+    "text": "大佛古寺"
+  },
+  {
+    "id": "699be7e9-8d4f-48db-aeb2-ffbf530dbb3e",
+    "text": "Wawawa Amusement City"
+  },
+  {
+    "id": "1d912745-5859-468e-825e-eb064b533544",
+    "text": "越秀公园北门"
+  },
+  {
+    "id": "188fc301-c058-4eb4-b325-87cdd22686b5",
+    "text": "小洲村"
+  },
+  {
+    "id": "21ef9c5c-9be7-4ad8-b2c4-06c3288b8273",
+    "text": "Qingnian Park （East Gate）"
+  },
+  {
+    "id": "6b7bf429-4f66-4242-a711-b5b37a7bbbe6",
+    "text": "Guangdong Museum of Revolutionary History \nMuseum exhibitions of cultural relics, literature & photos from the time of the 1911 Revolution."
+  },
+  {
+    "id": "0c9edc5c-4b51-4a38-9d67-adafcfe79ad7",
+    "text": "Gao Jianfu Memorial Hall"
+  },
+  {
+    "id": "8c912922-059f-444a-a3ae-1305aad727b3",
+    "text": "Guangzhou Lu Xun Memorial Hall"
+  },
+  {
+    "id": "5b10e21c-b1bc-4535-b014-e1437be93d37",
+    "text": "The Museum of Dr. Sun Yat-sen"
+  },
+  {
+    "id": "46197071-a49f-4c66-8314-7d241238aa76",
+    "text": "Chenshuren Memorial Hall"
+  },
+  {
+    "id": "aca819c3-1640-4c71-b421-641a6e003100",
+    "text": "华南植物研究院"
+  },
+  {
+    "id": "dd5bab4f-2c40-4530-8333-eda4662d777d",
+    "text": "白云山摩星岭"
+  },
+  {
+    "id": "e3c258c9-f829-45d0-80db-5c9d5c29f06f",
+    "text": "Baiyun Songtao"
+  },
+  {
+    "id": "137622dd-2fd6-409b-9bfa-61a6f8f5f945",
+    "text": "海幢寺"
+  },
+  {
+    "id": "e8b7098b-2829-4fe3-b0b4-f58c832e2376",
+    "text": "詹天佑故居"
+  },
+  {
+    "id": "1529d0d1-e02d-4c2e-8ed4-773e9698aead",
+    "text": "十香园"
+  },
+  {
+    "id": "e4e75976-4a23-4f6e-bd94-a21be0679de2",
+    "text": "Qingyun Academy \nRestored Qianlong-period college building used for art exhibitions & cultural events."
+  },
+  {
+    "id": "3af0653c-e426-40b3-9bd7-1680940b303c",
+    "text": "鸣春谷"
+  },
+  {
+    "id": "a1c001fb-6ca9-43cb-af75-c3b2fb4c3856",
+    "text": "清真先贤古墓"
+  },
+  {
+    "id": "94549f87-7701-4958-b930-cdd859363f22",
+    "text": "Nanyue King Wen's Mausoleum \nMuseum showcasing the tomb & many funerary relics of Zhao Mei, a Han dynasty king."
+  },
+  {
+    "id": "0e8ac695-71e6-4927-a6dd-21194dfc6ec0",
+    "text": "Haizhu Bridge"
+  },
+  {
+    "id": "c6a3a453-cc7d-42e6-a893-b1b04dd1bacf",
+    "text": "香港杜莎夫人蜡像馆"
+  },
+  {
+    "id": "7754d9e0-96ac-4f0a-bee8-6338f8c0a3ad",
+    "text": "Luhu Children's Playground"
+  },
+  {
+    "id": "8eddc1c1-687a-45d7-9579-a1dbbca8acc5",
+    "text": "Guangzhou Sculpture Park \nWalking paths wind past a variety of large, striking sculptures & garden art in an urban park."
+  },
+  {
+    "id": "75051e4f-3fb5-40b4-a9e0-19779a6a1fa8",
+    "text": "Yuntai Garden \nFlower gardens, landscaped paths & tiered fountains in a scenic, park-like setting in the foothills."
+  },
+  {
+    "id": "ef718ae6-4c92-4dcd-bdc5-815d69056868",
+    "text": "Sun Yat-sen University （North Gate）"
+  },
+  {
+    "id": "48f2918f-5a47-419d-9bf8-d1c9202ce927",
+    "text": "广州长隆鳄鱼公园"
+  },
+  {
+    "id": "4cb297f6-775a-4c19-a750-a3a6b3925b60",
+    "text": "19th Route Army Songhu Anti-Japanese War Martyrs' Memorial Park （East Gate）"
+  },
+  {
+    "id": "de15d8e5-20af-4687-b586-eb51e7980212",
+    "text": "Van Gogh Museum \nMuseum housing the world's largest collection of Van Gogh paintings, alongside drawings & letters."
+  },
+  {
+    "id": "9971caff-b953-408d-a6e3-d68bd35dec3a",
+    "text": "Keizersgrachtkerk"
+  },
+  {
+    "id": "fb5abc81-9da5-4abc-a2b1-c72e0c92e31e",
+    "text": "National Maritime Museum \nInteractive museum in former storehouse with virtual voyages & a replica 18th-century merchant ship."
+  },
+  {
+    "id": "352c4ee4-7a98-4033-a60f-ec7b86b69717",
+    "text": "Stedelijk Museum Amsterdam \nContemporary museum with appearance of large bathtub, showing international, modern art & design."
+  },
+  {
+    "id": "b4ac4318-3605-4c3d-8a39-a4895471a6e2",
+    "text": "Rijksmuseum \n19th-century building housing Dutch Golden Age painting masterpieces & vast European art collection."
+  },
+  {
+    "id": "ad9ceddc-0ac4-4cfb-9584-062f747624d5",
+    "text": "NEMO Science Museum \nInteractive science exhibits, experiments & shows in a huge, waterfront, boat-like museum."
+  },
+  {
+    "id": "e6ab461c-5fc6-4265-a110-a354142fb803",
+    "text": "Heineken Experience \nInteractive tour through beer giant's history in former brewery, with a tasting room finale."
+  },
+  {
+    "id": "f7b9f2e2-2eaa-448d-b365-956f7733d380",
+    "text": "Wereldmuseum Amsterdam \nArt objects, photos, music & film from non-Western cultures, including regular kids' exhibitions."
+  },
+  {
+    "id": "eee0b7ac-52cd-447f-8d96-e96e7ec15a96",
+    "text": "Anne Frank House \nMuseum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII."
+  },
+  {
+    "id": "6f76ff8c-c6e4-4b20-a53d-64f0b27a00d8",
+    "text": "Dungeon Amsterdam \nTheatrical, gore-laden attraction, part of a global chain, featuring gruesome local history."
+  },
+  {
+    "id": "ad3e97a4-cde8-43c2-a89e-c6f830e7c672",
+    "text": "ARTIS \nZoo park founded in 19th century, with chimps, zebras & elephants, plus aquarium & planetarium."
+  },
+  {
+    "id": "86dbec1b-e1d7-4f61-b6b0-7793e917e190",
+    "text": "Foam \nEclectic photography exhibition program in museum in 18th-century, canalside house with airy atrium."
+  },
+  {
+    "id": "4edd31cd-7acc-4717-8113-7f6407865706",
+    "text": "Muiderslot \nRestored & striking 13th-century moated castle with ramparts & hands-on museum, plus formal gardens."
+  },
+  {
+    "id": "9ea77ef5-3237-4a49-a474-da0d3afcaa16",
+    "text": "Royal Palace Amsterdam \nGrand residence for royal receptions since 1808, open to the public & exhibitions when not in use."
+  },
+  {
+    "id": "70df0921-1910-41e7-bce1-036f9df43124",
+    "text": "Madame Tussauds Amsterdam \nMuseum chain for life-size wax replicas of famous people & historic icons in themed galleries."
+  },
+  {
+    "id": "8c1a082a-5265-41b6-9c7f-f73536e321dc",
+    "text": "The New Church \nExhibition space in a medieval church that hosts royal weddings, ceremonies & organ recitals."
+  },
+  {
+    "id": "9adac9db-70dd-4734-8492-7b3a204ff645",
+    "text": "Vondelpark \nExpansive, 19th-century urban park with a playground, ponds & an open-air theater."
+  },
+  {
+    "id": "522b7b20-2400-4ca2-87cf-08223cf57959",
+    "text": "Allard Pierson Museum of Antiquities \nArcheological museum displaying ancient Greek & Roman pottery, plus Egyptian mummies & jewelry."
+  },
+  {
+    "id": "cf735fa9-a676-4322-9af1-74738fced159",
+    "text": "H'ART Museum (Hermitage Amsterdam)"
+  },
+  {
+    "id": "0cf67ba0-efb5-4dbc-a25e-cbabc3a55e45",
+    "text": "Basilica of Saint Nicholas \nGrand Catholic church with an elaborate interior featuring many frescoes & stained-glass windows."
+  },
+  {
+    "id": "13dadf05-6657-452b-8976-a6491ffce2c4",
+    "text": "Bols Cocktail Experience \nSelf-guided tour of noted Dutch gin museum including a tasting room, plus cocktails in the chic bar."
+  },
+  {
+    "id": "150ea584-17d2-41f0-ab9e-440166c1799e",
+    "text": "Prostitution Information Center"
+  },
+  {
+    "id": "20b42fe0-a253-4ee1-8d28-ea96ae3dc6fb",
+    "text": "Hash Marihuana & Hemp Museum in Amsterdam \nStalwart showcase for historical & cultural exhibits relating to cannabis, including a live garden."
+  },
+  {
+    "id": "82ebc03a-2924-490c-bdd1-7b341ea45376",
+    "text": "Westerkerk \nA crown-topped spire rises from this Renaissance-era Protestant church where Rembrandt is buried."
+  },
+  {
+    "id": "409031f5-a959-489a-9777-dbed394a89b8",
+    "text": "Hortus Botanicus \nCompact botanical gardens, originally planted in 1682, with formal outdoor & greenhouse sections."
+  },
+  {
+    "id": "c00e7083-684a-4634-a1e1-a6c07f2fb0bf",
+    "text": "Jewish Museum \nArtworks, ceremonial items & artifacts relating to Jews in the Netherlands & its former colonies."
+  },
+  {
+    "id": "5bc740c2-c0d7-4f75-be9e-f070ba0d5d96",
+    "text": "Blue Boat Company"
+  },
+  {
+    "id": "dda3734b-22dc-4fa3-a2ab-4cfe6eba7a3f",
+    "text": "ARCAM Architecture Centre Amsterdam \nUniquely designed facility offering exhibits & tours of the city's architecture & urban design."
+  },
+  {
+    "id": "1793ec6a-afc8-4d42-ae24-79f3e1e8233e",
+    "text": "Forteiland Pampus \nArtificial island holding a sea fort built in the late 19th century & now open to summer visitors."
+  },
+  {
+    "id": "8704e1d2-4dc3-4fb7-8417-ab3e7e32709b",
+    "text": "Xtracold Icebar Amsterdam \nColorfully-lit bar where everything from the walls to the glasses are made out of ice."
+  },
+  {
+    "id": "194784d2-30ba-4efb-b17a-a45582e828f6",
+    "text": "Grey Area Coffeeshop"
+  },
+  {
+    "id": "462e2913-c795-4a5a-9cdc-dc48881b3436",
+    "text": "Dominicuskerk"
+  },
+  {
+    "id": "48be77fd-4887-407d-ab52-918a2725013d",
+    "text": "Erotic Museum \nMuseum of erotica exhibiting sex toys, prints & artworks, including sketches by John Lennon."
+  },
+  {
+    "id": "02d5efb0-d344-40d0-abe5-564af08d9e35",
+    "text": "Torture Museum \nCollection of 40+ pain-inflicting instruments from the Middle Ages such as the rack & guillotine."
+  },
+  {
+    "id": "d70f659f-e3c7-4781-8d78-45cf5f8377bd",
+    "text": "Het Dolhuys \nInteractive exhibits on psychiatry in a 16th-century former mental institution & leper home."
+  },
+  {
+    "id": "36b50dee-eb8a-4f62-b6a7-ef1d725ce471",
+    "text": "Silverstone Party Center - Karting, Laser Gaming & Bowling"
+  },
+  {
+    "id": "11e7e94e-05e9-48a2-8ff8-0a83abae6a0f",
+    "text": "Verzetsmuseum Amsterdam - Museum of WWII Resistance \nMuseum detailing the WWII Dutch resistance through collections of photos, films & artifacts."
+  },
+  {
+    "id": "f0e9ce36-961d-4460-af8c-9a00e7713134",
+    "text": "Museum of the Canals \nHistory of Amsterdam's canals through films & audio & interactive exhibits in a waterside museum."
+  },
+  {
+    "id": "215fdce9-2285-4ead-a0e3-06509f1d0830",
+    "text": "Zuiderkerk \nRestored church built in 1611 & once painted by Monet, now used for conferences, events & concerts."
+  },
+  {
+    "id": "aefb6af1-9b04-4b2c-828c-7df8eb0477ea",
+    "text": "Walloon Church"
+  },
+  {
+    "id": "ae943ee3-c1f7-49e0-9f2f-174e494d2799",
+    "text": "Houseboat Museum \nMuseum on a 1914 freighter converted to become a houseboat, exploring life on Amsterdam's canals."
+  },
+  {
+    "id": "5de4f427-d3d7-4517-b125-af8685423bbb",
+    "text": "Museum Cobra \nAiry museum showing major works by CoBrA group (1948–1951) artists & related temporary exhibitions."
+  },
+  {
+    "id": "de7ddebd-9c62-404c-8239-990042d3ba0e",
+    "text": "Stromma - Damrak \nSeasonal sightseeing cruises in glass-roofed boats along the city's many canals, with audio guide."
+  },
+  {
+    "id": "63b0e187-7152-47a7-a304-94e99beec8bd",
+    "text": "Rode Hoed \nDebates, lectures, concerts, weddings & events space in a galleried 17th-century clandestine church."
+  },
+  {
+    "id": "dfb60997-6963-4d07-acdb-e16e234dfb00",
+    "text": "Homomonument \nPeople persecuted for their homosexuality are memorialized by this public sculpture."
+  },
+  {
+    "id": "ceb735bb-17d9-420a-9ac5-a362ab79202e",
+    "text": "Portuguese Synagogue of Amsterdam \nCompleted in 1675, this grand, light-filled synagoge with elegant chandelier offers an audio guide."
+  },
+  {
+    "id": "8e4c7cb2-ae92-4e10-bab8-8a9257f71278",
+    "text": "Boom Chicago \nRenowned English-language comedy troupe performing topical sketches, improvisations & songs."
+  },
+  {
+    "id": "eafa4601-9eec-4b84-a2e8-675c4b57d02b",
+    "text": "Sarphatipark \nCompact, English-style garden with ponds & meadows, plus a memorial to the doctor who founded it."
+  },
+  {
+    "id": "1d7d34af-41bb-49f1-baaa-c738942126ed",
+    "text": "English Reformed Church Amsterdam \nTime-tested English Reformed Church since 1607 with unique architecture & a famous replica organ."
+  },
+  {
+    "id": "e4f9fb15-3e0f-40f1-a865-ef3743c8fd8f",
+    "text": "Willet-Holthuysen Museum \nPeriod interiors plus Venetian glass, porcelain, weapons, rare art history books, paintings & more."
+  },
+  {
+    "id": "b6f631ee-17c8-458b-9d3e-0025f8f11d9d",
+    "text": "Beatrixpark \nCity park established in the 1930s featuring landscaped paths, a pond, a wading pool & a playground."
+  },
+  {
+    "id": "01894a10-b884-48a9-bdde-fa059575e5ee",
+    "text": "Six Collection"
+  },
+  {
+    "id": "d6d7a460-a2a3-4b38-968d-39735a075db2",
+    "text": "Geelvinck Pianola Museum \nThis museum showcases an array of automatic pianos, plus an archive of more than 30,000 music rolls."
+  },
+  {
+    "id": "69d01995-2d59-46c1-b997-3c9094873c3c",
+    "text": "The St. Bavo Church in Haarlem \nArt-rich towering Gothic church, home to the ornate Muller organ, played by both Handel & Mozart."
+  },
+  {
+    "id": "005ba997-2947-4cfa-8c93-cb8a5107cd9a",
+    "text": "Rederij Plas"
+  },
+  {
+    "id": "a0f51178-471e-4683-be72-537549f45fc1",
+    "text": "Groengebied Amstelland"
+  },
+  {
+    "id": "c8cf3f62-44d0-43ee-b201-17dd080de731",
+    "text": "Munttoren \nOriginally part of the city wall, this tower was rebuilt in 1620 & features a carillon with bells."
+  },
+  {
+    "id": "54723f2f-72cf-4654-84dc-d5129588b52e",
+    "text": "Moses and Aaron Church (officially Church of St. Anthony of Padua)"
+  },
+  {
+    "id": "a988df08-4ad1-4de2-a0eb-25fc94d14ddc",
+    "text": "Vineyard Amsteltuin BV"
+  },
+  {
+    "id": "030f2ce8-1369-42e1-be4b-2fee422bd5e7",
+    "text": "Frans Hals Museum \nGallery in a 17th-century building dedicated to portrait painter Frans Hals & the Dutch Old Masters."
+  },
+  {
+    "id": "4614975c-8fd8-4432-9b83-8d025719452e",
+    "text": "Liebfrauen, Frankfurt \nLight-filled Catholic church constructed in the mid-1300s, featuring stained glass & a pipe organ."
+  },
+  {
+    "id": "55129d87-02ae-439e-81bd-2fc8e47c6c61",
+    "text": "Brothers Grimm National Monument \nIn addition to a farmers' market, this village square features a statue honoring the Brothers Grimm."
+  },
+  {
+    "id": "dd62c4bc-38e5-4311-984b-8e9936146b2d",
+    "text": "Städel Museum \nArt gallery housing a prominent European art collection dating from the Middle Ages to the present."
+  },
+  {
+    "id": "6bfc21d1-5e3f-4f13-8a05-a3726677e26d",
+    "text": "Palmengarten Frankfurt \nExpansive, 19th-century botanical garden with palm & orchid collections displayed in greenhouses."
+  },
+  {
+    "id": "9e4faec6-673a-4024-8a5f-b3413f06f928",
+    "text": "Museum for Communication Frankfurt \nThe story of communication, told from Mesopotamian writing tablets to contemporary electronic media."
+  },
+  {
+    "id": "9e314d5c-2f47-4dea-82ed-8b490a84826f",
+    "text": "Senckenberg Nature Museum \nDinosaur skeletons & a giant anaconda featured in the collections of a large natural history museum."
+  },
+  {
+    "id": "5b376206-795d-48b7-b23e-b7cb2fb21cce",
+    "text": "Alte Oper \nFormer opera house, opened in 1880 & rebuilt after WWII, with a classical concert program."
+  },
+  {
+    "id": "904f20c6-d79f-4bd6-89f3-5c77e6339d7c",
+    "text": "Zoo Frankfurt \nZoo founded in 1858, keeping hundreds of animal species in their naturalistic habitats."
+  },
+  {
+    "id": "036188d9-707c-4d77-8926-5910201bfb86",
+    "text": "Frankfurt Cathedral \nGothic-style Catholic cathedral decorated with Renaissance frescoes, plus a tower with city views."
+  },
+  {
+    "id": "432fe5da-5b75-467b-b0e8-d620d92d3ea9",
+    "text": "Frankfurter Römer \nThis medieval building with a stepped gable facade is now town hall with a balcony & many portraits."
+  },
+  {
+    "id": "92e181ed-199b-4865-9162-b163cdf82869",
+    "text": "German Film Museum \nInnovative film museum showcasing the workings of cinema with artifacts & interactive displays."
+  },
+  {
+    "id": "c3ebb5ee-6ac7-4ba4-b3f3-538e0921198a",
+    "text": "Römerberg \nReconstructed timber houses lining the cobbled town square, also home to a museum & Gothic church."
+  },
+  {
+    "id": "b492a975-6f81-48d3-ba41-35500a6ac7c8",
+    "text": "Jewish Museum \nDisplays on recent Jewish history in the 19th-century Rothschild Palais, plus a modern extension."
+  },
+  {
+    "id": "421f243f-192e-4f64-a1d1-6d8de808d595",
+    "text": "St. Paul's Church \nRedbrick church, a memorial to the start of German democracy, now hosting concerts & exhibitions."
+  },
+  {
+    "id": "1964c899-9f37-4fce-822b-6f11d3b4a35e",
+    "text": "Das Tollhaus"
+  },
+  {
+    "id": "2b245262-4c20-47ff-bcde-9bd663acac87",
+    "text": "Iron Footbridge \nIron footbridge over the Main known for its city views & padlocks attached by romantic couples."
+  },
+  {
+    "id": "1dfb3209-9958-4303-952b-63869d12b740",
+    "text": "Museum Applied Art \nCollection of hundreds of years of design tracing European history through art & everyday objects."
+  },
+  {
+    "id": "0c65b8d5-64fc-4f49-bc6c-cda2f5b8d28c",
+    "text": "MesseTurm Service GmbH \nPostmodern office building completed in 1991, including a conference & events floor."
+  },
+  {
+    "id": "8bb9ef7d-7eee-4795-9f91-7e4441f971f1",
+    "text": "Deutsches Architekturmuseum (DAM) \nArchitectural exhibitions & events in an 18th-century mansion with an airy redesigned interior."
+  },
+  {
+    "id": "54d7bbb3-2693-4063-a6c9-08b94c25416c",
+    "text": "Liebieghaus \nMunicipal sculpture museum with a 5,000-strong collection spanning ancient Egypt to neoclassicism."
+  },
+  {
+    "id": "9d19e759-dbcd-4306-9e65-3d329f44e011",
+    "text": "Opel Zoo \nWildlife park with a showpiece elephant enclosure, hippos & a petting zoo, plus camel & pony rides."
+  },
+  {
+    "id": "787c8ff3-9d1a-4258-9ade-61aca945bf2f",
+    "text": "Caricatura - Museum for Comic Art \nMuseum of humorous art, both permanent & temporary exhibits, displaying work by German cartoonists."
+  },
+  {
+    "id": "d05e5e1b-7e54-4913-ab13-64bdb660fcc9",
+    "text": "Historical Museum Frankfurt \nCollections of art & artifacts on Frankfurt's history from medieval times to the present day."
+  },
+  {
+    "id": "f8905935-fc48-4c69-af97-89c593f81d44",
+    "text": "Portikus"
+  },
+  {
+    "id": "64d41893-d12e-4a08-8cb2-13627460bfa5",
+    "text": "Museum Giersch \nMuseum of 19th- & 20th-century art from the Rhine-Main region, plus cultural & educational events."
+  },
+  {
+    "id": "216f45a3-e470-4b80-bd7f-8c4a61b716e3",
+    "text": "Kronberg Castle \nRestored medieval castle offering guided interior tours, expansive gardens & panoramic views."
+  },
+  {
+    "id": "7f4bc8c5-b9aa-4911-a618-4ea488716e57",
+    "text": "Museum of World Cultures \nOriginal museum with a huge collection of objects, photographs & films of cultures around the world."
+  },
+  {
+    "id": "3233b55f-65a0-4c3b-827e-5e109b4b0b37",
+    "text": "Schwanheimer Dünen \nNature reserve with inland sand dunes and wooden walkways running across the meadow landscape."
+  },
+  {
+    "id": "5416bb8d-5783-4a8a-9de9-de20dc90b1cc",
+    "text": "Dreieich-Museum"
+  },
+  {
+    "id": "5b68e1e3-fd9d-493e-b060-3cf30d3316a2",
+    "text": "Sinclair-Haus"
+  },
+  {
+    "id": "c4642396-b4f8-4de4-bf08-62e0b07d1a2b",
+    "text": "Saalburg \nReconstructed Roman fort, with a large archaeological museum  & guided tours of the site."
+  },
+  {
+    "id": "bc240513-98dd-4d13-a3e6-23c7ec8923b7",
+    "text": "Frankfurt Archaeological Museum \nMuseum in a restored monastery exploring the city's history from the Neolithic to early modern eras."
+  },
+  {
+    "id": "c0bfdf30-1777-4610-8a62-b2634d4bb498",
+    "text": "Günthersburgpark \nCity green space with a popular fountain/splash pad, sports courts & a children’s playground."
+  },
+  {
+    "id": "ce2b5483-ae8b-4fe2-9539-a4242bf44874",
+    "text": "Fun Forest GmbH AbenteuerPark Offenbach"
+  },
+  {
+    "id": "0bbb89c7-0099-450a-8478-12883304824a",
+    "text": "Tolliwood children Adventureland Frankfurt"
+  },
+  {
+    "id": "d5985d4a-699b-4440-92af-83c5e281e227",
+    "text": "Freizeitpark Oberwiesen"
+  },
+  {
+    "id": "9b1fe944-65cc-41c3-87f5-2be5d549a1af",
+    "text": "Forum GmbH"
+  },
+  {
+    "id": "2e2e6699-326f-4a7e-87de-c657536f1480",
+    "text": "Metzler Park"
+  },
+  {
+    "id": "3080906d-8848-4c2f-a2f4-76c99d193c30",
+    "text": "Bürger Park"
+  },
+  {
+    "id": "dcca6d56-884c-481c-a67e-a887862dbe65",
+    "text": "Museum Kronberger Malerkolonie"
+  },
+  {
+    "id": "6eebd096-042b-438b-ab74-fdff601f6969",
+    "text": "Porcelain Museum in Frankfurt Kronberger House"
+  },
+  {
+    "id": "95aab12d-2138-4627-bae8-8702032c9015",
+    "text": "Stoltze-Museum"
+  },
+  {
+    "id": "42d6d5ec-9cb5-4e90-a4dd-b485eec64ddd",
+    "text": "Kaiserpfalz franconofurd"
+  },
+  {
+    "id": "a7838571-7e11-4999-9456-01a549966e7e",
+    "text": "Bibelhaus Erlebnis Museum Frankfurt"
+  },
+  {
+    "id": "635abf00-6e28-4e21-87bd-7a9c3ba5a835",
+    "text": "Museumsufer"
+  },
+  {
+    "id": "2e824e31-b037-4b42-8fcd-992e610be264",
+    "text": "\"Euro-Skulptur\" von Ottmar Hörl \nInstalled in 2001, this Ottmar Hörl sculpture outside the Eurotower celebrates the euro currency."
+  },
+  {
+    "id": "2f87a662-8248-438a-b363-dd1a4014d5d0",
+    "text": "Märchenbrunnen \nFountain situated in a small green belt featuring a fabled female figure adorning the middle."
+  },
+  {
+    "id": "b5d95478-4b62-4b78-b817-69fe69fe67e4",
+    "text": "Der Peterskirchhof"
+  },
+  {
+    "id": "090d54bb-39b1-490a-8e28-e82d9812bbb8",
+    "text": "Charles Schrader Fotogalerie"
+  },
+  {
+    "id": "ead62820-bdb2-41d5-826a-14724e13f239",
+    "text": "Frankfurt Bahnhofsviertel"
+  },
+  {
+    "id": "ec7c4d68-3899-4ed0-8528-84295870d856",
+    "text": "The Westend Synagogue \nImposing, opulent 1910 synagogue featuring a majestic dome & a rich, historic past."
+  },
+  {
+    "id": "1afdecf8-137e-4cb4-a667-66dd3a004d4c",
+    "text": "Gutleutkaserne"
+  },
+  {
+    "id": "f3e438bc-b807-499e-b7aa-7f83ed0e3573",
+    "text": "Willemer-Häuschen"
+  },
+  {
+    "id": "bdb493e3-aca6-4525-9773-856c4fda8457",
+    "text": "Skyline Garden"
+  },
+  {
+    "id": "ac6e227c-bbb7-4506-b0a9-c0daa4d9e715",
+    "text": "Kriminalmuseum - Kriminaltechnische Lehrmittelsammlung des Polizeipräsidiums Frankfurt am Main"
+  },
+  {
+    "id": "6168e5a8-2bc8-41e9-94f6-a3fde814d26e",
+    "text": "LILU"
+  },
+  {
+    "id": "67e1c98b-1958-4cc7-9a2f-6dddcd38f072",
+    "text": "Waldspielpark Scheerwald \nExtensive park with a splash pad for kids, miniature golf, roller skating & sports fields."
+  },
+  {
+    "id": "dca5882f-b855-4950-ad87-8bf79627e045",
+    "text": "Königsbrünnchen"
+  },
+  {
+    "id": "61a9e0bb-14fe-4d73-833b-b58d7a234c04",
+    "text": "Rebstockpark \nWoodland walks in a storied park with a family water slides, lakeside picnic spots & a soccer field."
+  },
+  {
+    "id": "a5baebe6-cbed-41b7-ad8a-e58310dc7659",
+    "text": "Nidda Park"
+  },
+  {
+    "id": "204dd566-90ef-4cb5-9870-e02a91082f75",
+    "text": "The Blue Mosque \nWell-known site, also known as the Blue Mosque, built in 1616 & containing its founder's tomb."
+  },
+  {
+    "id": "e8f877af-e53e-4330-aa3f-c31458b02452",
+    "text": "Serpent Column \nAncient Greek bronze column with missing serpent heads, made to commemorate a historic battle."
+  },
+  {
+    "id": "7d670456-240c-419d-94f8-8664fcf70ef2",
+    "text": "Antik Hotel Istanbul \nRefined hotel with an event space in a 1500-year-old cistern, plus a sauna & sea views."
+  },
+  {
+    "id": "71825c05-f499-4f28-b951-0b3009508d47",
+    "text": "Ciragan Palace Kempinski \nLavish lodging in an ornate former palace with dining & a spa, plus an infinity pool & a helipad."
+  },
+  {
+    "id": "bc501557-f9b1-40e6-a988-152472754b1f",
+    "text": "Beyazit Square \nLarge public square featuring the main gate to Istanbul University, a big mosque & street vendors."
+  },
+  {
+    "id": "6de3fcaf-db91-43bc-ba4f-69126886f5b0",
+    "text": "Hagia Sophia Grand Mosque \nIconic, storied mosque set within a vast, domed former Byzantine church with stained-glass windows."
+  },
+  {
+    "id": "cdb217d6-7711-4b70-909b-168a324040ca",
+    "text": "Levanten \nLow-key rooms & dorms in a downtown building, plus a hip TV lounge & a common kitchen."
+  },
+  {
+    "id": "a059e441-30ed-499b-8a4a-7480f51faae4",
+    "text": "Faik Pasha-Suites Serviced Rooms"
+  },
+  {
+    "id": "2c37c479-d420-4ecc-ab5a-7c98945df872",
+    "text": "Martinenz Hotel \nSimple rooms in a down-to-earth hotel offering sea & city views, plus a bar/lounge."
+  },
+  {
+    "id": "7b71e45d-0452-4f9c-987f-3d6a37331121",
+    "text": "Topkapi Palace Museum \nHuge, opulent 15th-century palace, occupied by sultans for 400 years, housing Ottoman treasures."
+  },
+  {
+    "id": "75d26c50-1f1b-41d6-84ea-507ddcdbd21c",
+    "text": "Grand Bazaar \nHistoric sprawling network of indoor souks & market streets peddling leather, jewelry & gifts."
+  },
+  {
+    "id": "61189b3c-c272-42a7-bd13-f6ce8f92ec5c",
+    "text": "Basilica Cistern \nHuge underground Roman water source held up with 336 marble columns covering 9,800 sq. meters."
+  },
+  {
+    "id": "b9b3a46e-ef08-4665-8240-8f360ba9d7a9",
+    "text": "Cemberlitas Hammam \nTurkish bath complex dating from 1584 offering soaks, steam baths, scrubs, massages & clay masks."
+  },
+  {
+    "id": "87be5c80-d1ee-42cf-8311-a73fef374e5c",
+    "text": "Maiden's Tower \nStructure linked with legend & once used as a lighthouse, housing a small museum & a restaurant."
+  },
+  {
+    "id": "8c69e006-3af1-44d9-bbc3-67ccc19709ed",
+    "text": "Galata Tower \nRestored 14th-century tower and former prison overlooking the Bosphorus with a top-floor restaurant."
+  },
+  {
+    "id": "9c1505b2-1b0c-46bf-9c1c-4a4ac25da8a9",
+    "text": "Dolmabahçe Palace \nGrand, domed sultan's palace, now a museum, including collections of art, calligraphy and carpets."
+  },
+  {
+    "id": "617c7fb7-3031-4d2a-a004-051b25bead4e",
+    "text": "Egyptian Bazaar \nCovered, 17th-century market known as the Egyptian Bazaar, with spice, food & textile shops."
+  },
+  {
+    "id": "e80cf246-19f2-4b50-8571-6d5f70fd9029",
+    "text": "Kariye Mosque \nMuseum of religious art on the site of a church that was first built here in the 6th century A.D."
+  },
+  {
+    "id": "1c58a6dc-e144-476c-a225-b6b4c7822e34",
+    "text": "Suleymaniye Mosque \nOrnate 16th-century mosque with gardens, plus a terrace with views over the Golden Horn."
+  },
+  {
+    "id": "6875d1b5-a20f-402d-98cb-c8b75e5393f7",
+    "text": "Istanbul Archaeological Museums \nNeoclassical museum showing the country's rich archaeological heritage within landscaped gardens."
+  },
+  {
+    "id": "00d151b0-5f3c-4db3-b167-6d94a171fdf7",
+    "text": "Pierre Loti Hill \nThis peak named for French writer & former local, Pierre Loti, has a cable car, cafe & views."
+  },
+  {
+    "id": "310e0b3b-3033-4673-8e9a-da0de6c2654c",
+    "text": "FATİH ERCİYES OTEL"
+  },
+  {
+    "id": "1056ee2a-70f6-4cc5-a4d6-a7573d711af5",
+    "text": "Çiçek Pasajı \nHistoric passageway between 2 streets, featuring ornate architecture, shops & cafes."
+  },
+  {
+    "id": "d8965fbc-eee6-4578-821c-908d4a36916e",
+    "text": "Yeni Mosque \nProminent mosque dating from the 17th century, featuring iconic domes & a dramatic interior."
+  },
+  {
+    "id": "5183a109-2991-420a-9718-67edc097b7fd",
+    "text": "Rahmi M. Koç Museum \nMuseum on transportation, industry & communications with a car collection & some hands-on exhibits."
+  },
+  {
+    "id": "86d18850-262a-40f2-bacc-062699951724",
+    "text": "Tophane Fountain \nThis sizable structure built in 1732 supplies water for drinking & ritual prayer washing."
+  },
+  {
+    "id": "40a75a8a-d576-4371-9d48-421e18e5511a",
+    "text": "Beyazit Mosque \nImperial mosque complex built in the early 1500's including a school, baths & a soup kitchen."
+  },
+  {
+    "id": "4e1d0c61-e0ce-409c-8cc7-9d36ba647edc",
+    "text": "Sakıp Sabancı Museum \nMuseum in a 1925 mansion with temporary & permanent exhibits, plus Islamic calligraphy & sculptures."
+  },
+  {
+    "id": "bd09ca99-bb4d-4e24-b95e-240b5b057833",
+    "text": "Neve Shalom Synagogue \nImported stained glass & a massive chandelier in a synagogue dating from the mid-20th century."
+  },
+  {
+    "id": "20b0e3ec-cd65-4dbd-9128-9a98697d2ea2",
+    "text": "Gülhane Park \nVenerable, tranquil forested park featuring gardens, paths, a creek & a science museum."
+  },
+  {
+    "id": "2797b2f6-aa21-45f6-b6d7-b517484fb687",
+    "text": "Naval Museum \nMuseum tracing Turkish naval history with artifacts such as Ottoman-era ships & early diving gear."
+  },
+  {
+    "id": "05abc646-c50d-41f5-bfb6-ae8253734ac5",
+    "text": "Ataturk Arboretum \nCalm, expansive arboretum with collections of plants & trees, popular for nature walks & photos."
+  },
+  {
+    "id": "25399142-fc23-43d5-a96b-20077bd4b9ff",
+    "text": "Salt Galata \nArt space in a former bank building featuring a gallery, a cafe & a library with free Wi-Fi."
+  },
+  {
+    "id": "bfcb8490-9901-4960-ade1-a2d496563021",
+    "text": "Mihrimah Sultan Mosque \nImposing, 16th-century mosque complex designed by Mimar Sinan, with 4 corner towers & tall minaret."
+  },
+  {
+    "id": "5a9421c5-ac73-44af-abb8-c79bbe20aa96",
+    "text": "Sokollu Mehmed Pasha Mosque \nArchitecturally notable Ottoman mosque completed in 1572, with Iznik tiles on its interior walls."
+  },
+  {
+    "id": "f60b11c1-4cd7-4014-9a78-7f848b90f952",
+    "text": "Şakirin Mosque \nEstablished in 2009, this modern mosque features 2 minarets, an aluminum dome & a fountain."
+  },
+  {
+    "id": "538a5d63-d46a-4e06-99f9-c2417dd9ae3f",
+    "text": "Mimar Sinan Mosque \nFormal gardens, a colonnaded courtyard & a tiled, domed interior at an elaborate place of worship."
+  },
+  {
+    "id": "49a3f691-f2e4-4f74-a0d2-b0e53e4fe8b7",
+    "text": "Tophane-İ Amire Culture and Art Center"
+  },
+  {
+    "id": "0c67ec59-2b74-48a9-b32d-b2d4ff1f41d7",
+    "text": "Dolmabahçe Mosque \nElegant, 19th-century, Ottoman-style mosque with Baroque & rococo-influenced decorative features."
+  },
+  {
+    "id": "6803eac3-f16c-420a-b52f-ff760f6f342f",
+    "text": "Sait Halim Pasha Mansion \nSeveral grand rooms can be booked at this iconic waterside destination for private events."
+  },
+  {
+    "id": "f25309fc-d988-4223-9272-5fa183e63e34",
+    "text": "Salt Beyoğlu"
+  },
+  {
+    "id": "36d043ee-f6df-47b6-aebf-f8ff73ea5fe0",
+    "text": "Istanbul Aviation Museum \nFamily-friendly aviation museum featuring military aircraft & exhibits with models & equipment."
+  },
+  {
+    "id": "23a6ec75-5b0b-465b-9f5b-e9a1d1bad716",
+    "text": "Galatasaray Hamam \nClassic hammam with Ottoman-style marble-clad treatment areas & extras like massage & bubble baths."
+  },
+  {
+    "id": "e3884e04-9fbc-4bee-8cdc-3ecd2cd1d8ad",
+    "text": "Ismail Aga Mosque \nRed-brick 1700s building with a minaret & a tiled courtyard, hub for a strict Sufi religious order."
+  },
+  {
+    "id": "4317e66a-2bc4-46e2-af55-563fa5f66522",
+    "text": "Kirazlıbent Nature Park"
+  },
+  {
+    "id": "5305d3fd-43b0-4814-b527-9cab679d0b17",
+    "text": "İBB Taksim Gezi Parkı \nOne of the area's few green spaces, this tree-filled park was the site of a large protest in 2013."
+  },
+  {
+    "id": "ac20946e-2b78-4c98-9810-ff0c3b2a72e5",
+    "text": "Laleli Mosque \nDesigned in the Baroque style, this 18th-century Ottoman imperial mosque features a dome & minarets."
+  },
+  {
+    "id": "8844b1b9-9c17-4bd5-bb10-cee501e3811b",
+    "text": "Rustem Pasha Mosque \nOttoman mosque from the 16th century decorated with a wide range of floral & geometric tile designs."
+  },
+  {
+    "id": "955c2dfe-b0c9-44ee-b573-56894f3afbb7",
+    "text": "Parkorman Nature Park"
+  },
+  {
+    "id": "31a41ead-7a2c-438e-bcf0-dfcc0a45557f",
+    "text": "Little Hagia Sophia Mosque \nLandmark domed mosque in a former 6th century Byzantine church with an Ottoman-style interior."
+  },
+  {
+    "id": "6d066367-50d6-402e-9ebd-3753cd2a6f59",
+    "text": "Kadırga Hamamı"
+  },
+  {
+    "id": "172878e2-3644-45fb-86c6-7dab55ff6355",
+    "text": "Büyük Mecidiye Mosque \nRestored Baroque Revival mosque featuring windows designed to capture the Bosphorus' changing light."
+  },
+  {
+    "id": "bb33c47c-9cfa-40a1-be61-78d35129a271",
+    "text": "Pera Museum \nArt museum in an ornate former hotel with paintings, ceramics & rotating shows of modern masters."
+  },
+  {
+    "id": "fd6ce26c-cc6c-4548-8a6d-fff784e5ed3a",
+    "text": "Hatay Medeniyetler Sofrası"
+  },
+  {
+    "id": "7a6675c4-563d-41d2-917f-3accf5fd8223",
+    "text": "Burmalı Mescit Mosque"
+  },
+  {
+    "id": "a6a415ea-fec4-4cf2-9910-c718fb106f4d",
+    "text": "Kadırga Park \nNeighborhood gardens popular with families featuring fountains illuminated at night."
+  },
+  {
+    "id": "77728166-92e7-449c-a64b-caaae97c3945",
+    "text": "ŞEHİT CEVHER DUDAYEV PARKİ"
+  },
+  {
+    "id": "f29a1b09-0b02-4491-9050-938b18ee6518",
+    "text": "Punto Carpet"
+  },
+  {
+    "id": "f8332dcc-37f2-41e5-9d56-bd734fdb40e9",
+    "text": "Church of SS Peter and Paul, Istanbul"
+  },
+  {
+    "id": "7dbc7f7e-4f39-4bed-8f76-e018d36b1d61",
+    "text": "Armenian Church of Surp Takavor \nThis rebuilt church dating back to 1722 features a prominent bell tower & refined interior decor."
+  },
+  {
+    "id": "2c16169d-1604-48f5-ac23-f655f7b81b6c",
+    "text": "Times Square \nBustling destination in the heart of the Theater District known for bright lights, shopping & shows."
+  },
+  {
+    "id": "47aea1ad-5aee-439d-80d2-83f44f5ab390",
+    "text": "Lincoln Center for the Performing Arts \nMulti-venue complex home to many prominent groups like Metropolitan Opera & New York City Ballet."
+  },
+  {
+    "id": "9d79ab0f-d0e3-4779-b5f6-72393bb504bc",
+    "text": "Radio City Music Hall \nCirca-1932 art deco theater hosting the Christmas Spectacular with the Rockettes, concerts & more."
+  },
+  {
+    "id": "ddcd5d62-37c2-4c37-848c-b44da89b49d2",
+    "text": "Rockefeller Center \nFamous complex that's home to TV studios, plus a seasonal ice rink & a giant Christmas tree."
+  },
+  {
+    "id": "758770d9-16cc-459a-84b3-a73e107cce7f",
+    "text": "Beacon Theatre \nBig-name musical acts are usually on the marquee at this classy, 2,800-seat theater."
+  },
+  {
+    "id": "ea328eae-5ebe-4184-a211-133256874862",
+    "text": "The Museum of Modern Art \nWorks from van Gogh to Warhol & beyond plus a sculpture garden, 2 cafes & The Modern restaurant."
+  },
+  {
+    "id": "a9216657-113c-4702-8377-0485db4bdf4c",
+    "text": "American Museum of Natural History \nFrom dinosaurs to outer space & everything in between, this huge museum showcases natural wonders."
+  },
+  {
+    "id": "b07872f9-10c4-4706-9f0e-e74a8e89e91d",
+    "text": "Empire State Building \nIconic, art deco office tower from 1931 with exhibits & observatories on the 86th & 102nd floors."
+  },
+  {
+    "id": "9b723cbf-f83f-4fce-9799-e074779018c9",
+    "text": "Solomon R. Guggenheim Museum \nFrank Lloyd Wright–designed modern art museum with an architecturally significant spiral rotunda."
+  },
+  {
+    "id": "ff740908-22da-4570-90e6-ce45f6e69c82",
+    "text": "Madison Square Garden \nBilled as the \"world's most famous arena\", this icon hosts pro sports, concerts & other big events."
+  },
+  {
+    "id": "2cba7c6c-ee8b-41ae-89e4-4dcc6cca39c2",
+    "text": "Intrepid Museum \nFlight museum on an aircraft carrier whose exhibits include a Concorde, submarine & space shuttle."
+  },
+  {
+    "id": "fedf66c4-24ad-4a88-8ccc-f7478472f66b",
+    "text": "St. Patrick's Cathedral \nTowering Neo-Gothic church from 1879 with twin spires & storied history opposite Rockefeller Center."
+  },
+  {
+    "id": "98506487-4de0-454e-8175-e29d63648707",
+    "text": "The Battery \nHistoric park with Ellis Island & Statue of Liberty views, plus ferry service to both islands."
+  },
+  {
+    "id": "88529549-a305-4f39-b61a-7e02c9aae111",
+    "text": "Prospect Park \nSprawling city park featuring the Audubon Center in the historic Boathouse, plus Prospect Park Zoo."
+  },
+  {
+    "id": "25041cc1-ce8f-4e0a-8a3d-30ad0b6e12d2",
+    "text": "Carnegie Hall \nLongtime music hall with exceptional acoustics, architecture & a storied performance history."
+  },
+  {
+    "id": "3e102834-776d-4df4-8bcc-a430ac32257a",
+    "text": "Central Park Zoo \nSet within Central Park, this small zoo features penguins, sea lions, monkeys & a petting zoo."
+  },
+  {
+    "id": "86bd9981-74f0-43cd-a529-6566f655477d",
+    "text": "Museum of Sex \nIntimate museum chronicling the evolution of human sexuality in ever-changing exhibits."
+  },
+  {
+    "id": "629c4d3f-9e9d-490f-b7a9-a442ab22061c",
+    "text": "Brooklyn Bridge Park \nThis urban oasis features shaded picnic tables, hibachi-style BBQ grills & river views."
+  },
+  {
+    "id": "b557c5c4-ba11-491d-ad1b-265b6fccd7bc",
+    "text": "Madame Tussauds New York \nMuseum chain for life-size wax replicas of famous Americans & historic icons in themed galleries."
+  },
+  {
+    "id": "17ccaf5f-1aa0-449e-839e-e5ee864ee5d2",
+    "text": "Brooklyn Museum \nBeaux Arts landmark famed for ancient & modern art collections & world-class temporary exhibitions."
+  },
+  {
+    "id": "47d18462-d3a0-4a04-a7a0-5127dd6b9544",
+    "text": "M&M'S New York \nColorful, interactive sweets-themed shop selling M&Ms candy, clothing, home decor & gifts."
+  },
+  {
+    "id": "69cbcd59-aec4-4f87-b7ea-bfb7f44e17aa",
+    "text": "New York Aquarium \nAquarium on the Coney Island boardwalk hosting exhibits on marine life & daily sea lion shows."
+  },
+  {
+    "id": "16f7b4e2-b398-4893-8f3e-10640080192a",
+    "text": "Hell Gate Bridge \nOpened in 1916, this steel arch bridge in NYC connects Queens to Randall's Island."
+  },
+  {
+    "id": "a482e035-3fe7-492e-a604-c786448e273c",
+    "text": "Chrysler Building \nShimmering art deco skyscraper from 1930 whose spire once made it the world's tallest building."
+  },
+  {
+    "id": "afbb8be4-050e-453b-a28e-f9b9ee43ed35",
+    "text": "Brooklyn Bridge \nBeloved, circa-1883 landmark connecting Manhattan & Brooklyn via a unique stone-&-steel design."
+  },
+  {
+    "id": "eb3af912-842a-4c20-8c4f-d138288dc2be",
+    "text": "Central Park \nSprawling park with pedestrian paths & ballfields, plus a zoo, carousel, boat rentals & a reservoir."
+  },
+  {
+    "id": "582ace42-15e6-41d7-8e01-a235e42b6cdc",
+    "text": "New York Stock Exchange \nLandmark building on Wall Street and home to one of the world's leading stock exchanges."
+  },
+  {
+    "id": "29c1a95f-6c04-414e-bf27-f9a28551a02b",
+    "text": "Washington Square Park \nHistoric Greenwich Village concrete-&-green park known for its stately arch & prime people watching."
+  },
+  {
+    "id": "d353b0ef-4e04-477c-b88c-010f5cb55bc5",
+    "text": "Apollo Theater \nShowbiz legends & amateurs alike take the stage at this longtime music hall."
+  },
+  {
+    "id": "1e5df1c1-5518-4973-a358-0ea44cba1610",
+    "text": "Whitney Museum of American Art \nMuseum exclusively featuring 20th-century & contemporary art by American artists, most still living."
+  },
+  {
+    "id": "31d89a82-11a0-4e1a-85ea-791c6ac51df1",
+    "text": "Central Park Boathouse \nAmerican restaurant & bar notable for its prime lakeside setting in the middle of Central Park."
+  },
+  {
+    "id": "5273a004-91d1-4e0d-9faf-470371351886",
+    "text": "David Zwirner \nWorks by well-known contemporary artists take center stage at this airy exhibition space."
+  },
+  {
+    "id": "e6b073a6-4664-4dd8-a97e-d46642e0cf1e",
+    "text": "Flatiron Building \nArchitect Daniel Burnham's iconic 1902 triangular tower nicknamed for its clothes iron look."
+  },
+  {
+    "id": "b9319798-e843-4021-b78e-b2b0cf989b81",
+    "text": "Yankee Stadium \nHome of baseball's New York Yankees, this 2009 ballpark replaced the storied House That Ruth Built."
+  },
+  {
+    "id": "9dc76488-d597-466d-9cb7-c7566b80197f",
+    "text": "Prospect Park Zoo \nNearly 400 animals of 150 species within the confines of a 12-acre menagerie, suitable for all ages."
+  },
+  {
+    "id": "528953ff-83b0-4345-b0b3-c02e0d8ff78b",
+    "text": "Medieval Times Dinner & Tournament \nJousting, horsemanship & falconry plus a 4-course, utensil-free meal served in a castle-like space."
+  },
+  {
+    "id": "ecd4947a-f355-4593-90ea-89a80a29b872",
+    "text": "Comedy Cellar \nFamous comics are often in the lineup at this brick-walled comedy club with several shows nightly."
+  },
+  {
+    "id": "d44e1a69-8621-4004-97f8-36571ae29d5e",
+    "text": "New Museum \nContemporary art museum housed in a sleek white building with a gift shop & cafe in the lobby."
+  },
+  {
+    "id": "ab2c48f3-fc02-4fd4-a4db-0e88c8b9bd3d",
+    "text": "The Morgan Library & Museum \nCelebrated museum & library's gift shop featuring books, accessories & collection-related wares."
+  },
+  {
+    "id": "127363c3-540f-47b8-91ae-99bb2714b503",
+    "text": "The Mercury Lounge \nIndie headliners & up-and-comers have kept this small music venue crowded since the '90s."
+  },
+  {
+    "id": "7be63f4d-e539-4541-af7a-021f7462e2f0",
+    "text": "Deutsche Bank Center \nBrand-name fashion shops & upscale eateries share space around a soaring five-story central atrium."
+  },
+  {
+    "id": "725ce40c-f9da-46b7-aa53-e42e0833553c",
+    "text": "Tenement Museum \n1863 preserved tenement building brings Lower East Side immigrant stories to life with guided tours."
+  },
+  {
+    "id": "e45710d0-3fb3-4948-a31d-3c7e15082ac0",
+    "text": "Pier 54"
+  },
+  {
+    "id": "dd663fcd-1fa6-4dab-b29e-52f0c90a3e75",
+    "text": "Museum of the Moving Image \nThe history of film, television & digital media told via interactive displays, plus screenings."
+  },
+  {
+    "id": "e60cb649-146d-41a3-a20c-62ac68865086",
+    "text": "The New York Historical \nWest Side museum presenting New York City history via artwork, manuscripts, furniture and more."
+  },
+  {
+    "id": "3d5e7096-5573-4268-94d7-668c5108cb4e",
+    "text": "Liberty Science Center \n4 floors & 12 galleries with interactive science exhibits, a planetarium & a 3D theater."
+  },
+  {
+    "id": "707172d1-e99c-4622-b00b-984636eb4400",
+    "text": "The Metropolitan Museum of Art \nA grand setting for one of the world's greatest collections of art, from ancient to contemporary."
+  },
+  {
+    "id": "ce04efa6-b277-401c-8ac7-8109fb2ea514",
+    "text": "Flushing Meadows Corona Park \nEnormous greenspace housing World's Fair monuments, plus museums, sports facilities, a zoo & more."
+  },
+  {
+    "id": "ef4004f9-70b5-42ca-96a3-0bdeaaeeac37",
+    "text": "The Theater at Madison Square Garden \nExpansive spot (5,600 seats) showcasing top-name concerts, theatrical performances & family shows."
+  },
+  {
+    "id": "9610e6f8-e5be-498c-b85e-963b1bcb6e67",
+    "text": "Madison Square Park \nPublic green space featuring sculptures, a dog run & views of the Flatiron Building."
+  },
+  {
+    "id": "0839cfde-d2f4-4ccc-9042-d7eeedde0285",
+    "text": "Circle Line Sightseeing Cruises - Midtown \nUp-close perspective of Manhattan skyline, Statue of Liberty and Brooklyn Bridge with sea breezes."
+  },
+  {
+    "id": "c408a9a1-ee1c-49f0-add4-44cb7fdb16c4",
+    "text": "Brooklyn Botanic Garden \nA kid-friendly annual cherry blossom festival, a Japanese garden & more, spread across 52 acres."
+  },
+  {
+    "id": "afd02e86-f3c1-4936-8099-747351aaab25",
+    "text": "New York City Hall \nPalatial, circa-1812 government complex housing the mayor's office, the City Council & more."
+  },
+  {
+    "id": "211e3c42-3d3f-4830-b178-3c2947815ade",
+    "text": "The Met Cloisters \nBranch of the Metropolitan, showcasing medieval art in a French monastery overlooking the Hudson."
+  },
+  {
+    "id": "ff808777-bc58-4000-8e00-fc5424398631",
+    "text": "Hayden Planetarium \nSpace exhibits & shows in a large & futuristic sphere that seems to float inside a glass cube."
+  },
+  {
+    "id": "7c6fea9f-1dce-4719-a193-278002d25198",
+    "text": "United Nations Headquarters \n18-acre complex on the East River where 193 member-nations participate in international diplomacy."
+  },
+  {
+    "id": "bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62",
+    "text": "Queens Museum \nVisual arts on display along with The Panorama, a building-for-building model of New York City."
+  },
+  {
+    "id": "0df5b2a1-2115-4db7-a9e5-9443213af683",
+    "text": "The Tour at NBC Studios \nA backstage look at the venerable TV network & the studios where many popular shows are taped."
+  },
+  {
+    "id": "31f16974-f32d-456a-98c4-83008e9cb7b6",
+    "text": "Trinity Church \nHistoric Episcopal church & cemetery where Alexander Hamilton & other early Americans are buried."
+  },
+  {
+    "id": "32cd18ef-1dca-4b91-8880-ce6e848f9178",
+    "text": "New York Hall of Science \nThis former 1964 World's Fair pavilion now houses more than 450 interactive science & tech exhibits."
+  }
+]

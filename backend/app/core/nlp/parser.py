@@ -53,33 +53,6 @@ def extract_date_range(text: str) -> Tuple[Optional[datetime], Optional[datetime
             r'(\d+)\s+days?\s+(?:starting|from)\s+(.+?)(?:[.,;\s]|$)'
         ]
         
-        # for pattern in date_patterns:
-        #     m = re.search(pattern, text, flags=re.IGNORECASE)
-        #     if m:
-        #         try:
-        #             d1 = dateparser.parse(m.group(1), settings=parser.date_settings)
-                    
-                    
-        #             # Handle duration patterns
-        #             if "days" in pattern and len(m.groups()) > 1:
-        #                 if m.group(2) and m.group(2).isdigit():
-        #                     days = int(m.group(2))
-        #                     d2 = d1 + timedelta(days=days) if d1 else None
-        #                 else:
-        #                     d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
-        #             else:
-        #                 d2 = dateparser.parse(m.group(2), settings=parser.date_settings) if len(m.groups()) > 1 else None
-                    
-        #             if d1 and d2:
-        #                 return (min(d1, d2), max(d1, d2))
-        #             elif d1:
-        #                 # Check for duration indicator
-        #                 duration_match = re.search(r'(\d+)\s+days?', text, re.IGNORECASE)
-        #                 if duration_match:
-        #                     days = int(duration_match.group(1))
-        #                     d2 = d1 + timedelta(days=days)
-        #                     return (d1, d2)
-        #                 return (d1, d1)
         for pattern in date_patterns:
             m = re.search(pattern, text, flags=re.IGNORECASE)
             if m:
@@ -129,7 +102,6 @@ def extract_date_range(text: str) -> Tuple[Optional[datetime], Optional[datetime
     except Exception as e:
         logger.error(f"Error in date extraction: {e}")
         return None, None
-
 
 def extract_budget(text: str, doc) -> Tuple[Optional[Decimal], List[str]]:
     """Enhanced budget extraction with multiple currency support"""

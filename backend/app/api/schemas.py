@@ -91,6 +91,10 @@ class SeedingStatus(BaseModel):
 
 class ItineraryCreate(BaseModel):
     text: str = Field(..., description="Natural language travel request")
+    use_transformer: Optional[bool] = Field(
+        default=None,
+        description="Override server setting to enable/disable Transformer ordering for this request",
+    )
     
     @field_validator('text')
     @classmethod
@@ -120,6 +124,14 @@ class ItineraryUpdate(BaseModel):
         if v and len(v.strip()) == 0:
             raise ValueError("Name cannot be empty")
         return v
+
+# Debug/utility schemas for Transformer ordering preview
+class ReorderPreviewRequest(BaseModel):
+    poi_ids: List[str] = Field(..., description="List of POI UUID strings to reorder")
+
+class ReorderPreviewResponse(BaseModel):
+    input: List[str]
+    output: List[str]
 
 # ===== CATALOG ITEM SCHEMAS =====
 
@@ -157,8 +169,8 @@ class ActivityRead(BaseModel):
     difficulty_level: Optional[str] = None
     age_restrictions: Optional[str] = None
     accessibility_info: Optional[str] = None
-    created_at: datetime
-    updated_at: datetime
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         orm_mode = True
@@ -179,8 +191,8 @@ class AccommodationRead(BaseModel):
     check_in_time: Optional[str] = None
     check_out_time: Optional[str] = None
     contact_info: Optional[Dict[str, Any]] = None
-    created_at: datetime
-    updated_at: datetime
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         orm_mode = True
@@ -262,6 +274,7 @@ class ItineraryRead(BaseModel):
     is_active: bool
     created_at: datetime
     updated_at: datetime
+    scheduled_items: Optional[List[List[Any]]] = None
 
     dest_links: List[ItineraryDestinationRead]        = []
     act_links:  List[ItineraryActivityRead]           = []

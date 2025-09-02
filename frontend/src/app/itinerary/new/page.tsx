@@ -30,6 +30,8 @@ export default function NewItineraryPage() {
   
   // Step 3: Generated Itinerary
   const [generatedItinerary, setGeneratedItinerary] = useState<any>(null);
+  // Optional: enable Transformer ordering per request
+  const [useTransformer, setUseTransformer] = useState<boolean>(false);
 
   if (!isAuthenticated) {
     router.push('/login');
@@ -69,6 +71,7 @@ export default function NewItineraryPage() {
       const itinerary = await apiClient.createItinerary({
         text: travelText,
         preferences: preferences,
+        use_transformer: useTransformer,
       });
       setGeneratedItinerary(itinerary);
       setStep(3);
@@ -219,9 +222,22 @@ export default function NewItineraryPage() {
                     type="number"
                     value={preferences.budget}
                     onChange={(e) => setPreferences(prev => ({ ...prev, budget: Number(e.target.value) }))}
-                    min="0"
-                    step="100"
+                    min={0}
                   />
+                </div>
+
+                {/* Transformer ordering toggle */}
+                <div className="flex items-center space-x-3">
+                  <input
+                    id="use-transformer"
+                    type="checkbox"
+                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    checked={useTransformer}
+                    onChange={(e) => setUseTransformer(e.target.checked)}
+                  />
+                  <label htmlFor="use-transformer" className="text-sm text-gray-700">
+                    Enable AI ordering (Transformer)
+                  </label>
                 </div>
 
                 <div>

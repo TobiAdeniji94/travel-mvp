@@ -62,12 +62,33 @@ def time_aware_greedy_route(
             arrive = current_time + tt
 
             # if we arrive before it opens, we must wait
-            wait = max(timedelta(0), poi.opens - arrive)
+            # Ensure timezone consistency between poi.opens and arrive
+            if poi.opens.tzinfo is not None and arrive.tzinfo is None:
+                arrive = arrive.replace(tzinfo=poi.opens.tzinfo)
+            elif poi.opens.tzinfo is None and arrive.tzinfo is not None:
+                poi_opens = poi.opens.replace(tzinfo=arrive.tzinfo)
+                wait = max(timedelta(0), poi_opens - arrive)
+            else:
+                wait = max(timedelta(0), poi.opens - arrive)
             start_service = arrive + wait
             finish_service = start_service + timedelta(minutes=poi.duration)
 
-            # skip if we’d finish after closing or day_end
-            if finish_service > poi.closes or finish_service > day_end:
+            # skip if we'd finish after closing or day_end
+            # Ensure timezone consistency for poi.closes comparison
+            poi_closes = poi.closes
+            if poi.closes.tzinfo is not None and finish_service.tzinfo is None:
+                finish_service = finish_service.replace(tzinfo=poi.closes.tzinfo)
+            elif poi.closes.tzinfo is None and finish_service.tzinfo is not None:
+                poi_closes = poi.closes.replace(tzinfo=finish_service.tzinfo)
+            
+            # Ensure timezone consistency for day_end comparison
+            day_end_tz = day_end
+            if finish_service.tzinfo is not None and day_end.tzinfo is None:
+                day_end_tz = day_end.replace(tzinfo=finish_service.tzinfo)
+            elif finish_service.tzinfo is None and day_end.tzinfo is not None:
+                finish_service = finish_service.replace(tzinfo=day_end.tzinfo)
+            
+            if finish_service > poi_closes or finish_service > day_end_tz:
                 continue
 
             # score = minimal wait, tie-break on shortest travel

@@ -1,0 +1,8 @@
+{
+  "vocab_size": 215,
+  "pad_id": 0,
+  "bos_id": 1,
+  "max_src_len": 40,
+  "max_tgt_len": 7,
+  "num_samples": 13
+}

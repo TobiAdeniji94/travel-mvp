@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     # ML Models
     ML_MODELS_PATH: str = "/app/models"
     ENABLE_ML_CACHING: bool = True
+    # Transformer Inference
+    ENABLE_TRANSFORMER: bool = False
+    TRANSFORMER_ARTIFACTS: str = "/app/ml/artifacts"
     
     # Rate Limiting
     ENABLE_RATE_LIMITING: bool = True
