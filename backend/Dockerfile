@@ -21,17 +21,16 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Install Python dependencies
-COPY requirements.txt .
+# Install Python dependencies in split, cache-friendly layers
+COPY requirements/ ./requirements/
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --no-cache-dir --upgrade pip setuptools wheel \
-    && pip install --no-cache-dir -r requirements.txt
+    pip install --upgrade pip setuptools wheel \
+    && pip install -r requirements/base.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install -r requirements/app.txt
 
-# Download spaCy model with verification
-RUN --mount=type=cache,target=/root/.cache/pip \
-    python -m spacy download en_core_web_lg \
-    && python -c "import spacy; spacy.load('en_core_web_lg')" \
-    || (echo "Fallback: downloading en_core_web_sm" && python -m spacy download en_core_web_sm)
+# Verify spaCy model is importable (no extra downloads here)
+RUN python -c "import spacy; spacy.load('en_core_web_lg')"
 
 # Copy and set up startup script
 COPY start.sh .
@@ -67,3 +66,6 @@ LABEL maintainer="Travel MVP Team" \
       version="1.0" \
       description="Travel MVP Backend API with enhanced NLP and ML capabilities" \
       org.opencontainers.image.source="https://github.com/TobiAdeniji94/travel-mvp"
+
+# Production stage to match compose.prod target
+FROM base as production

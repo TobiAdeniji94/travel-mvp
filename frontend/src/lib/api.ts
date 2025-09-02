@@ -113,8 +113,9 @@ class ApiClient {
   async createItinerary(data: {
     text: string;
     preferences?: any;
+    use_transformer?: boolean;
   }) {
-    return this.request<any>('/itineraries/', {
+    return this.request<any>('/itineraries/generate', {
       method: 'POST',
       body: JSON.stringify(data),
     });

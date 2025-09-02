@@ -29,15 +29,20 @@ export interface RegisterData {
 }
 
 export interface Itinerary {
+  scheduled_items?: any[][];
   id: string;
   user_id: string;
-  title: string;
+  title?: string;
+  /** Backend field */
+  name?: string;
+  /** Raw parsed request data from backend */
+  data?: any;
   description?: string;
-  destination: string;
+  destination?: string;
   start_date: string;
   end_date: string;
   budget?: number;
-  status: 'draft' | 'confirmed' | 'completed' | 'cancelled';
+  status: 'draft' | 'confirmed' | 'completed' | 'cancelled' | 'generated';
   preferences?: any;
   created_at: string;
   updated_at: string;

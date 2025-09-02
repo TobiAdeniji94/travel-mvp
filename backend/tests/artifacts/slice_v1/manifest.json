@@ -1,0 +1,15 @@
+{
+  "slice_id": "slice_v1",
+  "catalog_version": "2025.08.01",
+  "created_at": "2025-08-30T02:49:19Z",
+  "prompt_count": 10,
+  "poi_count": 60,
+  "k_relevance": 5,
+  "guidelines": "docs/relevance_criteria.md",
+  "checksums": {
+    "catalog_subset.json": "sha256:aa87cd6848997f5a9ae27f9b48860d61a001937053eaab39ea369fe0b9628c0a",
+    "prompts.json": "sha256:49a8e1a2597c13a94279ea8c28c4a23dced8585a1f09517e20506a3b763da41f",
+    "labels.json": "sha256:bef0ba6f2c1bae3ffd4a8a25feb71d61d4db60f2d46147b2de88a17e8e80e060"
+  },
+  "seed": 42
+}

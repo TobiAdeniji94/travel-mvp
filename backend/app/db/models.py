@@ -498,7 +498,7 @@ class ItineraryActivity(SQLModel, table=True):
     activity: Activity = Relationship(back_populates="act_links")
 
 
-class Accommodation(BaseModel, table=True):
+class Accommodation(AuditMixin, BaseModel, table=True):
     __tablename__ = "accommodations"
     
     __table_args__ = (

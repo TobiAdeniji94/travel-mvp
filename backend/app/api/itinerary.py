@@ -25,17 +25,25 @@ from app.db.models import (
    Transportation, ItineraryTransportation
 )
 from app.core.itinerary_optimizer import DestCoord, POI, time_aware_greedy_route
-from app.api.schemas import ItineraryCreate, ItineraryUpdate, ItineraryRead
+from app.api.schemas import (
+   ItineraryCreate, ItineraryUpdate, ItineraryRead,
+   ReorderPreviewRequest, ReorderPreviewResponse,
+   ItineraryDestinationRead, ItineraryActivityRead, 
+   ItineraryAccommodationRead, ItineraryTransportationRead
+)
 from app.db.session import get_db_session
 from app.core.security import get_current_user
 from app.db.crud import (
    create_itinerary, 
    get_itinerary,
    get_itineraries,
+   get_user_itineraries,
    update_itinerary_status,
    update_itinerary
 )
 from app.core.nlp.parser import parse_travel_request
+from app.core.settings import Settings
+from app.ml.inference import reorder_pois
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -231,40 +239,6 @@ class ItineraryService:
         except Exception as e:
             logger.error(f"Failed to process dates: {e}")
             raise HTTPException(status_code=400, detail="Invalid date format")
-    
-    # async def get_location_coordinates(self, dest_city: str, origin_city: Optional[str] = None):
-    #     """Get coordinates for destination and origin cities"""
-    #     try:
-    #         dest_row = await self.session.scalar(select(Destination).where(Destination.name == dest_city))
-    #         origin_row = await self.session.scalar(select(Destination).where(Destination.name == origin_city)) if origin_city else None
-            
-    #         if not dest_row:
-    #             raise HTTPException(status_code=404, detail=f"Destination '{dest_city}' not found")
-    #         if origin_city and not origin_row:
-    #             raise HTTPException(status_code=404, detail=f"Origin '{origin_city}' not found")
-            
-    #         dest_center_lat, dest_center_lon = dest_row.latitude, dest_row.longitude
-    #         # origin_center_lat, origin_center_lon = origin_row.latitude, origin_row.longitude if origin_row else (None, None)
-    #         if origin_row:
-    #             origin_center_lat, origin_center_lon = origin_row.latitude, origin_row.longitude
-    #         else:
-    #             origin_center_lat, origin_center_lon = None, None
-    #         logger.info("Location coordinates retrieved", extra={
-    #             "dest_city": dest_city,
-    #             "dest_coords": (dest_center_lat, dest_center_lon),
-    #             "origin_city": origin_city,
-    #             "origin_coords": (origin_center_lat, origin_center_lon) if origin_city else None
-    #         })
-            
-    #         return {
-    #             'dest': (dest_center_lat, dest_center_lon),
-    #             'origin': (origin_center_lat, origin_center_lon)
-    #         }
-    #     except HTTPException:
-    #         raise
-    #     except Exception as e:
-    #         logger.error(f"Failed to get location coordinates: {e}")
-    #         raise HTTPException(status_code=500, detail="Failed to retrieve location coordinates")
 
     async def get_location_coordinates(self, dest_city: str, origin_city: Optional[str] = None):
         # Try a case‐insensitive partial match for destination
@@ -349,7 +323,8 @@ class ItineraryService:
             logger.error(f"Failed to get flight options: {e}")
             return []
     
-    async def build_poi_list(self, dest_ids, act_ids, acc_ids, trans_ids, start_date, center_pt, radius_m, budget):
+    async def build_poi_list(self, dest_ids, act_ids, acc_ids, trans_ids, start_date, center_lat, 
+                             center_lon, radius_m, budget):
         """Build list of Points of Interest for scheduling"""
 
         try:
@@ -364,7 +339,8 @@ class ItineraryService:
                 select(Destination.id, Destination.latitude, Destination.longitude)
                 .where(
                     Destination.id.in_(dest_ids),
-                    func.ST_DWithin(geom_dest, center_pt, radius_m)
+                    func.ST_DWithin(geom_dest, func.ST_SetSRID(func.ST_MakePoint(center_lon, center_lat), 4326)
+                                    .cast(Geography), radius_m)
                 )
             )
             dest_rows = (await self.session.execute(dest_stmt)).all()
@@ -383,17 +359,44 @@ class ItineraryService:
                 4326
             ).cast(Geography)
             act_stmt = (
-                select(Activity.id, Activity.latitude, Activity.longitude, 
-                       Activity.opening_hours, Activity.price)
+                select(
+                    Activity.id,
+                    Activity.name,
+                    Activity.latitude,
+                    Activity.longitude,
+                    Activity.opening_hours,
+                    Activity.price,
+                )
                 .where(
                     Activity.id.in_(act_ids),
-                    func.ST_DWithin(geom_act, center_pt, radius_m)
+                    func.ST_DWithin(
+                        geom_act,
+                        func.ST_SetSRID(func.ST_MakePoint(center_lon, center_lat), 4326).cast(Geography),
+                        radius_m,
+                    ),
                 )
             )
             act_rows = (await self.session.execute(act_stmt)).all()
-            
-            for _id, lat, lon, oh, price in act_rows:
+            logger.info(f"Recommended activity IDs: {act_ids}")
+            logger.info(f"Fetched {len(act_rows)} activity rows: {[row[0] for row in act_rows]}")
+            logger.info(f"Activity location filter: center=({center_lat},{center_lon}), radius_m={radius_m}")
+
+            # Name/location-based dedup to avoid visually repeated activities with different IDs
+            seen_activity_keys = set()
+            for _id, name, lat, lon, oh, price in act_rows:
+                name_norm = (name or "").strip().lower()
+                loc_key = (round(lat or 0.0, 3), round(lon or 0.0, 3))  # ~100m grid
+                dedup_key = (name_norm, loc_key)
+                if name_norm:  # only apply when we actually have a name
+                    if dedup_key in seen_activity_keys:
+                        logger.info(
+                            f"Skipping duplicate activity by name/loc: name='{name_norm}', lat={lat}, lon={lon}, id={_id}"
+                        )
+                        continue
+                    seen_activity_keys.add(dedup_key)
+
                 o, c = parse_opening_hours(oh or "")
+                logger.info(f"Adding activity POI: id={_id}, name='{name}', lat={lat}, lon={lon}, price={price}")
                 all_pois.append(POI(
                     id=_id, latitude=lat, longitude=lon,
                     opens=datetime.combine(start_date.date(), o, tzinfo=start_date.tzinfo),
@@ -401,7 +404,19 @@ class ItineraryService:
                     duration=60, type="activity",
                     price=price if price is not None else 0.0,
                 ))
-            
+
+            # Log before filtering by budget
+            n_before_budget = len(all_pois)
+            budget_limit = budget * 0.1
+            filtered_pois = []
+            for poi in all_pois:
+                if poi.type == "activity" and poi.price is not None and poi.price > budget_limit:
+                    logger.info(f"Excluding activity {poi.id} due to price {poi.price} > {budget_limit}")
+                else:
+                    filtered_pois.append(poi)
+            all_pois = filtered_pois
+            logger.info(f"Activities after budget filter: {len([p for p in all_pois if p.type == 'activity'])} (before: {n_before_budget})")
+
             # Get accommodations
             geom_acc = func.ST_SetSRID(
                 func.ST_MakePoint(Accommodation.longitude, Accommodation.latitude),
@@ -412,7 +427,7 @@ class ItineraryService:
                        Accommodation.longitude, Accommodation.price)
                 .where(
                     Accommodation.rating >= 3.5,
-                    func.ST_DWithin(geom_acc, center_pt, radius_m)
+                    func.ST_DWithin(geom_acc, func.ST_SetSRID(func.ST_MakePoint(center_lon, center_lat), 4326).cast(Geography), radius_m)
                 )
                 .order_by(Accommodation.rating.desc())
                 .limit(30)  # Increased limit for better selection
@@ -458,15 +473,23 @@ class ItineraryService:
                 logger.warning("No accommodations match budget/rating — relaxing to any rating")
 
             
-            logger.info(f"Built POI list with {len(all_pois)} items")
-            return all_pois
+            # Deduplicate POIs by (type, id) to avoid repeats in scheduling
+            unique = {}
+            for poi in all_pois:
+                key = (poi.type, poi.id)
+                if key not in unique:
+                    unique[key] = poi
+            deduped = list(unique.values())
+
+            logger.info(f"Built POI list with {len(deduped)} unique items (from {len(all_pois)} raw)")
+            return deduped
         except Exception as e:
             logger.exception("Failed to build POI list")
             # raise HTTPException(status_code=500, detail="Failed to build itinerary items")
             raise HTTPException(status_code=500, detail=str(e))
     
-    async def create_itinerary_schedule(self, all_pois, trip_days, start_date, pace):
-        """Create day-by-day itinerary schedule"""
+    async def create_itinerary_schedule(self, all_pois, trip_days, start_date, pace, use_transformer: Optional[bool] = None):
+        """Create day-by-day itinerary schedule with enriched entity details"""
         try:
             base_loc = DestCoord(id=None, latitude=all_pois[0].latitude, longitude=all_pois[0].longitude)
             scheduled_items = []
@@ -475,14 +498,38 @@ class ItineraryService:
                 day_start = datetime.combine(start_date + timedelta(days=day), TimeOfDay(9, 0), tzinfo=start_date.tzinfo)
                 day_end = day_start + timedelta(hours=pace["max_hours"])
                 
+                # Optionally reorder activity POIs using Transformer to bias selection order
+                try:
+                    settings = Settings()
+                    enabled_flag = use_transformer if use_transformer is not None else settings.ENABLE_TRANSFORMER
+                    if enabled_flag:
+                        act_ids = [str(p.id) for p in all_pois if getattr(p, "type", None) == "activity"]
+                        if act_ids:
+                            ordered_ids = reorder_pois(act_ids)
+                            order_rank = {pid: i for i, pid in enumerate(ordered_ids)}
+                            def sort_key(p):
+                                if getattr(p, "type", None) == "activity":
+                                    return (0, order_rank.get(str(p.id), len(order_rank)))
+                                return (1, 0)
+                            candidate_pois = sorted(all_pois, key=sort_key)
+                        else:
+                            candidate_pois = all_pois
+                    else:
+                        candidate_pois = all_pois
+                except Exception as e:
+                    logger.error(f"Transformer reorder failed, using original order: {e}")
+                    candidate_pois = all_pois
+
                 today = time_aware_greedy_route(
                     start_point=base_loc,
-                    pois=all_pois,
+                    pois=candidate_pois,
                     day_start=day_start,
                     day_end=day_end
                 )[:pace["daily_activities"]]
                 
-                scheduled_items.append(today)
+                # Enrich POI data with full entity details
+                enriched_today = await self._enrich_pois_with_details(today)
+                scheduled_items.append(enriched_today)
                 
                 # Update base location and remove scheduled items
                 scheduled = {p.id for p in today}
@@ -492,12 +539,83 @@ class ItineraryService:
                     base_loc = DestCoord(last.id, last.latitude, last.longitude)
             
             logger.info(f"Created schedule for {trip_days} days")
+            logger.info(f"Scheduled items: {len(scheduled_items)} days with enriched details")
             return scheduled_items
         except Exception as e:
             logger.error(f"Failed to create itinerary schedule: {e}")
             raise HTTPException(status_code=500, detail="Failed to create itinerary schedule")
+
+    async def _enrich_pois_with_details(self, pois):
+        """Enrich POI objects with full entity details for frontend display"""
+        enriched_pois = []
+        
+        for poi in pois:
+            enriched_poi = {
+                "id": str(poi.id),
+                "type": poi.type,
+                "latitude": poi.latitude,
+                "longitude": poi.longitude,
+                "price": float(poi.price) if poi.price is not None else None,
+                "opens": poi.opens.isoformat() if poi.opens else None,
+                "closes": poi.closes.isoformat() if poi.closes else None,
+                "duration": poi.duration,
+            }
+            
+            try:
+                # Fetch full entity details based on type
+                if poi.type == "destination":
+                    dest = await self.session.get(Destination, poi.id)
+                    if dest:
+                        enriched_poi.update({
+                            "name": dest.name,
+                            "description": dest.description,
+                            "rating": float(dest.rating) if dest.rating else None,
+                            "popularity_score": float(dest.popularity_score) if dest.popularity_score else None,
+                        })
+                
+                elif poi.type == "activity":
+                    activity = await self.session.get(Activity, poi.id)
+                    if activity:
+                        enriched_poi.update({
+                            "name": activity.name or f"Activity {str(poi.id)[:8]}",
+                            "description": activity.description or "No description available",
+                            "rating": float(activity.rating) if activity.rating else None,
+                            "opening_hours": activity.opening_hours or "Hours not specified",
+                            "price_display": f"${float(poi.price):.2f}" if poi.price is not None and poi.price > 0 else "Free",
+                        })
+                
+                elif poi.type == "accommodation":
+                    accommodation = await self.session.get(Accommodation, poi.id)
+                    if accommodation:
+                        enriched_poi.update({
+                            "name": accommodation.name,
+                            "description": accommodation.description,
+                            "rating": float(accommodation.rating) if accommodation.rating else None,
+                            "amenities": accommodation.amenities,
+                        })
+                
+                elif poi.type == "transportation":
+                    transport = await self.session.get(Transportation, poi.id)
+                    if transport:
+                        enriched_poi.update({
+                            "name": f"{transport.transport_type} - {transport.departure_location} to {transport.arrival_location}",
+                            "transport_type": transport.transport_type,
+                            "departure_location": transport.departure_location,
+                            "arrival_location": transport.arrival_location,
+                            "departure_time": transport.departure_time.isoformat() if transport.departure_time else None,
+                            "arrival_time": transport.arrival_time.isoformat() if transport.arrival_time else None,
+                        })
+                        
+            except Exception as e:
+                logger.warning(f"Failed to enrich POI {poi.id} of type {poi.type}: {e}")
+                # Fallback to basic POI data
+                enriched_poi["name"] = f"{poi.type.title()} {str(poi.id)[:8]}"
+            
+            enriched_pois.append(enriched_poi)
+        
+        return enriched_pois
     
-    async def persist_itinerary(self, itin_id, scheduled_items, parsed_data, user_id):
+    async def persist_itinerary(self, itin_id, scheduled_items, parsed_data, user_id, budget: Optional[float] = None):
         """Persist itinerary and its items to database"""
         try:
             # Create itinerary
@@ -508,28 +626,33 @@ class ItineraryService:
                 end_date=parsed_data["dates"][-1],
                 status="generated",
                 data=jsonable_encoder(parsed_data),
-                user_id=user_id
+                user_id=user_id,
+                budget=budget if budget is not None else parsed_data.get("budget")
             )
             self.session.add(new_itin)
             
             # Persist scheduled items
             for day_idx, day_items in enumerate(scheduled_items):
                 for order, poi in enumerate(day_items, start=1):
-                    if poi.type == "destination":
+                    # Handle both POI objects and enriched dictionaries
+                    poi_type = poi.get("type") if isinstance(poi, dict) else poi.type
+                    poi_id = poi.get("id") if isinstance(poi, dict) else poi.id
+                    
+                    if poi_type == "destination":
                         self.session.add(ItineraryDestination(
-                            itinerary_id=itin_id, destination_id=poi.id, order=order
+                            itinerary_id=itin_id, destination_id=poi_id, order=order
                         ))
-                    elif poi.type == "activity":
+                    elif poi_type == "activity":
                         self.session.add(ItineraryActivity(
-                            itinerary_id=itin_id, activity_id=poi.id, order=order
+                            itinerary_id=itin_id, activity_id=poi_id, order=order
                         ))
-                    elif poi.type == "accommodation":
+                    elif poi_type == "accommodation":
                         self.session.add(ItineraryAccommodation(
-                            itinerary_id=itin_id, accommodation_id=poi.id, order=order
+                            itinerary_id=itin_id, accommodation_id=poi_id, order=order
                         ))
                     else:  # transportation
                         self.session.add(ItineraryTransportation(
-                            itinerary_id=itin_id, transportation_id=poi.id, order=order
+                            itinerary_id=itin_id, transportation_id=poi_id, order=order
                         ))
             
             await self.session.commit()
@@ -565,11 +688,11 @@ class ItineraryService:
     summary="Generate personalized travel itinerary",
     description="Creates a complete travel itinerary based on natural language request"
 )
-@limiter.limit("5/minute")
+@limiter.limit(Settings().RATE_LIMIT_GENERATE if Settings().ENABLE_RATE_LIMITING else "1000/minute")
 async def generate_itinerary(
     request: Request,
     payload: ItineraryCreate,
-    current_user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user), # auth gate
     session: AsyncSession = Depends(get_db_session)
 ):
     """Generate a personalized travel itinerary"""
@@ -590,11 +713,12 @@ async def generate_itinerary(
             locations = parsed.get("locations") or ["My Trip"]
             dest_city = locations[0]
             origin_city = locations[-2] if len(locations) >= 2 else None
-            interests = parsed.get("interests") or current_user.preferences.get("interests", [])
-            budget = parsed.get("budget") or current_user.preferences.get("budget", 1000)
+            user_prefs = current_user.preferences or {}
+            interests = parsed.get("interests") or user_prefs.get("interests", [])
+            budget = parsed.get("budget") or user_prefs.get("budget", 1000)
             
             # Get pace settings
-            pace_key = parsed.get("pace") or current_user.preferences.get("pace", "moderate")
+            pace_key = parsed.get("pace") or user_prefs.get("pace", "moderate")
             pace = PACING.get(pace_key, PACING["moderate"])
             
             # Get location coordinates
@@ -621,9 +745,22 @@ async def generate_itinerary(
                 func.ST_MakePoint(dest_center_lon, dest_center_lat), 4326
             ).cast(Geography)
             
-            all_pois = await service.build_poi_list(
-                dest_ids, act_ids, acc_ids, trans_ids, start_date, center_pt, radius_m, budget
-            )
+            # Adaptive radius: try increasing if too few activities found
+            min_activities = 3
+            radius_attempts = [radius_m, 50000, 100000]  # 20km, 50km, 100km
+            all_pois = None
+            center_lat = dest_center_lat
+            center_lon = dest_center_lon
+            for attempt, rad in enumerate(radius_attempts):
+                logger.info(f"Attempting build_poi_list with radius_m={rad}")
+                all_pois = await service.build_poi_list(
+                    dest_ids, act_ids, acc_ids, trans_ids, start_date, center_lat, center_lon,
+                     rad, budget
+                )
+                n_activities = len([p for p in all_pois if p.type == "activity"])
+                logger.info(f"build_poi_list found {n_activities} activities with radius_m={rad}")
+                if n_activities >= 3 or attempt == len(radius_attempts) - 1:
+                    break
 
             if not any(p.type=="accommodation" for p in all_pois):
                 logger.warning("No accommodations match budget/rating—relaxing to any rating")
@@ -638,12 +775,12 @@ async def generate_itinerary(
             
             # Create schedule
             scheduled_items = await service.create_itinerary_schedule(
-                all_pois, trip_days, start_date, pace
+                all_pois, trip_days, start_date, pace, use_transformer=payload.use_transformer
             )
             
             # Persist itinerary
             itin_id = uuid4()
-            full_itin = await service.persist_itinerary(itin_id, scheduled_items, parsed, current_user.id)
+            full_itin = await service.persist_itinerary(itin_id, scheduled_items, parsed, current_user.id, budget=budget)
             
             logger.info(f"Successfully generated itinerary {itin_id} for user {current_user.id}")
             return full_itin
@@ -665,8 +802,53 @@ async def read_itinerary(
     itin = await get_itinerary(session, itinerary_id)
     if itin.user_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to access this itinerary")
+
+    # --- PATCH: add scheduled_items to response ---
+    # Extract POI IDs from itinerary links
+    dest_ids = [dl.destination.id for dl in itin.dest_links]
+    act_ids = [al.activity.id for al in itin.act_links]
+    acc_ids = [al.accommodation.id for al in itin.accom_links]
+    trans_ids = [tl.transportation.id for tl in itin.trans_links]
+
+    # Use itinerary data to get schedule params
+    parsed_data = itin.data or {}
+    start_date = itin.start_date
+    trip_days = itin.duration_days
+    pace_key = parsed_data.get("pace", "moderate")
+    pace = PACING.get(pace_key, PACING["moderate"])
+    center_lat = itin.dest_links[0].destination.latitude if itin.dest_links else 0.0
+    center_lon = itin.dest_links[0].destination.longitude if itin.dest_links else 0.0
+    radius_m = 20000
+    budget = float(itin.budget) if itin.budget else 10000.0
+
+    service = ItineraryService(session)
+    all_pois = await service.build_poi_list(dest_ids, act_ids, acc_ids, trans_ids, start_date, center_lat, center_lon, 
+                                            radius_m, budget)
+    scheduled_items = await service.create_itinerary_schedule(all_pois, trip_days, start_date, pace)
+
+    # Prepare dict for ItineraryRead, ensuring all fields are serializable and required fields are present
+    itin_dict = itin.__dict__.copy()
+    itin_dict["scheduled_items"] = scheduled_items
+
+    # Compute duration_days and is_active if not present
+    if "duration_days" not in itin_dict or itin_dict["duration_days"] is None:
+        itin_dict["duration_days"] = (itin.end_date - itin.start_date).days if itin.start_date and itin.end_date else 0
+    if "is_active" not in itin_dict or itin_dict["is_active"] is None:
+        itin_dict["is_active"] = getattr(itin, "is_active", True) if hasattr(itin, "is_active") else True
+
+    # Convert ORM link objects to Pydantic schema
     
-    return itin
+    itin_dict["dest_links"] = [ItineraryDestinationRead.model_validate(dl, from_attributes=True) 
+                               for dl in getattr(itin, "dest_links", [])]
+    itin_dict["act_links"]  = [ItineraryActivityRead.model_validate(al, from_attributes=True) 
+                               for al in getattr(itin, "act_links", [])]
+    itin_dict["accom_links"] = [ItineraryAccommodationRead.model_validate(acl, from_attributes=True) 
+                                for acl in getattr(itin, "accom_links", [])]
+    itin_dict["trans_links"] = [ItineraryTransportationRead.model_validate(tl, from_attributes=True) 
+                                for tl in getattr(itin, "trans_links", [])]
+
+    return ItineraryRead(**itin_dict)
+
 
 @router.get("/", response_model=List[Itinerary])
 @limiter.limit("30/minute")
@@ -675,8 +857,8 @@ async def list_itineraries(
     current_user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_db_session)
 ):
-    itineraries = await get_itineraries(session)
-    return [itin for itin in itineraries if itin.user_id == current_user.id]
+    itineraries = await get_user_itineraries(session, user_id=current_user.id)
+    return itineraries
 
 
 @router.patch("/{itinerary_id}", response_model=Itinerary)
@@ -706,6 +888,24 @@ async def remove_itinerary(
         raise HTTPException(status_code=403, detail="Not authorized to delete this itinerary")
     await delete_itinerary(itinerary_id, session)
     return Response(status_code=204)
+
+@router.post("/reorder-preview", response_model=ReorderPreviewResponse)
+@limiter.limit("10/minute")
+async def reorder_preview(
+    request: Request,
+    payload: ReorderPreviewRequest,
+):
+    settings = Settings()
+    if not settings.ENABLE_TRANSFORMER:
+        # If transformer disabled, return identity order
+        return ReorderPreviewResponse(input=payload.poi_ids, output=payload.poi_ids)
+    try:
+        ordered = reorder_pois(payload.poi_ids)
+        return ReorderPreviewResponse(input=payload.poi_ids, output=ordered)
+    except Exception as e:
+        logger.error(f"/reorder-preview failed: {e}")
+        # Fallback: return original order
+        return ReorderPreviewResponse(input=payload.poi_ids, output=payload.poi_ids)
 
 # from uuid import UUID, uuid4
 # from typing import List, Optional
