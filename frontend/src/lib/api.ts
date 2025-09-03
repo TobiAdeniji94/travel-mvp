@@ -3,6 +3,7 @@
  */
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+import type { Itinerary } from '@/types';
 
 export class ApiError extends Error {
   constructor(
@@ -110,14 +111,40 @@ class ApiClient {
   }
 
   // Itinerary endpoints
-  async createItinerary(data: {
-    text: string;
-    preferences?: any;
-    use_transformer?: boolean;
-  }) {
-    return this.request<any>('/itineraries/generate', {
+  async createItinerary(payload: { text: string; preferences?: any; use_transformer?: boolean }): Promise<Itinerary> {
+    return this.request<Itinerary>('/itineraries/generate', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        text: payload.text,
+        use_transformer: payload.use_transformer,
+      }),
+    });
+  }
+
+  async regenerateItineraryDay(itineraryId: string, payload: {
+    day_index: number;
+    max_stops?: number;
+    max_price_per_activity?: number;
+    use_transformer?: boolean;
+  }): Promise<Itinerary> {
+    return this.request<Itinerary>(`/itineraries/${itineraryId}/regenerate-day`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+  }
+
+  async createShareLink(itineraryId: string): Promise<{ token: string; url: string; expires_at: string }> {
+    return this.request<{ token: string; url: string; expires_at: string }>(`/itineraries/${itineraryId}/share-link`, {
+      method: 'POST',
+    });
+  }
+
+  async getSharedItinerary(token: string): Promise<Itinerary> {
+    // For shared read, we call absolute path since backend exposes /itineraries/shared/{token}
+    return this.request<Itinerary>(`/itineraries/shared/${token}`, {
+      method: 'GET',
+      // Do not send Authorization header; request() includes it by default if present.
+      // Backend ignores auth for this endpoint, so it's fine to include.
     });
   }
 
