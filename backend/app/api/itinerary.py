@@ -29,7 +29,8 @@ from app.api.schemas import (
    ItineraryCreate, ItineraryUpdate, ItineraryRead,
    ReorderPreviewRequest, ReorderPreviewResponse,
    ItineraryDestinationRead, ItineraryActivityRead, 
-   ItineraryAccommodationRead, ItineraryTransportationRead
+   ItineraryAccommodationRead, ItineraryTransportationRead,
+   RegenerateDayRequest, ShareLinkCreateResponse,
 )
 from app.db.session import get_db_session
 from app.core.security import get_current_user
@@ -52,6 +53,9 @@ router = APIRouter(prefix="/itineraries", tags=["itineraries"])
 
 # Initialize rate limiter
 limiter = Limiter(key_func=get_remote_address)
+
+# In-memory public share tokens (replace with DB in production)
+_SHARE_LINKS: dict[str, dict] = {}
 
 # Pace presets
 PACING = {
@@ -849,6 +853,148 @@ async def read_itinerary(
 
     return ItineraryRead(**itin_dict)
 
+
+@router.post("/{itinerary_id}/regenerate-day", response_model=ItineraryRead)
+@limiter.limit("20/minute")
+async def regenerate_day(
+    request: Request,
+    itinerary_id: UUID,
+    payload: RegenerateDayRequest,
+    current_user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_db_session)
+):
+    """Regenerate a specific day's schedule with optional constraints.
+    This does NOT persist changes; it returns a preview with updated scheduled_items.
+    """
+    itin = await get_itinerary(session, itinerary_id)
+    if itin.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to modify this itinerary")
+
+    # Rebuild inputs similar to read_itinerary
+    parsed_data = itin.data or {}
+    start_date = itin.start_date
+    trip_days = itin.duration_days
+    if payload.day_index < 0 or payload.day_index >= trip_days:
+        raise HTTPException(status_code=400, detail="day_index out of range")
+
+    pace_key = parsed_data.get("pace", "moderate")
+    base_pace = PACING.get(pace_key, PACING["moderate"]).copy()
+    if payload.max_stops is not None:
+        base_pace["daily_activities"] = max(1, min(payload.max_stops, 20))
+
+    center_lat = itin.dest_links[0].destination.latitude if itin.dest_links else 0.0
+    center_lon = itin.dest_links[0].destination.longitude if itin.dest_links else 0.0
+    radius_m = 20000
+    budget = float(itin.budget) if itin.budget else 10000.0
+
+    # Collect IDs from links
+    dest_ids = [dl.destination.id for dl in itin.dest_links]
+    act_ids = [al.activity.id for al in itin.act_links]
+    acc_ids = [al.accommodation.id for al in itin.accom_links]
+    trans_ids = [tl.transportation.id for tl in itin.trans_links]
+
+    service = ItineraryService(session)
+    all_pois = await service.build_poi_list(dest_ids, act_ids, acc_ids, trans_ids, start_date, center_lat, center_lon, radius_m, budget)
+
+    # Apply price constraint only to activities if provided
+    if payload.max_price_per_activity is not None:
+        max_price = float(payload.max_price_per_activity)
+        for p in all_pois:
+            if getattr(p, "type", None) == "activity" and getattr(p, "price", 0.0) is not None:
+                if p.price > max_price:
+                    p.price = max_price  # bias scheduler toward cheaper options
+
+    scheduled_items = await service.create_itinerary_schedule(
+        all_pois, trip_days, start_date, base_pace, use_transformer=payload.use_transformer
+    )
+
+    # Prepare ItineraryRead with updated scheduled_items only (no DB write)
+    itin_dict = itin.__dict__.copy()
+    itin_dict["scheduled_items"] = scheduled_items
+    itin_dict["dest_links"] = [ItineraryDestinationRead.model_validate(dl, from_attributes=True) for dl in getattr(itin, "dest_links", [])]
+    itin_dict["act_links"]  = [ItineraryActivityRead.model_validate(al, from_attributes=True) for al in getattr(itin, "act_links", [])]
+    itin_dict["accom_links"] = [ItineraryAccommodationRead.model_validate(acl, from_attributes=True) for acl in getattr(itin, "accom_links", [])]
+    itin_dict["trans_links"] = [ItineraryTransportationRead.model_validate(tl, from_attributes=True) for tl in getattr(itin, "trans_links", [])]
+    if "duration_days" not in itin_dict or itin_dict["duration_days"] is None:
+        itin_dict["duration_days"] = (itin.end_date - itin.start_date).days if itin.start_date and itin.end_date else 0
+    if "is_active" not in itin_dict or itin_dict["is_active"] is None:
+        itin_dict["is_active"] = getattr(itin, "is_active", True) if hasattr(itin, "is_active") else True
+    return ItineraryRead(**itin_dict)
+
+
+@router.post("/{itinerary_id}/share-link", response_model=ShareLinkCreateResponse)
+@limiter.limit("5/minute")
+async def create_share_link(
+    request: Request,
+    itinerary_id: UUID,
+    current_user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_db_session)
+):
+    """Create a tokenized public share link for an itinerary."""
+    itin = await get_itinerary(session, itinerary_id)
+    if itin.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to share this itinerary")
+
+    token = uuid4().hex
+    expires_at = datetime.now(timezone.utc) + timedelta(days=7)
+    _SHARE_LINKS[token] = {
+        "itinerary_id": str(itinerary_id),
+        "user_id": str(current_user.id),
+        "expires_at": expires_at,
+    }
+    base = str(request.base_url).rstrip("/")
+    url = f"{base}/itineraries/shared/{token}"
+    return ShareLinkCreateResponse(token=token, url=url, expires_at=expires_at)
+
+
+@router.get("/shared/{token}", response_model=ItineraryRead)
+@limiter.limit("120/minute")
+async def read_shared_itinerary(
+    request: Request,
+    token: str,
+    session: AsyncSession = Depends(get_db_session)
+):
+    """Public endpoint to read an itinerary shared via token."""
+    link = _SHARE_LINKS.get(token)
+    if not link:
+        raise HTTPException(status_code=404, detail="Invalid or expired share link")
+    if datetime.now(timezone.utc) > link["expires_at"]:
+        _SHARE_LINKS.pop(token, None)
+        raise HTTPException(status_code=410, detail="Share link has expired")
+
+    itin = await get_itinerary(session, UUID(link["itinerary_id"]))
+
+    # Build schedule as in read_itinerary
+    dest_ids = [dl.destination.id for dl in itin.dest_links]
+    act_ids = [al.activity.id for al in itin.act_links]
+    acc_ids = [al.accommodation.id for al in itin.accom_links]
+    trans_ids = [tl.transportation.id for tl in itin.trans_links]
+
+    parsed_data = itin.data or {}
+    start_date = itin.start_date
+    trip_days = itin.duration_days
+    pace_key = parsed_data.get("pace", "moderate")
+    pace = PACING.get(pace_key, PACING["moderate"])
+    center_lat = itin.dest_links[0].destination.latitude if itin.dest_links else 0.0
+    center_lon = itin.dest_links[0].destination.longitude if itin.dest_links else 0.0
+    radius_m = 20000
+    budget = float(itin.budget) if itin.budget else 10000.0
+
+    service = ItineraryService(session)
+    all_pois = await service.build_poi_list(dest_ids, act_ids, acc_ids, trans_ids, start_date, center_lat, center_lon, radius_m, budget)
+    scheduled_items = await service.create_itinerary_schedule(all_pois, trip_days, start_date, pace)
+
+    itin_dict = itin.__dict__.copy()
+    itin_dict["scheduled_items"] = scheduled_items
+    itin_dict["dest_links"] = [ItineraryDestinationRead.model_validate(dl, from_attributes=True) for dl in getattr(itin, "dest_links", [])]
+    itin_dict["act_links"]  = [ItineraryActivityRead.model_validate(al, from_attributes=True) for al in getattr(itin, "act_links", [])]
+    itin_dict["accom_links"] = [ItineraryAccommodationRead.model_validate(acl, from_attributes=True) for acl in getattr(itin, "accom_links", [])]
+    itin_dict["trans_links"] = [ItineraryTransportationRead.model_validate(tl, from_attributes=True) for tl in getattr(itin, "trans_links", [])]
+    if "duration_days" not in itin_dict or itin_dict["duration_days"] is None:
+        itin_dict["duration_days"] = (itin.end_date - itin.start_date).days if itin.start_date and itin.end_date else 0
+    if "is_active" not in itin_dict or itin_dict["is_active"] is None:
+        itin_dict["is_active"] = getattr(itin, "is_active", True) if hasattr(itin, "is_active") else True
+    return ItineraryRead(**itin_dict)
 
 @router.get("/", response_model=List[Itinerary])
 @limiter.limit("30/minute")

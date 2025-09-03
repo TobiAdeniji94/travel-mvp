@@ -125,6 +125,19 @@ class ItineraryUpdate(BaseModel):
             raise ValueError("Name cannot be empty")
         return v
 
+# Request schema for regenerating a specific day with constraints
+class RegenerateDayRequest(BaseModel):
+    day_index: int = Field(..., ge=0, description="Zero-based index of the day to regenerate")
+    max_stops: Optional[int] = Field(None, ge=1, le=20, description="Maximum number of items to schedule for the day")
+    max_price_per_activity: Optional[Decimal] = Field(None, ge=0, description="Upper price bound for activities")
+    use_transformer: Optional[bool] = Field(None, description="Override server setting for ordering model")
+
+# Response for creating a share link
+class ShareLinkCreateResponse(BaseModel):
+    token: str
+    url: str
+    expires_at: datetime
+
 # Debug/utility schemas for Transformer ordering preview
 class ReorderPreviewRequest(BaseModel):
     poi_ids: List[str] = Field(..., description="List of POI UUID strings to reorder")

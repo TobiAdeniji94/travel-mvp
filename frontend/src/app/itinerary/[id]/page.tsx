@@ -16,6 +16,9 @@ export default function ItineraryDetailPage() {
   const [itinerary, setItinerary] = useState<Itinerary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [regenLoadingDay, setRegenLoadingDay] = useState<number | null>(null);
+  const [publicLink, setPublicLink] = useState<string | null>(null);
+  const [constraints, setConstraints] = useState<Record<number, { maxStops?: number; maxPrice?: number }>>({});
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -44,6 +47,42 @@ export default function ItineraryDetailPage() {
 
     loadItinerary();
   }, [id, isAuthenticated, router]);
+
+  const handleRegenerateDay = async (dayIndex: number) => {
+    if (!itinerary) return;
+    try {
+      setRegenLoadingDay(dayIndex);
+      const c = constraints[dayIndex] || {};
+      const resp = await apiClient.regenerateItineraryDay(itinerary.id, {
+        day_index: dayIndex,
+        max_stops: c.maxStops,
+        max_price_per_activity: c.maxPrice,
+      });
+      setItinerary(resp as any);
+    } catch (e) {
+      console.error('Failed to regenerate day', e);
+      alert('Failed to regenerate this day');
+    } finally {
+      setRegenLoadingDay(null);
+    }
+  };
+
+  const handleCreateShareLink = async () => {
+    if (!itinerary) return;
+    try {
+      const { url } = await apiClient.createShareLink(itinerary.id);
+      setPublicLink(url);
+      try {
+        await navigator.clipboard.writeText(url);
+        alert('Share link copied to clipboard');
+      } catch {
+        // ignore
+      }
+    } catch (e) {
+      console.error('Failed to create share link', e);
+      alert('Failed to create share link');
+    }
+  };
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -237,14 +276,55 @@ export default function ItineraryDetailPage() {
               <CardContent>
                 <div className="space-y-4">
                   {Array.isArray(itinerary?.scheduled_items) && itinerary.scheduled_items.length > 0 ? (
-                    itinerary.scheduled_items.map((dayItems: any[], dayIdx: number) => {
-                      const dayDate = new Date(new Date(itinerary.start_date).getTime() + dayIdx * 24 * 60 * 60 * 1000);
+                    itinerary.scheduled_items.map((dayItems: any[], dayIndex: number) => {
                       return (
-                        <div key={dayIdx} className="border-l-4 border-blue-500 pl-4">
-                          <h3 className="font-semibold text-lg">Day {dayIdx + 1}</h3>
-                          <p className="text-sm text-gray-500 mb-3">
-                            {dayDate.toLocaleDateString()}
-                          </p>
+                        <div key={dayIndex} className="border rounded-lg p-4 bg-white">
+                          <div className="flex items-center justify-between gap-4 flex-wrap">
+                            <h2 className="text-xl font-semibold">Day {dayIndex + 1}</h2>
+                            <div className="space-x-2 flex items-center flex-wrap gap-2">
+                              <input
+                                type="number"
+                                min={1}
+                                max={20}
+                                placeholder="Max stops"
+                                className="w-28 border rounded px-2 py-1 text-sm"
+                                value={constraints[dayIndex]?.maxStops ?? ''}
+                                onChange={(e) =>
+                                  setConstraints((prev) => ({
+                                    ...prev,
+                                    [dayIndex]: { ...prev[dayIndex], maxStops: e.target.value ? Number(e.target.value) : undefined },
+                                  }))
+                                }
+                              />
+                              <input
+                                type="number"
+                                min={0}
+                                placeholder="Max price/activity"
+                                className="w-40 border rounded px-2 py-1 text-sm"
+                                value={constraints[dayIndex]?.maxPrice ?? ''}
+                                onChange={(e) =>
+                                  setConstraints((prev) => ({
+                                    ...prev,
+                                    [dayIndex]: { ...prev[dayIndex], maxPrice: e.target.value ? Number(e.target.value) : undefined },
+                                  }))
+                                }
+                              />
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => handleRegenerateDay(dayIndex)}
+                                disabled={regenLoadingDay === dayIndex}
+                              >
+                                {regenLoadingDay === dayIndex ? 'Regenerating…' : 'Regenerate day'}
+                              </Button>
+                              <Button size="sm" variant="outline">
+                                Add Activity
+                              </Button>
+                              <Button size="sm" variant="outline">
+                                Edit Day
+                              </Button>
+                            </div>
+                          </div>
                           <div className="space-y-2">
                             {Array.isArray(dayItems) && dayItems.length > 0 ? (
                               dayItems.map((activity: any, actIdx: number) => (
@@ -327,6 +407,12 @@ export default function ItineraryDetailPage() {
                 <CardTitle>Trip Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
+                {publicLink && (
+                  <div className="text-xs text-gray-600 break-all">Share link: {publicLink}</div>
+                )}
+                <Button className="w-full" variant="primary" onClick={handleCreateShareLink}>
+                  Create Shareable Link
+                </Button>
                 <Button className="w-full" variant="outline">
                   Export to PDF
                 </Button>
