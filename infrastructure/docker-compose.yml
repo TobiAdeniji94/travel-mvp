@@ -97,6 +97,20 @@ services:
       retries: 3
       start_period: 40s
 
+  # Frontend Application
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: travel-mvp-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - travel-mvp-network
+    depends_on:
+      - backend
+
 volumes:
   postgres_data:
     driver: local

@@ -4,6 +4,7 @@ from datetime import datetime, timezone, timedelta
 from datetime import time as TimeOfDay
 import time
 import logging
+import json
 from contextlib import asynccontextmanager
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status, Request
@@ -136,11 +137,25 @@ async def get_destination_ids(interests: List[str], budget: Optional[float]):
         scores = cosine_similarity(v, item_matrix).flatten()
         top = scores.argsort()[::-1][:10]
         
-        logger.info("Destination recommendations generated", extra={
+        topk = [
+            {
+                "rank": r + 1,
+                "row": int(i),
+                "id": str(id_map[i]),
+                "score": float(scores[i]),
+            }
+            for r, i in enumerate(top.tolist())
+            if scores[i] > 0
+        ]
+        log_line = {
+           # "request_id": request_id,
+            "stage": "rank",
+            "domain": "acc",
             "query": q,
-            "top_scores": scores[top].tolist(),
-            "top_indices": top.tolist()
-        })
+            "K": len(topk),
+            "topk": topk,
+        }
+        logger.info("destination rank_topk %s", json.dumps(log_line, ensure_ascii=False))
         
         return [id_map[i] for i in top]
     except Exception as e:
@@ -159,11 +174,26 @@ async def get_activity_ids(interests: List[str], budget: Optional[float]):
         scores = cosine_similarity(v, item_matrix).flatten()
         top = scores.argsort()[::-1][:10]
         
-        logger.info("Activity recommendations generated", extra={
+        topk = [
+            {
+                "rank": r + 1,
+                "row": int(i),
+                "id": str(id_map[i]),
+                "score": float(scores[i]),
+            }
+            for r, i in enumerate(top.tolist())
+            if scores[i] > 0
+        ]
+        log_line = {
+           # "request_id": request_id,
+            "stage": "rank",
+            "domain": "acc",
             "query": q,
-            "top_scores": scores[top].tolist(),
-            "top_indices": top.tolist()
-        })
+            "K": len(topk),
+            "topk": topk,
+        }
+        logger.info("activity rank_topk %s", json.dumps(log_line, ensure_ascii=False))
+        
         
         return [id_map[i] for i in top]
     except Exception as e:
@@ -182,6 +212,27 @@ async def get_accommodation_ids(interests: List[str], budget: Optional[float]):
         scores = cosine_similarity(v, item_matrix).flatten()
         top = scores.argsort()[::-1][:10]
         
+        topk = [
+            {
+                "rank": r + 1,
+                "row": int(i),
+                "id": str(id_map[i]),
+                "score": float(scores[i]),
+            }
+            for r, i in enumerate(top.tolist())
+            if scores[i] > 0
+        ]
+        log_line = {
+           # "request_id": request_id,
+            "stage": "rank",
+            "domain": "acc",
+            "query": q,
+            "K": len(topk),
+            "topk": topk,
+        }
+        logger.info("accomodation rank_topk %s", json.dumps(log_line, ensure_ascii=False))
+        
+        
         return [id_map[i] for i in top if scores[i] > 0]
     except Exception as e:
         logger.error(f"Error getting accommodation recommendations: {e}")
@@ -198,6 +249,27 @@ async def get_transportation_ids(interests: List[str], budget: Optional[float]):
         v = vectorizer.transform([q])
         scores = cosine_similarity(v, item_matrix).flatten()
         top = scores.argsort()[::-1][:10]
+        
+        topk = [
+            {
+                "rank": r + 1,
+                "row": int(i),
+                "id": str(id_map[i]),
+                "score": float(scores[i]),
+            }
+            for r, i in enumerate(top.tolist())
+            if scores[i] > 0
+        ]
+        log_line = {
+           # "request_id": request_id,
+            "stage": "rank",
+            "domain": "acc",
+            "query": q,
+            "K": len(topk),
+            "topk": topk,
+        }
+        logger.info("destination rank_topk %s", json.dumps(log_line, ensure_ascii=False))
+        
         
         return [id_map[i] for i in top if scores[i] > 0]
     except Exception as e:
@@ -734,6 +806,7 @@ async def generate_itinerary(
             dest_ids = await get_destination_ids(interests, budget)
             act_ids = await get_activity_ids(interests, budget)
             acc_ids = await get_accommodation_ids(interests, budget)
+            #logger.info(f"Recommended IDs - Destinations: {dest_ids}, Activities: {act_ids}, Accommodations: {acc_ids}")
             
             # Get flight options
             trans_ids = await service.get_flight_options(
@@ -1052,343 +1125,3 @@ async def reorder_preview(
         logger.error(f"/reorder-preview failed: {e}")
         # Fallback: return original order
         return ReorderPreviewResponse(input=payload.poi_ids, output=payload.poi_ids)
-
-# from uuid import UUID, uuid4
-# from typing import List, Optional
-# from datetime import datetime, timezone, time, timedelta
-
-# from fastapi import APIRouter, Depends, HTTPException
-# from fastapi.concurrency import run_in_threadpool
-# from fastapi.encoders import jsonable_encoder
-# from geoalchemy2 import Geography
-# from sqlalchemy.ext.asyncio import AsyncSession
-# from sqlalchemy import select, func, and_
-# from sqlalchemy.orm import selectinload
-
-# import pickle, scipy.sparse
-# from sklearn.metrics.pairwise import cosine_similarity
-
-# from app.db.models import (
-#     User, Itinerary, ItineraryDestination, Destination, Activity,
-#     ItineraryActivity, Accommodation, ItineraryAccommodation,
-#     Transportation, ItineraryTransportation
-# )
-# from app.core.itinerary_optimizer import DestCoord, POI, time_aware_greedy_route
-# from app.api.schemas import ItineraryCreate, ItineraryRead
-# from app.db.session import get_db_session
-# from app.core.security import get_current_user
-# from app.core.nlp.parser import parse_travel_request
-
-
-# router = APIRouter(prefix="/itineraries", tags=["itineraries"])
-
-# # Pace presets
-# PACING = {
-#     "relaxed":  {"daily_activities": 2, "max_hours": 4},
-#     "moderate": {"daily_activities": 4, "max_hours": 8},
-#     "intense":  {"daily_activities": 6, "max_hours": 12},
-# }
-
-# def parse_opening_hours(oh: str):
-#     """ "HH:MM-HH:MM" -> (time, time) """
-#     try:
-#         o, c = oh.split("-")
-#         return time.fromisoformat(o), time.fromisoformat(c)
-#     except:
-#         return time(9, 0), time(17, 0)
-
-
-# # --- TF-IDF helpers (unchanged) ---
-
-# DEST_VEC, DEST_MAT, DEST_MAP = (
-#     "/app/models/tfidf_vectorizer_dest.pkl",
-#     "/app/models/tfidf_matrix_dest.npz",
-#     "/app/models/item_index_map_dest.pkl",
-# )
-# vectorizer    = pickle.load(open(DEST_VEC, "rb"))
-# item_matrix   = scipy.sparse.load_npz(DEST_MAT)
-# DEST_ID_MAP   = pickle.load(open(DEST_MAP, "rb"))
-
-# async def get_destination_ids(interests: List[str], budget: Optional[float]):
-#     q      = " ".join(interests or []) + f" budget {budget or 0}"
-#     v      = vectorizer.transform([q])
-#     scores = cosine_similarity(v, item_matrix).flatten()
-#     top    = scores.argsort()[::-1][:10]
-#     return [DEST_ID_MAP[i] for i in top]
-
-# ACT_VEC, ACT_MAT, ACT_MAP = (
-#     "/app/models/tfidf_vectorizer_act.pkl",
-#     "/app/models/tfidf_matrix_act.npz",
-#     "/app/models/item_index_map_act.pkl",
-# )
-# act_vectorizer = pickle.load(open(ACT_VEC, "rb"))
-# act_matrix     = scipy.sparse.load_npz(ACT_MAT)
-# ACT_ID_MAP     = pickle.load(open(ACT_MAP, "rb"))
-
-# async def get_activity_ids(interests: List[str], budget: Optional[float]):
-#     q      = " ".join(interests or []) + f" budget {budget or 0}"
-#     v      = act_vectorizer.transform([q])
-#     scores = cosine_similarity(v, act_matrix).flatten()
-#     top    = scores.argsort()[::-1][:10]
-#     return [ACT_ID_MAP[i] for i in top]
-
-# ACC_VEC, ACC_MAT, ACC_MAP = (
-#     "/app/models/tfidf_vectorizer_acc.pkl",
-#     "/app/models/tfidf_matrix_acc.npz",
-#     "/app/models/item_index_map_acc.pkl",
-# )
-# acc_vectorizer = pickle.load(open(ACC_VEC, "rb"))
-# acc_matrix     = scipy.sparse.load_npz(ACC_MAT)
-# ACC_ID_MAP     = pickle.load(open(ACC_MAP, "rb"))
-
-# async def get_accommodation_ids(interests: List[str], budget: Optional[float]):
-#     q      = " ".join(interests or []) + f" budget {budget or 0}"
-#     v      = acc_vectorizer.transform([q])
-#     scores = cosine_similarity(v, acc_matrix).flatten()
-#     top    = scores.argsort()[::-1][:10]
-#     return [ACC_ID_MAP[i] for i in top if scores[i] > 0]
-
-# TRANS_VEC, TRANS_MAT, TRANS_MAP = (
-#     "/app/models/tfidf_vectorizer_trans.pkl",
-#     "/app/models/tfidf_matrix_trans.npz",
-#     "/app/models/item_index_map_trans.pkl",
-# )
-# trans_vectorizer = pickle.load(open(TRANS_VEC, "rb"))
-# trans_matrix     = scipy.sparse.load_npz(TRANS_MAT)
-# TRANS_ID_MAP     = pickle.load(open(TRANS_MAP, "rb"))
-
-# async def get_transportation_ids(interests: List[str], budget: Optional[float]):
-#     q      = " ".join(interests or []) + f" budget {budget or 0}"
-#     v      = trans_vectorizer.transform([q])
-#     scores = cosine_similarity(v, trans_matrix).flatten()
-#     top    = scores.argsort()[::-1][:10]
-#     return [TRANS_ID_MAP[i] for i in top if scores[i] > 0]
-
-
-# @router.post("/generate", response_model=ItineraryRead)
-# async def generate_itinerary(
-#     payload: ItineraryCreate,
-#     current_user: User = Depends(get_current_user),
-#     session: AsyncSession = Depends(get_db_session),
-# ):
-#     # --- 1) Parse & expand dates ---
-#     parsed = await run_in_threadpool(parse_travel_request, payload.text)
-#     raw_dates = parsed.get("dates", [])
-#     if len(raw_dates) == 2:
-#         # assume ISO strings or datetimes
-#         start = raw_dates[0] if isinstance(raw_dates[0], datetime) else datetime.fromisoformat(raw_dates[0])
-#         end   = raw_dates[1] if isinstance(raw_dates[1], datetime) else datetime.fromisoformat(raw_dates[1])
-#         parsed["dates"] = [
-#             (start + timedelta(days=i)).isoformat()
-#             for i in range((end - start).days + 1)
-#         ]
-#     else:
-#         parsed["dates"] = [
-#             d.isoformat() if isinstance(d, datetime) else d
-#             for d in raw_dates
-#         ]
-#     dates = [datetime.fromisoformat(d) for d in parsed["dates"]]
-#     start_date, end_date = dates[0], dates[-1]
-#     trip_days = len(dates)
-
-#     # --- 2) Extract locations, prefs ---
-#     locs        = parsed.get("locations", ["My Trip"])
-#     dest_city   = locs[0]
-#     origin_city = locs[-2] if len(locs) >= 2 else None
-#     interests   = parsed.get("interests") or current_user.preferences.get("interests", [])
-#     budget      = parsed.get("budget") or current_user.preferences.get("budget")
-#     pace_key    = parsed.get("pace") or current_user.preferences.get("pace", "moderate")
-#     pace        = PACING.get(pace_key, PACING["moderate"])
-
-#     # --- 3) Lookup seed destinations for centroids ---
-#     dest_row   = await session.scalar(select(Destination).where(Destination.name == dest_city))
-#     origin_row = await session.scalar(select(Destination).where(Destination.name == origin_city)) if origin_city else None
-#     if dest_row is None or (origin_city and origin_row is None):
-#         raise HTTPException(404, f"Unknown origin/destination: {origin_city} → {dest_city}")
-
-#     dc_lat, dc_lon = dest_row.latitude, dest_row.longitude
-#     oc_lat, oc_lon = (origin_row.latitude, origin_row.longitude) if origin_row else (None, None)
-
-#     # --- 4) Build geography filters for flights ---
-#     origin_pt = func.ST_SetSRID(func.ST_MakePoint(oc_lon, oc_lat), 4326).cast(Geography) if origin_city else None
-#     dest_pt   = func.ST_SetSRID(func.ST_MakePoint(dc_lon, dc_lat), 4326).cast(Geography)
-#     flight_radius_m = parsed.get("flight_radius_km", 20) * 1000
-
-#     dep_geom = func.ST_SetSRID(func.ST_MakePoint(
-#         Transportation.departure_long, Transportation.departure_lat), 4326).cast(Geography)
-#     arr_geom = func.ST_SetSRID(func.ST_MakePoint(
-#         Transportation.arrival_long, Transportation.arrival_lat), 4326).cast(Geography)
-
-#     flight_stmt = (
-#         select(Transportation.id)
-#         .where(
-#             and_(
-#                 origin_city and func.ST_DWithin(dep_geom, origin_pt, flight_radius_m),
-#                 func.ST_DWithin(arr_geom, dest_pt,   flight_radius_m),
-#                 Transportation.departure_time >= start_date,
-#                 Transportation.arrival_time   <= end_date + timedelta(days=1),
-#             )
-#         )
-#         .limit(10)
-#     )
-#     trans_rows = await session.execute(flight_stmt)
-#     trans_ids  = [r[0] for r in trans_rows.all()]
-#     if not trans_ids:
-#         # fallback to TF-IDF lookup
-#         trans_ids = await get_transportation_ids(interests, budget)
-
-#     # --- 5) Persist itinerary stub ---
-#     json_data = jsonable_encoder(parsed)
-#     itin_id = uuid4()
-#     new_itin = Itinerary(
-#         id=itin_id,
-#         name=dest_city,
-#         start_date=start_date,
-#         end_date=end_date,
-#         status="generated",
-#         data=json_data,
-#         user_id=current_user.id,
-#     )
-#     session.add(new_itin)
-#     await session.commit()
-
-#     # --- 6) TF-IDF candidates for POIs ---
-#     dest_ids = await get_destination_ids(interests, budget)
-#     act_ids  = await get_activity_ids(interests, budget)
-#     acc_ids  = await get_accommodation_ids(interests, budget)
-
-#     all_pois: List[POI] = []
-
-#     # --- 7) Destinations (9–17, 120m) ---
-#     radius_m = parsed.get("radius_km", 20) * 1000
-#     geom_dest = func.ST_SetSRID(func.ST_MakePoint(
-#         Destination.longitude, Destination.latitude), 4326).cast(Geography)
-
-#     dest_stmt = (
-#         select(Destination.id, Destination.latitude, Destination.longitude)
-#         .where(
-#             Destination.id.in_(dest_ids),
-#             Destination.rating >= parsed.get("min_rating", 0.0),
-#             func.ST_DWithin(geom_dest, dest_pt, radius_m),
-#         )
-#     )
-#     dest_rows = (await session.execute(dest_stmt)).all()
-#     if not dest_rows:
-#         raise HTTPException(404, f"No destinations found within {radius_m/1000} km")
-
-#     for _id, lat, lon in dest_rows:
-#         all_pois.append(POI(
-#             id=_id, latitude=lat, longitude=lon,
-#             opens = datetime.combine(start_date.date(), time(9,0), tzinfo=start_date.tzinfo),
-#             closes= datetime.combine(start_date.date(), time(17,0), tzinfo=start_date.tzinfo),
-#             duration=120, type="destination", price=None,
-#         ))
-
-#     # --- 8) Activities (opening_hours, 60m) ---
-#     geom_act = func.ST_SetSRID(func.ST_MakePoint(
-#         Activity.longitude, Activity.latitude), 4326).cast(Geography)
-#     act_stmt = (
-#         select(Activity.id, Activity.latitude, Activity.longitude, Activity.opening_hours, Activity.price)
-#         .where(
-#             Activity.id.in_(act_ids),
-#             func.ST_DWithin(geom_act, dest_pt, radius_m),
-#         )
-#     )
-#     act_rows = (await session.execute(act_stmt)).all()
-#     if not act_rows:
-#         raise HTTPException(404, f"No activities found within {radius_m/1000} km")
-
-#     for _id, lat, lon, oh, price in act_rows:
-#         o, c = parse_opening_hours(oh or "")
-#         all_pois.append(POI(
-#             id=_id, latitude=lat, longitude=lon,
-#             opens = datetime.combine(start_date.date(), o, tzinfo=start_date.tzinfo),
-#             closes= datetime.combine(start_date.date(), c, tzinfo=start_date.tzinfo),
-#             duration=60, type="activity", price=price or 0.0,
-#         ))
-
-#     # --- 9) Accommodations (full-day window) ---
-#     geom_acc = func.ST_SetSRID(func.ST_MakePoint(
-#         Accommodation.longitude, Accommodation.latitude), 4326).cast(Geography)
-#     acc_stmt = (
-#         select(Accommodation.id, Accommodation.latitude, Accommodation.longitude, Accommodation.price)
-#         .where(
-#             Accommodation.id.in_(acc_ids),
-#             func.ST_DWithin(geom_acc, dest_pt, radius_m),
-#         )
-#         .order_by(Accommodation.rating.desc())
-#         .limit(trip_days)
-#     )
-#     acc_rows = (await session.execute(acc_stmt)).all()
-#     if not acc_rows:
-#         raise HTTPException(404, f"No accommodations found within {radius_m/1000} km")
-
-#     for _id, lat, lon, price in acc_rows:
-#         all_pois.append(POI(
-#             id=_id, latitude=lat, longitude=lon,
-#             opens = datetime.combine(start_date.date(), time(0,0),   tzinfo=start_date.tzinfo),
-#             closes= datetime.combine(start_date.date(), time(23,59), tzinfo=start_date.tzinfo),
-#             duration=0, type="accommodation", price=price or 0.0,
-#         ))
-
-#     # --- 10) Flights (already have trans_ids) ---
-#     trans_stmt = select(
-#         Transportation.id, Transportation.departure_lat, Transportation.departure_long,
-#         Transportation.arrival_lat,   Transportation.arrival_long,
-#         Transportation.departure_time, Transportation.arrival_time,
-#         Transportation.price
-#     ).where(Transportation.id.in_(trans_ids))
-#     for _id, dlat, dlon, alat, alon, dt, at, price in (await session.execute(trans_stmt)).all():
-#         dur_min = int((at - dt).total_seconds() / 60)
-#         all_pois.append(POI(
-#             id=_id, latitude=dlat, longitude=dlon,
-#             arrival_lat=alat, arrival_long=alon,
-#             opens=dt.astimezone(start_date.tzinfo),
-#             closes=at.astimezone(start_date.tzinfo),
-#             duration=dur_min, type="transportation", price=price or 0.0,
-#         ))
-
-#     # --- 11) Price filter for activities ---
-#     all_pois = [
-#         p for p in all_pois
-#         if not (p.type == "activity" and p.price > (budget or float("inf")) * 0.1)
-#     ]
-#     if not all_pois:
-#         raise HTTPException(404, "No itinerary items fitted your preferences")
-
-#     # --- 12) Schedule day-by-day ---
-#     base_loc = DestCoord(id=None, latitude=all_pois[0].latitude, longitude=all_pois[0].longitude)
-#     for day in range(trip_days):
-#         ds = datetime.combine(start_date + timedelta(days=day), time(9,0), tzinfo=start_date.tzinfo)
-#         de = ds + timedelta(hours=pace["max_hours"])
-#         today = time_aware_greedy_route(base_loc, all_pois, day_start=ds, day_end=de)
-#         for order, poi in enumerate(today[:pace["daily_activities"]], 1):
-#             if poi.type == "destination":
-#                 session.add(ItineraryDestination(itinerary_id=itin_id, destination_id=poi.id, order=order))
-#             elif poi.type == "activity":
-#                 session.add(ItineraryActivity(itinerary_id=itin_id, activity_id=poi.id, order=order))
-#             elif poi.type == "accommodation":
-#                 session.add(ItineraryAccommodation(itinerary_id=itin_id, accommodation_id=poi.id, order=order))
-#             else:
-#                 session.add(ItineraryTransportation(itinerary_id=itin_id, transportation_id=poi.id, order=order))
-#         await session.commit()
-#         # remove used POIs and update base
-#         used = {p.id for p in today}
-#         all_pois = [p for p in all_pois if p.id not in used]
-#         if today:
-#             last = today[-1]
-#             base_loc = DestCoord(last.id, last.latitude, last.longitude)
-
-#     # --- 13) Return full itinerary ---
-#     full_itin = (await session.execute(
-#         select(Itinerary)
-#         .where(Itinerary.id == itin_id)
-#         .options(
-#             selectinload(Itinerary.dest_links).selectinload(ItineraryDestination.destination),
-#             selectinload(Itinerary.act_links).selectinload(ItineraryActivity.activity),
-#             selectinload(Itinerary.accom_links).selectinload(ItineraryAccommodation.accommodation),
-#             selectinload(Itinerary.trans_links).selectinload(ItineraryTransportation.transportation),
-#         )
-#     )).scalar_one()
-
-#     return full_itin
