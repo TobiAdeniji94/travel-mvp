@@ -10505,3 +10505,11 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-09-19 12:05:37,984 - app.db.session - INFO - Database engine created with pool_size=10
 2025-09-19 12:05:38,059 - app.db.session - INFO - Database manager initialized successfully
 2025-09-19 12:05:38,060 - app.main - INFO - Database manager initialized successfully
+2025-09-19 12:39:35,763 - app.main - INFO - Starting application...
+2025-09-19 12:39:35,767 - app.main - INFO - Initializing database manager...
+2025-09-19 12:39:35,767 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-09-19 12:39:35,820 - app.db.session - INFO - Database engine created with pool_size=10
+2025-09-19 12:39:35,881 - app.db.session - INFO - Database manager initialized successfully
+2025-09-19 12:39:35,882 - app.main - INFO - Database manager initialized successfully
+2025-09-19 12:40:58,733 - app.core.security - WARNING - JWT decode error: Signature has expired.
+2025-09-19 12:40:58,733 - app.db.session - ERROR - Unexpected session error: 401: Could not validate credentials
