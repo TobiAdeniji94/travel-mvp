@@ -72,12 +72,12 @@ Next.js (Frontend)
 ## Screenshots
 
 * Dashboard
-![travel-mvp-dashboard](<Screenshot 2025-08-17 031309.png>)
+![travel-mvp-dashboard](<misc/Screenshot 2025-08-17 031309.png>)
 * Builder (request → parsed summary)
-![travel-mvp-builder-request](<Screenshot 2025-08-17 031527.png>)
-![travel-mvp-builder-parsed-summary](<Screenshot 2025-08-17 031646.png>)
+![travel-mvp-builder-request](<misc/Screenshot 2025-08-17 031527.png>)
+![travel-mvp-builder-parsed-summary](<misc/Screenshot 2025-08-17 031646.png>)
 * Itinerary viewer (per-day stops, times, estimated costs)
-![travel-mvp-itinerary-viewer](<Screenshot 2025-08-17 031834.png>)
+![travel-mvp-itinerary-viewer](<misc/Screenshot 2025-08-17 031834.png>)
 
 ---
 
