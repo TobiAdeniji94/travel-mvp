@@ -1,0 +1,17 @@
+{
+  "days": 2,
+  "feasible_days": 1,
+  "feasible_rate": 0.5,
+  "per_day": [
+    {
+      "open_hours_pass": 1,
+      "overlap_pass": 1,
+      "budget_pass": 1
+    },
+    {
+      "open_hours_pass": 0,
+      "overlap_pass": 1,
+      "budget_pass": 1
+    }
+  ]
+}

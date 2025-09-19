@@ -24,7 +24,18 @@ services:
       - ../backend/models:/app/models
       - backend_temp:/app/temp
 
-  
+  # Frontend development overrides
+  frontend:
+    build:
+      target: development
+    environment:
+      - NODE_ENV=development
+      - VITE_API_URL=http://localhost:8000
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+    command: npm run dev
+
   # Development tools (optional - comment out if not needed)
   pgadmin:
     image: dpage/pgadmin4:latest

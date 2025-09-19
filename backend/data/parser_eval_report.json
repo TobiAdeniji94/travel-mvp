@@ -1,0 +1,54 @@
+{
+  "ran": true,
+  "cases": 6,
+  "slot_accuracy": {
+    "locations": 1.0,
+    "interests": 0.6667,
+    "budget": 0.8333,
+    "dates": 1.0
+  },
+  "per_case": [
+    {
+      "text": "Plan a trip to Paris next month, about $2000 budget. I like museums and pastries.",
+      "loc_ok": 1,
+      "int_ok": 1,
+      "bud_ok": 1,
+      "date_ok": 1
+    },
+    {
+      "text": "Family vacation: 7 days in Tokyo in December, budget 5000 USD, kid-friendly activities.",
+      "loc_ok": 1,
+      "int_ok": 1,
+      "bud_ok": 0,
+      "date_ok": 1
+    },
+    {
+      "text": "Business trip to New York from London next week. No strict budget, but prefer 4-star hotels.",
+      "loc_ok": 1,
+      "int_ok": 0,
+      "bud_ok": 1,
+      "date_ok": 1
+    },
+    {
+      "text": "Weekend in Lagos, beach + nightlife, max $300 total.",
+      "loc_ok": 1,
+      "int_ok": 1,
+      "bud_ok": 1,
+      "date_ok": 1
+    },
+    {
+      "text": "Two weeks in Rome in spring. Cathedrals, art, and pasta. Budget around \u20ac2500.",
+      "loc_ok": 1,
+      "int_ok": 0,
+      "bud_ok": 1,
+      "date_ok": 1
+    },
+    {
+      "text": "Couples getaway to Zurich in January, skiing and fondue. Spend up to 1200 CHF.",
+      "loc_ok": 1,
+      "int_ok": 1,
+      "bud_ok": 1,
+      "date_ok": 1
+    }
+  ]
+}

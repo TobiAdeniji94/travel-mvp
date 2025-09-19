@@ -1,0 +1,158 @@
+{
+  "generated_at": "2025-09-04T10:43:45+00:00",
+  "gates": {
+    "ranking_quality": {
+      "k": 10,
+      "prompts": 10,
+      "candidates": 900,
+      "micro_P_at_k": 0.08,
+      "micro_R_at_k": 0.2667,
+      "hits": 8,
+      "total_pred": 100,
+      "total_relevant": 30,
+      "diagnostics_csv": "ranking_diagnostics.csv"
+    },
+    "parser_accuracy": {
+      "ran": true,
+      "cases": 6,
+      "slot_accuracy": {
+        "locations": 1.0,
+        "interests": 0.6667,
+        "budget": 0.8333,
+        "dates": 1.0
+      },
+      "per_case": [
+        {
+          "text": "Plan a trip to Paris next month, about $2000 budget. I like museums and pastries.",
+          "loc_ok": 1,
+          "int_ok": 1,
+          "bud_ok": 1,
+          "date_ok": 1
+        },
+        {
+          "text": "Family vacation: 7 days in Tokyo in December, budget 5000 USD, kid-friendly activities.",
+          "loc_ok": 1,
+          "int_ok": 1,
+          "bud_ok": 0,
+          "date_ok": 1
+        },
+        {
+          "text": "Business trip to New York from London next week. No strict budget, but prefer 4-star hotels.",
+          "loc_ok": 1,
+          "int_ok": 0,
+          "bud_ok": 1,
+          "date_ok": 1
+        },
+        {
+          "text": "Weekend in Lagos, beach + nightlife, max $300 total.",
+          "loc_ok": 1,
+          "int_ok": 1,
+          "bud_ok": 1,
+          "date_ok": 1
+        },
+        {
+          "text": "Two weeks in Rome in spring. Cathedrals, art, and pasta. Budget around \u20ac2500.",
+          "loc_ok": 1,
+          "int_ok": 0,
+          "bud_ok": 1,
+          "date_ok": 1
+        },
+        {
+          "text": "Couples getaway to Zurich in January, skiing and fondue. Spend up to 1200 CHF.",
+          "loc_ok": 1,
+          "int_ok": 1,
+          "bud_ok": 1,
+          "date_ok": 1
+        }
+      ]
+    },
+    "feasibility_rate": {
+      "days": 2,
+      "feasible_days": 1,
+      "feasible_rate": 0.5,
+      "per_day": [
+        {
+          "open_hours_pass": 1,
+          "overlap_pass": 1,
+          "budget_pass": 1
+        },
+        {
+          "open_hours_pass": 0,
+          "overlap_pass": 1,
+          "budget_pass": 1
+        }
+      ],
+      "source": "synthetic",
+      "budget_used": 150.0
+    },
+    "performance": {
+      "runs": 10,
+      "parse_ms": {
+        "p50": 0.01,
+        "p95": 0.04
+      },
+      "rank_ms": {
+        "p50": 1.24,
+        "p95": 2.37
+      },
+      "sched_ms": {
+        "p50": 0.04,
+        "p95": 0.06
+      },
+      "total_ms": {
+        "p50": 1.3,
+        "p95": 2.48
+      },
+      "samples": {
+        "parse_ms": [
+          0.04,
+          0.02,
+          0.01,
+          0.01,
+          0.01,
+          0.02,
+          0.01,
+          0.02,
+          0.01,
+          0.01
+        ],
+        "rank_ms": [
+          2.37,
+          1.39,
+          1.11,
+          1.08,
+          1.18,
+          1.33,
+          1.25,
+          1.2,
+          1.23,
+          1.27
+        ],
+        "sched_ms": [
+          0.06,
+          0.04,
+          0.06,
+          0.03,
+          0.04,
+          0.04,
+          0.05,
+          0.05,
+          0.04,
+          0.05
+        ],
+        "total_ms": [
+          2.48,
+          1.45,
+          1.18,
+          1.13,
+          1.23,
+          1.39,
+          1.31,
+          1.26,
+          1.29,
+          1.34
+        ]
+      }
+    }
+  }
+}

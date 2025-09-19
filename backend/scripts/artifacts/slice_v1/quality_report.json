@@ -1,0 +1,20 @@
+{
+  "generated_at": "2025-09-04T10:24:40Z",
+  "gates": {
+    "ranking_quality": {
+      "error": "[Errno 2] No such file or directory: 'candidates.json'"
+    },
+    "parser_accuracy": {
+      "ran": false,
+      "error": "parse_travel_request() not found",
+      "hint": "Expose parse_travel_request(text: str) -> dict with keys: locations, dates, interests, budget.",
+      "cases": 6
+    },
+    "feasibility_rate": {
+      "error": "'feasible_days'"
+    },
+    "performance": {
+      "error": "[Errno 2] No such file or directory: 'candidates.json'"
+    }
+  }
+}
