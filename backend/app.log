@@ -10513,3 +10513,480 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-09-19 12:39:35,882 - app.main - INFO - Database manager initialized successfully
 2025-09-19 12:40:58,733 - app.core.security - WARNING - JWT decode error: Signature has expired.
 2025-09-19 12:40:58,733 - app.db.session - ERROR - Unexpected session error: 401: Could not validate credentials
+2025-10-24 13:33:08,804 - app.main - INFO - Starting application...
+2025-10-24 13:33:08,805 - app.main - INFO - Initializing database manager...
+2025-10-24 13:33:08,806 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 13:33:08,874 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 13:33:08,979 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 13:33:08,980 - app.main - INFO - Database manager initialized successfully
+2025-10-24 13:39:12,461 - app.main - INFO - Shutting down application...
+2025-10-24 13:39:12,462 - app.main - INFO - Closing database connections...
+2025-10-24 13:39:12,463 - app.db.session - INFO - Closing database connections...
+2025-10-24 13:39:12,471 - app.db.session - INFO - Database connections closed
+2025-10-24 13:39:12,472 - app.main - INFO - Database connections closed successfully
+2025-10-24 13:39:25,310 - app.main - INFO - Starting application...
+2025-10-24 13:39:25,310 - app.main - INFO - Initializing database manager...
+2025-10-24 13:39:25,311 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 13:39:25,349 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 13:39:25,418 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 13:39:25,419 - app.main - INFO - Database manager initialized successfully
+2025-10-24 14:51:31,575 - app.main - INFO - Starting application...
+2025-10-24 14:51:31,575 - app.main - INFO - Initializing database manager...
+2025-10-24 14:51:31,576 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 14:51:31,604 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 14:51:31,660 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 14:51:31,661 - app.main - INFO - Database manager initialized successfully
+2025-10-24 15:59:43,550 - app.main - INFO - Starting application...
+2025-10-24 15:59:43,551 - app.main - INFO - Initializing database manager...
+2025-10-24 15:59:43,552 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 15:59:43,588 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 15:59:43,632 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 15:59:43,632 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:01:02,362 - app.main - INFO - Starting application...
+2025-10-24 16:01:02,363 - app.main - INFO - Initializing database manager...
+2025-10-24 16:01:02,364 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:01:02,401 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:01:02,453 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:01:02,454 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:11:12,185 - app.main - INFO - Starting application...
+2025-10-24 16:11:12,187 - app.main - INFO - Initializing database manager...
+2025-10-24 16:11:12,194 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:11:12,312 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:11:12,410 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:11:12,418 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:20:43,092 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-24 16:20:43,456 - app.api.auth - INFO - New user registered: ttgi_
+2025-10-24 16:20:43,457 - app.api.auth - INFO - New user registered: ttgi_
+2025-10-24 16:20:43,469 - app.api.auth - INFO - user_registration completed in 0.58s
+2025-10-24 16:20:43,870 - app.core.security - INFO - User authenticated successfully: ttgi_
+2025-10-24 16:20:43,871 - app.core.security - INFO - user_authentication completed in 0.34s
+2025-10-24 16:20:43,871 - app.api.auth - INFO - Successful login for user: ttgi_
+2025-10-24 16:20:43,908 - app.core.security - INFO - Access token created successfully
+2025-10-24 16:20:43,910 - app.core.security - INFO - Refresh token created successfully
+2025-10-24 16:20:43,911 - app.api.auth - INFO - User ttgi_ logged in successfully
+2025-10-24 16:20:43,912 - app.api.auth - INFO - user_login completed in 0.38s
+2025-10-24 16:20:43,975 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:20:46,152 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:20:46,199 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:20:46,260 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:20:46,261 - app.api.recommend - INFO - destination_recommendations completed in 0.03s
+2025-10-24 16:20:46,263 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:20:46,267 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:20:46,268 - app.api.recommend - INFO - destination_recommendations completed in 0.00s
+2025-10-24 16:20:46,269 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:23:37,479 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:23:37,480 - app.api.nlp - INFO - Successfully parsed travel request
+2025-10-24 16:23:37,481 - app.api.nlp - INFO - Travel request parsed successfully
+2025-10-24 16:23:37,482 - app.api.nlp - INFO - nlp_parsing completed in 4.78s
+2025-10-24 16:24:22,934 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:24:24,094 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:24:24,095 - app.api.itinerary - INFO - Travel request parsed successfully
+2025-10-24 16:24:24,108 - app.api.itinerary - INFO - itinerary_generation completed in 1.17s
+2025-10-24 16:24:24,109 - app.db.session - ERROR - Unexpected session error: 404: No destination found matching 'New York'
+2025-10-24 16:29:35,067 - app.main - INFO - Starting application...
+2025-10-24 16:29:35,068 - app.main - INFO - Initializing database manager...
+2025-10-24 16:29:35,069 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:29:35,118 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:29:35,195 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:29:35,202 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:31:20,998 - app.main - INFO - Shutting down application...
+2025-10-24 16:31:20,998 - app.main - INFO - Closing database connections...
+2025-10-24 16:31:20,998 - app.db.session - INFO - Closing database connections...
+2025-10-24 16:31:21,007 - app.db.session - INFO - Database connections closed
+2025-10-24 16:31:21,007 - app.main - INFO - Database connections closed successfully
+2025-10-24 16:31:31,220 - app.main - INFO - Starting application...
+2025-10-24 16:31:31,221 - app.main - INFO - Initializing database manager...
+2025-10-24 16:31:31,223 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:31:31,252 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:31:31,305 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:31:31,305 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:31:54,427 - app.main - INFO - Shutting down application...
+2025-10-24 16:31:54,428 - app.main - INFO - Closing database connections...
+2025-10-24 16:31:54,428 - app.db.session - INFO - Closing database connections...
+2025-10-24 16:31:54,431 - app.db.session - INFO - Database connections closed
+2025-10-24 16:31:54,431 - app.main - INFO - Database connections closed successfully
+2025-10-24 16:32:03,148 - app.main - INFO - Starting application...
+2025-10-24 16:32:03,148 - app.main - INFO - Initializing database manager...
+2025-10-24 16:32:03,149 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:32:03,175 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:32:03,221 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:32:03,222 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:33:00,767 - app.main - INFO - Shutting down application...
+2025-10-24 16:33:00,768 - app.main - INFO - Closing database connections...
+2025-10-24 16:33:00,768 - app.db.session - INFO - Closing database connections...
+2025-10-24 16:33:00,773 - app.db.session - INFO - Database connections closed
+2025-10-24 16:33:00,773 - app.main - INFO - Database connections closed successfully
+2025-10-24 16:33:09,606 - app.main - INFO - Starting application...
+2025-10-24 16:33:09,606 - app.main - INFO - Initializing database manager...
+2025-10-24 16:33:09,607 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:33:09,634 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:33:09,684 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:33:09,684 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:46:30,047 - app.main - INFO - Shutting down application...
+2025-10-24 16:46:30,058 - app.main - INFO - Closing database connections...
+2025-10-24 16:46:30,058 - app.db.session - INFO - Closing database connections...
+2025-10-24 16:46:30,074 - app.db.session - INFO - Database connections closed
+2025-10-24 16:46:30,075 - app.main - INFO - Database connections closed successfully
+2025-10-24 16:46:42,825 - app.main - INFO - Starting application...
+2025-10-24 16:46:42,825 - app.main - INFO - Initializing database manager...
+2025-10-24 16:46:42,826 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:46:42,853 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:46:42,896 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:46:42,897 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:47:03,051 - app.main - INFO - Shutting down application...
+2025-10-24 16:47:03,051 - app.main - INFO - Closing database connections...
+2025-10-24 16:47:03,051 - app.db.session - INFO - Closing database connections...
+2025-10-24 16:47:03,055 - app.db.session - INFO - Database connections closed
+2025-10-24 16:47:03,055 - app.main - INFO - Database connections closed successfully
+2025-10-24 16:47:17,998 - app.main - INFO - Starting application...
+2025-10-24 16:47:17,999 - app.main - INFO - Initializing database manager...
+2025-10-24 16:47:18,002 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:47:18,033 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:47:18,086 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:47:18,086 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:47:57,883 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:48:22,968 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-24 16:48:23,236 - app.core.security - INFO - User authenticated successfully: ttgi_
+2025-10-24 16:48:23,236 - app.core.security - INFO - user_authentication completed in 0.27s
+2025-10-24 16:48:23,237 - app.api.auth - INFO - Successful login for user: ttgi_
+2025-10-24 16:48:23,237 - app.core.security - INFO - Access token created successfully
+2025-10-24 16:48:23,238 - app.core.security - INFO - Refresh token created successfully
+2025-10-24 16:48:23,239 - app.api.auth - INFO - User ttgi_ logged in successfully
+2025-10-24 16:48:23,239 - app.api.auth - INFO - user_login completed in 0.28s
+2025-10-24 16:48:23,299 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:48:24,265 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:48:24,312 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:48:24,343 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:48:24,343 - app.api.recommend - INFO - destination_recommendations completed in 0.01s
+2025-10-24 16:48:24,344 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:48:24,380 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:48:24,383 - app.api.recommend - INFO - destination_recommendations completed in 0.00s
+2025-10-24 16:48:24,384 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:48:44,068 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:48:44,068 - app.api.nlp - INFO - Successfully parsed travel request
+2025-10-24 16:48:44,069 - app.api.nlp - INFO - Travel request parsed successfully
+2025-10-24 16:48:44,070 - app.api.nlp - INFO - nlp_parsing completed in 2.29s
+2025-10-24 16:48:47,773 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:48:47,968 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:48:47,969 - app.api.itinerary - INFO - Travel request parsed successfully
+2025-10-24 16:48:47,981 - app.api.itinerary - INFO - Location coordinates retrieved
+2025-10-24 16:48:47,985 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 5, "topk": [{"rank": 1, "row": 8, "id": "2754083a-8d39-4db0-9d28-337a6fe2b383", "score": 0.47943120106570436}, {"rank": 2, "row": 26, "id": "d6f85265-e1ee-49de-86b6-7224c69f928a", "score": 0.38049548496517277}, {"rank": 3, "row": 24, "id": "f66be966-bdd0-48b0-9dbe-f62324f2be0d", "score": 0.33373748819874866}, {"rank": 4, "row": 17, "id": "dbb459a4-5912-49fe-94f3-98928a7c58ab", "score": 0.32506303527396674}, {"rank": 5, "row": 0, "id": "5e31b033-2ca9-460b-9628-b294f89317ea", "score": 0.3000809465487028}]}
+2025-10-24 16:48:47,989 - app.api.itinerary - INFO - activity rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 16, "id": "e5565d6b-90dd-42c1-89f3-e7293bf409ca", "score": 0.43660825287425575}, {"rank": 2, "row": 2561, "id": "e60cb649-146d-41a3-a20c-62ac68865086", "score": 0.3866877096702068}, {"rank": 3, "row": 850, "id": "198f0814-bf17-4849-8a01-02c7620d7833", "score": 0.37837448218273073}, {"rank": 4, "row": 1672, "id": "47d2b428-dc0c-440d-8a9d-9778f30a4e47", "score": 0.37837448218273073}, {"rank": 5, "row": 858, "id": "60a53ac7-b74a-4488-9269-23e8ee00433f", "score": 0.25759769885764905}, {"rank": 6, "row": 1684, "id": "cb136867-635d-4993-8104-1c4c02ac5343", "score": 0.25759769885764905}, {"rank": 7, "row": 2573, "id": "bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62", "score": 0.25620967195780736}, {"rank": 8, "row": 1680, "id": "4e3abb3d-8d9b-4369-b237-b7e36ff5bbf2", "score": 0.22535241787390578}, {"rank": 9, "row": 859, "id": "292fc1d3-3325-4521-a841-dd50fee05fd7", "score": 0.22535241787390578}, {"rank": 10, "row": 2569, "id": "afd02e86-f3c1-4936-8099-747351aaab25", "score": 0.2245799727304617}]}
+2025-10-24 16:48:48,002 - app.api.itinerary - INFO - accomodation rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 5765, "id": "62e3be95-e9ac-4657-b2d3-69e4b6c78112", "score": 0.5846951627024383}, {"rank": 2, "row": 3179, "id": "9982257e-18a6-4d63-88cb-fe5b9adbe1c4", "score": 0.5342644242428954}, {"rank": 3, "row": 8294, "id": "5ab79ebb-655b-43c8-94a8-e31fc06535f6", "score": 0.4722642377591524}, {"rank": 4, "row": 5248, "id": "fa262022-9fcb-4e68-86ba-e6b878d51487", "score": 0.4722642377591524}, {"rank": 5, "row": 7558, "id": "37e12ab8-de27-45bd-98cf-84f23e23b53b", "score": 0.4722642377591524}, {"rank": 6, "row": 2136, "id": "0d14770f-cb9a-41d8-b5b5-ebfad07f02fb", "score": 0.4722642377591524}, {"rank": 7, "row": 7788, "id": "07faa49e-5669-4699-a81a-d2991371cbd9", "score": 0.4714118773502709}, {"rank": 8, "row": 811, "id": "a5034a8c-75e0-48dd-87ca-a340d316b6b2", "score": 0.4714118773502709}, {"rank": 9, "row": 8411, "id": "7a4b4496-dfb8-462f-99e7-bb1cb86d83de", "score": 0.4714118773502709}, {"rank": 10, "row": 7225, "id": "457f4bad-7266-4d31-8632-106700e79e19", "score": 0.4714118773502709}]}
+2025-10-24 16:48:48,018 - app.db.session - ERROR - Database connection error: <class 'asyncpg.exceptions.UndefinedObjectError'>: type "geography" does not exist
+2025-10-24 16:48:48,019 - app.api.itinerary - ERROR - Failed to get flight options: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedObjectError'>: type "geography" does not exist
+[SQL: SELECT transportations.id 
+FROM transportations 
+WHERE ST_DWithin(CAST(ST_SetSRID(ST_MakePoint(transportations.departure_long, transportations.departure_lat), $1::INTEGER) AS geography(GEOMETRY,-1)), CAST(ST_SetSRID(ST_MakePoint($2::FLOAT, $3::FLOAT), $4::INTEGER) AS geography(GEOMETRY,-1)), $5::INTEGER) AND ST_DWithin(CAST(ST_SetSRID(ST_MakePoint(transportations.arrival_long, transportations.arrival_lat), $6::INTEGER) AS geography(GEOMETRY,-1)), CAST(ST_SetSRID(ST_MakePoint($7::FLOAT, $8::FLOAT), $9::INTEGER) AS geography(GEOMETRY,-1)), $10::INTEGER) AND transportations.departure_time >= $11::TIMESTAMP WITH TIME ZONE AND transportations.arrival_time <= $12::TIMESTAMP WITH TIME ZONE 
+ LIMIT $13::INTEGER]
+[parameters: (4326, -74.006015, 40.712728, 4326, 50000, 4326, -74.006015, 40.712728, 4326, 50000, datetime.datetime(2025, 7, 25, 0, 0, tzinfo=datetime.timezone.utc), datetime.datetime(2025, 7, 27, 23, 59, 59, 999999, tzinfo=datetime.timezone.utc), 10)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-10-24 16:48:48,023 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 0, "topk": []}
+2025-10-24 16:48:48,024 - app.api.itinerary - INFO - Attempting build_poi_list with radius_m=20000
+2025-10-24 16:48:48,031 - app.db.session - ERROR - Database connection error: <class 'asyncpg.exceptions.InFailedSQLTransactionError'>: current transaction is aborted, commands ignored until end of transaction block
+2025-10-24 16:48:48,033 - app.api.itinerary - ERROR - Failed to build POI list
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 521, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        operation, self._invalidate_schema_cache_asof
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 768, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        operation, name=self._prepared_statement_name_func()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/asyncpg/connection.py", line 635, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/asyncpg/connection.py", line 653, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/asyncpg/connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.InFailedSQLTransactionError: current transaction is aborted, commands ignored until end of transaction block
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._prepare_and_execute(operation, parameters)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.InFailedSQLTransactionError'>: current transaction is aborted, commands ignored until end of transaction block
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/app/api/itinerary.py", line 422, in build_poi_list
+    dest_rows = (await self.session.execute(dest_stmt)).all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._prepare_and_execute(operation, parameters)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.InFailedSQLTransactionError'>: current transaction is aborted, commands ignored until end of transaction block
+[SQL: SELECT destinations.id, destinations.latitude, destinations.longitude 
+FROM destinations 
+WHERE destinations.id IN ($6::UUID, $7::UUID, $8::UUID, $9::UUID, $10::UUID, $11::UUID, $12::UUID, $13::UUID, $14::UUID, $15::UUID) AND ST_DWithin(CAST(ST_SetSRID(ST_MakePoint(destinations.longitude, destinations.latitude), $1::INTEGER) AS geography(GEOMETRY,-1)), CAST(ST_SetSRID(ST_MakePoint($2::FLOAT, $3::FLOAT), $4::INTEGER) AS geography(GEOMETRY,-1)), $5::INTEGER)]
+[parameters: (4326, -74.006015, 40.712728, 4326, 20000, '2754083a-8d39-4db0-9d28-337a6fe2b383', 'd6f85265-e1ee-49de-86b6-7224c69f928a', 'f66be966-bdd0-48b0-9dbe-f62324f2be0d', 'dbb459a4-5912-49fe-94f3-98928a7c58ab', '5e31b033-2ca9-460b-9628-b294f89317ea', '64160910-332a-4243-8e36-b0d3dd55c629', '1fc65d2a-eb74-4a85-90b2-a6b8568da4c1', '4a3cedbe-97a2-48d6-bef5-8e7fdff5f40c', '1dbddc57-3a40-468d-b7fe-8c0b75e8570e', '6da1784f-1a76-4b7c-a758-e7ccc2c3993b')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-10-24 16:48:48,064 - app.api.itinerary - INFO - itinerary_generation completed in 0.29s
+2025-10-24 16:48:48,065 - app.db.session - ERROR - Unexpected session error: 500: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.InFailedSQLTransactionError'>: current transaction is aborted, commands ignored until end of transaction block
+[SQL: SELECT destinations.id, destinations.latitude, destinations.longitude 
+FROM destinations 
+WHERE destinations.id IN ($6::UUID, $7::UUID, $8::UUID, $9::UUID, $10::UUID, $11::UUID, $12::UUID, $13::UUID, $14::UUID, $15::UUID) AND ST_DWithin(CAST(ST_SetSRID(ST_MakePoint(destinations.longitude, destinations.latitude), $1::INTEGER) AS geography(GEOMETRY,-1)), CAST(ST_SetSRID(ST_MakePoint($2::FLOAT, $3::FLOAT), $4::INTEGER) AS geography(GEOMETRY,-1)), $5::INTEGER)]
+[parameters: (4326, -74.006015, 40.712728, 4326, 20000, '2754083a-8d39-4db0-9d28-337a6fe2b383', 'd6f85265-e1ee-49de-86b6-7224c69f928a', 'f66be966-bdd0-48b0-9dbe-f62324f2be0d', 'dbb459a4-5912-49fe-94f3-98928a7c58ab', '5e31b033-2ca9-460b-9628-b294f89317ea', '64160910-332a-4243-8e36-b0d3dd55c629', '1fc65d2a-eb74-4a85-90b2-a6b8568da4c1', '4a3cedbe-97a2-48d6-bef5-8e7fdff5f40c', '1dbddc57-3a40-468d-b7fe-8c0b75e8570e', '6da1784f-1a76-4b7c-a758-e7ccc2c3993b')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-10-24 16:52:51,993 - app.main - INFO - Starting application...
+2025-10-24 16:52:51,993 - app.main - INFO - Initializing database manager...
+2025-10-24 16:52:51,994 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-10-24 16:52:52,025 - app.db.session - INFO - Database engine created with pool_size=10
+2025-10-24 16:52:52,070 - app.db.session - INFO - Database manager initialized successfully
+2025-10-24 16:52:52,070 - app.main - INFO - Database manager initialized successfully
+2025-10-24 16:53:13,632 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:07,022 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-24 16:54:07,343 - app.core.security - INFO - User authenticated successfully: ttgi_
+2025-10-24 16:54:07,343 - app.core.security - INFO - user_authentication completed in 0.33s
+2025-10-24 16:54:07,344 - app.api.auth - INFO - Successful login for user: ttgi_
+2025-10-24 16:54:07,345 - app.core.security - INFO - Access token created successfully
+2025-10-24 16:54:07,346 - app.core.security - INFO - Refresh token created successfully
+2025-10-24 16:54:07,346 - app.api.auth - INFO - User ttgi_ logged in successfully
+2025-10-24 16:54:07,347 - app.api.auth - INFO - user_login completed in 0.33s
+2025-10-24 16:54:07,399 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:07,674 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:07,706 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:07,768 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:54:07,769 - app.api.recommend - INFO - destination_recommendations completed in 0.01s
+2025-10-24 16:54:07,770 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:54:07,778 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-10-24 16:54:07,781 - app.api.recommend - INFO - destination_recommendations completed in 0.00s
+2025-10-24 16:54:07,781 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-10-24 16:54:41,462 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:54:41,462 - app.api.nlp - INFO - Successfully parsed travel request
+2025-10-24 16:54:41,463 - app.api.nlp - INFO - Travel request parsed successfully
+2025-10-24 16:54:41,465 - app.api.nlp - INFO - nlp_parsing completed in 2.19s
+2025-10-24 16:54:44,813 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:44,940 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-10-24 16:54:44,941 - app.api.itinerary - INFO - Travel request parsed successfully
+2025-10-24 16:54:44,949 - app.api.itinerary - INFO - Location coordinates retrieved
+2025-10-24 16:54:44,951 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 0, "topk": []}
+2025-10-24 16:54:44,954 - app.api.itinerary - INFO - activity rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 873, "id": "e60cb649-146d-41a3-a20c-62ac68865086", "score": 0.5050155577740821}, {"rank": 2, "row": 881, "id": "afd02e86-f3c1-4936-8099-747351aaab25", "score": 0.3568189310873978}, {"rank": 3, "row": 885, "id": "bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62", "score": 0.345141655605544}, {"rank": 4, "row": 855, "id": "582ace42-15e6-41d7-8e01-a235e42b6cdc", "score": 0.3280383594163051}, {"rank": 5, "row": 207, "id": "4053bc68-04be-4845-8911-b6191d66f660", "score": 0.2873488557371483}, {"rank": 6, "row": 862, "id": "b9319798-e843-4021-b78e-b2b0cf989b81", "score": 0.26974534501501146}, {"rank": 7, "row": 849, "id": "47d18462-d3a0-4a04-a7a0-5127dd6b9544", "score": 0.26418337786725715}, {"rank": 8, "row": 611, "id": "2c37c479-d420-4ecc-ab5a-7c98945df872", "score": 0.2601752192838376}, {"rank": 9, "row": 832, "id": "47aea1ad-5aee-439d-80d2-83f44f5ab390", "score": 0.2526850821865758}, {"rank": 10, "row": 888, "id": "32cd18ef-1dca-4b91-8880-ce6e848f9178", "score": 0.2287729898882584}]}
+2025-10-24 16:54:44,957 - app.api.itinerary - INFO - accomodation rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 748, "id": "900bb15b-9eef-42f5-bf5e-65c9622b7a2c", "score": 0.38061260856304246}, {"rank": 2, "row": 744, "id": "415956d5-228b-44c0-b5eb-b23048e259c6", "score": 0.380380319030163}, {"rank": 3, "row": 745, "id": "81f0e907-6ab8-42df-9352-ed2898d439d6", "score": 0.37863515804022846}, {"rank": 4, "row": 719, "id": "c88591ae-46ca-4f62-8188-7384ca7a9aae", "score": 0.36887712294608216}, {"rank": 5, "row": 702, "id": "af1d1c0f-5f3f-4da2-bb5b-310eb7d376c6", "score": 0.36871773338582275}, {"rank": 6, "row": 724, "id": "7de91e21-7465-442e-bab3-522253dae9e3", "score": 0.3651573159369445}, {"rank": 7, "row": 739, "id": "81a9b577-54b7-4b2a-95d9-9fe8c3497b62", "score": 0.3641870321061805}, {"rank": 8, "row": 710, "id": "fb1de5fa-c74d-462d-a854-12d64b4845b2", "score": 0.3638986525394944}, {"rank": 9, "row": 746, "id": "47f5b486-d694-4499-9751-dde681f168f8", "score": 0.36364554258537457}, {"rank": 10, "row": 703, "id": "8ea23b4b-eb88-4b94-9791-a7be72bb1056", "score": 0.3629496788187859}]}
+2025-10-24 16:54:44,977 - app.api.itinerary - INFO - Found 0 flight options
+2025-10-24 16:54:44,979 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 0, "topk": []}
+2025-10-24 16:54:44,980 - app.api.itinerary - INFO - Attempting build_poi_list with radius_m=20000
+2025-10-24 16:54:45,042 - app.api.itinerary - INFO - Recommended activity IDs: ['e60cb649-146d-41a3-a20c-62ac68865086', 'afd02e86-f3c1-4936-8099-747351aaab25', 'bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62', '582ace42-15e6-41d7-8e01-a235e42b6cdc', '4053bc68-04be-4845-8911-b6191d66f660', 'b9319798-e843-4021-b78e-b2b0cf989b81', '47d18462-d3a0-4a04-a7a0-5127dd6b9544', '2c37c479-d420-4ecc-ab5a-7c98945df872', '47aea1ad-5aee-439d-80d2-83f44f5ab390', '32cd18ef-1dca-4b91-8880-ce6e848f9178']
+2025-10-24 16:54:45,043 - app.api.itinerary - INFO - Fetched 8 activity rows: [UUID('47aea1ad-5aee-439d-80d2-83f44f5ab390'), UUID('47d18462-d3a0-4a04-a7a0-5127dd6b9544'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('b9319798-e843-4021-b78e-b2b0cf989b81'), UUID('e60cb649-146d-41a3-a20c-62ac68865086'), UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62'), UUID('32cd18ef-1dca-4b91-8880-ce6e848f9178')]
+2025-10-24 16:54:45,043 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-10-24 16:54:45,044 - app.api.itinerary - WARNING - Invalid opening hours format: [], using default 9:00-17:00
+2025-10-24 16:54:45,047 - app.api.itinerary - INFO - Adding activity POI: id=47aea1ad-5aee-439d-80d2-83f44f5ab390, name='Lincoln Center for the Performing Arts', lat=40.772464, lon=-73.983489, price=4
+2025-10-24 16:54:45,048 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Tuesday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Wednesday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Thursday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Saturday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Sunday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM"], using default 9:00-17:00
+2025-10-24 16:54:45,050 - app.api.itinerary - INFO - Adding activity POI: id=47d18462-d3a0-4a04-a7a0-5127dd6b9544, name='M&M'S New York', lat=40.760066, lon=-73.984296, price=2
+2025-10-24 16:54:45,051 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:45,051 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-10-24 16:54:45,051 - app.api.itinerary - WARNING - Invalid opening hours format: [], using default 9:00-17:00
+2025-10-24 16:54:45,052 - app.api.itinerary - INFO - Adding activity POI: id=b9319798-e843-4021-b78e-b2b0cf989b81, name='Yankee Stadium', lat=40.829643, lon=-73.926175, price=None
+2025-10-24 16:54:45,052 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM", "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-10-24 16:54:45,054 - app.api.itinerary - INFO - Adding activity POI: id=e60cb649-146d-41a3-a20c-62ac68865086, name='The New York Historical', lat=40.779349, lon=-73.973908, price=None
+2025-10-24 16:54:45,055 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:45,056 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-10-24 16:54:45,058 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: Closed", "Wednesday: 12:00\u2009\u2013\u20095:00\u202fPM", "Thursday: 12:00\u2009\u2013\u20095:00\u202fPM", "Friday: 12:00\u2009\u2013\u20095:00\u202fPM", "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-10-24 16:54:45,059 - app.api.itinerary - INFO - Adding activity POI: id=bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62, name='Queens Museum', lat=40.745914, lon=-73.846725, price=None
+2025-10-24 16:54:45,060 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-10-24 16:54:45,061 - app.api.itinerary - INFO - Adding activity POI: id=32cd18ef-1dca-4b91-8880-ce6e848f9178, name='New York Hall of Science', lat=40.747258, lon=-73.851692, price=None
+2025-10-24 16:54:45,062 - app.api.itinerary - INFO - Activities after budget filter: 8 (before: 9)
+2025-10-24 16:54:45,072 - app.api.itinerary - INFO - Built POI list with 39 unique items (from 39 raw)
+2025-10-24 16:54:45,072 - app.api.itinerary - INFO - build_poi_list found 8 activities with radius_m=20000
+2025-10-24 16:54:45,218 - app.api.itinerary - INFO - Created schedule for 3 days
+2025-10-24 16:54:45,219 - app.api.itinerary - INFO - Scheduled items: 3 days with enriched details
+2025-10-24 16:54:45,289 - app.api.itinerary - INFO - Itinerary a53a2477-19b4-4750-8609-636701456300 persisted successfully
+2025-10-24 16:54:45,289 - app.api.itinerary - INFO - Successfully generated itinerary a53a2477-19b4-4750-8609-636701456300 for user 2e1da0cb-11e2-43e8-b8e5-634998e746ee
+2025-10-24 16:54:45,290 - app.api.itinerary - INFO - itinerary_generation completed in 0.47s
+2025-10-24 16:54:52,250 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:52,274 - app.api.itinerary - INFO - Recommended activity IDs: [UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc')]
+2025-10-24 16:54:52,275 - app.api.itinerary - INFO - Fetched 2 activity rows: [UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('afd02e86-f3c1-4936-8099-747351aaab25')]
+2025-10-24 16:54:52,276 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-10-24 16:54:52,277 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:52,277 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-10-24 16:54:52,278 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:52,279 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-10-24 16:54:52,280 - app.api.itinerary - INFO - Activities after budget filter: 2 (before: 3)
+2025-10-24 16:54:52,290 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
+2025-10-24 16:54:52,381 - app.api.itinerary - INFO - Created schedule for 2 days
+2025-10-24 16:54:52,382 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details
+2025-10-24 16:54:52,397 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:54:52,425 - app.api.itinerary - INFO - Recommended activity IDs: [UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc')]
+2025-10-24 16:54:52,425 - app.api.itinerary - INFO - Fetched 2 activity rows: [UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('afd02e86-f3c1-4936-8099-747351aaab25')]
+2025-10-24 16:54:52,426 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-10-24 16:54:52,426 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:52,427 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-10-24 16:54:52,428 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:54:52,429 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-10-24 16:54:52,430 - app.api.itinerary - INFO - Activities after budget filter: 2 (before: 3)
+2025-10-24 16:54:52,437 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
+2025-10-24 16:54:52,555 - app.api.itinerary - INFO - Created schedule for 2 days
+2025-10-24 16:54:52,556 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details
+2025-10-24 16:55:29,213 - app.core.security - INFO - Current user resolved: ttgi_
+2025-10-24 16:55:29,233 - app.api.itinerary - INFO - Recommended activity IDs: [UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc')]
+2025-10-24 16:55:29,234 - app.api.itinerary - INFO - Fetched 2 activity rows: [UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('afd02e86-f3c1-4936-8099-747351aaab25')]
+2025-10-24 16:55:29,235 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-10-24 16:55:29,235 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:55:29,235 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-10-24 16:55:29,237 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-10-24 16:55:29,243 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-10-24 16:55:29,243 - app.api.itinerary - INFO - Activities after budget filter: 2 (before: 3)
+2025-10-24 16:55:29,250 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
+2025-10-24 16:55:29,336 - app.api.itinerary - INFO - Created schedule for 2 days
+2025-10-24 16:55:29,337 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details

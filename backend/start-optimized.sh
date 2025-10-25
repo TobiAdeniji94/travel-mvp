@@ -3,18 +3,6 @@ set -e
 
 echo "🚀 Starting Travel MVP Backend..."
 
-# Check if spaCy model is available, download if missing
-echo "🔍 Checking spaCy model..."
-if ! python -c "import spacy; spacy.load('en_core_web_lg')" 2>/dev/null; then
-    echo "📥 Downloading spaCy model (en_core_web_lg)..."
-    python -m spacy download en_core_web_lg --no-cache-dir || {
-        echo "⚠️  WARNING: Failed to download spaCy model. NLP features may not work."
-        echo "    You can manually download it later with: docker compose exec backend python -m spacy download en_core_web_lg"
-    }
-else
-    echo "✅ spaCy model already available"
-fi
-
 # Run database migrations
 echo "📦 Running database migrations..."
 alembic upgrade head

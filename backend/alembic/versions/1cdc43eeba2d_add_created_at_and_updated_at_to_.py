@@ -45,22 +45,8 @@ def upgrade() -> None:
                existing_type=postgresql.TIMESTAMP(),
                type_=sa.DateTime(timezone=True),
                existing_nullable=False)
-    op.execute(
-        """
-        UPDATE itineraries
-        SET status = CASE
-            WHEN status = 'draft' THEN 'DRAFT'
-            WHEN status = 'generated' THEN 'GENERATED'
-            WHEN status = 'booked' THEN 'BOOKED'
-            WHEN status = 'cancelled' THEN 'CANCELLED'
-            WHEN status = 'completed' THEN 'COMPLETED'
-            ELSE status
-        END
-        """
-    )
-    op.execute(
-    "ALTER TABLE itineraries ALTER COLUMN status TYPE itinerarystatus USING status::itinerarystatus"
-    )
+    # Note: itinerarystatus enum type is already created in migration a407221c898d
+    # The status column is already an enum type, so no need to uppercase values
     op.alter_column('itineraries', 'updated_at',
                existing_type=postgresql.TIMESTAMP(),
                type_=sa.DateTime(timezone=True),
@@ -75,10 +61,8 @@ def downgrade() -> None:
                existing_type=sa.DateTime(timezone=True),
                type_=postgresql.TIMESTAMP(),
                existing_nullable=False)
-    op.alter_column('itineraries', 'status',
-               existing_type=postgresql.ENUM('DRAFT', 'GENERATED', 'BOOKED', 'CANCELLED', 'COMPLETED', name='itinerarystatus'),
-               type_=sa.VARCHAR(),
-               nullable=False)
+    
+    # Note: Don't drop itinerarystatus enum - it's owned by migration a407221c898d
     op.alter_column('destinations', 'updated_at',
                existing_type=sa.DateTime(timezone=True),
                type_=postgresql.TIMESTAMP(),

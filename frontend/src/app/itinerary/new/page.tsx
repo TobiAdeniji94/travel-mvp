@@ -141,7 +141,7 @@ export default function NewItineraryPage() {
                   value={travelText}
                   onChange={(e) => setTravelText(e.target.value)}
                   placeholder="Example: I want to visit Paris for 5 days in March with a budget of $3000. I love art museums, local cuisine, and romantic walks. I prefer a relaxed pace with 4-star accommodations."
-                  className="w-full h-32 p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none"
+                  className="w-full h-32 p-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none"
                 />
               </div>
               
@@ -180,7 +180,7 @@ export default function NewItineraryPage() {
               </CardHeader>
               <CardContent>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-900">
                     {parseResult.parsed_data.destination && (
                       <div>
                         <span className="font-medium">Destination:</span> {parseResult.parsed_data.destination}

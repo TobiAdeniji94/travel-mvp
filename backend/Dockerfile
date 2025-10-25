@@ -29,8 +29,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements/app.txt
 
-# Verify spaCy model is importable (no extra downloads here)
-RUN python -c "import spacy; spacy.load('en_core_web_lg')"
+# Download spaCy model - skip if network unavailable (will download at runtime)
+RUN python -m spacy download en_core_web_lg --no-cache-dir || \
+    echo "⚠️  spaCy model download failed during build. Will attempt at runtime."
 
 # Copy and set up startup script
 COPY start.sh .

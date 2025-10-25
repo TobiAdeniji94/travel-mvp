@@ -18,7 +18,7 @@ from dataclasses import dataclass
 
 from sqlmodel import SQLModel
 from sqlalchemy.exc import SQLAlchemyError
-from app.db.session import init_db, get_engine, get_session
+from app.db.session import init_db, get_engine, get_db_session
 from app.db.models import (
     Destination,
     Activity,
@@ -37,7 +37,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent  # Go up to scripts/ directory where CSVs are located
 
 @dataclass
 class SeedingConfig:
@@ -613,7 +613,7 @@ async def seed():
                 await conn.run_sync(SQLModel.metadata.create_all)
         
         # Seed all categories
-        async with get_session() as session:
+        async for session in get_db_session():
             try:
                 # Seed destinations
                 async with performance_timer("destinations_seeding"):

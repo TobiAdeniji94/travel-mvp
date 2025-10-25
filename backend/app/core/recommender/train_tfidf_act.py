@@ -20,7 +20,7 @@ from sklearn.exceptions import NotFittedError
 from sqlmodel import select
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.db.session import init_db, get_session
+from app.db.session import init_db, get_db_session
 from app.db.models import Activity
 
 # Configure logging
@@ -115,7 +115,7 @@ class ActivityCorpusBuilder:
         
         try:
             async with performance_timer("activity_data_fetch"):
-                async with get_session() as session:
+                async for session in get_db_session():
                     # Enhanced query with more fields
                     result = await session.execute(
                         select(

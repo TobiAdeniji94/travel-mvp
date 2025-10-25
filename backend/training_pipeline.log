@@ -1019,3 +1019,185 @@ ImportError: cannot
 2025-08-05 00:53:45,340 - __main__ - INFO - 
 ✅ PIPELINE SUCCESS - All 4 jobs completed successfully
 2025-08-05 00:53:45,340 - __main__ - INFO - 🎉 All models trained successfully!
+2025-10-24 16:34:06,637 - __main__ - INFO - 🚀 Starting comprehensive ML training pipeline
+2025-10-24 16:34:06,639 - __main__ - INFO - 🚀 Starting ML training pipeline
+2025-10-24 16:34:06,640 - __main__ - INFO - 🔍 Validating training environment...
+2025-10-24 16:34:06,649 - __main__ - INFO - ✅ Environment validation passed
+2025-10-24 16:34:06,649 - __main__ - INFO - 
+============================================================
+2025-10-24 16:34:06,650 - __main__ - INFO - Training: accommodations
+2025-10-24 16:34:06,650 - __main__ - INFO - Description: TF-IDF model for accommodation recommendations
+2025-10-24 16:34:06,650 - __main__ - INFO - ============================================================
+2025-10-24 16:34:06,651 - __main__ - INFO - 🚀 Starting accommodations training...
+2025-10-24 16:34:09,145 - __main__ - ERROR - ❌ accommodations training failed with return code 1
+2025-10-24 16:34:09,145 - __main__ - ERROR - --- STDERR (full) ---
+Traceback (most recent call last):
+  File "/app/app/core/recommender/train_tfidf_acc.py", line 23, in <module>
+    from app.db.session import init_db, get_session
+ImportError: cannot import name 'get_session' from 'app.db.session' (/app/app/db/session.py)
+
+------------
+2025-10-24 16:34:09,146 - __main__ - INFO - accommodations_training completed in 2.49s
+2025-10-24 16:34:09,146 - __main__ - ERROR - ❌ accommodations training failed: Unknown error
+2025-10-24 16:34:09,147 - __main__ - INFO - 
+============================================================
+2025-10-24 16:34:09,147 - __main__ - INFO - Training: activities
+2025-10-24 16:34:09,147 - __main__ - INFO - Description: TF-IDF model for activity recommendations
+2025-10-24 16:34:09,148 - __main__ - INFO - ============================================================
+2025-10-24 16:34:09,148 - __main__ - INFO - 🚀 Starting activities training...
+2025-10-24 16:34:11,486 - __main__ - ERROR - ❌ activities training failed with return code 1
+2025-10-24 16:34:11,487 - __main__ - ERROR - --- STDERR (full) ---
+Traceback (most recent call last):
+  File "/app/app/core/recommender/train_tfidf_act.py", line 23, in <module>
+    from app.db.session import init_db, get_session
+ImportError: cannot import name 'get_session' from 'app.db.session' (/app/app/db/session.py)
+
+------------
+2025-10-24 16:34:11,488 - __main__ - INFO - activities_training completed in 2.34s
+2025-10-24 16:34:11,488 - __main__ - ERROR - ❌ activities training failed: Unknown error
+2025-10-24 16:34:11,489 - __main__ - INFO - 
+============================================================
+2025-10-24 16:34:11,489 - __main__ - INFO - Training: destinations
+2025-10-24 16:34:11,489 - __main__ - INFO - Description: TF-IDF model for destination recommendations
+2025-10-24 16:34:11,490 - __main__ - INFO - ============================================================
+2025-10-24 16:34:11,490 - __main__ - INFO - 🚀 Starting destinations training...
+2025-10-24 16:34:13,735 - __main__ - ERROR - ❌ destinations training failed with return code 1
+2025-10-24 16:34:13,736 - __main__ - ERROR - --- STDERR (full) ---
+Traceback (most recent call last):
+  File "/app/app/core/recommender/train_tfidf_dest.py", line 23, in <module>
+    from app.db.session import init_db, get_session
+ImportError: cannot import name 'get_session' from 'app.db.session' (/app/app/db/session.py)
+
+------------
+2025-10-24 16:34:13,736 - __main__ - INFO - destinations_training completed in 2.25s
+2025-10-24 16:34:13,737 - __main__ - ERROR - ❌ destinations training failed: Unknown error
+2025-10-24 16:34:13,737 - __main__ - INFO - 
+============================================================
+2025-10-24 16:34:13,737 - __main__ - INFO - Training: transportation
+2025-10-24 16:34:13,738 - __main__ - INFO - Description: TF-IDF model for transportation recommendations
+2025-10-24 16:34:13,738 - __main__ - INFO - ============================================================
+2025-10-24 16:34:13,738 - __main__ - INFO - 🚀 Starting transportation training...
+2025-10-24 16:34:16,044 - __main__ - ERROR - ❌ transportation training failed with return code 1
+2025-10-24 16:34:16,044 - __main__ - ERROR - --- STDERR (full) ---
+Traceback (most recent call last):
+  File "/app/app/core/recommender/train_tfidf_trans.py", line 23, in <module>
+    from app.db.session import init_db, get_session
+ImportError: cannot import name 'get_session' from 'app.db.session' (/app/app/db/session.py)
+
+------------
+2025-10-24 16:34:16,045 - __main__ - INFO - transportation_training completed in 2.31s
+2025-10-24 16:34:16,045 - __main__ - ERROR - ❌ transportation training failed: Unknown error
+2025-10-24 16:34:16,046 - __main__ - INFO - 
+================================================================================
+2025-10-24 16:34:16,046 - __main__ - INFO - 📊 TRAINING PIPELINE SUMMARY
+2025-10-24 16:34:16,047 - __main__ - INFO - ================================================================================
+2025-10-24 16:34:16,047 - __main__ - INFO - ✅ Successful jobs (0): 
+2025-10-24 16:34:16,048 - __main__ - INFO - ❌ Failed jobs (4): accommodations, activities, destinations, transportation
+2025-10-24 16:34:16,049 - __main__ - INFO - 
+📋 ACCOMMODATIONS RESULTS:
+2025-10-24 16:34:16,049 - __main__ - INFO -   Status: ❌ FAILED
+2025-10-24 16:34:16,050 - __main__ - INFO -   Error: Unknown error
+2025-10-24 16:34:16,050 - __main__ - INFO -   Return Code: 1
+2025-10-24 16:34:16,051 - __main__ - INFO - 
+📋 ACTIVITIES RESULTS:
+2025-10-24 16:34:16,051 - __main__ - INFO -   Status: ❌ FAILED
+2025-10-24 16:34:16,051 - __main__ - INFO -   Error: Unknown error
+2025-10-24 16:34:16,051 - __main__ - INFO -   Return Code: 1
+2025-10-24 16:34:16,052 - __main__ - INFO - 
+📋 DESTINATIONS RESULTS:
+2025-10-24 16:34:16,052 - __main__ - INFO -   Status: ❌ FAILED
+2025-10-24 16:34:16,052 - __main__ - INFO -   Error: Unknown error
+2025-10-24 16:34:16,053 - __main__ - INFO -   Return Code: 1
+2025-10-24 16:34:16,053 - __main__ - INFO - 
+📋 TRANSPORTATION RESULTS:
+2025-10-24 16:34:16,053 - __main__ - INFO -   Status: ❌ FAILED
+2025-10-24 16:34:16,054 - __main__ - INFO -   Error: Unknown error
+2025-10-24 16:34:16,054 - __main__ - INFO -   Return Code: 1
+2025-10-24 16:34:16,054 - __main__ - INFO - 
+❌ PIPELINE FAILED - 4 job(s) failed
+2025-10-24 16:34:16,055 - __main__ - ERROR - 💥 Training pipeline failed!
+2025-10-24 16:47:23,727 - __main__ - INFO - 🚀 Starting comprehensive ML training pipeline
+2025-10-24 16:47:23,727 - __main__ - INFO - 🚀 Starting ML training pipeline
+2025-10-24 16:47:23,728 - __main__ - INFO - 🔍 Validating training environment...
+2025-10-24 16:47:23,737 - __main__ - INFO - ✅ Environment validation passed
+2025-10-24 16:47:23,738 - __main__ - INFO - 
+============================================================
+2025-10-24 16:47:23,738 - __main__ - INFO - Training: accommodations
+2025-10-24 16:47:23,738 - __main__ - INFO - Description: TF-IDF model for accommodation recommendations
+2025-10-24 16:47:23,739 - __main__ - INFO - ============================================================
+2025-10-24 16:47:23,739 - __main__ - INFO - 🚀 Starting accommodations training...
+2025-10-24 16:47:26,606 - __main__ - INFO - ✅ accommodations training completed successfully
+2025-10-24 16:47:26,607 - __main__ - INFO - accommodations_training completed in 2.87s
+2025-10-24 16:47:26,607 - __main__ - INFO - 🔍 Validating accommodations output files...
+2025-10-24 16:47:26,609 - __main__ - INFO -   ✅ tfidf_vectorizer_acc.pkl (22294 bytes)
+2025-10-24 16:47:26,611 - __main__ - INFO -   ✅ tfidf_matrix_acc.npz (141198 bytes)
+2025-10-24 16:47:26,613 - __main__ - INFO -   ✅ item_index_map_acc.pkl (29266 bytes)
+2025-10-24 16:47:26,615 - __main__ - INFO -   ✅ training_metadata_acc.pkl (178 bytes)
+2025-10-24 16:47:26,615 - __main__ - INFO - ✅ accommodations output validation passed
+2025-10-24 16:47:26,616 - __main__ - INFO - 
+============================================================
+2025-10-24 16:47:26,616 - __main__ - INFO - Training: activities
+2025-10-24 16:47:26,616 - __main__ - INFO - Description: TF-IDF model for activity recommendations
+2025-10-24 16:47:26,617 - __main__ - INFO - ============================================================
+2025-10-24 16:47:26,617 - __main__ - INFO - 🚀 Starting activities training...
+2025-10-24 16:47:29,381 - __main__ - INFO - ✅ activities training completed successfully
+2025-10-24 16:47:29,382 - __main__ - INFO - activities_training completed in 2.76s
+2025-10-24 16:47:29,382 - __main__ - INFO - 🔍 Validating activities output files...
+2025-10-24 16:47:29,384 - __main__ - INFO -   ✅ tfidf_vectorizer_act.pkl (69451 bytes)
+2025-10-24 16:47:29,386 - __main__ - INFO -   ✅ tfidf_matrix_act.npz (68771 bytes)
+2025-10-24 16:47:29,388 - __main__ - INFO -   ✅ item_index_map_act.pkl (34687 bytes)
+2025-10-24 16:47:29,390 - __main__ - INFO -   ✅ training_metadata_act.pkl (178 bytes)
+2025-10-24 16:47:29,390 - __main__ - INFO - ✅ activities output validation passed
+2025-10-24 16:47:29,390 - __main__ - INFO - 
+============================================================
+2025-10-24 16:47:29,391 - __main__ - INFO - Training: destinations
+2025-10-24 16:47:29,391 - __main__ - INFO - Description: TF-IDF model for destination recommendations
+2025-10-24 16:47:29,392 - __main__ - INFO - ============================================================
+2025-10-24 16:47:29,392 - __main__ - INFO - 🚀 Starting destinations training...
+2025-10-24 16:47:32,080 - __main__ - INFO - ✅ destinations training completed successfully
+2025-10-24 16:47:32,081 - __main__ - INFO - destinations_training completed in 2.69s
+2025-10-24 16:47:32,081 - __main__ - INFO - 🔍 Validating destinations output files...
+2025-10-24 16:47:32,083 - __main__ - INFO -   ✅ tfidf_vectorizer_dest.pkl (985 bytes)
+2025-10-24 16:47:32,085 - __main__ - INFO -   ✅ tfidf_matrix_dest.npz (1032 bytes)
+2025-10-24 16:47:32,087 - __main__ - INFO -   ✅ item_index_map_dest.pkl (484 bytes)
+2025-10-24 16:47:32,088 - __main__ - INFO -   ✅ training_metadata_dest.pkl (174 bytes)
+2025-10-24 16:47:32,089 - __main__ - INFO - ✅ destinations output validation passed
+2025-10-24 16:47:32,089 - __main__ - INFO - 
+============================================================
+2025-10-24 16:47:32,089 - __main__ - INFO - Training: transportation
+2025-10-24 16:47:32,090 - __main__ - INFO - Description: TF-IDF model for transportation recommendations
+2025-10-24 16:47:32,090 - __main__ - INFO - ============================================================
+2025-10-24 16:47:32,091 - __main__ - INFO - 🚀 Starting transportation training...
+2025-10-24 16:47:34,697 - __main__ - INFO - ✅ transportation training completed successfully
+2025-10-24 16:47:34,697 - __main__ - INFO - transportation_training completed in 2.61s
+2025-10-24 16:47:34,697 - __main__ - INFO - 🔍 Validating transportation output files...
+2025-10-24 16:47:34,699 - __main__ - INFO -   ✅ tfidf_vectorizer_trans.pkl (2374 bytes)
+2025-10-24 16:47:34,701 - __main__ - INFO -   ✅ tfidf_matrix_trans.npz (2009 bytes)
+2025-10-24 16:47:34,703 - __main__ - INFO -   ✅ item_index_map_trans.pkl (6646 bytes)
+2025-10-24 16:47:34,704 - __main__ - INFO -   ✅ training_metadata_trans.pkl (173 bytes)
+2025-10-24 16:47:34,705 - __main__ - INFO - ✅ transportation output validation passed
+2025-10-24 16:47:34,705 - __main__ - INFO - 
+================================================================================
+2025-10-24 16:47:34,705 - __main__ - INFO - 📊 TRAINING PIPELINE SUMMARY
+2025-10-24 16:47:34,706 - __main__ - INFO - ================================================================================
+2025-10-24 16:47:34,706 - __main__ - INFO - ✅ Successful jobs (4): accommodations, activities, destinations, transportation
+2025-10-24 16:47:34,706 - __main__ - INFO - ❌ Failed jobs (0): 
+2025-10-24 16:47:34,707 - __main__ - INFO - 
+📋 ACCOMMODATIONS RESULTS:
+2025-10-24 16:47:34,707 - __main__ - INFO -   Status: ✅ SUCCESS
+2025-10-24 16:47:34,707 - __main__ - INFO -   Return Code: 0
+2025-10-24 16:47:34,708 - __main__ - INFO - 
+📋 ACTIVITIES RESULTS:
+2025-10-24 16:47:34,708 - __main__ - INFO -   Status: ✅ SUCCESS
+2025-10-24 16:47:34,709 - __main__ - INFO -   Return Code: 0
+2025-10-24 16:47:34,710 - __main__ - INFO - 
+📋 DESTINATIONS RESULTS:
+2025-10-24 16:47:34,710 - __main__ - INFO -   Status: ✅ SUCCESS
+2025-10-24 16:47:34,711 - __main__ - INFO -   Return Code: 0
+2025-10-24 16:47:34,711 - __main__ - INFO - 
+📋 TRANSPORTATION RESULTS:
+2025-10-24 16:47:34,712 - __main__ - INFO -   Status: ✅ SUCCESS
+2025-10-24 16:47:34,712 - __main__ - INFO -   Return Code: 0
+2025-10-24 16:47:34,713 - __main__ - INFO - 
+✅ PIPELINE SUCCESS - All 4 jobs completed successfully
+2025-10-24 16:47:34,713 - __main__ - INFO - 🎉 All models trained successfully!

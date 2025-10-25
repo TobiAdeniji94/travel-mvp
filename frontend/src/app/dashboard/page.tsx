@@ -45,7 +45,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Welcome to Travel MVP</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Welcome to The Calm Route</h1>
           <p className="text-gray-600 mb-8">Please sign in to access your dashboard</p>
           <div className="space-x-4">
             <Link href="/login">
