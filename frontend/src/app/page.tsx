@@ -34,7 +34,7 @@ export default function Home() {
         <div className="flex flex-col justify-center min-h-screen py-12">
           <div className="text-center">
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Travel <span className="text-blue-600">MVP</span>
+              The Calm <span className="text-blue-600">Route</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Plan your perfect trip with AI-powered recommendations and personalized itinerary generation

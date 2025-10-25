@@ -123,10 +123,21 @@ def upgrade() -> None:
     op.add_column('itineraries', sa.Column('updated_at', sa.DateTime(timezone=True), nullable=False))
     op.add_column('itineraries', sa.Column('is_deleted', sa.Boolean(), nullable=False))
     op.add_column('itineraries', sa.Column('deleted_at', sa.DateTime(timezone=True), nullable=True))
-    op.alter_column('itineraries', 'status',
-               existing_type=sa.VARCHAR(),
-               type_=postgresql.ENUM('DRAFT', 'GENERATED', 'BOOKED', 'CANCELLED', 'COMPLETED', name='itinerarystatus'),
-               nullable=True)
+    
+    # Create itinerarystatus enum type
+    itinerarystatus = postgresql.ENUM(
+        'DRAFT', 'GENERATED', 'BOOKED', 'CANCELLED', 'COMPLETED',
+        name='itinerarystatus'
+    )
+    itinerarystatus.create(op.get_bind(), checkfirst=True)
+    
+    op.alter_column(
+        'itineraries', 'status',
+        existing_type=sa.VARCHAR(),
+        type_=itinerarystatus,
+        nullable=True,
+        postgresql_using="status::itinerarystatus"
+    )
     op.create_index('idx_itineraries_created_at', 'itineraries', ['created_at'], unique=False)
     op.create_index('idx_itineraries_dates', 'itineraries', ['start_date', 'end_date'], unique=False)
     op.create_index('idx_itineraries_status', 'itineraries', ['status'], unique=False)
@@ -174,7 +185,12 @@ def upgrade() -> None:
     op.create_index('idx_transportations_departure', 'transportations', ['departure_lat', 'departure_long'], unique=False)
     op.create_index('idx_transportations_price', 'transportations', ['price'], unique=False)
     op.create_index('idx_transportations_type', 'transportations', ['type'], unique=False)
-    op.add_column('users', sa.Column('status', postgresql.ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', name='userstatus'), nullable=True))
+    
+    # Create userstatus enum type
+    userstatus = postgresql.ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', name='userstatus')
+    userstatus.create(op.get_bind(), checkfirst=True)
+    
+    op.add_column('users', sa.Column('status', userstatus, nullable=True))
     op.add_column('users', sa.Column('profile_data', postgresql.JSON(astext_type=sa.Text()), nullable=True))
     op.add_column('users', sa.Column('updated_at', sa.DateTime(timezone=True), nullable=False))
     op.add_column('users', sa.Column('is_deleted', sa.Boolean(), nullable=False))
@@ -198,6 +214,10 @@ def downgrade() -> None:
     op.drop_column('users', 'updated_at')
     op.drop_column('users', 'profile_data')
     op.drop_column('users', 'status')
+    
+    # Drop userstatus enum type
+    userstatus = postgresql.ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', name='userstatus')
+    userstatus.drop(op.get_bind(), checkfirst=True)
     op.drop_index('idx_transportations_type', table_name='transportations')
     op.drop_index('idx_transportations_price', table_name='transportations')
     op.drop_index('idx_transportations_departure', table_name='transportations')
@@ -245,10 +265,15 @@ def downgrade() -> None:
     op.drop_index('idx_itineraries_status', table_name='itineraries')
     op.drop_index('idx_itineraries_dates', table_name='itineraries')
     op.drop_index('idx_itineraries_created_at', table_name='itineraries')
-    op.alter_column('itineraries', 'status',
-               existing_type=postgresql.ENUM('DRAFT', 'GENERATED', 'BOOKED', 'CANCELLED', 'COMPLETED', name='itinerarystatus'),
-               type_=sa.VARCHAR(),
-               nullable=False)
+    
+    # Convert enum back to VARCHAR
+    op.execute("ALTER TABLE itineraries ALTER COLUMN status TYPE VARCHAR USING status::text")
+    op.alter_column('itineraries', 'status', nullable=False)
+    
+    # Drop the enum type
+    itinerarystatus = postgresql.ENUM('DRAFT', 'GENERATED', 'BOOKED', 'CANCELLED', 'COMPLETED', name='itinerarystatus')
+    itinerarystatus.drop(op.get_bind(), checkfirst=True)
+    
     op.drop_column('itineraries', 'deleted_at')
     op.drop_column('itineraries', 'is_deleted')
     op.drop_column('itineraries', 'updated_at')

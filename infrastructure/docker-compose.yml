@@ -102,8 +102,18 @@ services:
     build:
       context: ../frontend
       dockerfile: Dockerfile
+      target: development
     container_name: travel-mvp-frontend
     restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+    volumes:
+      # Mount source code for hot reload
+      - ../frontend/src:/app/src
+      - ../frontend/public:/app/public
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+      - /app/.next
     ports:
       - "3000:3000"
     networks:

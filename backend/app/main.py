@@ -54,7 +54,7 @@ async def lifespan(app: FastAPI):
         logger.error(f"Error during database cleanup: {e}")
 
 app = FastAPI(
-    title="Travel MVP API",
+    title="The Calm Route API",
     description="AI-powered travel itinerary generation service",
     version="1.0.0",
     lifespan=lifespan

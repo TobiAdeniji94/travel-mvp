@@ -30,7 +30,7 @@ const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingEle
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn('font-semibold leading-none tracking-tight', className)}
+      className={cn('font-semibold leading-none tracking-tight text-gray-900', className)}
       {...props}
     />
   )
