@@ -38,6 +38,10 @@ COPY --chown=appuser:appuser . .
 RUN mkdir -p /app/logs /app/models /app/temp /app/data && \
     chown -R appuser:appuser /app
 
+# Copy startup script BEFORE switching to non-root user
+COPY start-render.sh ./start.sh
+RUN chmod +x start.sh && chown appuser:appuser start.sh
+
 # Switch to non-root user for building models
 USER appuser
 
@@ -55,10 +59,6 @@ print('Training accommodation model...'); \
 print('Training transportation model...'); \
 print('ML models built successfully!')" || \
     echo "⚠️  ML model training skipped - will use sample data"
-
-# Copy startup script
-COPY start-render.sh ./start.sh
-RUN chmod +x start.sh
 
 # Health check (Render expects port from $PORT env var)
 HEALTHCHECK --interval=30s --timeout=30s --start-period=40s --retries=3 \
