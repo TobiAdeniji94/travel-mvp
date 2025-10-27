@@ -1,0 +1,91 @@
+# Render Blueprint for Travel MVP (Free Tier Optimized)
+# This file defines all services and their configuration
+
+services:
+  # Backend API Service
+  - type: web
+    name: travel-mvp-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile.render
+    dockerContext: ./backend
+    region: oregon  # Choose closest to your users
+    plan: free  # Free tier with auto-sleep after 15min
+    healthCheckPath: /health
+    autoDeploy: true  # Auto-deploy on git push
+    
+    envVars:
+      # Port Configuration (Render requirement)
+      - key: PORT
+        value: 10000
+      
+      # Application Settings
+      - key: FASTAPI_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: WORKERS
+        value: 2  # Free tier: limit workers
+      
+      # Database Connection (auto-populated from database service)
+      - key: DB_URL
+        fromDatabase:
+          name: travel-mvp-db
+          property: connectionString
+      
+      # Security (Render auto-generates secure values)
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      
+      # Feature Flags
+      - key: ENABLE_ML_RECOMMENDATIONS
+        value: true
+      - key: ENABLE_NLP_PARSING
+        value: true
+      - key: ENABLE_RATE_LIMITING
+        value: false  # Disable for free tier
+      - key: ENABLE_TRANSFORMER
+        value: false  # Disable heavy models
+      
+      # Database Pool (conservative for free tier)
+      - key: DB_POOL_SIZE
+        value: 5
+      - key: DB_MAX_OVERFLOW
+        value: 10
+      
+      # CORS (update with your frontend URL after deployment)
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000,https://travel-mvp-frontend.onrender.com
+
+  # Frontend Service
+  - type: web
+    name: travel-mvp-frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    region: oregon
+    plan: free
+    autoDeploy: true
+    
+    buildCommand: npm run build
+    
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      # Backend API URL (auto-populated from backend service)
+      - key: NEXT_PUBLIC_API_URL
+        value: https://travel-mvp-backend.onrender.com
+
+databases:
+  # PostgreSQL Database (Free Tier)
+  - name: travel-mvp-db
+    databaseName: traveldb
+    user: postgres
+    plan: free  # 1GB storage, 1GB RAM, expires after 90 days
+    region: oregon
+    postgresMajorVersion: 15

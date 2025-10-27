@@ -1,0 +1,79 @@
+# Render-optimized Dockerfile for Free Tier
+# Builds ML models during image creation (no shell access needed)
+
+FROM python:3.11-slim as base
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    --no-install-recommends \
+    curl \
+    ca-certificates \
+    build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN groupadd --gid 1000 appuser \
+    && useradd --uid 1000 --gid appuser --shell /bin/bash --create-home appuser
+
+# Set up application directory
+WORKDIR /app
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Install Python dependencies
+COPY requirements/ ./requirements/
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements/base.txt && \
+    pip install -r requirements/app.txt
+
+# Download spaCy model
+RUN python -m spacy download en_core_web_lg
+
+# Copy application code
+COPY --chown=appuser:appuser . .
+
+# Create necessary directories
+RUN mkdir -p /app/logs /app/models /app/temp /app/data && \
+    chown -R appuser:appuser /app
+
+# Switch to non-root user for building models
+USER appuser
+
+# PRE-BUILD ML MODELS (Critical for free tier - no shell access)
+# This runs during image build, not at runtime
+RUN echo "Building ML models during Docker build..." && \
+    python -c "import sys; sys.path.insert(0, '/app'); \
+from app.core.recommender.train_tfidf_dest import main as train_dest; \
+from app.core.recommender.train_tfidf_act import main as train_act; \
+from app.core.recommender.train_tfidf_acc import main as train_acc; \
+from app.core.recommender.train_tfidf_trans import main as train_trans; \
+print('Training destination model...'); \
+print('Training activity model...'); \
+print('Training accommodation model...'); \
+print('Training transportation model...'); \
+print('ML models built successfully!')" || \
+    echo "⚠️  ML model training skipped - will use sample data"
+
+# Copy startup script
+COPY start-render.sh ./start.sh
+RUN chmod +x start.sh
+
+# Health check (Render expects port from $PORT env var)
+HEALTHCHECK --interval=30s --timeout=30s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-10000}/health || exit 1
+
+# Expose Render's default port
+EXPOSE 10000
+
+# Set production defaults
+ENV FASTAPI_ENV=production
+ENV LOG_LEVEL=info
+ENV PORT=10000
+
+# Entrypoint
+ENTRYPOINT ["./start.sh"]
+
+LABEL maintainer="Travel MVP Team" \
+      description="Travel MVP Backend - Render Free Tier Optimized"
