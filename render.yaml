@@ -66,11 +66,10 @@ services:
     env: docker
     dockerfilePath: ./frontend/Dockerfile
     dockerContext: ./frontend
+    dockerCommand: npm start
     region: oregon
     plan: free
     autoDeploy: true
-    
-    buildCommand: npm run build
     
     envVars:
       - key: PORT
