@@ -6,3 +6,8 @@
 # Environment variables
 .env.local
 # Temporary files
+RENDER_DEPLOYMENT.md
+RENDER_QUICK_START.md
+IMPLEMENTATION_PLAN.md
+INFRASTRUCTURE_OPTIMIZATION.md
+QUICK_START.md
