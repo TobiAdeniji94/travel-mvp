@@ -85,7 +85,5 @@ databases:
   # PostgreSQL Database (Free Tier)
   - name: travel-mvp-db
     databaseName: traveldb
-    user: postgres
     plan: free  # 1GB storage, 1GB RAM, expires after 90 days
     region: oregon
-    postgresMajorVersion: 15
