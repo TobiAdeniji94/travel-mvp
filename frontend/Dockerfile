@@ -69,6 +69,9 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 # Start Next.js production server
 CMD ["npm", "start"]
 
+# Set production as default stage
+FROM production AS default
+
 # ============================================================================
 # Development stage - Hot reload enabled
 # ============================================================================
