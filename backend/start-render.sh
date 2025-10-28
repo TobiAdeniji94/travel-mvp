@@ -50,9 +50,9 @@ except Exception as e:
     sleep 2
 done
 
-# Run database migrations (idempotent)
-echo "Running database migrations..."
-cd /app && alembic upgrade head || echo "⚠️  Migration failed or already applied"
+# Initialize database tables (idempotent - SQLAlchemy won't recreate existing tables)
+echo "Initializing database tables..."
+python scripts/init_db.py || echo "⚠️  Database initialization failed or already done"
 
 # Check if database needs seeding (first run detection)
 echo "Checking if database needs initial seeding..."
