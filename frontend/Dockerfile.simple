@@ -17,9 +17,10 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 RUN npm run build
 
-# Expose port
+# Expose port and bind to 0.0.0.0 (required by Render)
 ENV PORT=10000
+ENV HOSTNAME=0.0.0.0
 EXPOSE 10000
 
-# Start the application
+# Start the application (Next.js will bind to 0.0.0.0:10000)
 CMD ["npm", "start"]

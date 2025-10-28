@@ -42,23 +42,12 @@ RUN mkdir -p /app/logs /app/models /app/temp /app/data && \
 COPY start-render.sh ./start.sh
 RUN chmod +x start.sh && chown appuser:appuser start.sh
 
-# Switch to non-root user for building models
+# Switch to non-root user
 USER appuser
 
-# PRE-BUILD ML MODELS (Critical for free tier - no shell access)
-# This runs during image build, not at runtime
-RUN echo "Building ML models during Docker build..." && \
-    python -c "import sys; sys.path.insert(0, '/app'); \
-from app.core.recommender.train_tfidf_dest import main as train_dest; \
-from app.core.recommender.train_tfidf_act import main as train_act; \
-from app.core.recommender.train_tfidf_acc import main as train_acc; \
-from app.core.recommender.train_tfidf_trans import main as train_trans; \
-print('Training destination model...'); \
-print('Training activity model...'); \
-print('Training accommodation model...'); \
-print('Training transportation model...'); \
-print('ML models built successfully!')" || \
-    echo "⚠️  ML model training skipped - will use sample data"
+# NOTE: ML models will be built at runtime (first startup)
+# This speeds up Docker builds from 30min to 5min
+# Models are cached after first run
 
 # Health check (Render expects port from $PORT env var)
 HEALTHCHECK --interval=30s --timeout=30s --start-period=40s --retries=3 \
