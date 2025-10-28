@@ -89,12 +89,33 @@ if [ $? -eq 1 ]; then
     python scripts/seed_catalog.py || echo "⚠️  Seeding failed, will use existing data"
 fi
 
-# Verify ML models exist
-echo "Verifying ML models..."
+# Build ML models if they don't exist (first run only)
+echo "Checking ML models..."
 if [ ! -f "/app/models/tfidf_vectorizer_dest.pkl" ]; then
-    echo "⚠️  ML models not found in /app/models/"
-    echo "Attempting to build models now..."
-    python scripts/train_all_models.py || echo "❌ Model training failed"
+    echo "📦 ML models not found - building now (this takes ~5 minutes on first run)..."
+    python -c "
+import sys
+sys.path.insert(0, '/app')
+try:
+    from app.core.recommender.train_tfidf_dest import main as train_dest
+    from app.core.recommender.train_tfidf_act import main as train_act
+    from app.core.recommender.train_tfidf_acc import main as train_acc
+    from app.core.recommender.train_tfidf_trans import main as train_trans
+    print('Training destination model...')
+    train_dest()
+    print('Training activity model...')
+    train_act()
+    print('Training accommodation model...')
+    train_acc()
+    print('Training transportation model...')
+    train_trans()
+    print('✅ ML models built successfully!')
+except Exception as e:
+    print(f'⚠️  Model training failed: {e}')
+    print('Will use fallback recommendations')
+" || echo "⚠️  Model training failed - using fallback"
+else
+    echo "✅ ML models found, skipping training"
 fi
 
 # Download spaCy model if not present (fallback)
