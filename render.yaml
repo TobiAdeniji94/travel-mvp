@@ -24,7 +24,7 @@ services:
       - key: LOG_LEVEL
         value: info
       - key: WORKERS
-        value: 2  # Free tier: limit workers
+        value: 1  # Free tier: use 1 worker to save memory
       
       # Database Connection (auto-populated from database service)
       - key: DB_URL
