@@ -64,9 +64,8 @@ services:
   - type: web
     name: travel-mvp-frontend
     env: docker
-    dockerfilePath: ./frontend/Dockerfile
+    dockerfilePath: ./frontend/Dockerfile.simple
     dockerContext: ./frontend
-    dockerCommand: npm start
     region: oregon
     plan: free
     autoDeploy: true

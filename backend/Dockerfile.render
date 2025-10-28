@@ -28,8 +28,8 @@ RUN pip install --upgrade pip setuptools wheel && \
     pip install -r requirements/base.txt && \
     pip install -r requirements/app.txt
 
-# Download spaCy model
-RUN python -m spacy download en_core_web_lg
+# Download smaller spaCy model for free tier (saves ~350MB RAM)
+RUN python -m spacy download en_core_web_sm
 
 # Copy application code
 COPY --chown=appuser:appuser . .

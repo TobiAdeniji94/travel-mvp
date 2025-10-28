@@ -30,13 +30,14 @@ class NLPParser:
     def _load_model(self):
         """Load spaCy model with error handling"""
         try:
-            return spacy.load("en_core_web_lg")
+            # Try small model first (better for memory-constrained environments)
+            return spacy.load("en_core_web_sm")
         except OSError:
             try:
-                logger.warning("en_core_web_lg not found, falling back to en_core_web_sm")
-                return spacy.load("en_core_web_sm")
+                logger.warning("en_core_web_sm not found, trying en_core_web_lg")
+                return spacy.load("en_core_web_lg")
             except OSError:
-                logger.error("No spaCy model available. Install with: python -m spacy download en_core_web_lg")
+                logger.error("No spaCy model available. Install with: python -m spacy download en_core_web_sm")
                 raise RuntimeError("spaCy model not available")
 
 # Global parser instance

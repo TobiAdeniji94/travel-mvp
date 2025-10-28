@@ -52,7 +52,7 @@ done
 
 # Run database migrations (idempotent)
 echo "Running database migrations..."
-alembic upgrade head || echo "⚠️  Migration failed or already applied"
+cd /app && alembic upgrade head || echo "⚠️  Migration failed or already applied"
 
 # Check if database needs seeding (first run detection)
 echo "Checking if database needs initial seeding..."
@@ -99,9 +99,9 @@ fi
 
 # Download spaCy model if not present (fallback)
 echo "Verifying spaCy model..."
-python -c "import spacy; spacy.load('en_core_web_lg')" 2>/dev/null || {
+python -c "import spacy; spacy.load('en_core_web_sm')" 2>/dev/null || {
     echo "Downloading spaCy model..."
-    python -m spacy download en_core_web_lg
+    python -m spacy download en_core_web_sm
 }
 
 echo "========================================="
