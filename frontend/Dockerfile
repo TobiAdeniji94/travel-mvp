@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.4
 
 # ============================================================================
-# Dependencies stage - Install production dependencies only
+# Dependencies stage - Install ALL dependencies for build
 # ============================================================================
 FROM node:18-alpine AS deps
 WORKDIR /app
@@ -9,8 +9,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production && \
+# Install ALL dependencies (needed for Tailwind during build)
+RUN npm ci && \
     npm cache clean --force
 
 # ============================================================================
@@ -25,11 +25,19 @@ COPY package*.json ./
 # Install all dependencies (including devDependencies)
 RUN npm ci
 
+# Copy configuration files first
+COPY next.config.ts ./
+COPY tsconfig.json ./
+COPY tailwind.config.ts ./
+COPY postcss.config.mjs ./
+
 # Copy source code
-COPY . .
+COPY src ./src
+COPY public ./public
 
 # Build Next.js application
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 RUN npm run build
 
 # ============================================================================

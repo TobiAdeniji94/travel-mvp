@@ -1,0 +1,25 @@
+# Simplified single-stage Dockerfile for Render
+# More reliable for debugging build issues
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm ci
+
+# Copy all source files
+COPY . .
+
+# Build the application
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+RUN npm run build
+
+# Expose port
+ENV PORT=10000
+EXPOSE 10000
+
+# Start the application
+CMD ["npm", "start"]
