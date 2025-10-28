@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+from typing import Union
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
@@ -43,7 +45,16 @@ class Settings(BaseSettings):
     LOG_FILE: str = "app.log"
     
     # CORS
-    ALLOWED_ORIGINS: list = ["http://localhost:3000", "http://localhost:3001"]
+    ALLOWED_ORIGINS: Union[list, str] = ["http://localhost:3000", "http://localhost:3001"]
+    
+    @field_validator('ALLOWED_ORIGINS', mode='before')
+    @classmethod
+    def parse_allowed_origins(cls, v):
+        """Parse ALLOWED_ORIGINS from comma-separated string or list"""
+        if isinstance(v, str):
+            # Split by comma and strip whitespace
+            return [origin.strip() for origin in v.split(',') if origin.strip()]
+        return v
     
     # Security
     JWT_SECRET: str = "change_me"
