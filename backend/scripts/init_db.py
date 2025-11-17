@@ -8,8 +8,9 @@ import sys
 import os
 from pathlib import Path
 
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Ensure project root (/app) is on sys.path for "app.*" imports
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from sqlalchemy import create_engine, text
 from app.db.base import Base
@@ -18,12 +19,19 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+def _normalize_db_url(db_url: str) -> str:
+    if db_url.startswith("postgres://"):
+        return "postgresql://" + db_url[len("postgres://"):]
+    return db_url
+
+
 def init_database():
     """Initialize database tables"""
     db_url = os.getenv('DB_URL')
     if not db_url:
         logger.error("DB_URL environment variable not set")
         sys.exit(1)
+    db_url = _normalize_db_url(db_url)
     
     try:
         logger.info("Connecting to database...")
