@@ -2,7 +2,7 @@
  * API client for Travel MVP backend
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 import type { Itinerary } from '@/types';
 
 export class ApiError extends Error {
@@ -20,7 +20,11 @@ class ApiClient {
   private baseUrl: string;
   private token: string | null = null;
 
-  constructor(baseUrl: string) {
+  constructor(baseUrl?: string) {
+    if (!baseUrl) {
+      throw new Error('NEXT_PUBLIC_API_URL is not defined. Set it in your environment to use the ApiClient.');
+    }
+
     this.baseUrl = baseUrl;
     // Initialize token from localStorage if available
     if (typeof window !== 'undefined') {
