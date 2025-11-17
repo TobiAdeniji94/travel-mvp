@@ -17,19 +17,23 @@ export class ApiError extends Error {
 }
 
 class ApiClient {
-  private baseUrl: string;
+  private baseUrl?: string;
   private token: string | null = null;
 
   constructor(baseUrl?: string) {
-    if (!baseUrl) {
-      throw new Error('NEXT_PUBLIC_API_URL is not defined. Set it in your environment to use the ApiClient.');
-    }
-
     this.baseUrl = baseUrl;
     // Initialize token from localStorage if available
     if (typeof window !== 'undefined') {
       this.token = localStorage.getItem('auth_token');
     }
+  }
+
+  private ensureBaseUrl() {
+    if (!this.baseUrl) {
+      throw new Error('NEXT_PUBLIC_API_URL is not defined. Set it in your environment to use the ApiClient.');
+    }
+
+    return this.baseUrl;
   }
 
   setToken(token: string | null) {
@@ -47,7 +51,7 @@ class ApiClient {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = `${this.baseUrl}${endpoint}`;
+    const url = `${this.ensureBaseUrl()}${endpoint}`;
     const headers = new Headers(options.headers);
 
     // Only set Content-Type if not explicitly provided and body is not FormData
