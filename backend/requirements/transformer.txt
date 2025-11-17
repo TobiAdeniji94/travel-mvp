@@ -1,0 +1,5 @@
+# Optional dependencies for transformer-based itinerary reordering
+# Install only when ENABLE_TRANSFORMER=true
+
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.8.0

@@ -10990,3 +10990,129 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-10-24 16:55:29,250 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
 2025-10-24 16:55:29,336 - app.api.itinerary - INFO - Created schedule for 2 days
 2025-10-24 16:55:29,337 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details
+2025-11-17 11:33:17,595 - app.main - INFO - Starting application...
+2025-11-17 11:33:17,596 - app.main - INFO - Initializing database manager...
+2025-11-17 11:33:17,596 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-11-17 11:33:17,676 - app.db.session - INFO - Database engine created with pool_size=10
+2025-11-17 11:33:17,767 - app.db.session - INFO - Database manager initialized successfully
+2025-11-17 11:33:17,767 - app.main - INFO - Database manager initialized successfully
+2025-11-17 15:26:23,440 - app.main - INFO - Starting application...
+2025-11-17 15:26:23,441 - app.main - INFO - Initializing database manager...
+2025-11-17 15:26:23,442 - app.db.session - INFO - Database URL prepared: postgresql://db:5432/traveldb
+2025-11-17 15:26:23,480 - app.db.session - INFO - Database engine created with pool_size=10
+2025-11-17 15:26:23,559 - app.db.session - INFO - Database manager initialized successfully
+2025-11-17 15:26:23,560 - app.main - INFO - Database manager initialized successfully
+2025-11-17 15:40:05,582 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-11-17 15:40:06,000 - app.api.auth - INFO - New user registered: iota
+2025-11-17 15:40:06,001 - app.api.auth - INFO - New user registered: iota
+2025-11-17 15:40:06,021 - app.api.auth - INFO - user_registration completed in 0.59s
+2025-11-17 15:40:06,451 - app.core.security - INFO - User authenticated successfully: iota
+2025-11-17 15:40:06,453 - app.core.security - INFO - user_authentication completed in 0.35s
+2025-11-17 15:40:06,453 - app.api.auth - INFO - Successful login for user: iota
+2025-11-17 15:40:06,490 - app.core.security - INFO - Access token created successfully
+2025-11-17 15:40:06,491 - app.core.security - INFO - Refresh token created successfully
+2025-11-17 15:40:06,491 - app.api.auth - INFO - User iota logged in successfully
+2025-11-17 15:40:06,492 - app.api.auth - INFO - user_login completed in 0.39s
+2025-11-17 15:40:06,558 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 15:40:08,392 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 15:40:08,434 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 15:40:08,480 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-11-17 15:40:08,481 - app.api.recommend - INFO - destination_recommendations completed in 0.02s
+2025-11-17 15:40:08,482 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-11-17 15:40:08,486 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-11-17 15:40:08,487 - app.api.recommend - INFO - destination_recommendations completed in 0.00s
+2025-11-17 15:40:08,487 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-11-17 16:57:16,546 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-11-17 16:57:16,546 - app.api.nlp - INFO - Successfully parsed travel request
+2025-11-17 16:57:16,547 - app.api.nlp - INFO - Travel request parsed successfully
+2025-11-17 16:57:16,549 - app.api.nlp - INFO - nlp_parsing completed in 4.70s
+2025-11-17 16:57:20,316 - app.core.security - WARNING - JWT decode error: Signature has expired.
+2025-11-17 16:57:20,316 - app.db.session - ERROR - Unexpected session error: 401: Could not validate credentials
+2025-11-17 16:57:36,580 - app.core.security - WARNING - JWT decode error: Signature has expired.
+2025-11-17 16:57:36,581 - app.db.session - ERROR - Unexpected session error: 401: Could not validate credentials
+2025-11-17 16:58:27,836 - app.core.security - INFO - User authenticated successfully: iota
+2025-11-17 16:58:27,837 - app.core.security - INFO - user_authentication completed in 0.49s
+2025-11-17 16:58:27,837 - app.api.auth - INFO - Successful login for user: iota
+2025-11-17 16:58:27,839 - app.core.security - INFO - Access token created successfully
+2025-11-17 16:58:27,840 - app.core.security - INFO - Refresh token created successfully
+2025-11-17 16:58:27,840 - app.api.auth - INFO - User iota logged in successfully
+2025-11-17 16:58:27,841 - app.api.auth - INFO - user_login completed in 0.49s
+2025-11-17 16:58:27,855 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:28,537 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:28,565 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:28,625 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-11-17 16:58:28,626 - app.api.recommend - INFO - destination_recommendations completed in 0.01s
+2025-11-17 16:58:28,627 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-11-17 16:58:28,632 - app.api.recommend - INFO - Generated 0 dest recommendations
+2025-11-17 16:58:28,632 - app.api.recommend - INFO - destination_recommendations completed in 0.00s
+2025-11-17 16:58:28,633 - app.db.session - ERROR - Unexpected session error: 404: No destination recommendations found
+2025-11-17 16:58:36,438 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-11-17 16:58:36,439 - app.api.nlp - INFO - Successfully parsed travel request
+2025-11-17 16:58:36,439 - app.api.nlp - INFO - Travel request parsed successfully
+2025-11-17 16:58:36,440 - app.api.nlp - INFO - nlp_parsing completed in 0.17s
+2025-11-17 16:58:38,594 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:38,728 - app.core.nlp.parser - INFO - Parsed travel request with 95.0% confidence
+2025-11-17 16:58:38,729 - app.api.itinerary - INFO - Travel request parsed successfully
+2025-11-17 16:58:38,755 - app.api.itinerary - INFO - Location coordinates retrieved
+2025-11-17 16:58:38,758 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 0, "topk": []}
+2025-11-17 16:58:38,771 - app.api.itinerary - INFO - activity rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 873, "id": "e60cb649-146d-41a3-a20c-62ac68865086", "score": 0.5050155577740821}, {"rank": 2, "row": 881, "id": "afd02e86-f3c1-4936-8099-747351aaab25", "score": 0.3568189310873978}, {"rank": 3, "row": 885, "id": "bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62", "score": 0.345141655605544}, {"rank": 4, "row": 855, "id": "582ace42-15e6-41d7-8e01-a235e42b6cdc", "score": 0.3280383594163051}, {"rank": 5, "row": 207, "id": "4053bc68-04be-4845-8911-b6191d66f660", "score": 0.2873488557371483}, {"rank": 6, "row": 862, "id": "b9319798-e843-4021-b78e-b2b0cf989b81", "score": 0.26974534501501146}, {"rank": 7, "row": 849, "id": "47d18462-d3a0-4a04-a7a0-5127dd6b9544", "score": 0.26418337786725715}, {"rank": 8, "row": 611, "id": "2c37c479-d420-4ecc-ab5a-7c98945df872", "score": 0.2601752192838376}, {"rank": 9, "row": 832, "id": "47aea1ad-5aee-439d-80d2-83f44f5ab390", "score": 0.2526850821865758}, {"rank": 10, "row": 888, "id": "32cd18ef-1dca-4b91-8880-ce6e848f9178", "score": 0.2287729898882584}]}
+2025-11-17 16:58:38,782 - app.api.itinerary - INFO - accomodation rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 10, "topk": [{"rank": 1, "row": 748, "id": "900bb15b-9eef-42f5-bf5e-65c9622b7a2c", "score": 0.38061260856304246}, {"rank": 2, "row": 744, "id": "415956d5-228b-44c0-b5eb-b23048e259c6", "score": 0.380380319030163}, {"rank": 3, "row": 745, "id": "81f0e907-6ab8-42df-9352-ed2898d439d6", "score": 0.37863515804022846}, {"rank": 4, "row": 719, "id": "c88591ae-46ca-4f62-8188-7384ca7a9aae", "score": 0.36887712294608216}, {"rank": 5, "row": 702, "id": "af1d1c0f-5f3f-4da2-bb5b-310eb7d376c6", "score": 0.36871773338582275}, {"rank": 6, "row": 724, "id": "7de91e21-7465-442e-bab3-522253dae9e3", "score": 0.3651573159369445}, {"rank": 7, "row": 739, "id": "81a9b577-54b7-4b2a-95d9-9fe8c3497b62", "score": 0.3641870321061805}, {"rank": 8, "row": 710, "id": "fb1de5fa-c74d-462d-a854-12d64b4845b2", "score": 0.3638986525394944}, {"rank": 9, "row": 746, "id": "47f5b486-d694-4499-9751-dde681f168f8", "score": 0.36364554258537457}, {"rank": 10, "row": 703, "id": "8ea23b4b-eb88-4b94-9791-a7be72bb1056", "score": 0.3629496788187859}]}
+2025-11-17 16:58:38,928 - app.api.itinerary - INFO - Found 0 flight options
+2025-11-17 16:58:38,932 - app.api.itinerary - INFO - destination rank_topk {"stage": "rank", "domain": "acc", "query": "night weekend itinerary new york lunch leisurely pace max day museum iconic city sight hotel rating budget budget 200.0", "K": 0, "topk": []}
+2025-11-17 16:58:38,933 - app.api.itinerary - INFO - Attempting build_poi_list with radius_m=20000
+2025-11-17 16:58:39,021 - app.api.itinerary - INFO - Recommended activity IDs: ['e60cb649-146d-41a3-a20c-62ac68865086', 'afd02e86-f3c1-4936-8099-747351aaab25', 'bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62', '582ace42-15e6-41d7-8e01-a235e42b6cdc', '4053bc68-04be-4845-8911-b6191d66f660', 'b9319798-e843-4021-b78e-b2b0cf989b81', '47d18462-d3a0-4a04-a7a0-5127dd6b9544', '2c37c479-d420-4ecc-ab5a-7c98945df872', '47aea1ad-5aee-439d-80d2-83f44f5ab390', '32cd18ef-1dca-4b91-8880-ce6e848f9178']
+2025-11-17 16:58:39,022 - app.api.itinerary - INFO - Fetched 8 activity rows: [UUID('47aea1ad-5aee-439d-80d2-83f44f5ab390'), UUID('47d18462-d3a0-4a04-a7a0-5127dd6b9544'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('b9319798-e843-4021-b78e-b2b0cf989b81'), UUID('e60cb649-146d-41a3-a20c-62ac68865086'), UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62'), UUID('32cd18ef-1dca-4b91-8880-ce6e848f9178')]
+2025-11-17 16:58:39,022 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-11-17 16:58:39,023 - app.api.itinerary - WARNING - Invalid opening hours format: [], using default 9:00-17:00
+2025-11-17 16:58:39,024 - app.api.itinerary - INFO - Adding activity POI: id=47aea1ad-5aee-439d-80d2-83f44f5ab390, name='Lincoln Center for the Performing Arts', lat=40.772464, lon=-73.983489, price=4
+2025-11-17 16:58:39,024 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Tuesday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Wednesday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Thursday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Saturday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM", "Sunday: 9:00\u202fAM\u2009\u2013\u200911:00\u202fPM"], using default 9:00-17:00
+2025-11-17 16:58:39,025 - app.api.itinerary - INFO - Adding activity POI: id=47d18462-d3a0-4a04-a7a0-5127dd6b9544, name='M&M'S New York', lat=40.760066, lon=-73.984296, price=2
+2025-11-17 16:58:39,025 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:39,026 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-11-17 16:58:39,026 - app.api.itinerary - WARNING - Invalid opening hours format: [], using default 9:00-17:00
+2025-11-17 16:58:39,027 - app.api.itinerary - INFO - Adding activity POI: id=b9319798-e843-4021-b78e-b2b0cf989b81, name='Yankee Stadium', lat=40.829643, lon=-73.926175, price=None
+2025-11-17 16:58:39,027 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM", "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-11-17 16:58:39,028 - app.api.itinerary - INFO - Adding activity POI: id=e60cb649-146d-41a3-a20c-62ac68865086, name='The New York Historical', lat=40.779349, lon=-73.973908, price=None
+2025-11-17 16:58:39,028 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:39,028 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-11-17 16:58:39,029 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: Closed", "Wednesday: 12:00\u2009\u2013\u20095:00\u202fPM", "Thursday: 12:00\u2009\u2013\u20095:00\u202fPM", "Friday: 12:00\u2009\u2013\u20095:00\u202fPM", "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-11-17 16:58:39,030 - app.api.itinerary - INFO - Adding activity POI: id=bfad0f9a-1be8-4ecd-96b7-f2eda41f7f62, name='Queens Museum', lat=40.745914, lon=-73.846725, price=None
+2025-11-17 16:58:39,030 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: Closed", "Tuesday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Sunday: 10:00\u202fAM\u2009\u2013\u20095:00\u202fPM"], using default 9:00-17:00
+2025-11-17 16:58:39,030 - app.api.itinerary - INFO - Adding activity POI: id=32cd18ef-1dca-4b91-8880-ce6e848f9178, name='New York Hall of Science', lat=40.747258, lon=-73.851692, price=None
+2025-11-17 16:58:39,033 - app.api.itinerary - INFO - Activities after budget filter: 8 (before: 9)
+2025-11-17 16:58:39,050 - app.api.itinerary - INFO - Built POI list with 39 unique items (from 39 raw)
+2025-11-17 16:58:39,050 - app.api.itinerary - INFO - build_poi_list found 8 activities with radius_m=20000
+2025-11-17 16:58:39,245 - app.api.itinerary - INFO - Created schedule for 3 days
+2025-11-17 16:58:39,246 - app.api.itinerary - INFO - Scheduled items: 3 days with enriched details
+2025-11-17 16:58:39,329 - app.api.itinerary - INFO - Itinerary b6c36377-5e3c-432b-bb60-3c625e3985cb persisted successfully
+2025-11-17 16:58:39,330 - app.api.itinerary - INFO - Successfully generated itinerary b6c36377-5e3c-432b-bb60-3c625e3985cb for user 6f707c43-c3a0-461e-9f15-f6722e2d6b3b
+2025-11-17 16:58:39,331 - app.api.itinerary - INFO - itinerary_generation completed in 0.73s
+2025-11-17 16:58:47,605 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:47,633 - app.api.itinerary - INFO - Recommended activity IDs: [UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc')]
+2025-11-17 16:58:47,633 - app.api.itinerary - INFO - Fetched 2 activity rows: [UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('afd02e86-f3c1-4936-8099-747351aaab25')]
+2025-11-17 16:58:47,634 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-11-17 16:58:47,636 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:47,637 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-11-17 16:58:47,638 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:47,638 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-11-17 16:58:47,639 - app.api.itinerary - INFO - Activities after budget filter: 2 (before: 3)
+2025-11-17 16:58:47,646 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
+2025-11-17 16:58:47,797 - app.api.itinerary - INFO - Created schedule for 2 days
+2025-11-17 16:58:47,797 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details
+2025-11-17 16:58:47,812 - app.core.security - INFO - Current user resolved: iota
+2025-11-17 16:58:47,832 - app.api.itinerary - INFO - Recommended activity IDs: [UUID('afd02e86-f3c1-4936-8099-747351aaab25'), UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc')]
+2025-11-17 16:58:47,832 - app.api.itinerary - INFO - Fetched 2 activity rows: [UUID('582ace42-15e6-41d7-8e01-a235e42b6cdc'), UUID('afd02e86-f3c1-4936-8099-747351aaab25')]
+2025-11-17 16:58:47,832 - app.api.itinerary - INFO - Activity location filter: center=(40.712728,-74.006015), radius_m=20000
+2025-11-17 16:58:47,833 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Tuesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Wednesday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Thursday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Friday: 9:30\u202fAM\u2009\u2013\u20094:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:47,833 - app.api.itinerary - INFO - Adding activity POI: id=582ace42-15e6-41d7-8e01-a235e42b6cdc, name='New York Stock Exchange', lat=40.706877, lon=-74.011265, price=None
+2025-11-17 16:58:47,834 - app.api.itinerary - WARNING - Invalid opening hours format: ["Monday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Tuesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Wednesday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Thursday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Friday: 9:00\u202fAM\u2009\u2013\u20095:00\u202fPM", "Saturday: Closed", "Sunday: Closed"], using default 9:00-17:00
+2025-11-17 16:58:47,834 - app.api.itinerary - INFO - Adding activity POI: id=afd02e86-f3c1-4936-8099-747351aaab25, name='New York City Hall', lat=40.712774, lon=-74.006059, price=None
+2025-11-17 16:58:47,835 - app.api.itinerary - INFO - Activities after budget filter: 2 (before: 3)
+2025-11-17 16:58:47,842 - app.api.itinerary - INFO - Built POI list with 33 unique items (from 33 raw)
+2025-11-17 16:58:47,979 - app.api.itinerary - INFO - Created schedule for 2 days
+2025-11-17 16:58:47,981 - app.api.itinerary - INFO - Scheduled items: 2 days with enriched details

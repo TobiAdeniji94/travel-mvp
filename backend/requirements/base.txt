@@ -23,11 +23,10 @@ scipy==1.16.0
 scikit-learn==1.7.0
 joblib==1.5.1
 threadpoolctl==3.6.0
-sympy==1.14.0
-
-# ML runtime
-torch==2.8.0
 
 # Crypto / database client (often compiled wheels)
 cryptography==45.0.5
 psycopg2-binary==2.9.10
+
+# NOTE: Transformer/torch dependencies live in requirements/transformer.txt
+# Install them only if ENABLE_TRANSFORMER=true in production.
