@@ -39,7 +39,7 @@ This MVP generates **personalized, feasible itineraries** from a single free-tex
 * **Scheduling:** Greedy, time-aware day plans with open/close windows, max stops/day, and per-day budget caps.
 * **Persistence & UI:** Save/view/delete itineraries via FastAPI + Next.js.
 * **Determinism:** Versioned artifacts, reproducible runs, and stable tie-breakers.
-* **Observability:** Stage timings (parse/rank/schedule), simple logs, and health checks.
+* **Observability:** Structured JSON logging with request correlation IDs, Prometheus metrics, component health checks, and performance timers.
 
 ---
 
@@ -257,14 +257,66 @@ python eval.py --k 3 5 --rankers tfidf bm25 embed --domain act
 
 ---
 
+## Observability
+
+The application includes comprehensive observability features for monitoring and debugging:
+
+### Structured Logging
+- **JSON format** logs for machine-queryable output
+- **Request correlation IDs** (`X-Request-ID` header) for tracing multi-stage flows
+- **Contextual metadata** including user IDs, processing times, and business metrics
+- Logs written to `app.log` and stdout
+
+**Example log entry:**
+```json
+{
+  "event": "nlp_parse_endpoint_success",
+  "timestamp": "2025-11-18T18:50:23.456Z",
+  "level": "info",
+  "request_id": "a3f2c8d1-...",
+  "text_length": 145,
+  "processing_time_ms": 234.5,
+  "confidence_score": 0.87,
+  "parsed_fields": ["destination", "dates", "budget"]
+}
+```
+
+### Metrics Endpoint
+- **Prometheus-compatible** metrics at `/metrics`
+- Automatic instrumentation of all HTTP endpoints
+- Tracks: request rate, latency percentiles, error rate, in-flight requests
+
+**Query logs:**
+```bash
+# View logs with jq
+cat app.log | jq 'select(.event=="user_login_success")'
+
+# Find slow requests
+cat app.log | jq 'select(.duration_ms > 1000)'
+
+# Trace a specific request
+cat app.log | jq 'select(.request_id=="a3f2c8d1-...")'
+```
+
+### Health Checks
+- **Basic health:** `GET /` - API liveness
+- **Detailed health:** `GET /health` - Component-level status (database, ML models, API)
+- Returns structured JSON with component health and timestamp
+
+### Performance Monitoring
+- `performance_timer` context manager tracks operation durations
+- Logged for: NLP parsing, authentication, itinerary generation, ML model inference
+
+---
+
 ## Roadmap
 
 * [ ] Live APIs: maps/hours/events/weather/flights behind feature flags
 * [ ] LLM-assisted parsing & re-ranking; A/B BM25 vs embeddings
 * [ ] Incremental re-planning with real-time triggers
 * [ ] Collaboration (shared itineraries, comments), bookings/payments
-* [ ] Explainability (“why this place?”) + feedback loops
-* [ ] Multilingual catalogs, fairness audits, richer observability
+* [ ] Explainability ("why this place?") + feedback loops
+* [ ] Multilingual catalogs, fairness audits, alerting/dashboards
 
 ---
 

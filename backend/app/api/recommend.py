@@ -5,18 +5,18 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pickle
 import scipy.sparse
 import re
-import logging
 import time
 from typing import List, Optional, Dict, Any
 from functools import lru_cache
 from contextlib import asynccontextmanager
 from pydantic import BaseModel, Field, field_validator
+import structlog
 
 from app.db.session import get_db_session
 from app.db.models import Destination, Activity, Accommodation, Transportation
 
 # Set up logging
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 router = APIRouter(prefix="/recommend", tags=["recommendations"])
 
@@ -29,7 +29,7 @@ async def performance_timer(operation: str):
         yield
     finally:
         duration = time.time() - start
-        logger.info(f"{operation} completed in {duration:.2f}s")
+        logger.info("operation_completed", operation=operation, duration_seconds=round(duration, 2))
 
 # Input validation models
 class RecommendationRequest(BaseModel):

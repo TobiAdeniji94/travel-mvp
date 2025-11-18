@@ -3,11 +3,11 @@ from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlmodel import select
-import logging
 import time
 from contextlib import asynccontextmanager
 from typing import Optional, Dict, Any
 from pydantic import BaseModel, Field, field_validator
+import structlog
 
 from app.core.security import (
     authenticate_user,
@@ -24,7 +24,7 @@ from app.db.models import User
 from app.api.schemas import Token, UserRead
 
 # Set up logging
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -37,7 +37,7 @@ async def performance_timer(operation: str):
         yield
     finally:
         duration = time.time() - start
-        logger.info(f"{operation} completed in {duration:.2f}s")
+        logger.info("operation_completed", operation=operation, duration_seconds=round(duration, 2))
 
 # Input validation models
 class LoginRequest(BaseModel):
@@ -243,10 +243,12 @@ async def login(
                 expires_delta=timedelta(minutes=REFRESH_TOKEN_EXPIRE_MINUTES),
             )
             
-            logger.info(f"User {user.username} logged in successfully", extra={
-                'user_id': str(user.id),
-                'ip_address': request.client.host if request.client else None
-            })
+            logger.info(
+                "user_login_success",
+                username=user.username,
+                user_id=str(user.id),
+                ip_address=request.client.host if request.client else None
+            )
             
             return {
                 "access_token": access_token,
@@ -258,7 +260,11 @@ async def login(
         except HTTPException:
             raise
         except Exception as e:
-            logger.error(f"Unexpected error in login: {e}")
+            logger.error(
+                "user_login_error",
+                error=str(e),
+                error_type=type(e).__name__
+            )
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Login failed"
@@ -287,10 +293,13 @@ async def register(
                 user_data.username, user_data.email, user_data.password
             )
             
-            logger.info(f"New user registered: {new_user.username}", extra={
-                'user_id': str(new_user.id),
-                'ip_address': request.client.host if request.client else None
-            })
+            logger.info(
+                "user_registration_success",
+                username=new_user.username,
+                user_id=str(new_user.id),
+                email=new_user.email,
+                ip_address=request.client.host if request.client else None
+            )
             
             return UserRead(
                 id=new_user.id,
