@@ -1,14 +1,14 @@
 from fastapi import APIRouter, HTTPException, Request, status
 from pydantic import BaseModel, Field, field_validator
-import logging
 import time
 from contextlib import asynccontextmanager
 from typing import Dict, Any, Optional, List
+import structlog
 
 from app.core.nlp.parser import parse_travel_request
 
 # Set up logging
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 router = APIRouter(prefix="/nlp", tags=["NLP"])
 
@@ -21,7 +21,7 @@ async def performance_timer(operation: str):
         yield
     finally:
         duration = time.time() - start
-        logger.info(f"{operation} completed in {duration:.2f}s")
+        logger.info("operation_completed", operation=operation, duration_seconds=round(duration, 2))
 
 # Input validation models
 class ParseRequest(BaseModel):
@@ -54,13 +54,21 @@ class NLPService:
         """Safely parse travel request with error handling"""
         try:
             result = parse_travel_request(text)
-            logger.info("Successfully parsed travel request", extra={
-                'text_length': len(text),
-                'parsed_keys': list(result.keys()) if result else []
-            })
+            logger.info(
+                "travel_request_parsed",
+                text_length=len(text),
+                parsed_keys=list(result.keys()) if result else [],
+                has_destination=bool(result.get('destination')),
+                has_dates=bool(result.get('dates'))
+            )
             return result
         except Exception as e:
-            logger.error(f"Failed to parse travel request: {e}")
+            logger.error(
+                "travel_request_parse_failed",
+                error=str(e),
+                error_type=type(e).__name__,
+                text_length=len(text)
+            )
             raise HTTPException(
                 status_code=400, 
                 detail=f"Failed to parse travel request: {str(e)}"
@@ -117,11 +125,13 @@ async def parse_travel_request_endpoint(
             # Calculate confidence score (simple heuristic)
             confidence_score = min(0.95, max(0.5, 1.0 - (len(parse_req.text) / 2000)))
             
-            logger.info("Travel request parsed successfully", extra={
-                'text_length': len(parse_req.text),
-                'processing_time': processing_time,
-                'confidence_score': confidence_score
-            })
+            logger.info(
+                "nlp_parse_endpoint_success",
+                text_length=len(parse_req.text),
+                processing_time_ms=round(processing_time * 1000, 2),
+                confidence_score=round(confidence_score, 3),
+                parsed_fields=list(parsed_data.keys())
+            )
             
             return ParseResponse(
                 original_text=parse_req.text,
@@ -134,7 +144,11 @@ async def parse_travel_request_endpoint(
         except HTTPException:
             raise
         except Exception as e:
-            logger.error(f"Unexpected error in NLP parsing: {e}")
+            logger.error(
+                "nlp_parse_endpoint_error",
+                error=str(e),
+                error_type=type(e).__name__
+            )
             raise HTTPException(status_code=500, detail="Failed to parse travel request")
 
 @router.get("/parse-test")
@@ -148,10 +162,11 @@ async def parse_test():
             result = NLPService.parse_travel_request_safe(sample)
             processing_time = time.time() - start_time
             
-            logger.info("Test parsing completed", extra={
-                'sample_text': sample,
-                'processing_time': processing_time
-            })
+            logger.info(
+                "nlp_test_parse_completed",
+                sample_length=len(sample),
+                processing_time_ms=round(processing_time * 1000, 2)
+            )
             
             return {
                 "sample_text": sample,
@@ -160,7 +175,7 @@ async def parse_test():
                 "status": "success"
             }
         except Exception as e:
-            logger.error(f"Test parsing failed: {e}")
+            logger.error("nlp_test_parse_failed", error=str(e), error_type=type(e).__name__)
             raise HTTPException(status_code=500, detail=f"Test parsing failed: {str(e)}")
 
 @router.get("/samples")
@@ -168,14 +183,14 @@ async def get_sample_requests():
     """Get sample travel requests for testing"""
     try:
         samples = NLPService.get_sample_requests()
-        logger.info(f"Returned {len(samples)} sample requests")
+        logger.info("nlp_samples_returned", sample_count=len(samples))
         return {
             "samples": samples,
             "count": len(samples),
             "description": "Sample travel requests for testing NLP functionality"
         }
     except Exception as e:
-        logger.error(f"Failed to get sample requests: {e}")
+        logger.error("nlp_samples_failed", error=str(e), error_type=type(e).__name__)
         raise HTTPException(status_code=500, detail="Failed to get sample requests")
 
 @router.post("/parse-batch")

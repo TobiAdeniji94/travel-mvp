@@ -1,6 +1,7 @@
 import os
 import logging
 from contextlib import asynccontextmanager
+from datetime import datetime, timezone
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -9,21 +10,42 @@ from sqlalchemy.exc import SQLAlchemyError
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+import structlog
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.db.session import init_db, get_db_session, db_manager
 from app.api import users, itinerary, auth, nlp, recommend, security, catalog, database
+from app.middleware.logging import RequestLoggingMiddleware
 
-# Configure logging
+# Configure structured logging with JSON output
+structlog.configure(
+    processors=[
+        structlog.contextvars.merge_contextvars,
+        structlog.stdlib.filter_by_level,
+        structlog.stdlib.add_logger_name,
+        structlog.stdlib.add_log_level,
+        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.StackInfoRenderer(),
+        structlog.processors.format_exc_info,
+        structlog.processors.JSONRenderer()
+    ],
+    wrapper_class=structlog.stdlib.BoundLogger,
+    context_class=dict,
+    logger_factory=structlog.stdlib.LoggerFactory(),
+    cache_logger_on_first_use=True,
+)
+
+# Configure standard library logging to output to file and console
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format='%(message)s',  # structlog handles formatting
     handlers=[
         logging.StreamHandler(),
         logging.FileHandler('app.log')
     ]
 )
 
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__)
 
 # Initialize rate limiter
 limiter = Limiter(key_func=get_remote_address)
@@ -64,6 +86,9 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
+# Add request logging middleware
+app.add_middleware(RequestLoggingMiddleware)
+
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
@@ -73,10 +98,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Initialize Prometheus metrics instrumentation
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+
 # Global exception handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
-    logger.error(f"Unhandled exception: {exc}", exc_info=True)
+    logger.error(
+        "unhandled_exception",
+        error=str(exc),
+        error_type=type(exc).__name__,
+        path=request.url.path,
+        method=request.method,
+        exc_info=True
+    )
     return JSONResponse(
         status_code=500,
         content={"detail": "Internal server error"}
@@ -127,9 +162,20 @@ async def health_check_detailed():
         logger.error(f"Database health check failed: {e}")
         db_status = "unhealthy"
     
+    # Check ML models availability
+    try:
+        from app.api.recommend import ml_manager
+        ml_status = "healthy" if ml_manager.models else "degraded"
+    except Exception:
+        ml_status = "unknown"
+    
     return {
         "status": "healthy" if db_status == "healthy" else "degraded",
         "version": "1.0.0",
-        "database": db_status,
-        "timestamp": "2024-01-01T00:00:00Z"  # You could use datetime.now().isoformat()
+        "components": {
+            "database": db_status,
+            "ml_models": ml_status,
+            "api": "healthy"
+        },
+        "timestamp": datetime.now(timezone.utc).isoformat()
     }
