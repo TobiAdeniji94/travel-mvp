@@ -45,6 +45,33 @@ def init_database():
         logger.info("Connecting to database...")
         engine = create_engine(db_url, echo=False)
         
+        # Create PostgreSQL ENUM types first (if they don't exist)
+        logger.info("Creating ENUM types...")
+        with engine.connect() as conn:
+            # Create enums if they don't exist
+            conn.execute(text("""
+                DO $$ BEGIN
+                    CREATE TYPE userstatus AS ENUM ('active', 'inactive', 'suspended');
+                EXCEPTION
+                    WHEN duplicate_object THEN null;
+                END $$;
+            """))
+            conn.execute(text("""
+                DO $$ BEGIN
+                    CREATE TYPE itinerarystatus AS ENUM ('draft', 'generated', 'booked', 'cancelled', 'completed');
+                EXCEPTION
+                    WHEN duplicate_object THEN null;
+                END $$;
+            """))
+            conn.execute(text("""
+                DO $$ BEGIN
+                    CREATE TYPE bookingstatus AS ENUM ('pending', 'confirmed', 'cancelled', 'completed');
+                EXCEPTION
+                    WHEN duplicate_object THEN null;
+                END $$;
+            """))
+            conn.commit()
+        
         logger.info("Creating all tables...")
         SQLModel.metadata.create_all(bind=engine)
         
