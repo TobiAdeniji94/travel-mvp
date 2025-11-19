@@ -350,7 +350,7 @@ class ItineraryDestination(SQLModel, table=True):
         Index('idx_itinerary_destinations_itinerary', 'itinerary_id'),
         Index('idx_itinerary_destinations_destination', 'destination_id'),
         Index('idx_itinerary_destinations_order', 'order'),
-        CheckConstraint('order >= 0', name='check_valid_order'),
+        CheckConstraint('"order" >= 0', name='check_valid_order'),
     )
 
     itinerary_id: PyUUID = Field(foreign_key="itineraries.id", primary_key=True)
@@ -469,7 +469,7 @@ class ItineraryActivity(SQLModel, table=True):
         Index('idx_itinerary_activities_itinerary', 'itinerary_id'),
         Index('idx_itinerary_activities_activity', 'activity_id'),
         Index('idx_itinerary_activities_order', 'order'),
-        CheckConstraint('order >= 0', name='check_valid_order'),
+        CheckConstraint('"order" >= 0', name='check_valid_order'),
     )
 
     itinerary_id: PyUUID = Field(foreign_key="itineraries.id", primary_key=True)
@@ -599,7 +599,7 @@ class ItineraryAccommodation(SQLModel, table=True):
         Index('idx_itinerary_accommodations_itinerary', 'itinerary_id'),
         Index('idx_itinerary_accommodations_accommodation', 'accommodation_id'),
         Index('idx_itinerary_accommodations_order', 'order'),
-        CheckConstraint('order >= 0', name='check_valid_order'),
+        CheckConstraint('"order" >= 0', name='check_valid_order'),
     )
 
     itinerary_id: PyUUID = Field(foreign_key="itineraries.id", primary_key=True)
@@ -727,7 +727,7 @@ class ItineraryTransportation(SQLModel, table=True):
         Index('idx_itinerary_transportations_itinerary', 'itinerary_id'),
         Index('idx_itinerary_transportations_transportation', 'transportation_id'),
         Index('idx_itinerary_transportations_order', 'order'),
-        CheckConstraint('order >= 0', name='check_valid_order'),
+        CheckConstraint('"order" >= 0', name='check_valid_order'),
     )
 
     itinerary_id: PyUUID = Field(foreign_key="itineraries.id", primary_key=True)
