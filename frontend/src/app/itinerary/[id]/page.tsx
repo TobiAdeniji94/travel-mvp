@@ -85,6 +85,11 @@ export default function ItineraryDetailPage() {
   };
 
   const handleShare = async () => {
+    // Check if running in browser
+    if (typeof window === 'undefined') return;
+    
+    const currentUrl = window.location.href;
+    
     if (navigator.share) {
       try {
         await navigator.share({
@@ -98,14 +103,14 @@ export default function ItineraryDetailPage() {
               'your destination'
             }`,
           text: `Check out my travel itinerary!`,
-          url: window.location.href,
+          url: currentUrl,
         });
       } catch (error) {
         console.log('Error sharing:', error);
       }
     } else {
       // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(currentUrl);
       alert('Link copied to clipboard!');
     }
   };
