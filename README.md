@@ -97,10 +97,17 @@ cd travel-mvp
 
 ### 3) Environment
 
-Copy and edit the sample:
-
+**Backend:**
 ```bash
 cp .env.example .env
+# Edit .env with your database credentials and API keys
+```
+
+**Frontend:**
+```bash
+cd frontend
+cp .env.example .env.local
+# Default: NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
 ```
 
 ### 4) One-shot run (Docker)

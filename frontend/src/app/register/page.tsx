@@ -57,8 +57,17 @@ export default function RegisterPage() {
 
     try {
       await register(formData.username, formData.email, formData.password);
-      router.push('/dashboard');
+      // Registration successful - redirect to dashboard (or login if auto-login failed)
+      // Check if user is actually logged in
+      const isLoggedIn = localStorage.getItem('auth_token');
+      if (isLoggedIn) {
+        router.push('/dashboard');
+      } else {
+        // Auto-login failed, redirect to login page with success message
+        router.push('/login?registered=true');
+      }
     } catch (error: any) {
+      console.error('Registration error:', error);
       if (error.status === 400) {
         if (error.data?.detail?.includes('Username')) {
           setErrors({ username: 'Username already exists' });
@@ -69,6 +78,8 @@ export default function RegisterPage() {
         } else {
           setErrors({ general: 'Registration failed. Please check your information.' });
         }
+      } else if (error.status === 500) {
+        setErrors({ general: 'Server error. Please try again later.' });
       } else {
         setErrors({ general: 'Registration failed. Please try again.' });
       }

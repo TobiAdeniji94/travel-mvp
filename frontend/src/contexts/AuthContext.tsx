@@ -60,8 +60,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await apiClient.register({ username, email, password });
       // After successful registration, log the user in
-      await login(username, password);
+      try {
+        await login(username, password);
+      } catch (loginError) {
+        // If auto-login fails, that's okay - user can log in manually
+        console.warn('Auto-login after registration failed:', loginError);
+        // Don't throw - registration was successful
+      }
     } catch (error) {
+      console.error('Registration error:', error);
       throw error;
     }
   };
