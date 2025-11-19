@@ -13,8 +13,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from sqlalchemy import create_engine, text
-from app.db.base import Base
+from sqlmodel import SQLModel
 import logging
+
+# Import all models to register them with SQLModel.metadata
+from app.db.models import (
+    User, Destination, Activity, Accommodation, Transportation,
+    Itinerary, ItineraryItem, Booking, BookingItem, Review, SharedItinerary
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -38,7 +44,7 @@ def init_database():
         engine = create_engine(db_url, echo=False)
         
         logger.info("Creating all tables...")
-        Base.metadata.create_all(bind=engine)
+        SQLModel.metadata.create_all(bind=engine)
         
         logger.info("✅ Database tables created successfully")
         

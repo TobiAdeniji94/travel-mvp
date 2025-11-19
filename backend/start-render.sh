@@ -52,7 +52,44 @@ done
 
 # Initialize database tables (idempotent - SQLAlchemy won't recreate existing tables)
 echo "Initializing database tables..."
-python scripts/init_db.py || echo "⚠️  Database initialization failed or already done"
+if ! python scripts/init_db.py; then
+    echo "⚠️  Database initialization failed - checking if tables already exist..."
+    python -c "
+import sys
+import os
+from sqlalchemy import create_engine, text
+
+db_url = os.getenv('DB_URL', '')
+if not db_url:
+    print('❌ No DB_URL set')
+    sys.exit(1)
+
+# Normalize postgres:// to postgresql://
+if db_url.startswith('postgres://'):
+    db_url = 'postgresql://' + db_url[len('postgres://'):]
+
+try:
+    engine = create_engine(db_url)
+    with engine.connect() as conn:
+        result = conn.execute(text(\"SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'\"))
+        tables = [row[0] for row in result]
+        if 'users' in tables:
+            print(f'✅ Tables already exist: {len(tables)} tables found')
+            sys.exit(0)
+        else:
+            print(f'❌ Tables missing! Found: {tables}')
+            sys.exit(1)
+except Exception as e:
+    print(f'❌ Database check failed: {e}')
+    sys.exit(1)
+"
+    if [ $? -ne 0 ]; then
+        echo "❌ FATAL: Database tables do not exist and initialization failed"
+        echo "Please check database connection and permissions"
+        exit 1
+    fi
+fi
+echo "✅ Database tables ready"
 
 # Check if database needs seeding (first run detection)
 echo "Checking if database needs initial seeding..."
