@@ -188,14 +188,23 @@ class AuthService:
             await self.session.commit()
             await self.session.refresh(new_user)
             
-            logger.info(f"New user registered: {username}")
+            logger.info(
+                "user_registered_in_service",
+                username=username,
+                user_id=str(new_user.id)
+            )
             return new_user
             
         except HTTPException:
             raise
         except Exception as e:
             await self.session.rollback()
-            logger.error(f"Registration error for user {username}: {e}")
+            logger.error(
+                "user_registration_error",
+                username=username,
+                error=str(e),
+                error_type=type(e).__name__
+            )
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Registration failed"
@@ -314,10 +323,21 @@ async def register(
                 is_active=new_user.is_active
             )
             
-        except HTTPException:
+        except HTTPException as he:
+            logger.warning(
+                "user_registration_http_error",
+                status_code=he.status_code,
+                detail=he.detail,
+                username=user_data.username
+            )
             raise
         except Exception as e:
-            logger.error(f"Unexpected error in registration: {e}")
+            logger.error(
+                "user_registration_unexpected_error",
+                error=str(e),
+                error_type=type(e).__name__,
+                username=user_data.username
+            )
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Registration failed"
