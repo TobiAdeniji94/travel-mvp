@@ -75,9 +75,9 @@ services:
         value: 10000
       - key: NODE_ENV
         value: production
-      # Backend API URL (auto-populated from backend service)
+      # Backend API URL - Update this with your actual backend URL
       - key: NEXT_PUBLIC_API_URL
-        value: https://travel-mvp-backend.onrender.com
+        value: https://travel-mvp-backend.onrender.com/api/v1
 
 databases:
   # PostgreSQL Database (Free Tier)
