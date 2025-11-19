@@ -12,6 +12,10 @@ RUN npm install --include=dev
 # Copy all source files
 COPY . .
 
+# Accept build argument for API URL (with fallback for local builds)
+ARG NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
