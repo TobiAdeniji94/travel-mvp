@@ -19,7 +19,9 @@ import logging
 # Import all models to register them with SQLModel.metadata
 from app.db.models import (
     User, Destination, Activity, Accommodation, Transportation,
-    Itinerary, ItineraryItem, Booking, BookingItem, Review, SharedItinerary
+    Itinerary, ItineraryDestination, ItineraryActivity, 
+    ItineraryAccommodation, ItineraryTransportation,
+    Booking, Review
 )
 
 logging.basicConfig(level=logging.INFO)

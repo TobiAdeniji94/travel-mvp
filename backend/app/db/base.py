@@ -13,11 +13,12 @@ from app.db.models import (
     Accommodation,
     Transportation,
     Itinerary,
-    ItineraryItem,
+    ItineraryDestination,
+    ItineraryActivity,
+    ItineraryAccommodation,
+    ItineraryTransportation,
     Booking,
-    BookingItem,
     Review,
-    SharedItinerary,
 )
 
 # Export Base for use in init_db.py and migrations
