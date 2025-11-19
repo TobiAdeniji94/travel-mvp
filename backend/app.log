@@ -11618,3 +11618,44 @@ Database manager initialized successfully
 {"status_code": 200, "duration_ms": 1.32, "event": "http_request_completed", "path": "/health", "client_host": "127.0.0.1", "request_id": "dae96b16-41c3-4c53-a5ca-f3ca5887c60d", "method": "GET", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:32:13.418502Z"}
 {"status_code": 200, "duration_ms": 2.2, "event": "http_request_completed", "path": "/health", "client_host": "127.0.0.1", "request_id": "511ded06-1146-458f-b221-3c118bf45393", "method": "GET", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:32:43.373464Z"}
 {"status_code": 200, "duration_ms": 1.46, "event": "http_request_completed", "path": "/health", "client_host": "127.0.0.1", "request_id": "d024c410-e8d5-4d1e-81ab-cdb2e13067f5", "method": "GET", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:33:13.314251Z"}
+{"status_code": 200, "duration_ms": 1.15, "event": "http_request_completed", "path": "/health", "client_host": "127.0.0.1", "request_id": "4cb8bd83-2ea0-4dd4-b247-a2eca51ceb86", "method": "GET", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:33:43.266107Z"}
+{"event": "Shutting down application...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:07.050969Z"}
+{"event": "Closing database connections...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:07.052046Z"}
+Closing database connections...
+Database connections closed
+{"event": "Database connections closed successfully", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:07.189481Z"}
+{"event": "Starting application...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:27.118678Z"}
+{"event": "Initializing database manager...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:27.121589Z"}
+Database URL prepared: postgresql://db:5432/traveldb
+Database engine created with pool_size=10
+Database manager initialized successfully
+{"event": "Database manager initialized successfully", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:34:27.309475Z"}
+{"status_code": 200, "duration_ms": 34.93, "event": "http_request_completed", "request_id": "2709bb6f-70b3-48e8-81a9-7caa683c6f8f", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:34:27.365034Z"}
+{"status_code": 200, "duration_ms": 2.89, "event": "http_request_completed", "request_id": "06b327eb-c140-4991-97d9-ea195264f798", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:34:53.066379Z"}
+{"status_code": 200, "duration_ms": 4.71, "event": "http_request_completed", "request_id": "67a23478-120b-4868-b637-1fe6796012ce", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:35:22.993016Z"}
+{"status_code": 200, "duration_ms": 5.95, "event": "http_request_completed", "request_id": "5ba03bfa-2868-4d41-9513-fb73905ab996", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:35:52.955766Z"}
+{"status_code": 200, "duration_ms": 1.52, "event": "http_request_completed", "request_id": "34ce8bf4-d048-4ade-9ccf-5484d2e433a1", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:36:22.883382Z"}
+{"status_code": 200, "duration_ms": 2.42, "event": "http_request_completed", "request_id": "bc085b27-bf97-4191-913e-2d1ff29efc61", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:36:52.821140Z"}
+{"status_code": 200, "duration_ms": 2.07, "event": "http_request_completed", "request_id": "778eb8c9-9b9a-4976-958e-d3aabcfd7c1b", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:37:22.758904Z"}
+{"status_code": 200, "duration_ms": 1.68, "event": "http_request_completed", "request_id": "365974e2-8bcf-431f-b964-f2f33cea3d05", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:37:52.676398Z"}
+{"status_code": 200, "duration_ms": 1.94, "event": "http_request_completed", "request_id": "7f2367b1-3f29-43f9-913d-d7a2160f4f16", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:38:22.622753Z"}
+{"status_code": 200, "duration_ms": 2.36, "event": "http_request_completed", "request_id": "6925626f-f65c-4aca-80e6-96b6d279fe51", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:38:52.558653Z"}
+{"status_code": 200, "duration_ms": 2.16, "event": "http_request_completed", "request_id": "408d05f3-e684-4c00-96c3-2c17addf257a", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:39:22.515108Z"}
+{"status_code": 200, "duration_ms": 1.59, "event": "http_request_completed", "request_id": "e67fd762-68a2-4941-beb6-dc4f5736cea5", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:39:52.230133Z"}
+{"status_code": 200, "duration_ms": 2.3, "event": "http_request_completed", "request_id": "e5b7ddfe-c285-423f-b7f1-690202f9b214", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:40:22.226779Z"}
+{"status_code": 200, "duration_ms": 1.46, "event": "http_request_completed", "request_id": "b9bcb3e6-ac1d-4e5a-814b-48eb41b80129", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:40:52.146703Z"}
+{"status_code": 200, "duration_ms": 1.37, "event": "http_request_completed", "request_id": "26e0e678-1d75-4e31-b1ee-866639406fb1", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:41:22.047359Z"}
+{"status_code": 200, "duration_ms": 1.4, "event": "http_request_completed", "request_id": "36ace662-f0b8-4cad-bc9b-3f4baf2ed5cf", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:41:51.953169Z"}
+{"status_code": 200, "duration_ms": 2.41, "event": "http_request_completed", "request_id": "96204fe2-db70-4329-bb6d-f6d354176340", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:42:21.880767Z"}
+{"status_code": 200, "duration_ms": 1.41, "event": "http_request_completed", "request_id": "a2b1d101-c90e-4070-af0a-e4c5564c9046", "method": "GET", "path": "/health", "client_host": "127.0.0.1", "logger": "app.middleware.logging", "level": "info", "timestamp": "2025-11-19T15:42:51.854937Z"}
+{"event": "Shutting down application...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:00.957117Z"}
+{"event": "Closing database connections...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:00.958353Z"}
+Closing database connections...
+Database connections closed
+{"event": "Database connections closed successfully", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:00.969381Z"}
+{"event": "Starting application...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:08.891671Z"}
+{"event": "Initializing database manager...", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:08.892864Z"}
+Database URL prepared: postgresql://db:5432/traveldb
+Database engine created with pool_size=10
+Database manager initialized successfully
+{"event": "Database manager initialized successfully", "logger": "app.main", "level": "info", "timestamp": "2025-11-19T15:43:08.984891Z"}
