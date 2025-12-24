@@ -1,6 +1,9 @@
 **/venv
 /pycache/*
 .env
+# Log files
+*.log
+backend/app.log
 # or explicitly only the root one
 /.env
 # Environment variables
