@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 from enum import Enum
 from typing import List, Optional, Dict, Any
 from decimal import Decimal
+import re
 
 from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import Column, DateTime, Index, CheckConstraint, Boolean
@@ -341,6 +342,35 @@ class Destination(AuditMixin, BaseModel, table=True):
         if not isinstance(v, (int, float)):
             raise ValueError('Coordinates must be numeric')
         return float(v)
+    
+    @field_validator('images', mode='before')
+    @classmethod
+    def normalize_images(cls, v: Optional[List[str]]) -> Optional[List[str]]:
+        """
+        Normalize stored image references to extract photoreference tokens only.
+        If a full Google Place Photo URL is provided, extract the photoreference parameter.
+        If the URL contains an API key, strip it.
+        Store only the photoreference token; signed URLs are built at response time.
+        """
+        if not v:
+            return v
+        
+        normalized = []
+        for img in v:
+            if not img:
+                continue
+            # Try to extract photoreference from full Google Place Photo URL
+            match = re.search(r'photoreference=([^&\s]+)', img)
+            if match:
+                # Store only the photoreference token
+                normalized.append(match.group(1))
+            else:
+                # If it's already a token or some other URL, store as-is but strip API key
+                # Remove any &key=... parameter
+                img_clean = re.sub(r'&key=[^&\s]*', '', img)
+                normalized.append(img_clean)
+        
+        return normalized if normalized else None
 
 
 class ItineraryDestination(SQLModel, table=True):
@@ -460,6 +490,35 @@ class Activity(BaseModel, table=True):
         if not v or len(v.strip()) == 0:
             raise ValueError('Activity name cannot be empty')
         return v.strip()
+    
+    @field_validator('images', mode='before')
+    @classmethod
+    def normalize_images(cls, v: Optional[List[str]]) -> Optional[List[str]]:
+        """
+        Normalize stored image references to extract photoreference tokens only.
+        If a full Google Place Photo URL is provided, extract the photoreference parameter.
+        If the URL contains an API key, strip it.
+        Store only the photoreference token; signed URLs are built at response time.
+        """
+        if not v:
+            return v
+        
+        normalized = []
+        for img in v:
+            if not img:
+                continue
+            # Try to extract photoreference from full Google Place Photo URL
+            match = re.search(r'photoreference=([^&\s]+)', img)
+            if match:
+                # Store only the photoreference token
+                normalized.append(match.group(1))
+            else:
+                # If it's already a token or some other URL, store as-is but strip API key
+                # Remove any &key=... parameter
+                img_clean = re.sub(r'&key=[^&\s]*', '', img)
+                normalized.append(img_clean)
+        
+        return normalized if normalized else None
 
 
 class ItineraryActivity(SQLModel, table=True):
@@ -590,6 +649,35 @@ class Accommodation(AuditMixin, BaseModel, table=True):
         if not v or len(v.strip()) == 0:
             raise ValueError('Accommodation name cannot be empty')
         return v.strip()
+    
+    @field_validator('images', mode='before')
+    @classmethod
+    def normalize_images(cls, v: Optional[List[str]]) -> Optional[List[str]]:
+        """
+        Normalize stored image references to extract photoreference tokens only.
+        If a full Google Place Photo URL is provided, extract the photoreference parameter.
+        If the URL contains an API key, strip it.
+        Store only the photoreference token; signed URLs are built at response time.
+        """
+        if not v:
+            return v
+        
+        normalized = []
+        for img in v:
+            if not img:
+                continue
+            # Try to extract photoreference from full Google Place Photo URL
+            match = re.search(r'photoreference=([^&\s]+)', img)
+            if match:
+                # Store only the photoreference token
+                normalized.append(match.group(1))
+            else:
+                # If it's already a token or some other URL, store as-is but strip API key
+                # Remove any &key=... parameter
+                img_clean = re.sub(r'&key=[^&\s]*', '', img)
+                normalized.append(img_clean)
+        
+        return normalized if normalized else None
 
 
 class ItineraryAccommodation(SQLModel, table=True):

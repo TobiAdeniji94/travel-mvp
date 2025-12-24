@@ -1,14 +1,66 @@
 import os
 import logging
+import re
+import json
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
 from app.db.session import init_db, get_session
 from app.api import users, itinerary, auth, nlp, recommend
+import structlog
+
+# ============================================================================
+# API Key Redaction & Security Configuration
+# ============================================================================
+
+def redact_api_keys(logger, method_name, event_dict):
+    """
+    Structlog processor that redacts Google API keys and similar secrets from
+    all logged strings and nested structures (lists, dicts).
+    """
+    def _redact_value(v):
+        if isinstance(v, str):
+            # Redact ?key=... or &key=... query parameters
+            v = re.sub(r'([?&]key=)[^&\s]+', r'\1REDACTED', v)
+            # Redact common API key patterns (e.g., AIzaSyXXX...)
+            v = re.sub(r'(AIza[0-9A-Za-z-_]{35})', 'REDACTED', v)
+            return v
+        elif isinstance(v, list):
+            return [_redact_value(item) for item in v]
+        elif isinstance(v, dict):
+            return {k: _redact_value(val) for k, val in v.items()}
+        return v
+    
+    return _redact_value(event_dict)
+
+
+def build_photo_url(photoref: str, maxwidth: int = 400) -> str:
+    """
+    Build a signed Google Place Photo URL from a photoreference token.
+    Requires GOOGLE_MAPS_API_KEY environment variable at runtime.
+    """
+    api_key = os.getenv("GOOGLE_MAPS_API_KEY", "")
+    if not api_key:
+        # Return unsigned URL if key not configured
+        return f"https://maps.googleapis.com/maps/api/place/photo?maxwidth={maxwidth}&photoreference={photoref}"
+    return f"https://maps.googleapis.com/maps/api/place/photo?maxwidth={maxwidth}&photoreference={photoref}&key={api_key}"
+
+
+# Configure structlog with redaction processor
+structlog.configure(
+    processors=[
+        redact_api_keys,  # Must be early in pipeline
+        structlog.processors.JSONRenderer(),
+    ],
+    context_class=dict,
+    logger_factory=structlog.PrintLoggerFactory(),
+)
+
+logger = structlog.get_logger()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -48,6 +100,54 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Add request logging middleware
 app.add_middleware(RequestLoggingMiddleware)
+
+# Add photo URL builder middleware (response-time URL signing)
+@app.middleware("http")
+async def photo_url_middleware(request: Request, call_next):
+    """
+    Middleware that transforms stored photoreference tokens in JSON responses
+    into signed Google Place Photo URLs at response time.
+    This prevents storage of API keys in the database.
+    """
+    response = await call_next(request)
+    
+    # Only process JSON responses
+    if "application/json" in response.headers.get("content-type", ""):
+        try:
+            body = await response.body()
+            data = json.loads(body)
+            
+            # Transform 'images' fields: if they contain photoreference tokens,
+            # build signed URLs at response time
+            def transform_images(obj):
+                if isinstance(obj, dict):
+                    if "images" in obj and isinstance(obj["images"], list):
+                        obj["images"] = [
+                            build_photo_url(img) if not img.startswith("http") else img
+                            for img in obj["images"]
+                        ]
+                    for v in obj.values():
+                        if isinstance(v, (dict, list)):
+                            transform_images(v)
+                elif isinstance(obj, list):
+                    for item in obj:
+                        if isinstance(item, (dict, list)):
+                            transform_images(item)
+            
+            transform_images(data)
+            new_body = json.dumps(data).encode("utf-8")
+            return Response(
+                content=new_body,
+                status_code=response.status_code,
+                headers=dict(response.headers),
+                media_type=response.media_type,
+            )
+        except Exception as e:
+            logger.exception(f"Error in photo_url_middleware: {e}")
+            # On error, return original response
+            return response
+    
+    return response
 
 # Enable CORS for frontend
 # Get allowed origins from environment variable or use defaults
