@@ -461,6 +461,31 @@ class Activity(BaseModel, table=True):
             raise ValueError('Activity name cannot be empty')
         return v.strip()
 
+    @field_validator('images')
+    @classmethod
+    def normalize_images(cls, v):
+        """Normalize image entries: extract Google `photoreference` tokens
+        when a full signed URL was provided so we store only the token.
+        """
+        if v is None:
+            return v
+        import re
+
+        def extract(item):
+            if not isinstance(item, str):
+                return item
+            # If it's a Google Place Photo URL, extract photoreference
+            m = re.search(r'photoreference=([^&\s]+)', item)
+            if m:
+                return m.group(1)
+            # If it already looks like a photoreference token, keep it
+            if not item.startswith('http'):
+                return item
+            # Otherwise, strip any API key param to be safe
+            return re.sub(r'([?&]key=)[^&\s]+', '', item)
+
+        return [extract(it) for it in v]
+
 
 class ItineraryActivity(SQLModel, table=True):
     __tablename__ = "itinerary_activities"
